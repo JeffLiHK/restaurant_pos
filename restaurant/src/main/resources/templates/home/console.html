@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="utf-8">
+    <title>餐厅点餐系统</title>
+    <meta name="renderer" content="webkit">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=0">
+    <link rel="stylesheet" th:href="@{/layuiadmin/layui/css/layui.css}"
+          href="../../static/layuiadmin/layui/css/layui.css" media="all">
+    <link rel="stylesheet" th:href="@{/layuiadmin/style/admin.css}" href="../../static/layuiadmin/style/admin.css"
+          media="all">
+</head>
+<body>
+<div class="layui-fluid">
+    <div class="layui-row layui-col-space15">
+        <div class="layui-col-md8">
+            <div class="layui-row layui-col-space15">
+                <div class="layui-col-md12">
+                    <div class="layui-card">
+                        <div class="layui-card-body">
+                            <div class="layui-carousel layadmin-carousel layadmin-dataview">
+                                <div carousel-item>
+                                    <div id="customerFlowChart">
+                                        今日客流量面积图
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="layui-card">
+                        <div class="layui-card-header">会员统计</div>
+                        <div class="layui-card-body">
+                            <div class="layui-carousel layadmin-carousel layadmin-dataview" data-anim="fade">
+                                <div carousel-item>
+                                    <div id="memberAddChart" style="width: 810px">会员增长量折线图</div>
+                                    <div id="memberCategoryRate" style="width: 810px">会员类型比率饼图</div>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="layui-col-md4">
+            <div class="layui-card">
+                <div class="layui-card-body" style="height: 280px" id="goodsWordCloudChart">
+
+                </div>
+            </div>
+
+            <div class="layui-card">
+                <div class="layui-card-body" style="height: 350px" id="chart2">
+
+                </div>
+            </div>
+            <div class="layui-card">
+                <div class="layui-card-header">
+                    作者心语
+                    <i class="layui-icon layui-icon-tips" lay-tips="泸职院哦！" lay-offset="5"></i>
+                </div>
+                <div class="layui-card-body layui-text" style="height: 40px">
+                    <p>Hello world！</p>
+                    <p>—— 刘静</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<script th:src="@{/layuiadmin/layui/layui.js}"></script>
+<script th:src="@{/js/dist/echarts.js}"></script>
+<script type="text/javascript">
+
+</script>
+<script th:src="@{/js/chartStatistics.js}"></script>
+</body>
+</html>
+
