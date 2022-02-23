@@ -2,9 +2,9 @@
 <!DOCTYPE mapper
         PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
         "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-<mapper namespace="com.lzy.liujing.restaurant.dao.GoodsDao">
+<mapper namespace="pkpd.restaurant.dao.GoodsDao">
 
-    <select id="findPage" parameterType="com.lzy.liujing.restaurant.entity.Goods" resultMap="goodsResultMap">
+    <select id="findPage" parameterType="pkpd.restaurant.entity.Goods" resultMap="goodsResultMap">
         select * from r_goods as a
         <include refid="join"/>
         <include refid="where"/>
@@ -24,7 +24,7 @@
         where goods_id = #{id} and a.del = 0
     </select>
 
-    <select id="findByGoodsName" parameterType="com.lzy.liujing.restaurant.entity.Goods" resultMap="goodsResultMap">
+    <select id="findByGoodsName" parameterType="pkpd.restaurant.entity.Goods" resultMap="goodsResultMap">
         select * from r_goods as a
         <include refid="join"/>
         where goods_name = #{goodsName}
@@ -34,12 +34,12 @@
         and a.del = 0
     </select>
 
-    <insert id="insert" parameterType="com.lzy.liujing.restaurant.entity.Goods">
+    <insert id="insert" parameterType="pkpd.restaurant.entity.Goods">
         insert into r_goods
         <include refid="set"/>
     </insert>
 
-    <update id="update" parameterType="com.lzy.liujing.restaurant.entity.Goods">
+    <update id="update" parameterType="pkpd.restaurant.entity.Goods">
         update r_goods
         <include refid="set"/>
         where goods_id = #{goodsId}
@@ -58,7 +58,7 @@
         inner join r_category as b on a.category_id = b.category_id
     </sql>
 
-    <resultMap id="goodsResultMap" type="com.lzy.liujing.restaurant.entity.Goods">
+    <resultMap id="goodsResultMap" type="pkpd.restaurant.entity.Goods">
         <id column="goods_id" property="goodsId"/>
         <result column="goods_name" property="goodsName"/>
         <result column=" img_small_url" property="imgSmallUrl"/>
@@ -75,7 +75,7 @@
         <result column="putaway_status" property="putawayStatus"/>
         <result column="create_time" property="createTime"/>
         <result column="modify_time" property="modifyTime"/>
-        <association property="goodsCategory" javaType="com.lzy.liujing.restaurant.entity.GoodsCategory">
+        <association property="goodsCategory" javaType="pkpd.restaurant.entity.GoodsCategory">
             <id column="category_id" property="categoryId"/>
             <result column="category_name" property="categoryName"/>
         </association>
