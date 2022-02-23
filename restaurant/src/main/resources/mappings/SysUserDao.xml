@@ -2,12 +2,12 @@
 <!DOCTYPE mapper
         PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
         "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-<mapper namespace="com.lzy.liujing.restaurant.dao.SysUserDao">
+<mapper namespace="pkpd.restaurant.dao.SysUserDao">
     <sql id="join">
         INNER JOIN sys_user_role as ur on u.user_id = ur.user_id
         INNER JOIN sys_role as r on r.role_id = ur.role_id
     </sql>
-    <resultMap id="sysUserResultMap" type="com.lzy.liujing.restaurant.entity.SysUser">
+    <resultMap id="sysUserResultMap" type="pkpd.restaurant.entity.SysUser">
         <id column="user_id" property="userId"/>
         <result column="login_code" property="loginCode"/>
         <result column="password" property="password"/>
@@ -20,7 +20,7 @@
         <result column="address" property="address"/>
         <result column="create_time" property="createTime"/>
         <result column="modify_time" property="modifyTime"/>
-        <association property="role" javaType="com.lzy.liujing.restaurant.entity.SysRole">
+        <association property="role" javaType="pkpd.restaurant.entity.SysRole">
             <id property="roleId" column="role_id"/>
             <result property="roleName" column="role_name"/>
         </association>
@@ -33,7 +33,7 @@
         WHERE u.del = 0
     </select>
 
-    <select id="findPage" parameterType="com.lzy.liujing.restaurant.entity.request.UserRequest"
+    <select id="findPage" parameterType="pkpd.restaurant.entity.request.UserRequest"
             resultMap="sysUserResultMap">
         SELECT *
         FROM sys_user as u
@@ -62,7 +62,7 @@
         WHERE login_code = #{loginCode}
     </select>
 
-    <select id="searchPhone" parameterType="com.lzy.liujing.restaurant.entity.SysUser" resultMap="sysUserResultMap">
+    <select id="searchPhone" parameterType="pkpd.restaurant.entity.SysUser" resultMap="sysUserResultMap">
         SELECT *
         FROM sys_user as u
         <include refid="join"/>
@@ -72,7 +72,7 @@
         </if>
     </select>
 
-    <select id="findByIdNumber" parameterType="com.lzy.liujing.restaurant.entity.SysUser" resultMap="sysUserResultMap">
+    <select id="findByIdNumber" parameterType="pkpd.restaurant.entity.SysUser" resultMap="sysUserResultMap">
         SELECT *
         FROM sys_user as u
         <include refid="join"/>
@@ -82,7 +82,7 @@
         </if>
     </select>
 
-    <insert id="insert" parameterType="com.lzy.liujing.restaurant.entity.SysUser" keyColumn="user_id"
+    <insert id="insert" parameterType="pkpd.restaurant.entity.SysUser" keyColumn="user_id"
             keyProperty="userId" useGeneratedKeys="true">
       INSERT INTO sys_user(login_code,password,name,phone,email,gender,birthday,id_number,address,create_time)
       VALUE (#{loginCode},#{password},#{name},#{phone},#{email},#{gender},#{birthday},#{idNumber},
@@ -98,7 +98,7 @@
         </foreach>
     </update>
 
-    <update id="update" parameterType="com.lzy.liujing.restaurant.entity.SysUser">
+    <update id="update" parameterType="pkpd.restaurant.entity.SysUser">
         UPDATE sys_user
         <include refid="setFields"/>
         WHERE user_id = #{userId} AND del = 0

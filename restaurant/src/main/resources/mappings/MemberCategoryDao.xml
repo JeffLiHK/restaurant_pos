@@ -2,7 +2,7 @@
 <!DOCTYPE mapper
         PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
         "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-<mapper namespace="com.lzy.liujing.restaurant.dao.MemberCategoryDao">
+<mapper namespace="pkpd.restaurant.dao.MemberCategoryDao">
     <sql id="set">
         <set>
             <if test="mcName!=null">
@@ -23,17 +23,17 @@
         </set>
     </sql>
 
-    <select id="findAll" resultType="com.lzy.liujing.restaurant.entity.MemberCategory">
+    <select id="findAll" resultType="pkpd.restaurant.entity.MemberCategory">
         select * from r_merber_category
         where del = 0
     </select>
 
-    <select id="findById" parameterType="Long" resultType="com.lzy.liujing.restaurant.entity.MemberCategory">
+    <select id="findById" parameterType="Long" resultType="pkpd.restaurant.entity.MemberCategory">
         select * from r_merber_category
         where mc_id = #{mcId} and  del = 0
     </select>
 
-    <select id="findByMcName" parameterType="com.lzy.liujing.restaurant.entity.MemberCategory" resultType="com.lzy.liujing.restaurant.entity.MemberCategory">
+    <select id="findByMcName" parameterType="pkpd.restaurant.entity.MemberCategory" resultType="pkpd.restaurant.entity.MemberCategory">
         select * from r_merber_category
         where mc_name = #{mcName}
         <if test="mcId!=null">
@@ -41,12 +41,12 @@
         </if>
     </select>
 
-    <insert id="insert" parameterType="com.lzy.liujing.restaurant.entity.MemberCategory">
+    <insert id="insert" parameterType="pkpd.restaurant.entity.MemberCategory">
         insert into r_merber_category
         <include refid="set"/>
     </insert>
 
-    <update id="update" parameterType="com.lzy.liujing.restaurant.entity.MemberCategory">
+    <update id="update" parameterType="pkpd.restaurant.entity.MemberCategory">
         update r_merber_category
         <include refid="set"/>
         where mc_id =#{mcId} and del = 0
