@@ -2,12 +2,6 @@ package pkpd.restaurant.entity;
 
 import javax.validation.constraints.NotNull;
 
-/**
- * Created with IDEA
- * author:LiuJing
- * Date:2018/10/1
- * Time:22:33
- */
 
 public class Desk extends BaseBean{
     /**
@@ -17,7 +11,7 @@ public class Desk extends BaseBean{
     /**
      * 餐桌编号
      */
-    @NotNull(message = "桌号必填")
+    @NotNull(message = "The desk code cannot be empty")
     private String deskCode;
     /**
      * 座位人数

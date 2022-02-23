@@ -5,10 +5,6 @@ import org.springframework.format.annotation.DateTimeFormat;
 import java.util.Date;
 
 /**
- * Created with IDEA
- * author:LiuJing
- * Date:2018/10/1
- * Time:22:41
  * 会员类
  */
 public class Member extends BaseBean {

@@ -2,12 +2,7 @@ package pkpd.restaurant.exception;
 
 import pkpd.restaurant.Enums.ResultEnum;
 
-/**
- * Created with IDEA
- * author:LiuJing
- * Date:2018/10/2
- * Time:17:13
- */
+
 /**
  * 异常异常类
  * 注意：此处为什么继承RuntimeException而不是Exception与？

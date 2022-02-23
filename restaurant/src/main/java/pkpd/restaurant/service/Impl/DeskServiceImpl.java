@@ -17,10 +17,6 @@ import java.util.Date;
 import java.util.List;
 
 /**
- * Created with IDEA
- * author:LiuJing
- * Date:2018/10/22
- * Time:15:09
  *
  * 桌位管理业务逻辑
  */

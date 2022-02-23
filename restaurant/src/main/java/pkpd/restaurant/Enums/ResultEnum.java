@@ -1,17 +1,11 @@
 package pkpd.restaurant.Enums;
 
-/**
- * Created with IDEA
- * author:LiuJing
- * Date:2018/10/2
- * Time:20:11
- */
 
 public enum ResultEnum {
     UNKNOWN_ERROR(-1,"Unknown Error!"),
     SUCCESS(200,"Successful!"),
     USER_NO_FOUND(101,"Cannot find the account!"),
-    PWD_ERROR(101,"Error password!"),
+    PWD_ERROR(101,"Password Error!"),
     USER_IS_EXIST(101,"The account has existed!"),
     PHONE_IS_EXIST(101,"The phone number has existed!"),
     ID_NUMBER_IS_EXIST(101,"The ID has existed!"),

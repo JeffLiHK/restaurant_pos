@@ -34,7 +34,7 @@ spring:
 logging:
   level:
     root: info
-    com.lzy.liujing.restaurant: debug
+    pkpd.restaurant: debug
 
 #配置mybatis
 mybatis:
