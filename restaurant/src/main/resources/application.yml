@@ -62,6 +62,6 @@ server:
   port: 8181
   servlet:
     context-path: /restaurant
-
+# the image path
 web:
   upload-image-path: E:\Programming\Java\Project\restaurant\images\restaurant\upload
