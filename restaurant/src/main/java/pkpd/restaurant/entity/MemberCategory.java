@@ -1,10 +1,6 @@
 package pkpd.restaurant.entity;
 
 /**
- * Created with IDEA
- * author:LiuJing
- * Date:2018/10/1
- * Time:22:55
  * 会员类型类
  */
 

@@ -4,12 +4,6 @@ import pkpd.restaurant.entity.SysMenu;
 import java.util.ArrayList;
 import java.util.List;
 
-/**
- * Created with IDEA
- * author:LiuJing
- * Date:2018/10/3
- * Time:23:42
- */
 
 public class MenuUtil {
     /**

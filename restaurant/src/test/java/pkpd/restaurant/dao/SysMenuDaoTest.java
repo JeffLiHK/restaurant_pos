@@ -12,12 +12,7 @@ import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
 
-/**
- * Created with IDEA
- * author:LiuJing
- * Date:2018/10/3
- * Time:22:31
- */
+
 @RunWith(SpringRunner.class)
 @SpringBootTest
 public class SysMenuDaoTest {

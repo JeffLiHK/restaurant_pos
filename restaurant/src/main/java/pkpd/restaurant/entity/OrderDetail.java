@@ -3,10 +3,9 @@ package pkpd.restaurant.entity;
 import java.util.List;
 
 /**
- * Created with IDEA
- * author:LiuJing
+
  * Date:2018/10/1
- * Time:23:19
+23:19
  *
  * 订单明细表
  */

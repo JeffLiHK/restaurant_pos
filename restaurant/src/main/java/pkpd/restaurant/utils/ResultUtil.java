@@ -4,10 +4,9 @@ import pkpd.restaurant.Enums.ResultEnum;
 import pkpd.restaurant.entity.Result;
 
 /**
- * Created with IDEA
- * author:LiuJing
+
  * Date:2018/10/2
- * Time:17:53
+17:53
  * 返回值工具类
  */
 

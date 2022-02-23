@@ -14,13 +14,6 @@ import org.springframework.web.bind.annotation.ControllerAdvice;
 import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.bind.annotation.ResponseBody;
 
-
-/**
- * Created with IDEA
- * author:LiuJing
- * Date:2018/10/2
- * Time:19:56
- */
 @ControllerAdvice//注解定义全局异常处理类
 public class GlobalExceptionHandler {
     //Spring自带的日志框架Logger
@@ -46,7 +39,7 @@ public class GlobalExceptionHandler {
             CustomException exception = (CustomException) e;
             return ResultUtil.error(exception.getCode(),exception.getMessage());
         }else{
-            logger.info("[系统错误]={}",e);
+            logger.info("[System Error]={}",e);
             return ResultUtil.error(ResultEnum.UNKNOWN_ERROR.getCode(),ResultEnum.UNKNOWN_ERROR.getMsg());
         }
     }

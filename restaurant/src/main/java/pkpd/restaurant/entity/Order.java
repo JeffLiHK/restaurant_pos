@@ -6,10 +6,9 @@ import java.util.Date;
 import java.util.List;
 
 /**
- * Created with IDEA
- * author:LiuJing
+
  * Date:2018/10/1
- * Time:23:12
+23:12
  *
  * 订单表
  */

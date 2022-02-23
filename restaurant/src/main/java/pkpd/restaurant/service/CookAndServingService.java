@@ -6,11 +6,7 @@ import pkpd.restaurant.entity.OrderDetail;
 import java.util.List;
 
 /**
- * Created with IDEA
- * author:LiuJing
- * Date:2018/10/2
- * Time:15:08
- *
+
  * 做菜上菜管理业务逻辑接口
  */
 
