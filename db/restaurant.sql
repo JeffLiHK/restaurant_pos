@@ -16,16 +16,15 @@
 
 SET NAMES utf8mb4;
 SET FOREIGN_KEY_CHECKS = 0;
-
 -- ----------------------------
 -- Table structure for r_category
 -- ----------------------------
 DROP TABLE IF EXISTS `r_category`;
 CREATE TABLE `r_category`  (
-  `category_id` int(11) NOT NULL AUTO_INCREMENT COMMENT '菜品种类id',
-  `category_name` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL COMMENT '菜名',
-  `del` int(2) NOT NULL DEFAULT 0 COMMENT '删除标志',
-  PRIMARY KEY (`category_id`) USING BTREE
+                               `category_id` int(11) NOT NULL AUTO_INCREMENT COMMENT 'category_id',
+                               `category_name` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL COMMENT 'category_name',
+                               `del` int(2) NOT NULL DEFAULT 0 COMMENT 'delete',
+                               PRIMARY KEY (`category_id`) USING BTREE
 ) ENGINE = InnoDB AUTO_INCREMENT = 9 CHARACTER SET = utf8 COLLATE = utf8_general_ci ROW_FORMAT = Compact;
 
 -- ----------------------------
@@ -45,15 +44,15 @@ INSERT INTO `r_category` VALUES (8, '干锅', 1);
 -- ----------------------------
 DROP TABLE IF EXISTS `r_desk`;
 CREATE TABLE `r_desk`  (
-  `desk_id` int(10) NOT NULL AUTO_INCREMENT COMMENT '餐桌id',
-  `desk_code` varchar(20) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL COMMENT '餐桌号',
-  `people_count` int(6) NULL DEFAULT NULL COMMENT '餐桌座位数',
-  `idle_status` int(2) NULL DEFAULT 0 COMMENT '空闲状态(0空闲，1有人，2待清理)',
-  `create_time` datetime NULL DEFAULT NULL COMMENT '创建时间',
-  `modify_time` datetime NULL DEFAULT NULL COMMENT '修改时间',
-  `del` int(2) NULL DEFAULT 0 COMMENT '删除标志',
-  PRIMARY KEY (`desk_id`) USING BTREE,
-  UNIQUE INDEX `desk_code`(`desk_code`) USING BTREE
+                           `desk_id` int(10) NOT NULL AUTO_INCREMENT COMMENT 'desk_id',
+                           `desk_code` varchar(20) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL COMMENT 'desk_code',
+                           `people_count` int(6) NULL DEFAULT NULL COMMENT 'cus_number',
+                           `idle_status` int(2) NULL DEFAULT 0 COMMENT 'desk_status(0 No Customer，1 In Use，2 Wait For Clean)',
+                           `create_time` datetime NULL DEFAULT NULL COMMENT 'create_time',
+                           `modify_time` datetime NULL DEFAULT NULL COMMENT 'modify_time',
+                           `del` int(2) NULL DEFAULT 0 COMMENT 'delete',
+                           PRIMARY KEY (`desk_id`) USING BTREE,
+                           UNIQUE INDEX `desk_code`(`desk_code`) USING BTREE
 ) ENGINE = InnoDB AUTO_INCREMENT = 33 CHARACTER SET = utf8 COLLATE = utf8_general_ci ROW_FORMAT = Compact;
 
 -- ----------------------------
@@ -97,27 +96,27 @@ INSERT INTO `r_desk` VALUES (32, '32', 8, 0, '2018-11-01 16:26:13', NULL, 0);
 -- ----------------------------
 DROP TABLE IF EXISTS `r_goods`;
 CREATE TABLE `r_goods`  (
-  `goods_id` int(11) NOT NULL AUTO_INCREMENT COMMENT '菜品id',
-  `goods_name` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL COMMENT '菜名',
-  `category_id` int(11) NOT NULL COMMENT '菜品类别',
-  `img_small_url` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL COMMENT '菜的小图片地址',
-  `img_url` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL COMMENT '菜的大图片地址',
-  `img_circle_url` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL COMMENT '菜的轮播图地址',
-  `description` text CHARACTER SET utf8 COLLATE utf8_general_ci NULL COMMENT '菜的详细介绍',
-  `cost` decimal(20, 2) NULL DEFAULT NULL COMMENT '制作成本',
-  `price` decimal(20, 2) NULL DEFAULT NULL COMMENT '价格',
-  `discount` decimal(20, 2) NULL DEFAULT 1.00 COMMENT '折扣',
-  `store_count` bigint(20) NULL DEFAULT 0 COMMENT '库存表',
-  `sold_count` bigint(20) NULL DEFAULT 0 COMMENT '总销量',
-  `type_state` int(2) NULL DEFAULT 1 COMMENT '类型状态(1普通菜，2新菜，3热菜)',
-  `sold_state` int(2) NULL DEFAULT 0 COMMENT '销售状态(0在售,1已售完)',
-  `putaway_status` int(2) NULL DEFAULT 0 COMMENT '菜品上架状态(0下架，1上架)',
-  `create_time` datetime NULL DEFAULT NULL COMMENT '创建时间',
-  `modify_time` datetime NULL DEFAULT NULL COMMENT '修改时间',
-  `del` int(2) NULL DEFAULT 0 COMMENT '删除标志',
-  PRIMARY KEY (`goods_id`) USING BTREE,
-  INDEX `category_id`(`category_id`) USING BTREE,
-  CONSTRAINT `r_goods_ibfk_1` FOREIGN KEY (`category_id`) REFERENCES `r_category` (`category_id`) ON DELETE NO ACTION ON UPDATE NO ACTION
+                            `goods_id` int(11) NOT NULL AUTO_INCREMENT COMMENT 'goods_id',
+                            `goods_name` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL COMMENT 'goods_name',
+                            `category_id` int(11) NOT NULL COMMENT 'category_id',
+                            `img_small_url` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL COMMENT 'img_small_url',
+                            `img_url` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL COMMENT 'img_url',
+                            `img_circle_url` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL COMMENT 'img_circle_url',
+                            `description` text CHARACTER SET utf8 COLLATE utf8_general_ci NULL COMMENT 'description',
+                            `cost` decimal(20, 2) NULL DEFAULT NULL COMMENT 'cost',
+                            `price` decimal(20, 2) NULL DEFAULT NULL COMMENT 'price',
+                            `discount` decimal(20, 2) NULL DEFAULT 1.00 COMMENT 'discount',
+                            `store_count` bigint(20) NULL DEFAULT 0 COMMENT 'store_count',
+                            `sold_count` bigint(20) NULL DEFAULT 0 COMMENT 'sold_count',
+                            `type_state` int(2) NULL DEFAULT 1 COMMENT 'type_state(1normal，2new，3hot)',
+                            `sold_state` int(2) NULL DEFAULT 0 COMMENT 'sold_state(0OnSell,1SellOut)',
+                            `putaway_status` int(2) NULL DEFAULT 0 COMMENT 'good_status(0OffSale，1OnSale)',
+                            `create_time` datetime NULL DEFAULT NULL COMMENT 'create_time',
+                            `modify_time` datetime NULL DEFAULT NULL COMMENT 'modify_time',
+                            `del` int(2) NULL DEFAULT 0 COMMENT 'delete',
+                            PRIMARY KEY (`goods_id`) USING BTREE,
+                            INDEX `category_id`(`category_id`) USING BTREE,
+                            CONSTRAINT `r_goods_ibfk_1` FOREIGN KEY (`category_id`) REFERENCES `r_category` (`category_id`) ON DELETE NO ACTION ON UPDATE NO ACTION
 ) ENGINE = InnoDB AUTO_INCREMENT = 65 CHARACTER SET = utf8 COLLATE = utf8_general_ci ROW_FORMAT = Compact;
 
 -- ----------------------------
@@ -191,101 +190,101 @@ INSERT INTO `r_goods` VALUES (64, '宫保鸡丁', 1, NULL, '/image/ad7493af-dc36
 -- ----------------------------
 DROP TABLE IF EXISTS `r_member`;
 CREATE TABLE `r_member`  (
-  `member_id` bigint(20) NOT NULL AUTO_INCREMENT COMMENT '会员id',
-  `member_code` varchar(11) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL COMMENT '会员号（用手机号做会员号）',
-  `m_name` varchar(10) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL COMMENT '顾客姓名',
-  `m_gender` varchar(2) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL COMMENT '性别',
-  `m_birthday` date NULL DEFAULT NULL COMMENT '生日',
-  `m_phone` varchar(11) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL COMMENT '电话',
-  `mc_id` int(11) NOT NULL DEFAULT 1 COMMENT '会员类型id外键',
-  `total_money` double(11, 3) NULL DEFAULT 0.000 COMMENT '该会员总消费金额',
-  `create_time` datetime NULL DEFAULT NULL COMMENT '创建时间',
-  `modify_time` datetime NULL DEFAULT NULL COMMENT '修改时间',
-  `del` int(2) NULL DEFAULT 0 COMMENT '删除标志',
-  PRIMARY KEY (`member_id`) USING BTREE,
-  UNIQUE INDEX `member_code`(`member_code`) USING BTREE,
-  INDEX `mc_id`(`mc_id`) USING BTREE,
-  CONSTRAINT `r_member_ibfk_1` FOREIGN KEY (`mc_id`) REFERENCES `r_merber_category` (`mc_id`) ON DELETE NO ACTION ON UPDATE NO ACTION
+                             `member_id` bigint(20) NOT NULL AUTO_INCREMENT COMMENT 'member id',
+                             `member_code` varchar(11) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL COMMENT 'member code（use phone number for member code）',
+                             `m_name` varchar(30) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL COMMENT 'member name',
+                             `m_gender` varchar(2) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL COMMENT 'gender',
+                             `m_birthday` date NULL DEFAULT NULL COMMENT 'birthday',
+                             `m_phone` varchar(11) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL COMMENT 'phone',
+                             `mc_id` int(11) NOT NULL DEFAULT 1 COMMENT 'member type id',
+                             `total_money` double(11, 3) NULL DEFAULT 0.000 COMMENT 'total money',
+                             `create_time` datetime NULL DEFAULT NULL COMMENT 'create time',
+                             `modify_time` datetime NULL DEFAULT NULL COMMENT 'modify time',
+                             `del` int(2) NULL DEFAULT 0 COMMENT 'delete',
+                             PRIMARY KEY (`member_id`) USING BTREE,
+                             UNIQUE INDEX `member_code`(`member_code`) USING BTREE,
+                             INDEX `mc_id`(`mc_id`) USING BTREE,
+                             CONSTRAINT `r_member_ibfk_1` FOREIGN KEY (`mc_id`) REFERENCES `r_merber_category` (`mc_id`) ON DELETE NO ACTION ON UPDATE NO ACTION
 ) ENGINE = InnoDB AUTO_INCREMENT = 26 CHARACTER SET = utf8 COLLATE = utf8_general_ci ROW_FORMAT = Compact;
 
 -- ----------------------------
 -- Records of r_member
 -- ----------------------------
-INSERT INTO `r_member` VALUES (1, '17781036101', '顾客1', '男', '1991-06-05', '17781036101', 3, 9735.980, '2018-11-21 21:11:18', '2018-11-30 18:21:19', 0);
-INSERT INTO `r_member` VALUES (2, '17781036102', '顾客2', '女', '2000-10-15', '17781036102', 1, 627.200, '2018-11-21 21:12:07', NULL, 0);
-INSERT INTO `r_member` VALUES (3, '17781036103', '顾客3', '女', '2000-01-16', '17781036103', 1, 418.460, '2018-11-21 21:12:07', '2018-11-30 18:14:47', 0);
-INSERT INTO `r_member` VALUES (4, '17781036104', '顾客4', '女', '1989-04-01', '17781036104', 2, 1607.840, '2018-11-21 21:12:07', '2018-10-16 15:43:31', 0);
-INSERT INTO `r_member` VALUES (5, '17781036105', '刘静', '男', '2018-10-15', '17781036105', 2, 1465.100, '2018-11-21 22:27:30', '2018-10-16 15:38:25', 0);
-INSERT INTO `r_member` VALUES (6, '17781036106', '顾客6', '男', '1977-10-16', '17781036106', 2, 1026.940, '2018-11-22 14:50:39', '2018-10-16 15:56:25', 0);
-INSERT INTO `r_member` VALUES (10, '17781036108', '张三丰', '男', '1987-07-29', '17781036108', 2, 1331.820, '2018-11-22 11:02:50', '2018-11-30 18:14:52', 0);
-INSERT INTO `r_member` VALUES (11, '17781036110', '熊叫春', '女', '1990-05-25', '17781036110', 1, 937.860, '2018-11-17 11:05:04', NULL, 0);
-INSERT INTO `r_member` VALUES (12, '13108234478', '大熊', '女', '1952-12-25', '13108234478', 1, 534.550, '2018-11-23 11:10:37', NULL, 0);
-INSERT INTO `r_member` VALUES (13, '13108235578', '李世民', '女', '1990-07-07', '13108235578', 1, 871.610, '2018-11-24 11:12:20', NULL, 1);
-INSERT INTO `r_member` VALUES (14, '13108235579', '致富宝', '男', '1966-08-07', '13108235579', 4, 12456.800, '2019-10-12 11:13:21', '2019-10-15 14:46:55', 0);
-INSERT INTO `r_member` VALUES (15, '17781046103', '小叮当', '女', '1966-11-07', '17781046103', 3, 8233.250, '2019-10-14 11:15:03', NULL, 0);
-INSERT INTO `r_member` VALUES (16, '13108460034', '会员A', '女', '1980-11-20', '13108460034', 1, 784.390, '2019-10-14 17:22:33', NULL, 0);
-INSERT INTO `r_member` VALUES (17, '13108235571', '会员B', '女', '1977-11-15', '13108235571', 1, 784.390, '2019-10-15 20:12:42', NULL, 0);
-INSERT INTO `r_member` VALUES (18, '13108235573', '会员C', '男', '1966-11-08', '13108235573', 2, 1331.230, '2019-10-15 20:15:29', NULL, 0);
-INSERT INTO `r_member` VALUES (19, '13108235574', '会员D', '男', '1966-07-12', '13108235574', 1, 748.720, '2019-10-15 20:19:45', NULL, 0);
-INSERT INTO `r_member` VALUES (20, '13108235575', '会员E', '女', '1963-02-13', '13108235575', 2, 1918.300, '2019-10-15 20:23:18', NULL, 0);
-INSERT INTO `r_member` VALUES (21, '13108235576', '会员F', '女', '1956-07-26', '13108235576', 2, 1266.750, '2019-10-17 08:36:01', NULL, 0);
-INSERT INTO `r_member` VALUES (22, '13108235577', '会员G', '女', '1980-11-21', '13108235577', 1, 281.260, '2019-10-17 08:36:29', NULL, 0);
-INSERT INTO `r_member` VALUES (23, '13108235610', '会员H', '男', '1951-05-22', '13108235610', 1, 754.010, '2019-10-17 09:12:48', NULL, 1);
-INSERT INTO `r_member` VALUES (24, '17781036234', '会员F', '男', '1981-11-19', '17781036234', 2, 1060.560, '2019-10-17 14:13:48', NULL, 1);
-INSERT INTO `r_member` VALUES (25, '13108236677', '会员Z', '女', '1987-11-30', '13108236677', 1, 0.000, '2019-10-17 18:17:48', NULL, 0);
+INSERT INTO `r_member` VALUES (1, '17781036101', 'Customer A', 'M', '1991-06-05', '17781036101', 3, 9735.980, '2018-11-21 21:11:18', '2018-11-30 18:21:19', 0);
+INSERT INTO `r_member` VALUES (2, '17781036102', 'Ku Ming', 'F', '2000-10-15', '17781036102', 1, 627.200, '2018-11-21 21:12:07', NULL, 0);
+INSERT INTO `r_member` VALUES (3, '17781036103', 'Chung Fung', 'F', '2000-01-16', '17781036103', 1, 418.460, '2018-11-21 21:12:07', '2018-11-30 18:14:47', 0);
+INSERT INTO `r_member` VALUES (4, '17781036104', 'Yoyo Wong', 'F', '1989-04-01', '17781036104', 2, 1607.840, '2018-11-21 21:12:07', '2018-10-16 15:43:31', 0);
+INSERT INTO `r_member` VALUES (5, '17781036105', 'Lau Ki', 'M', '2018-10-15', '17781036105', 2, 1465.100, '2018-11-21 22:27:30', '2018-10-16 15:38:25', 0);
+INSERT INTO `r_member` VALUES (6, '17781036106', 'Lee Ho', 'M', '1977-10-16', '17781036106', 2, 1026.940, '2018-11-22 14:50:39', '2018-10-16 15:56:25', 0);
+INSERT INTO `r_member` VALUES (10, '17781036108', 'Cheung Chun Ho', 'M', '1987-07-29', '17781036108', 2, 1331.820, '2018-11-22 11:02:50', '2018-11-30 18:14:52', 0);
+INSERT INTO `r_member` VALUES (11, '17781036110', 'Lilly Chan', 'F', '1990-05-25', '17781036110', 1, 937.860, '2018-11-17 11:05:04', NULL, 0);
+INSERT INTO `r_member` VALUES (12, '13108234478', 'Christal Kwun', 'F', '1952-12-25', '13108234478', 1, 534.550, '2018-11-23 11:10:37', NULL, 0);
+INSERT INTO `r_member` VALUES (13, '13108235578', 'Law Po', 'F', '1990-07-07', '13108235578', 1, 871.610, '2018-11-24 11:12:20', NULL, 1);
+INSERT INTO `r_member` VALUES (14, '13108235579', 'Chan Siu Ming', 'M', '1966-08-07', '13108235579', 4, 12456.800, '2019-10-12 11:13:21', '2019-10-15 14:46:55', 0);
+INSERT INTO `r_member` VALUES (15, '17781046103', 'Tai Kei', 'F', '1966-11-07', '17781046103', 3, 8233.250, '2019-10-14 11:15:03', NULL, 0);
+INSERT INTO `r_member` VALUES (16, '13108460034', 'Leung Ka Wing', 'F', '1980-11-20', '13108460034', 1, 784.390, '2019-10-14 17:22:33', NULL, 0);
+INSERT INTO `r_member` VALUES (17, '13108235571', 'Ku Chu Kei', 'F', '1977-11-15', '13108235571', 1, 784.390, '2019-10-15 20:12:42', NULL, 0);
+INSERT INTO `r_member` VALUES (18, '13108235573', 'Chan Tai Ming', 'M', '1966-11-08', '13108235573', 2, 1331.230, '2019-10-15 20:15:29', NULL, 0);
+INSERT INTO `r_member` VALUES (19, '13108235574', 'Leung Fei', 'M', '1966-07-12', '13108235574', 1, 748.720, '2019-10-15 20:19:45', NULL, 0);
+INSERT INTO `r_member` VALUES (20, '13108235575', 'Emma Li', 'F', '1963-02-13', '13108235575', 2, 1918.300, '2019-10-15 20:23:18', NULL, 0);
+INSERT INTO `r_member` VALUES (21, '13108235576', 'Sophia Do', 'F', '1956-07-26', '13108235576', 2, 1266.750, '2019-10-17 08:36:01', NULL, 0);
+INSERT INTO `r_member` VALUES (22, '13108235577', 'Mia Dao', 'F', '1980-11-21', '13108235577', 1, 281.260, '2019-10-17 08:36:29', NULL, 0);
+INSERT INTO `r_member` VALUES (23, '13108235610', 'Max Leung', 'M', '1951-05-22', '13108235610', 1, 754.010, '2019-10-17 09:12:48', NULL, 1);
+INSERT INTO `r_member` VALUES (24, '17781036234', 'Member Li ', 'M', '1981-11-19', '17781036234', 2, 1060.560, '2019-10-17 14:13:48', NULL, 1);
+INSERT INTO `r_member` VALUES (25, '13108236677', 'Wu Tin', 'F', '1987-11-30', '13108236677', 1, 0.000, '2019-10-17 18:17:48', NULL, 0);
 
 -- ----------------------------
 -- Table structure for r_merber_category
 -- ----------------------------
 DROP TABLE IF EXISTS `r_merber_category`;
 CREATE TABLE `r_merber_category`  (
-  `mc_id` int(11) NOT NULL AUTO_INCREMENT COMMENT '会员类型id',
-  `mc_name` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL COMMENT '类型名称',
-  `discount` decimal(10, 2) NULL DEFAULT NULL COMMENT '享有折扣',
-  `amount` decimal(20, 2) NULL DEFAULT NULL COMMENT '会员需达到的消费金额',
-  `create_time` datetime NULL DEFAULT NULL COMMENT '创建时间',
-  `modify_time` datetime NULL DEFAULT NULL COMMENT '修改时间',
-  `del` int(2) NULL DEFAULT 0 COMMENT '删除标志',
-  PRIMARY KEY (`mc_id`) USING BTREE,
-  UNIQUE INDEX `mc_name`(`mc_name`) USING BTREE COMMENT '唯一键'
+                                      `mc_id` int(11) NOT NULL AUTO_INCREMENT COMMENT 'member type id',
+                                      `mc_name` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL COMMENT 'typename',
+                                      `discount` decimal(10, 2) NULL DEFAULT NULL COMMENT 'discount',
+                                      `amount` decimal(20, 2) NULL DEFAULT NULL COMMENT 'expenditure need',
+                                      `create_time` datetime NULL DEFAULT NULL COMMENT 'create time',
+                                      `modify_time` datetime NULL DEFAULT NULL COMMENT 'create time',
+                                      `del` int(2) NULL DEFAULT 0 COMMENT 'delete',
+                                      PRIMARY KEY (`mc_id`) USING BTREE,
+                                      UNIQUE INDEX `mc_name`(`mc_name`) USING BTREE COMMENT 'unique key'
 ) ENGINE = InnoDB AUTO_INCREMENT = 15 CHARACTER SET = utf8 COLLATE = utf8_general_ci ROW_FORMAT = Compact;
 
 -- ----------------------------
 -- Records of r_merber_category
 -- ----------------------------
-INSERT INTO `r_merber_category` VALUES (1, 'VIP1', 0.98, 0.00, '2018-09-28 16:02:25', '2018-11-20 09:22:43', 0);
-INSERT INTO `r_merber_category` VALUES (2, 'VIP2', 0.90, 1000.00, '2018-09-28 16:02:48', '2018-11-30 18:14:29', 0);
-INSERT INTO `r_merber_category` VALUES (3, 'VIP3', 0.85, 8000.00, '2018-09-28 16:03:18', '2018-11-20 09:23:07', 0);
-INSERT INTO `r_merber_category` VALUES (4, 'VIP4', 0.80, 10000.00, '2018-09-28 16:04:08', '2018-11-20 09:23:12', 0);
-INSERT INTO `r_merber_category` VALUES (12, '王者会员', 0.40, 6000000.00, '2018-10-16 17:41:30', NULL, 1);
-INSERT INTO `r_merber_category` VALUES (13, '至尊会员', 0.10, 100000000.00, '2018-10-16 17:44:47', '2018-10-16 17:45:12', 1);
-INSERT INTO `r_merber_category` VALUES (14, '疯狗会员', 1.10, 100000.00, '2018-10-16 17:47:03', NULL, 1);
+INSERT INTO `r_merber_category` VALUES (1, 'VIP', 0.98, 0.00, '2018-09-28 16:02:25', '2018-11-20 09:22:43', 0);
+INSERT INTO `r_merber_category` VALUES (2, 'VIP_BRONZE', 0.90, 1000.00, '2018-09-28 16:02:48', '2018-11-30 18:14:29', 0);
+INSERT INTO `r_merber_category` VALUES (3, 'VIP_SILVER', 0.85, 8000.00, '2018-09-28 16:03:18', '2018-11-20 09:23:07', 0);
+INSERT INTO `r_merber_category` VALUES (4, 'VIP_GOLD ', 0.80, 10000.00, '2018-09-28 16:04:08', '2018-11-20 09:23:12', 0);
+INSERT INTO `r_merber_category` VALUES (12, 'VIP_PLATINUM', 0.40, 6000000.00, '2018-10-16 17:41:30', NULL, 1);
+INSERT INTO `r_merber_category` VALUES (13, 'VIP_DIAMOND', 0.10, 100000000.00, '2018-10-16 17:44:47', '2018-10-16 17:45:12', 1);
+INSERT INTO `r_merber_category` VALUES (14, 'VIP_BLACK', 1.10, 100000.00, '2018-10-16 17:47:03', NULL, 1);
 
 -- ----------------------------
 -- Table structure for r_order
 -- ----------------------------
 DROP TABLE IF EXISTS `r_order`;
 CREATE TABLE `r_order`  (
-  `order_id` bigint(20) NOT NULL AUTO_INCREMENT COMMENT '订单id',
-  `order_code` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL COMMENT '订单号',
-  `desk_code` varchar(20) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL COMMENT '餐桌号',
-  `member_code` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL COMMENT '会员号',
-  `user_id` bigint(20) NULL DEFAULT NULL COMMENT '收银员id',
-  `total_cost` decimal(10, 2) UNSIGNED ZEROFILL NULL DEFAULT NULL COMMENT '总成本',
-  `total_price` decimal(10, 2) NULL DEFAULT NULL COMMENT '该订单总金额',
-  `total_profit` decimal(10, 2) NULL DEFAULT NULL COMMENT '总利润',
-  `actual_pay` decimal(10, 2) NULL DEFAULT NULL COMMENT '实际支付金额',
-  `must_pay` decimal(10, 2) NULL DEFAULT NULL COMMENT '应付金额',
-  `change_money` decimal(10, 2) NULL DEFAULT NULL COMMENT '找零',
-  `discount_money` decimal(10, 2) NULL DEFAULT NULL COMMENT '打折金额',
-  `people_num` int(10) NULL DEFAULT 0 COMMENT '就餐人数',
-  `pay_status` int(2) NULL DEFAULT 0 COMMENT '支付状态(0未支付，1已支付))',
-  `finish_status` int(2) NULL DEFAULT 0 COMMENT '上菜是否完成（0未完成，1完成）',
-  `over_status` int(2) NULL DEFAULT 0 COMMENT '订单是否结束即已支付已上菜完毕(0未结束，1已结束）',
-  `create_time` datetime NULL DEFAULT NULL COMMENT '创建时间',
-  `modify_time` datetime NULL DEFAULT NULL COMMENT '修改时间',
-  `del` int(2) NULL DEFAULT 0 COMMENT '删除标志',
-  PRIMARY KEY (`order_id`) USING BTREE
+                            `order_id` bigint(20) NOT NULL AUTO_INCREMENT COMMENT 'order id',
+                            `order_code` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL COMMENT 'order code',
+                            `desk_code` varchar(20) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL COMMENT 'desk code',
+                            `member_code` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL COMMENT '会员号',
+                            `user_id` bigint(20) NULL DEFAULT NULL COMMENT ' user id',
+                            `total_cost` decimal(10, 2) UNSIGNED ZEROFILL NULL DEFAULT NULL COMMENT 'total cost',
+                            `total_price` decimal(10, 2) NULL DEFAULT NULL COMMENT 'total price',
+                            `total_profit` decimal(10, 2) NULL DEFAULT NULL COMMENT 'total profit',
+                            `actual_pay` decimal(10, 2) NULL DEFAULT NULL COMMENT 'actual pay',
+                            `must_pay` decimal(10, 2) NULL DEFAULT NULL COMMENT 'payment',
+                            `change_money` decimal(10, 2) NULL DEFAULT NULL COMMENT 'change money',
+                            `discount_money` decimal(10, 2) NULL DEFAULT NULL COMMENT 'discount value',
+                            `people_num` int(10) NULL DEFAULT 0 COMMENT 'Customer number',
+                            `pay_status` int(2) NULL DEFAULT 0 COMMENT 'payment status(0not pay，1 payment finished))',
+                            `finish_status` int(2) NULL DEFAULT 0 COMMENT 'status of goods（0not finish，1finished）',
+                            `over_status` int(2) NULL DEFAULT 0 COMMENT 'over all status(0Not finish，1finished）',
+                            `create_time` datetime NULL DEFAULT NULL COMMENT 'create time',
+                            `modify_time` datetime NULL DEFAULT NULL COMMENT 'modify time',
+                            `del` int(2) NULL DEFAULT 0 COMMENT 'delete',
+                            PRIMARY KEY (`order_id`) USING BTREE
 ) ENGINE = InnoDB AUTO_INCREMENT = 72 CHARACTER SET = utf8 COLLATE = utf8_general_ci ROW_FORMAT = Compact;
 
 -- ----------------------------
@@ -367,17 +366,17 @@ INSERT INTO `r_order` VALUES (71, '2019-1017-1238-23-146', '22', NULL, 2, 000000
 -- ----------------------------
 DROP TABLE IF EXISTS `r_order_detail`;
 CREATE TABLE `r_order_detail`  (
-  `od_id` bigint(20) NOT NULL AUTO_INCREMENT COMMENT '订单明细id',
-  `order_id` bigint(20) NOT NULL COMMENT '订单id',
-  `goods_id` int(11) NOT NULL COMMENT '菜品id',
-  `count` int(6) NOT NULL DEFAULT 1 COMMENT '菜的数量',
-  `status` int(2) NULL DEFAULT 0 COMMENT '菜的状态(0未制作，1正在制作，2制作完成，3上菜完成)',
-  `description` text CHARACTER SET utf8 COLLATE utf8_general_ci NULL COMMENT '制菜说明',
-  `del` int(2) NULL DEFAULT 0 COMMENT '删除标志',
-  PRIMARY KEY (`od_id`) USING BTREE,
-  INDEX `order_id`(`order_id`) USING BTREE,
-  INDEX `goods_id`(`goods_id`) USING BTREE,
-  CONSTRAINT `r_order_detail_ibfk_2` FOREIGN KEY (`goods_id`) REFERENCES `r_goods` (`goods_id`) ON DELETE NO ACTION ON UPDATE NO ACTION
+                                   `od_id` bigint(20) NOT NULL AUTO_INCREMENT COMMENT 'small_order_id',
+                                   `order_id` bigint(20) NOT NULL COMMENT 'order_id',
+                                   `goods_id` int(11) NOT NULL COMMENT 'goods_id',
+                                   `count` int(6) NOT NULL DEFAULT 1 COMMENT 'goods_count',
+                                   `status` int(2) NULL DEFAULT 0 COMMENT 'goods_status(0not make，1making，2finish，3served)',
+                                   `description` text CHARACTER SET utf8 COLLATE utf8_general_ci NULL COMMENT 'description',
+                                   `del` int(2) NULL DEFAULT 0 COMMENT 'delete',
+                                   PRIMARY KEY (`od_id`) USING BTREE,
+                                   INDEX `order_id`(`order_id`) USING BTREE,
+                                   INDEX `goods_id`(`goods_id`) USING BTREE,
+                                   CONSTRAINT `r_order_detail_ibfk_2` FOREIGN KEY (`goods_id`) REFERENCES `r_goods` (`goods_id`) ON DELETE NO ACTION ON UPDATE NO ACTION
 ) ENGINE = InnoDB AUTO_INCREMENT = 293 CHARACTER SET = utf8 COLLATE = utf8_general_ci ROW_FORMAT = Compact;
 
 -- ----------------------------
@@ -681,105 +680,105 @@ INSERT INTO `r_order_detail` VALUES (292, 71, 53, 1, 0, NULL, 1);
 -- ----------------------------
 DROP TABLE IF EXISTS `sys_menu`;
 CREATE TABLE `sys_menu`  (
-  `menu_id` bigint(20) NOT NULL AUTO_INCREMENT COMMENT '菜单id',
-  `menu_name` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL COMMENT '菜单名',
-  `parent_id` bigint(20) NULL DEFAULT 0 COMMENT '父节点id',
-  `parent_ids` text CHARACTER SET utf8 COLLATE utf8_general_ci NULL COMMENT '祖先节点id集',
-  `is_show` int(2) NULL DEFAULT NULL COMMENT '是否显示（0不显示，1显示）',
-  `permission` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL COMMENT '权限',
-  `menu_href` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL COMMENT '菜单链接',
-  `menu_icon` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL COMMENT '菜单图标',
-  `weight` int(10) NULL DEFAULT NULL COMMENT '菜单权重',
-  `description` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL COMMENT '菜单描述',
-  `del` int(2) NULL DEFAULT 0 COMMENT '删除标志(0未删除，1删除)',
-  PRIMARY KEY (`menu_id`) USING BTREE
+                             `menu_id` bigint(20) NOT NULL AUTO_INCREMENT COMMENT 'menu_id',
+                             `menu_name` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL COMMENT 'nemu_name',
+                             `parent_id` bigint(20) NULL DEFAULT 0 COMMENT 'parent_id',
+                             `parent_ids` text CHARACTER SET utf8 COLLATE utf8_general_ci NULL COMMENT 'all_parent_id',
+                             `is_show` int(2) NULL DEFAULT NULL COMMENT 'showing（0no，1yes）',
+                             `permission` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL COMMENT 'permission',
+                             `menu_href` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL COMMENT 'menu_href',
+                             `menu_icon` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL COMMENT 'menu_icon',
+                             `weight` int(10) NULL DEFAULT NULL COMMENT 'menu_weigh',
+                             `description` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL COMMENT 'menu_description',
+                             `del` int(2) NULL DEFAULT 0 COMMENT 'delete(0no，1yes)',
+                             PRIMARY KEY (`menu_id`) USING BTREE
 ) ENGINE = InnoDB AUTO_INCREMENT = 49 CHARACTER SET = utf8 COLLATE = utf8_general_ci ROW_FORMAT = Compact;
 
 -- ----------------------------
 -- Records of sys_menu
 -- ----------------------------
-INSERT INTO `sys_menu` VALUES (1, '订单管理', 0, '', 1, '', NULL, 'layui-icon-form', 50000, '', 0);
-INSERT INTO `sys_menu` VALUES (2, '订单列表', 1, '1,', 1, 'orderManage:view', '/order/list.html', NULL, 8000, NULL, 0);
-INSERT INTO `sys_menu` VALUES (3, '修改', 2, '1,2', 0, 'orderManage:edit', NULL, NULL, 7900, NULL, 0);
-INSERT INTO `sys_menu` VALUES (4, '查询', 2, '1,2', 0, 'orderManage:view', NULL, NULL, 7800, NULL, 0);
-INSERT INTO `sys_menu` VALUES (5, '菜谱管理', 0, NULL, 1, '', '', 'layui-icon-read', 60000, NULL, 0);
-INSERT INTO `sys_menu` VALUES (6, '菜品列表', 5, '5,', 1, 'goodsManage:view', '/goods/list.html', NULL, 7700, NULL, 0);
-INSERT INTO `sys_menu` VALUES (7, '添加菜品', 5, '5,', 1, 'goodsManage:view', '', NULL, 7600, NULL, 1);
-INSERT INTO `sys_menu` VALUES (8, '修改', 6, '5,6', 0, 'goodsManage:edit', NULL, NULL, 7500, NULL, 0);
-INSERT INTO `sys_menu` VALUES (9, '查询', 6, '5,6', 0, 'goodsManage:view', NULL, NULL, 7400, NULL, 0);
-INSERT INTO `sys_menu` VALUES (10, '种类列表', 5, '5,', 1, 'goodsTypes:view', '/goodscategory/list.html', NULL, 7300, NULL, 0);
-INSERT INTO `sys_menu` VALUES (11, '添加种类', 5, '5,', 1, 'goodsTypes:edit', '', NULL, 7200, NULL, 1);
-INSERT INTO `sys_menu` VALUES (12, '修改', 10, '5,10', 0, 'goodsTypes:edit', NULL, NULL, 7100, NULL, 0);
-INSERT INTO `sys_menu` VALUES (13, '查询', 10, '5,10', 0, 'goodsTypes:view', NULL, NULL, 7000, NULL, 0);
-INSERT INTO `sys_menu` VALUES (14, '会员管理', 0, NULL, 1, '', NULL, 'layui-icon-username', 70000, NULL, 0);
-INSERT INTO `sys_menu` VALUES (15, '会员列表', 14, '14,', 1, 'memberManage:view', '/member/list.html', NULL, 6900, NULL, 0);
-INSERT INTO `sys_menu` VALUES (16, '修改', 15, '14,15', 0, 'memberManage:edit', NULL, NULL, 6800, NULL, 0);
-INSERT INTO `sys_menu` VALUES (17, '查询', 15, '14,15', 0, 'memberManage:view', NULL, NULL, 6700, NULL, 0);
-INSERT INTO `sys_menu` VALUES (18, '会员类型列表', 14, '14,', 1, 'memberTypes:view', '/membercategory/list.html', NULL, 6600, NULL, 0);
-INSERT INTO `sys_menu` VALUES (19, '添加会员种类', 14, '14,', 1, 'memberTypes:edit', '', NULL, 6500, NULL, 1);
-INSERT INTO `sys_menu` VALUES (20, '修改', 18, '14,18', 0, 'memberTypes:edit', NULL, NULL, 6400, NULL, 0);
-INSERT INTO `sys_menu` VALUES (21, '查询', 18, '14,18', 0, 'memberTypes:view', NULL, NULL, 6300, NULL, 0);
-INSERT INTO `sys_menu` VALUES (22, '员工管理', 0, NULL, 1, '', NULL, 'layui-icon-user', 80000, NULL, 0);
-INSERT INTO `sys_menu` VALUES (23, '员工列表', 22, '22,', 1, 'userManage:view', '/user/userlist.html', NULL, 6200, NULL, 0);
-INSERT INTO `sys_menu` VALUES (24, '添加员工', 22, '22,', 1, 'userManage:edit', '/user/adduser.html', NULL, 6100, NULL, 1);
-INSERT INTO `sys_menu` VALUES (25, '修改', 23, '22,23', 0, 'userManage:edit', NULL, NULL, 6000, NULL, 0);
-INSERT INTO `sys_menu` VALUES (26, '查询', 23, '22,23', 0, 'userManage:view ', NULL, NULL, 5900, NULL, 0);
-INSERT INTO `sys_menu` VALUES (27, '销售管理', 0, NULL, 1, '', NULL, 'layui-icon-cart-simple', 40000, NULL, 0);
-INSERT INTO `sys_menu` VALUES (28, '销量统计', 27, '27,', 1, 'salesVolume:view', '/analysis/salesVolume.html', NULL, 5800, NULL, 0);
-INSERT INTO `sys_menu` VALUES (29, '查询', 28, '27,28', 0, 'salesVolume:view', NULL, NULL, 5700, NULL, 0);
-INSERT INTO `sys_menu` VALUES (30, '交易记录', 27, '27,', 1, 'tranRecords:view', '/sold/tranRecordsList.html', NULL, 5600, NULL, 0);
-INSERT INTO `sys_menu` VALUES (31, '查询', 30, '27,30', 0, 'tranRecords:view', NULL, NULL, 5500, NULL, 0);
-INSERT INTO `sys_menu` VALUES (32, '制菜上菜管理', 0, NULL, 1, '', NULL, 'layui-icon-release', 30000, NULL, 0);
-INSERT INTO `sys_menu` VALUES (33, '制菜任务列表', 32, '32,', 1, 'cooking:view', '/service/cookTask.html', NULL, 5400, NULL, 0);
-INSERT INTO `sys_menu` VALUES (34, '编辑', 33, '32,33', 0, 'cooking:edit', NULL, NULL, 5300, NULL, 0);
-INSERT INTO `sys_menu` VALUES (35, '上菜任务列表', 32, '32,', 1, 'serving:view', '/service/servingTask.html', NULL, 5200, NULL, 0);
-INSERT INTO `sys_menu` VALUES (36, '编辑', 35, '32,35', 0, 'serving:edit', NULL, NULL, 5100, NULL, 0);
-INSERT INTO `sys_menu` VALUES (37, '桌位上菜情况列表', 32, '32,', 1, 'deskServing:view', '/service/dssList.html', NULL, 5000, NULL, 0);
-INSERT INTO `sys_menu` VALUES (38, '查询', 37, '32,37', 0, 'deskServing:view', NULL, NULL, 4900, NULL, 0);
-INSERT INTO `sys_menu` VALUES (39, '桌位管理', 0, NULL, 1, '', '', 'layui-icon-circle', 20000, NULL, 0);
-INSERT INTO `sys_menu` VALUES (40, '桌位列表', 39, '39,', 1, 'deskManage:view', '/desk/list.html', NULL, 4800, NULL, 0);
-INSERT INTO `sys_menu` VALUES (41, '添加桌位', 39, '39,', 1, 'deskManage:edit', '', NULL, 4700, NULL, 1);
-INSERT INTO `sys_menu` VALUES (42, '编辑', 40, '39,40', 0, 'deskManage:edit', NULL, NULL, 4600, NULL, 0);
-INSERT INTO `sys_menu` VALUES (43, '查询', 40, '39,40', 0, 'deskManage:view', NULL, NULL, 4500, NULL, 0);
-INSERT INTO `sys_menu` VALUES (44, '收银业务', 0, NULL, 1, '', '', 'layui-icon-rmb', 10000, NULL, 0);
-INSERT INTO `sys_menu` VALUES (45, '收款', 44, '44,', 1, 'counter:view', '/counter/counterPage.html', NULL, 4400, NULL, 0);
-INSERT INTO `sys_menu` VALUES (47, '删除', 15, '14,15', 1, 'manage:del', NULL, NULL, 6310, NULL, 0);
-INSERT INTO `sys_menu` VALUES (48, '销售统计', 27, '27，', 1, 'salesStatistics:view', '/analysis/salesStatistics.html', NULL, 5850, NULL, 0);
+INSERT INTO `sys_menu` VALUES (1, 'Order Management', 0, '', 1, '', NULL, 'layui-icon-form', 50000, '', 0);
+INSERT INTO `sys_menu` VALUES (2, 'Order List', 1, '1,', 1, 'orderManage:view', '/order/list.html', NULL, 8000, NULL, 0);
+INSERT INTO `sys_menu` VALUES (3, 'Modify', 2, '1,2', 0, 'orderManage:edit', NULL, NULL, 7900, NULL, 0);
+INSERT INTO `sys_menu` VALUES (4, 'Searching', 2, '1,2', 0, 'orderManage:view', NULL, NULL, 7800, NULL, 0);
+INSERT INTO `sys_menu` VALUES (5, 'Menu Management', 0, NULL, 1, '', '', 'layui-icon-read', 60000, NULL, 0);
+INSERT INTO `sys_menu` VALUES (6, 'Menu List', 5, '5,', 1, 'goodsManage:view', '/goods/list.html', NULL, 7700, NULL, 0);
+INSERT INTO `sys_menu` VALUES (7, 'Add goods', 5, '5,', 1, 'goodsManage:view', '', NULL, 7600, NULL, 1);
+INSERT INTO `sys_menu` VALUES (8, 'modify', 6, '5,6', 0, 'goodsManage:edit', NULL, NULL, 7500, NULL, 0);
+INSERT INTO `sys_menu` VALUES (9, 'Searching', 6, '5,6', 0, 'goodsManage:view', NULL, NULL, 7400, NULL, 0);
+INSERT INTO `sys_menu` VALUES (10, 'Type List', 5, '5,', 1, 'goodsTypes:view', '/goodscategory/list.html', NULL, 7300, NULL, 0);
+INSERT INTO `sys_menu` VALUES (11, 'Add Type', 5, '5,', 1, 'goodsTypes:edit', '', NULL, 7200, NULL, 1);
+INSERT INTO `sys_menu` VALUES (12, 'Modify', 10, '5,10', 0, 'goodsTypes:edit', NULL, NULL, 7100, NULL, 0);
+INSERT INTO `sys_menu` VALUES (13, 'Searching', 10, '5,10', 0, 'goodsTypes:view', NULL, NULL, 7000, NULL, 0);
+INSERT INTO `sys_menu` VALUES (14, 'Member Management', 0, NULL, 1, '', NULL, 'layui-icon-username', 70000, NULL, 0);
+INSERT INTO `sys_menu` VALUES (15, 'Member List', 14, '14,', 1, 'memberManage:view', '/member/list.html', NULL, 6900, NULL, 0);
+INSERT INTO `sys_menu` VALUES (16, 'Modify', 15, '14,15', 0, 'memberManage:edit', NULL, NULL, 6800, NULL, 0);
+INSERT INTO `sys_menu` VALUES (17, 'Searching', 15, '14,15', 0, 'memberManage:view', NULL, NULL, 6700, NULL, 0);
+INSERT INTO `sys_menu` VALUES (18, 'Member Type List', 14, '14,', 1, 'memberTypes:view', '/membercategory/list.html', NULL, 6600, NULL, 0);
+INSERT INTO `sys_menu` VALUES (19, 'Add Member Type', 14, '14,', 1, 'memberTypes:edit', '', NULL, 6500, NULL, 1);
+INSERT INTO `sys_menu` VALUES (20, 'Modify', 18, '14,18', 0, 'memberTypes:edit', NULL, NULL, 6400, NULL, 0);
+INSERT INTO `sys_menu` VALUES (21, 'Searching', 18, '14,18', 0, 'memberTypes:view', NULL, NULL, 6300, NULL, 0);
+INSERT INTO `sys_menu` VALUES (22, 'Employee Management', 0, NULL, 1, '', NULL, 'layui-icon-user', 80000, NULL, 0);
+INSERT INTO `sys_menu` VALUES (23, 'Employee List', 22, '22,', 1, 'userManage:view', '/user/userlist.html', NULL, 6200, NULL, 0);
+INSERT INTO `sys_menu` VALUES (24, 'Add Employee', 22, '22,', 1, 'userManage:edit', '/user/adduser.html', NULL, 6100, NULL, 1);
+INSERT INTO `sys_menu` VALUES (25, 'Modify', 23, '22,23', 0, 'userManage:edit', NULL, NULL, 6000, NULL, 0);
+INSERT INTO `sys_menu` VALUES (26, 'Searching', 23, '22,23', 0, 'userManage:view ', NULL, NULL, 5900, NULL, 0);
+INSERT INTO `sys_menu` VALUES (27, 'Sales Management', 0, NULL, 1, '', NULL, 'layui-icon-cart-simple', 40000, NULL, 0);
+INSERT INTO `sys_menu` VALUES (28, 'Sales Statistics', 27, '27,', 1, 'salesVolume:view', '/analysis/salesVolume.html', NULL, 5800, NULL, 0);
+INSERT INTO `sys_menu` VALUES (29, 'Searching', 28, '27,28', 0, 'salesVolume:view', NULL, NULL, 5700, NULL, 0);
+INSERT INTO `sys_menu` VALUES (30, 'Transaction Record', 27, '27,', 1, 'tranRecords:view', '/sold/tranRecordsList.html', NULL, 5600, NULL, 0);
+INSERT INTO `sys_menu` VALUES (31, 'Searching', 30, '27,30', 0, 'tranRecords:view', NULL, NULL, 5500, NULL, 0);
+INSERT INTO `sys_menu` VALUES (32, 'Food Status Management', 0, NULL, 1, '', NULL, 'layui-icon-release', 30000, NULL, 0);
+INSERT INTO `sys_menu` VALUES (33, 'Cooking List', 32, '32,', 1, 'cooking:view', '/service/cookTask.html', NULL, 5400, NULL, 0);
+INSERT INTO `sys_menu` VALUES (34, 'Modify', 33, '32,33', 0, 'cooking:edit', NULL, NULL, 5300, NULL, 0);
+INSERT INTO `sys_menu` VALUES (35, 'Serving List', 32, '32,', 1, 'serving:view', '/service/servingTask.html', NULL, 5200, NULL, 0);
+INSERT INTO `sys_menu` VALUES (36, 'Modify', 35, '32,35', 0, 'serving:edit', NULL, NULL, 5100, NULL, 0);
+INSERT INTO `sys_menu` VALUES (37, 'Table Serving Status List', 32, '32,', 1, 'deskServing:view', '/service/dssList.html', NULL, 5000, NULL, 0);
+INSERT INTO `sys_menu` VALUES (38, 'Searching', 37, '32,37', 0, 'deskServing:view', NULL, NULL, 4900, NULL, 0);
+INSERT INTO `sys_menu` VALUES (39, 'Table Management', 0, NULL, 1, '', '', 'layui-icon-circle', 20000, NULL, 0);
+INSERT INTO `sys_menu` VALUES (40, 'Table List', 39, '39,', 1, 'deskManage:view', '/desk/list.html', NULL, 4800, NULL, 0);
+INSERT INTO `sys_menu` VALUES (41, 'Add Table', 39, '39,', 1, 'deskManage:edit', '', NULL, 4700, NULL, 1);
+INSERT INTO `sys_menu` VALUES (42, 'Modify', 40, '39,40', 0, 'deskManage:edit', NULL, NULL, 4600, NULL, 0);
+INSERT INTO `sys_menu` VALUES (43, 'Searching', 40, '39,40', 0, 'deskManage:view', NULL, NULL, 4500, NULL, 0);
+INSERT INTO `sys_menu` VALUES (44, 'Cashier', 0, NULL, 1, '', '', 'layui-icon-rmb', 10000, NULL, 0);
+INSERT INTO `sys_menu` VALUES (45, 'Payment', 44, '44,', 1, 'counter:view', '/counter/counterPage.html', NULL, 4400, NULL, 0);
+INSERT INTO `sys_menu` VALUES (47, 'delete', 15, '14,15', 1, 'manage:del', NULL, NULL, 6310, NULL, 0);
+INSERT INTO `sys_menu` VALUES (48, 'Total Sales', 27, '27，', 1, 'salesStatistics:view', '/analysis/salesStatistics.html', NULL, 5850, NULL, 0);
 
 -- ----------------------------
 -- Table structure for sys_role
 -- ----------------------------
 DROP TABLE IF EXISTS `sys_role`;
 CREATE TABLE `sys_role`  (
-  `role_id` int(10) NOT NULL AUTO_INCREMENT COMMENT '角色id',
-  `role_name` varchar(10) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL COMMENT '角色名',
-  `create_time` datetime NULL DEFAULT NULL COMMENT '创建时间',
-  `modify_time` datetime NULL DEFAULT NULL COMMENT '修改时间',
-  `del` int(2) NULL DEFAULT 0 COMMENT '删除标志',
-  PRIMARY KEY (`role_id`) USING BTREE,
-  UNIQUE INDEX `role_name`(`role_name`) USING BTREE
+                             `role_id` int(10) NOT NULL AUTO_INCREMENT COMMENT 'role_id',
+                             `role_name` varchar(10) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL COMMENT 'role_name',
+                             `create_time` datetime NULL DEFAULT NULL COMMENT 'create_time',
+                             `modify_time` datetime NULL DEFAULT NULL COMMENT 'modify_time',
+                             `del` int(2) NULL DEFAULT 0 COMMENT 'delete',
+                             PRIMARY KEY (`role_id`) USING BTREE,
+                             UNIQUE INDEX `role_name`(`role_name`) USING BTREE
 ) ENGINE = InnoDB AUTO_INCREMENT = 6 CHARACTER SET = utf8 COLLATE = utf8_general_ci ROW_FORMAT = Compact;
 
 -- ----------------------------
 -- Records of sys_role
 -- ----------------------------
-INSERT INTO `sys_role` VALUES (1, '经理', '2018-09-28 15:58:21', NULL, 0);
-INSERT INTO `sys_role` VALUES (2, '厨师', '2018-09-28 16:00:32', NULL, 0);
-INSERT INTO `sys_role` VALUES (3, '服务员', '2018-09-28 16:00:41', NULL, 0);
-INSERT INTO `sys_role` VALUES (4, '收银员', '2018-09-28 16:01:09', NULL, 0);
-INSERT INTO `sys_role` VALUES (5, '顾客', '2018-09-28 16:01:16', NULL, 1);
+INSERT INTO `sys_role` VALUES (1, 'Manager', '2018-09-28 15:58:21', NULL, 0);
+INSERT INTO `sys_role` VALUES (2, 'Chef', '2018-09-28 16:00:32', NULL, 0);
+INSERT INTO `sys_role` VALUES (3, 'Waiter', '2018-09-28 16:00:41', NULL, 0);
+INSERT INTO `sys_role` VALUES (4, 'Cashier', '2018-09-28 16:01:09', NULL, 0);
+INSERT INTO `sys_role` VALUES (5, 'Customer', '2018-09-28 16:01:16', NULL, 1);
 
 -- ----------------------------
 -- Table structure for sys_role_menu
 -- ----------------------------
 DROP TABLE IF EXISTS `sys_role_menu`;
 CREATE TABLE `sys_role_menu`  (
-  `role_id` int(10) NOT NULL COMMENT '角色id',
-  `menu_id` bigint(20) NOT NULL COMMENT '功能菜单id',
-  PRIMARY KEY (`role_id`, `menu_id`) USING BTREE,
-  INDEX `menu_id`(`menu_id`) USING BTREE,
-  CONSTRAINT `sys_role_menu_ibfk_1` FOREIGN KEY (`role_id`) REFERENCES `sys_role` (`role_id`) ON DELETE NO ACTION ON UPDATE NO ACTION,
-  CONSTRAINT `sys_role_menu_ibfk_2` FOREIGN KEY (`menu_id`) REFERENCES `sys_menu` (`menu_id`) ON DELETE NO ACTION ON UPDATE NO ACTION
+                                  `role_id` int(10) NOT NULL COMMENT 'role_id',
+                                  `menu_id` bigint(20) NOT NULL COMMENT 'menu_id',
+                                  PRIMARY KEY (`role_id`, `menu_id`) USING BTREE,
+                                  INDEX `menu_id`(`menu_id`) USING BTREE,
+                                  CONSTRAINT `sys_role_menu_ibfk_1` FOREIGN KEY (`role_id`) REFERENCES `sys_role` (`role_id`) ON DELETE NO ACTION ON UPDATE NO ACTION,
+                                  CONSTRAINT `sys_role_menu_ibfk_2` FOREIGN KEY (`menu_id`) REFERENCES `sys_menu` (`menu_id`) ON DELETE NO ACTION ON UPDATE NO ACTION
 ) ENGINE = InnoDB CHARACTER SET = utf8 COLLATE = utf8_general_ci ROW_FORMAT = Compact;
 
 -- ----------------------------
@@ -862,55 +861,55 @@ INSERT INTO `sys_role_menu` VALUES (1, 48);
 -- ----------------------------
 DROP TABLE IF EXISTS `sys_user`;
 CREATE TABLE `sys_user`  (
-  `user_id` bigint(20) NOT NULL AUTO_INCREMENT COMMENT '用户id',
-  `login_code` varchar(20) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL COMMENT '登录账户',
-  `password` varchar(20) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL COMMENT '密码',
-  `name` varchar(10) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL COMMENT '用户姓名',
-  `phone` varchar(11) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL COMMENT '电话号码',
-  `email` varchar(20) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL COMMENT '邮箱',
-  `gender` varchar(2) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL COMMENT '性别',
-  `birthday` date NULL DEFAULT NULL COMMENT '生日',
-  `id_number` varchar(18) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL COMMENT '身份证号',
-  `address` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL COMMENT '家庭住址',
-  `create_time` datetime NULL DEFAULT NULL COMMENT '创建时间',
-  `modify_time` datetime NULL DEFAULT NULL COMMENT '修改时间',
-  `del` int(2) NULL DEFAULT 0 COMMENT '删除标志',
-  PRIMARY KEY (`user_id`) USING BTREE,
-  UNIQUE INDEX `login_code`(`login_code`) USING BTREE,
-  UNIQUE INDEX `id_number`(`id_number`) USING BTREE
+                             `user_id` bigint(20) NOT NULL AUTO_INCREMENT COMMENT 'user_id',
+                             `login_code` varchar(20) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL COMMENT 'login_account',
+                             `password` varchar(20) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL COMMENT 'password',
+                             `name` varchar(30) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL COMMENT 'user_name',
+                             `phone` varchar(11) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL COMMENT 'user_phone',
+                             `email` varchar(20) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL COMMENT 'user_email_address',
+                             `gender` varchar(2) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL COMMENT 'user_gender',
+                             `birthday` date NULL DEFAULT NULL COMMENT 'user_birthday',
+                             `id_number` varchar(18) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL COMMENT 'HKID',
+                             `address` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL COMMENT 'Address',
+                             `create_time` datetime NULL DEFAULT NULL COMMENT 'create_time',
+                             `modify_time` datetime NULL DEFAULT NULL COMMENT 'modify_time',
+                             `del` int(2) NULL DEFAULT 0 COMMENT 'delete',
+                             PRIMARY KEY (`user_id`) USING BTREE,
+                             UNIQUE INDEX `login_code`(`login_code`) USING BTREE,
+                             UNIQUE INDEX `id_number`(`id_number`) USING BTREE
 ) ENGINE = InnoDB AUTO_INCREMENT = 31 CHARACTER SET = utf8 COLLATE = utf8_general_ci ROW_FORMAT = Compact;
 
 -- ----------------------------
 -- Records of sys_user
 -- ----------------------------
-INSERT INTO `sys_user` VALUES (1, '18384623911', '123456', '张经理', '19384623911', '18384623911@163.com', '男', '1998-05-26', '511102199805263618', '北京', '2018-09-28 16:16:14', '2019-10-17 13:07:36', 0);
-INSERT INTO `sys_user` VALUES (2, '18384623912', '123456', '收银员A', '19384623912', '18384623912@163.com', '男', '1995-06-24', '511102199805263617', '四川泸州', '2018-09-28 16:20:32', '2019-10-17 13:07:41', 0);
-INSERT INTO `sys_user` VALUES (3, '18384623913', '123456', '厨师A', '19384623913', '18384623913@163.com', '男', '1990-08-16', '511102199805263616', '四川泸州', '2018-09-28 16:23:03', '2019-10-17 13:07:47', 0);
-INSERT INTO `sys_user` VALUES (4, '18384623914', '123456', '服务员B', '19384623914', '18384623914@163.com', '男', '1992-01-16', '511102199805263615', '四川成都', '2018-09-28 16:24:56', '2019-10-17 13:07:56', 0);
-INSERT INTO `sys_user` VALUES (13, '18384623915', '123456', '服务员1', '18384623915', '18384623915@163.com', '女', '1996-10-16', '511102199610163634', '四川成都', '2018-10-13 23:41:19', NULL, 0);
-INSERT INTO `sys_user` VALUES (14, '18384623916', '123456', '服务员B', '18384623915', '18384623915@163.com', '女', '1996-10-09', '511102199610093618', '四川绵阳', '2018-10-13 23:43:02', NULL, 0);
-INSERT INTO `sys_user` VALUES (15, '18384623917', '123456', '厨师A', '18384623917', '18384623917@163.com', '女', '1980-10-13', '511102198010133456', '四川泸州', '2018-10-13 23:45:44', NULL, 0);
-INSERT INTO `sys_user` VALUES (20, '18384623919', '123456', '厨师B', '18384623919', '18384623919@163.com', '女', '1988-07-13', '511061988071324324', '四川南充', '2018-10-14 20:25:15', NULL, 0);
-INSERT INTO `sys_user` VALUES (23, '18384623921', '123456', '服务员2', '18384623919', '18384623919@163.com', '男', '1981-03-01', '511102198103013443', '四川成都', '2018-10-14 22:38:46', NULL, 0);
-INSERT INTO `sys_user` VALUES (24, '18384623918', '123456', '服务员A', '18384623918', '18384623918@163.com', '女', '1981-10-15', '511103198110153634', '四川绵阳', '2018-10-15 16:03:46', '2018-11-26 17:42:42', 0);
-INSERT INTO `sys_user` VALUES (25, '18384623925', '123456', '服务员D', '18384623925', '18384623912@163.com', '男', '1970-10-15', '511103197010154354', '四川达州', '2018-10-15 17:39:08', '2018-11-26 17:43:03', 1);
-INSERT INTO `sys_user` VALUES (26, '18384623922', '123456', '服务员C', '18384623922', '18384623912@163.com', '女', '1997-12-02', '511103199712023487', '四川宜宾', '2018-10-15 17:47:06', '2018-11-26 17:28:54', 0);
-INSERT INTO `sys_user` VALUES (27, '18384623910', '123456', '收银员B', '18384623910', '18384623910@163.com', '女', '1978-03-16', '511106167803164568', '四川成都', '2018-11-11 17:13:22', '2018-11-26 17:40:12', 0);
-INSERT INTO `sys_user` VALUES (28, '18384623810', '123456', '服务员E', '18384623810', '18384623810@163.com', '女', '1978-04-12', '511104197804124587', '四川泸州', '2018-11-26 17:37:23', '2018-11-26 17:40:24', 0);
-INSERT INTO `sys_user` VALUES (29, '18384623811', '123456', '厨师B', '18384623811', '18384623811@163.com', '女', '2018-11-26', '511102196808264951', '四川成都', '2018-11-26 17:38:33', '2018-11-26 17:40:29', 1);
-INSERT INTO `sys_user` VALUES (30, '18384623812', '123456', '厨师C', '18384623812', '18384623812@163.com', '女', '1983-11-11', '511104198311117841', '四川绵阳', '2018-11-26 17:39:47', '2018-11-26 17:42:22', 1);
+INSERT INTO `sys_user` VALUES (1, '18384623911', '123456', 'Manager Li', '19384623911', '18384623911@163.com', 'M', '1998-05-26', '511102199805263618', 'Tung Chung', '2018-09-28 16:16:14', '2019-10-17 13:07:36', 0);
+INSERT INTO `sys_user` VALUES (2, '18384623912', '123456', 'Cashier A', '19384623912', '18384623912@163.com', 'M', '1995-06-24', '511102199805263617', 'Kowloon Bay', '2018-09-28 16:20:32', '2019-10-17 13:07:41', 0);
+INSERT INTO `sys_user` VALUES (3, '18384623913', '123456', 'Chef Nick', '19384623913', '18384623913@163.com', 'M', '1990-08-16', '511102199805263616', 'Yung Shue Wan', '2018-09-28 16:23:03', '2019-10-17 13:07:47', 0);
+INSERT INTO `sys_user` VALUES (4, '18384623914', '123456', 'Waiter D', '19384623914', '18384623914@163.com', 'M', '1992-01-16', '511102199805263615', 'Ngong Ping', '2018-09-28 16:24:56', '2019-10-17 13:07:56', 0);
+INSERT INTO `sys_user` VALUES (13, '18384623915', '123456', 'Emily Yu', '18384623915', '18384623915@163.com', 'F', '1996-10-16', '511102199610163634', 'Tuen Mun', '2018-10-13 23:41:19', NULL, 0);
+INSERT INTO `sys_user` VALUES (14, '18384623916', '123456', 'Ashley Ku', '18384623915', '18384623915@163.com', 'F', '1996-10-09', '511102199610093618', 'Tsuen Wan', '2018-10-13 23:43:02', NULL, 0);
+INSERT INTO `sys_user` VALUES (15, '18384623917', '123456', 'Lilly Cheung', '18384623917', '18384623917@163.com', 'F', '1980-10-13', '511102198010133456', 'Shatin', '2018-10-13 23:45:44', NULL, 0);
+INSERT INTO `sys_user` VALUES (20, '18384623919', '123456', 'May Chan', '18384623919', '18384623919@163.com', 'F', '1988-07-13', '511061988071324324', 'Kwun Tong', '2018-10-14 20:25:15', NULL, 0);
+INSERT INTO `sys_user` VALUES (23, '18384623921', '123456', 'Lee Big Big', '18384623919', '18384623919@163.com', 'M', '1981-03-01', '511102198103013443', 'Lok Fu', '2018-10-14 22:38:46', NULL, 0);
+INSERT INTO `sys_user` VALUES (24, '18384623918', '123456', 'Waiter B', '18384623918', '18384623918@163.com', 'F', '1981-10-15', '511103198110153634', 'Lai KIng', '2018-10-15 16:03:46', '2018-11-26 17:42:42', 0);
+INSERT INTO `sys_user` VALUES (25, '18384623925', '123456', 'Waiter C', '18384623925', '18384623912@163.com', 'M', '1970-10-15', '511103197010154354', 'Sai Ying Pun', '2018-10-15 17:39:08', '2018-11-26 17:43:03', 1);
+INSERT INTO `sys_user` VALUES (26, '18384623922', '123456', 'Waiter D', '18384623922', '18384623912@163.com', 'F', '1997-12-02', '511103199712023487', 'Mong Kok', '2018-10-15 17:47:06', '2018-11-26 17:28:54', 0);
+INSERT INTO `sys_user` VALUES (27, '18384623910', '123456', 'Cashier B', '18384623910', '18384623910@163.com', 'F', '1978-03-16', '511106167803164568', 'Chai Wan', '2018-11-11 17:13:22', '2018-11-26 17:40:12', 0);
+INSERT INTO `sys_user` VALUES (28, '18384623810', '123456', 'Waiter F', '18384623810', '18384623810@163.com', 'F', '1978-04-12', '511104197804124587', 'Po Lam', '2018-11-26 17:37:23', '2018-11-26 17:40:24', 0);
+INSERT INTO `sys_user` VALUES (29, '18384623811', '123456', 'Chief B', '18384623811', '18384623811@163.com', 'F', '2018-11-26', '511102196808264951', 'Tsing Yi', '2018-11-26 17:38:33', '2018-11-26 17:40:29', 1);
+INSERT INTO `sys_user` VALUES (30, '18384623812', '123456', 'Chief C', '18384623812', '18384623812@163.com', 'F', '1983-11-11', '511104198311117841', 'Whampoa', '2018-11-26 17:39:47', '2018-11-26 17:42:22', 1);
 
 -- ----------------------------
 -- Table structure for sys_user_role
 -- ----------------------------
 DROP TABLE IF EXISTS `sys_user_role`;
 CREATE TABLE `sys_user_role`  (
-  `user_id` bigint(20) NOT NULL COMMENT '用户id',
-  `role_id` int(11) NOT NULL COMMENT '角色id',
-  PRIMARY KEY (`user_id`, `role_id`) USING BTREE,
-  INDEX `role_id`(`role_id`) USING BTREE,
-  CONSTRAINT `sys_user_role_ibfk_1` FOREIGN KEY (`user_id`) REFERENCES `sys_user` (`user_id`) ON DELETE NO ACTION ON UPDATE NO ACTION,
-  CONSTRAINT `sys_user_role_ibfk_2` FOREIGN KEY (`role_id`) REFERENCES `sys_role` (`role_id`) ON DELETE NO ACTION ON UPDATE NO ACTION
+                                  `user_id` bigint(20) NOT NULL COMMENT 'user_id',
+                                  `role_id` int(11) NOT NULL COMMENT 'role_id',
+                                  PRIMARY KEY (`user_id`, `role_id`) USING BTREE,
+                                  INDEX `role_id`(`role_id`) USING BTREE,
+                                  CONSTRAINT `sys_user_role_ibfk_1` FOREIGN KEY (`user_id`) REFERENCES `sys_user` (`user_id`) ON DELETE NO ACTION ON UPDATE NO ACTION,
+                                  CONSTRAINT `sys_user_role_ibfk_2` FOREIGN KEY (`role_id`) REFERENCES `sys_role` (`role_id`) ON DELETE NO ACTION ON UPDATE NO ACTION
 ) ENGINE = InnoDB CHARACTER SET = utf8 COLLATE = utf8_general_ci ROW_FORMAT = Compact;
 
 -- ----------------------------
