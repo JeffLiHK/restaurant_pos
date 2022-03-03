@@ -2,7 +2,7 @@
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
-    <title>添加用户</title>
+    <title>Add member</title>
     <link rel="stylesheet" th:href="@{/layuiadmin/layui/css/layui.css}" href="../../static/layui/css/layui.css"
           media="all"/>
     <style>
@@ -18,14 +18,14 @@
             <div class="layui-form-item">
                 <div class="layui-row layui-col-space15">
                     <div class="layui-col-xs6 layui-col-sm6 layui-col-md4">
-                        <label class="layui-form-label">账号</label>
+                        <label class="layui-form-label">Account</label>
                         <div class="layui-input-block">
                             <input type="text" name="loginCode" lay-verify="required|phone" placeholder="电话号作账号"
                                    autocomplete="off" class="layui-input">
                         </div>
                     </div>
                     <div class="layui-col-xs6 layui-col-sm6 layui-col-md4">
-                        <label class="layui-form-label">密码</label>
+                        <label class="layui-form-label">Password</label>
                         <div class="layui-input-block">
                             <input type="text" name="password" placeholder="初始密码123456" autocomplete="off"
                                    class="layui-input" disabled>
@@ -36,17 +36,17 @@
             <div class="layui-form-item">
                 <div class="layui-row layui-col-space15">
                     <div class="layui-col-xs6 layui-col-sm6 layui-col-md4">
-                        <label class="layui-form-label">姓名</label>
+                        <label class="layui-form-label">Name</label>
                         <div class="layui-input-block">
                             <input type="text" name="name" lay-verify="required" placeholder="" autocomplete="off"
                                    class="layui-input">
                         </div>
                     </div>
                     <div class="layui-col-xs6 layui-col-sm6 layui-col-md4">
-                        <label class="layui-form-label">性别</label>
+                        <label class="layui-form-label">Sex</label>
                         <div class="layui-input-block">
-                            <input type="radio" name="gender" value="男" title="男">
-                            <input type="radio" name="gender" value="女" title="女" checked>
+                            <input type="radio" name="gender" value="Male" title="Male">
+                            <input type="radio" name="gender" value="Female" title="Female" checked>
                         </div>
                     </div>
                 </div>
@@ -54,14 +54,14 @@
             <div class="layui-form-item">
                 <div class="layui-row layui-col-space15">
                     <div class="layui-col-xs6 layui-col-sm6 layui-col-md4">
-                        <label class="layui-form-label">电话</label>
+                        <label class="layui-form-label">Phone</label>
                         <div class="layui-input-block">
                             <input type="text" name="phone" lay-verify="required|phone" placeholder=""
                                    autocomplete="off" class="layui-input">
                         </div>
                     </div>
                     <div class="layui-col-xs6 layui-col-sm6 layui-col-md4">
-                        <label class="layui-form-label">邮箱</label>
+                        <label class="layui-form-label">Email</label>
                         <div class="layui-input-block">
                             <input type="text" name="email" lay-verify="required|email" placeholder=""
                                    autocomplete="off" class="layui-input">
@@ -72,14 +72,14 @@
             <div class="layui-form-item">
                 <div class="layui-row layui-col-space15">
                     <div class="layui-col-xs6 layui-col-sm6 layui-col-md4">
-                        <label class="layui-form-label">生日</label>
+                        <label class="layui-form-label">Birth</label>
                         <div class="layui-input-block">
                             <input type="text" id="birthday" name="birthday" lay-verify="required" placeholder=""
                                    autocomplete="off" class="layui-input">
                         </div>
                     </div>
                     <div class="layui-col-xs6 layui-col-sm6 layui-col-md4">
-                        <label class="layui-form-label">身份证号</label>
+                        <label class="layui-form-label">Id number</label>
                         <div class="layui-input-block">
                             <input type="text" name="IdNumber" placeholder="" lay-verify="identity" autocomplete="off"
                                    class="layui-input">
@@ -92,17 +92,17 @@
                     <div class="layui-col-xs6 layui-col-sm6 layui-col-md4">
                         <!-- 文本框要用.layui-form-text样式修饰-->
                         <div class="layui-form-text">
-                            <label class="layui-form-label">家庭住址</label>
+                            <label class="layui-form-label">Home address</label>
                             <div class="">
                                 <div class="layui-input-block">
-                                    <textarea name="address" placeholder="请输入内容" lay-verify="required"
+                                    <textarea name="address" placeholder="Please enter information" lay-verify="required"
                                               class="layui-textarea"></textarea>
                                 </div>
                             </div>
                         </div>
                     </div>
                     <div class="layui-col-xs6 layui-col-sm6 layui-col-md4">
-                        <label class="layui-form-label">角色</label>
+                        <label class="layui-form-label">Role</label>
                         <div class="layui-input-block">
                             <select name="roleId">
                                 <th:block th:each="role:${roleList}">
@@ -120,7 +120,7 @@
             </div>
             <div class="layui-form-item layui-hide">
                 <input type="button" lay-submit lay-filter="LAY-user-front-submit" id="LAY-user-front-submit"
-                       value="确认">
+                       value="Confimr">
             </div>
         </form>
     </div>

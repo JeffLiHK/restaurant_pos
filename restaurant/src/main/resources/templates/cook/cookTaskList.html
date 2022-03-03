@@ -2,7 +2,7 @@
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
-    <title>制菜任务表</title>
+    <title>制菜任务表 Dish to Cook</title>
     <link rel="stylesheet" th:href="@{/layuiadmin/layui/css/layui.css}"
           href="../../static/layuiadmin/layui/css/layui.css"
           media="all"/>
@@ -18,7 +18,7 @@
 <body>
 <div class="layui-card">
     <div class="layui-card-header" style="text-align: center">
-        制菜任务列表
+        制菜任务列表 List of Dish Cooking
     </div>
     <div class="layui-card-body">
         <!--右边工具栏-->
@@ -29,11 +29,11 @@
                {{#
                if(d.status==0){
                }}
-               <a class="layui-btn layui-btn-warm" lay-event="startCode">开始烹饪</a>
+               <a class="layui-btn layui-btn-warm" lay-event="startCode">Start Cooking</a>
                {{#
                }else if(d.status==1){
                }}
-               <a class="layui-btn layui-btn-normal" lay-event="finishCode">完成烹饪</a>
+               <a class="layui-btn layui-btn-normal" lay-event="finishCode">Finish Cooking</a>
                {{#
                }
                }}
@@ -43,11 +43,11 @@
            {{#
            if(d.status==0){
            }}
-           <a class="layui-btn layui-btn-disabled">开始烹饪</a>
+           <a class="layui-btn layui-btn-disabled">开始烹饪 Start Cooking</a>
            {{#
            }else if(d.status==1){
            }}
-           <a class="layui-btn layui-btn-disabled">完成烹饪</a>
+           <a class="layui-btn layui-btn-disabled">完成烹饪 Finish Cooking</a>
            {{#
            }
            }}
@@ -63,7 +63,7 @@
             {{#
             if( d.goods.imgUrl==null||d.goods.imgUrl=='')
             { }}
-            <div style="color:red">无图片</div>
+            <div style="color:red">无图片 N/A</div>
             {{#  } else { }}
             <img src="/restaurant/{{d.goods.imgUrl}}" class="laytable-cell-1-imgUrl">
             {{#  } }}
@@ -72,11 +72,11 @@
             {{#
             if( d.status==0){
             }}
-            <div style="color: red">等待烹饪</div>
+            <div style="color: red">等待烹饪 Wait to Cooking</div>
             {{#
             } else if(d.status==1){
             }}
-            <div style="color:#5FB878;">正在烹饪</div>
+            <div style="color:#5FB878;">正在烹饪 Cooking</div>
             {{#
                 }
             }}
@@ -106,12 +106,12 @@
             , toolbar: '#test-table-toolbar-toolbarDemo' //开启工具栏，此处显示默认图标
             , cols: [[ //表头
                   {field: 'odList', title:'ID', align: 'center', cellMinWidth: 60, fixed: 'left', sort: true,templet:'<div>{{d.odIdList}}</div>',hide:true}
-                , {field: 'imgUrl', title: '菜品图片',align:'center', cellMinWidth:120, templet:'#imgUrl'}
-                , {field: 'goodsName', title: '菜品名',align:'center', cellMinWidth: 150, sort: true,templet:'<div>{{d.goods.goodsName}}</div>'}
-                , {field: 'count', title: '数量',align:'center', cellMinWidth: 100,sort:true,templet:'<div style="color:#FF5722">{{d.count}}份</div>'}
-                , {field: 'goodsCategory', title: '菜品类型', align:'center',cellMinWidth: 100, templet: '<div>{{d.goods.goodsCategory.categoryName}}</div>'}
-                , {field: 'status', title: '制作状态',align:'center', cellMinWidth: 100,sort: true,templet:"#status"}
-                , {fixed: 'right', title: "工具栏",align:'center', cellMinWidth:300, toolbar: '#barDemo'}
+                , {field: 'imgUrl', title: '菜品图片 Photo',align:'center', cellMinWidth:120, templet:'#imgUrl'}
+                , {field: 'goodsName', title: '菜品名 Food Name',align:'center', cellMinWidth: 150, sort: true,templet:'<div>{{d.goods.goodsName}}</div>'}
+                , {field: 'count', title: '数量 XXX',align:'center', cellMinWidth: 100,sort:true,templet:'<div style="color:#FF5722">{{d.count}}份</div>'}
+                , {field: 'goodsCategory', title: '菜品类型 Type', align:'center',cellMinWidth: 100, templet: '<div>{{d.goods.goodsCategory.categoryName}}</div>'}
+                , {field: 'status', title: '制作状态 Cooking Status',align:'center', cellMinWidth: 100,sort: true,templet:"#status"}
+                , {fixed: 'right', title: "工具栏 Toolbar",align:'center', cellMinWidth:300, toolbar: '#barDemo'}
             ]]
         });
         //监听行工具事件

@@ -2,7 +2,7 @@
 <html xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="utf-8"/>
-    <title>Restaurant POS Systems</title>
+    <title>Restaurant order system</title>
     <meta name="renderer" content="webkit"/>
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
     <meta name="viewport"
@@ -25,7 +25,7 @@
                     </a>
                 </li>
                 <li class="layui-nav-item" lay-unselect>
-                    <a href="javascript:;" layadmin-event="refresh" title="刷新">
+                    <a href="javascript:;" layadmin-event="refresh" title="Refresh">
                         <i class="layui-icon layui-icon-refresh-3"></i>
                     </a>
                 </li>
@@ -52,8 +52,8 @@
                         <cite th:text="${session.user.name}"></cite>
                     </a>
                     <dl class="layui-nav-child">
-                        <dd><a th:attr="lay-href=@{/user/curuserinfo.html}">User Information</a></dd>
-                        <dd><a th:attr="lay-href=@{/user/updatepwd.html}">Change Password</a></dd>
+                        <dd><a th:attr="lay-href=@{/user/curuserinfo.html}">Personal information</a></dd>
+                        <dd><a th:attr="lay-href=@{/user/updatepwd.html}">Change password</a></dd>
                         <dd layadmin-event="logout" style="text-align: center;"><a th:href="@{/sysuser/logout.do}">Quit</a></dd>
                     </dl>
                 </li>
@@ -71,7 +71,7 @@
         <div class="layui-side layui-side-menu">
             <div class="layui-side-scroll">
                 <div class="layui-logo" lay-href="home/console.html">
-                    <span>Restaurant POS Systems</span>
+                    <span>Restaurant order system</span>
                 </div>
 
                 <ul class="layui-nav layui-nav-tree" lay-shrink="all" id="LAY-system-side-menu"
@@ -79,11 +79,11 @@
                     <li data-name="home" class="layui-nav-item layui-nav-itemed">
                         <a href="javascript:;" lay-tips="主页" lay-direction="2">
                             <i class="layui-icon layui-icon-home"></i>
-                            <cite>Main Page</cite>
+                            <cite>Main page</cite>
                         </a>
                         <dl class="layui-nav-child">
                             <dd data-name="console" class="layui-this">
-                                <a th:href="@{/sysuser/console.html}" lay-href="home/console.html" target="mainFrame">Control Console</a>
+                                <a th:href="@{/sysuser/console.html}" lay-href="home/console.html" target="mainFrame">Control panel</a>
                             </dd>
                         </dl>
                     </li>
@@ -120,9 +120,9 @@
                     <li class="layui-nav-item" lay-unselect>
                         <a href="javascript:;"></a>
                         <dl class="layui-nav-child layui-anim-fadein">
-                            <dd layadmin-event="closeThisTabs"><a href="javascript:;">关闭当前标签页 Close the Current Tab</a></dd>
-                            <dd layadmin-event="closeOtherTabs"><a href="javascript:;">关闭其它标签页 Close Other Tab</a></dd>
-                            <dd layadmin-event="closeAllTabs"><a href="javascript:;">关闭全部标签页 Close Al Tab</a></dd>
+                            <dd layadmin-event="closeThisTabs"><a href="javascript:;">Close current tab</a></dd>
+                            <dd layadmin-event="closeOtherTabs"><a href="javascript:;">Close other tab</a></dd>
+                            <dd layadmin-event="closeAllTabs"><a href="javascript:;">Close all tab</a></dd>
                         </dl>
                     </li>
                 </ul>
