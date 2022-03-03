@@ -30,14 +30,11 @@ CREATE TABLE `r_category`  (
 -- ----------------------------
 -- Records of r_category
 -- ----------------------------
-INSERT INTO `r_category` VALUES (1, '川菜', 0);
-INSERT INTO `r_category` VALUES (2, '鲁菜', 0);
-INSERT INTO `r_category` VALUES (3, '闽菜', 0);
-INSERT INTO `r_category` VALUES (4, '粤菜', 0);
-INSERT INTO `r_category` VALUES (5, '浙菜', 0);
-INSERT INTO `r_category` VALUES (6, '汤菜', 1);
-INSERT INTO `r_category` VALUES (7, '干锅', 1);
-INSERT INTO `r_category` VALUES (8, '干锅', 1);
+INSERT INTO `r_category` VALUES (1, 'Food', 0);
+INSERT INTO `r_category` VALUES (2, 'Drink', 0);
+INSERT INTO `r_category` VALUES (3, 'Salad', 0);
+INSERT INTO `r_category` VALUES (4, 'Dessert', 0);
+
 
 -- ----------------------------
 -- Table structure for r_desk
@@ -122,68 +119,34 @@ CREATE TABLE `r_goods`  (
 -- ----------------------------
 -- Records of r_goods
 -- ----------------------------
-INSERT INTO `r_goods` VALUES (3, '家常口水鸡', 1, NULL, '/image/c87048d7-2b87-4be0-bf65-9a3f7286b1a4.jpg', '', '家常口水鸡家常口水鸡家常口水鸡', 10.00, 30.80, 1.00, 3, 16, 1, 0, 1, '2018-10-18 16:55:13', '2018-12-13 21:19:47', 0);
-INSERT INTO `r_goods` VALUES (4, '冬枣凤尾虾', 3, NULL, '/image/6218a5cc-6cce-4e2f-b04f-f1c0c2fad95d.jpg', '', '冬枣凤尾虾冬枣凤尾虾冬枣凤尾虾冬枣凤尾虾', 30.00, 98.00, 1.00, 0, 20, 2, 1, 0, '2018-09-29 14:26:19', '2018-11-30 16:41:12', 0);
-INSERT INTO `r_goods` VALUES (5, '火腿蒸鲈鱼', 5, NULL, '/image/a013629e-def0-4ae9-b68e-8b4e7bb5398d.jpg', '', '火腿蒸鲈鱼火腿蒸鲈鱼火腿蒸鲈鱼火腿蒸鲈鱼火腿蒸鲈鱼', 30.00, 100.00, 1.00, 13, 18, 1, 0, 1, '2018-10-19 13:53:07', '2018-10-30 21:11:15', 0);
-INSERT INTO `r_goods` VALUES (6, '虾籽扒菇参', 3, NULL, '/image/cdbcc568-04f1-4b2f-bbee-e301a505eba8.jpg', NULL, '虾籽扒菇参虾籽扒菇参虾籽扒菇参虾籽扒菇参虾籽扒菇参', 40.00, 168.00, 1.00, 23, 5, 1, 0, 1, '2018-10-19 14:11:54', '2018-10-30 21:11:03', 0);
-INSERT INTO `r_goods` VALUES (7, '吊炉叉烧', 4, NULL, '/image/0272564d-7e0e-4dd4-ae45-bbaca606efad.jpg', '', '吊炉叉烧吊炉叉烧吊炉叉烧吊炉叉烧吊炉叉烧', 17.80, 48.00, 1.00, 64, 36, 3, 0, 1, '2018-10-19 14:15:09', '2018-11-30 16:45:26', 0);
-INSERT INTO `r_goods` VALUES (8, '老妈蹄花', 1, NULL, '/image/6b078a5b-0ed8-4f91-bf4e-6a64139b28e0.jpg', '', '扒酿蹄筋扒酿蹄筋扒酿蹄筋扒酿蹄筋扒酿蹄筋扒酿蹄筋', 25.00, 68.80, 1.00, 20, 14, 1, 0, 1, '2018-10-19 14:16:16', '2018-11-01 10:47:01', 0);
-INSERT INTO `r_goods` VALUES (9, '正宗洋葱回锅肉', 1, NULL, '/image/b7b9bf19-b0e9-4b22-91c9-e6563c4b3282.jpg', '', '正宗洋葱回锅肉正宗洋葱回锅肉正宗洋葱回锅肉', 8.00, 23.80, 1.00, 17, 11, 1, 0, 1, '2018-10-19 14:32:57', '2018-11-20 09:54:36', 0);
-INSERT INTO `r_goods` VALUES (10, '鲜虾肠粉', 4, NULL, '/image/62738ae7-886c-4c30-8fed-f24e91d5ee76.jpg', '', '鲜虾肠粉鲜虾肠粉鲜虾肠粉鲜虾肠粉鲜虾肠粉', 23.00, 67.00, 1.00, 8, 25, 1, 0, 1, '2018-10-21 23:35:03', '2018-10-22 16:41:48', 0);
-INSERT INTO `r_goods` VALUES (11, '秘制叉烧', 3, NULL, '/image/4ae7ef67-c839-44ca-b410-1c9f11db1399.jpg', '', '秘制叉烧秘制叉烧秘制叉烧秘制叉烧秘制叉烧秘制叉烧秘制叉烧秘制叉烧秘制叉烧秘制叉烧', 17.90, 69.00, 1.00, 12, 9, 1, 0, 1, '2018-10-21 23:40:10', '2018-10-30 10:32:21', 0);
-INSERT INTO `r_goods` VALUES (12, '锅巴肉片', 1, NULL, '/image/443a94a9-5429-473a-90f0-cde578446d93.jpg', NULL, '锅巴肉片锅巴肉片锅巴肉片锅巴肉片', 8.00, 22.40, 1.00, 70, 18, 2, 0, 1, '2018-10-30 10:29:51', '2018-11-11 17:00:07', 0);
-INSERT INTO `r_goods` VALUES (13, '水煮鱼片', 1, NULL, '/image/2552d8d4-003a-4c7d-a158-1307c8cc8d24.jpg', NULL, '水煮鱼片水煮鱼片水煮鱼片水煮鱼片', 13.00, 40.00, 1.00, 10, 10, 1, 0, 1, '2018-10-30 10:34:47', NULL, 0);
-INSERT INTO `r_goods` VALUES (14, '香辣毛血旺', 1, NULL, '/image/ba59bdac-113d-424e-b502-078acfd37e8d.jpg', NULL, '香辣毛血旺香辣毛血旺香辣毛血旺香辣毛血旺香辣毛血旺', 18.00, 48.00, 1.00, 10, 20, 1, 0, 1, '2018-10-30 10:35:36', NULL, 0);
-INSERT INTO `r_goods` VALUES (15, '鱼香肉丝', 1, NULL, '/image/c27d77fa-d41b-44d5-9fc5-bc52619a252d.jpg', NULL, '鱼香肉丝鱼香肉丝鱼香肉丝', 8.00, 22.00, 1.00, 28, 12, 1, 0, 1, '2018-10-30 10:36:25', NULL, 0);
-INSERT INTO `r_goods` VALUES (16, '荷包加吉鱼', 2, NULL, '/image/d692d2e7-39b1-4ba9-a4f8-db8d8d6d9b72.jpg', NULL, '鲫鱼荷包蛋鲫鱼荷包蛋鲫鱼荷包蛋鲫鱼荷包蛋', 18.00, 48.00, 1.00, 10, 10, 1, 0, 1, '2018-10-30 10:38:02', '2018-10-30 23:42:50', 0);
-INSERT INTO `r_goods` VALUES (17, '蒜泥拌白肉', 2, NULL, '/image/ea359d93-1060-49e5-9598-14dec7643130.jpg', NULL, '蒜泥拌白肉蒜泥拌白肉蒜泥拌白肉蒜泥拌白肉蒜泥拌白肉蒜泥拌白肉', 15.00, 28.00, 1.00, 8, 6, 1, 0, 1, '2018-10-30 10:38:54', NULL, 0);
-INSERT INTO `r_goods` VALUES (18, '油焖春笋', 5, NULL, '/image/8f5ac298-b725-4f62-9eda-3046016fd82b.jpg', NULL, '油焖春笋油焖春笋油焖春笋油焖春笋', 6.00, 12.00, 1.00, 1, 18, 1, 0, 1, '2018-10-30 10:39:48', NULL, 0);
-INSERT INTO `r_goods` VALUES (19, '大蒜烧鸡肫', 2, NULL, '/image/014d36e2-5ea3-4f1a-80b6-2dff4b22498a.jpg', NULL, '大蒜烧鸡肫大蒜烧鸡肫大蒜烧鸡肫大蒜烧鸡肫', 21.00, 40.00, 1.00, 17, 15, 3, 0, 1, '2018-10-30 16:37:32', NULL, 0);
-INSERT INTO `r_goods` VALUES (20, '白扒鱼翅', 2, NULL, '/image/7f706523-9d69-418b-a541-f73f09796821.jpg', NULL, '白扒鱼翅白扒鱼翅白扒鱼翅白扒鱼翅白扒鱼翅白扒鱼翅白扒鱼翅白扒鱼翅', 30.00, 189.00, 1.00, 56, 9, 3, 0, 1, '2018-10-30 23:38:03', '2018-10-30 23:38:22', 0);
-INSERT INTO `r_goods` VALUES (21, '板栗蘑菇炒螺花', 2, NULL, '/image/001d635b-d16d-45ae-a21d-3d92dc7e3d5a.jpg', NULL, '板栗蘑菇炒螺花板栗蘑菇炒螺花板栗蘑菇炒螺花板栗蘑菇炒螺花板栗蘑菇炒螺花', 46.00, 168.00, 1.00, 33, 10, 2, 0, 1, '2018-10-30 23:39:27', NULL, 0);
-INSERT INTO `r_goods` VALUES (22, '大肠炖豆腐', 2, NULL, '/image/95f51e70-3544-46b2-9cab-8632c56ae9cd.jpg', NULL, '大肠炖豆腐大肠炖豆腐大肠炖豆腐大肠炖豆腐大肠炖豆腐大肠炖豆腐大肠炖豆腐大肠炖豆腐', 18.00, 58.00, 1.00, 6, 11, 1, 0, 1, '2018-10-30 23:40:36', NULL, 0);
-INSERT INTO `r_goods` VALUES (23, '济南把子肉', 2, NULL, '/image/81bda1b0-fc37-4d6c-8e4a-7f6749db140e.jpg', NULL, '济南把子肉济南把子肉济南把子肉济南把子肉', 26.80, 68.00, 1.00, 36, 4, 1, 0, 1, '2018-10-30 23:41:34', NULL, 0);
-INSERT INTO `r_goods` VALUES (24, '鲫鱼荷包蛋', 2, NULL, '/image/3e88a351-1388-4efa-83da-790ffb3e82f0.jpg', NULL, '鲫鱼荷包蛋鲫鱼荷包蛋鲫鱼荷包蛋鲫鱼荷包蛋鲫鱼荷包蛋鲫鱼荷包蛋鲫鱼荷包蛋', 18.00, 39.00, 1.00, 63, 15, 1, 0, 1, '2018-10-30 23:43:36', NULL, 0);
-INSERT INTO `r_goods` VALUES (25, '烤鱼', 2, NULL, '/image/d65f568d-a8c4-439f-bb47-6e59abcd9bee.jpg', NULL, '烤鱼烤鱼烤鱼烤鱼烤鱼烤鱼烤鱼烤鱼烤鱼烤鱼烤鱼烤鱼', 23.00, 76.00, 1.00, 9, 4, 1, 0, 1, '2018-10-30 23:44:21', NULL, 0);
-INSERT INTO `r_goods` VALUES (26, '黄瓜汆里脊片', 2, NULL, '/image/97ae84ee-27d9-4c09-8a25-5d76ff8f28ae.jpg', NULL, '黄瓜汆里脊片黄瓜汆里脊片黄瓜汆里脊片黄瓜汆里脊片黄瓜汆里脊片黄瓜汆里脊片黄瓜汆里脊片', 28.00, 68.00, 1.00, 15, 10, 1, 0, 1, '2018-10-30 23:44:58', NULL, 0);
-INSERT INTO `r_goods` VALUES (27, '蒜爆肉', 2, NULL, '/image/1b2aff29-653e-46eb-922a-f0a385cfd852.jpg', NULL, '蒜爆肉蒜爆肉蒜爆肉蒜爆肉蒜爆肉蒜爆肉蒜爆肉', 18.00, 38.00, 1.00, 30, 4, 1, 0, 1, '2018-10-30 23:46:09', NULL, 0);
-INSERT INTO `r_goods` VALUES (28, '奶汤鸡脯', 2, NULL, '/image/02189ede-cc89-4996-9c80-9e7742bab471.jpg', NULL, '奶汤鸡脯奶汤鸡脯奶汤鸡脯奶汤鸡脯', 24.00, 48.00, 1.00, 11, 1, 2, 0, 1, '2018-10-30 23:48:07', '2018-11-01 14:54:03', 0);
-INSERT INTO `r_goods` VALUES (29, '蒜香炒梭蟹', 2, NULL, '/image/d5ba4308-fe6b-443c-b0c3-88c9718c1f03.jpg', NULL, '蒜香炒梭蟹蒜香炒梭蟹蒜香炒梭蟹蒜香炒梭蟹蒜香炒梭蟹蒜香炒梭蟹', 67.00, 268.00, 1.00, 33, 1, 1, 0, 1, '2018-10-30 23:48:44', NULL, 0);
-INSERT INTO `r_goods` VALUES (30, '糖酥丸子', 2, NULL, '/image/6aa734c2-ef98-4676-b958-31b91a6aed70.jpg', NULL, '糖酥丸子糖酥丸子糖酥丸子糖酥丸子', 20.00, 58.00, 1.00, 8, 4, 1, 0, 1, '2018-10-30 23:49:17', '2018-10-30 23:49:33', 0);
-INSERT INTO `r_goods` VALUES (31, '香菜拌毛蛤', 2, NULL, '/image/023117f7-1c99-4fee-9a97-4f928c0c508c.jpg', NULL, '香菜拌毛蛤香菜拌毛蛤香菜拌毛蛤香菜拌毛蛤香菜拌毛蛤香菜拌毛蛤', 45.00, 149.00, 1.00, 18, 1, 1, 0, 1, '2018-10-30 23:50:26', NULL, 0);
-INSERT INTO `r_goods` VALUES (32, '龙珠凤翅', 3, NULL, '/image/9b80a2e7-88a5-4ca6-b284-a0faf4eee34c.jpg', NULL, '龙珠凤翅龙珠凤翅龙珠凤翅龙珠凤翅龙珠凤翅龙珠凤翅龙珠凤翅龙珠凤翅', 34.00, 98.00, 1.00, 0, 7, 3, 1, 1, '2018-10-30 23:52:03', NULL, 0);
-INSERT INTO `r_goods` VALUES (33, '酸梅爪尖', 3, NULL, '/image/036dc8ae-76be-4871-9a81-ec1c5595832f.jpg', NULL, '酸梅爪尖酸梅爪尖酸梅爪尖酸梅爪尖酸梅爪尖酸梅爪尖酸梅爪尖酸梅爪尖酸梅爪尖', 34.00, 98.00, 1.00, 27, 9, 2, 0, 1, '2018-10-30 23:53:02', NULL, 0);
-INSERT INTO `r_goods` VALUES (34, '焖糟羊肉', 3, NULL, '/image/6b908329-b036-4f8a-a6be-a7feeab827f1.jpg', NULL, '焖糟羊肉焖糟羊肉焖糟羊肉焖糟羊肉焖糟羊肉焖糟羊肉焖糟羊肉焖糟羊肉焖糟羊肉焖糟羊肉', 68.00, 288.00, 1.00, 7, 9, 3, 0, 1, '2018-10-30 23:53:44', NULL, 0);
-INSERT INTO `r_goods` VALUES (35, '青蒜烧晶鱼', 3, NULL, '/image/becf890b-c45c-4de1-a0b6-fdef5b0ed321.jpg', NULL, '青蒜烧晶鱼青蒜烧晶鱼青蒜烧晶鱼青蒜烧晶鱼青蒜烧晶鱼青蒜烧晶鱼', 54.00, 149.00, 1.00, 8, 11, 1, 0, 1, '2018-10-30 23:54:17', NULL, 0);
-INSERT INTO `r_goods` VALUES (36, '群鲜荟萃', 3, NULL, '/image/5dfe7ff5-f93c-4aeb-aa8b-9795f6db97d7.jpg', NULL, '群鲜荟萃群鲜荟萃群鲜荟萃群鲜荟萃群鲜荟萃群鲜荟萃群鲜荟萃群鲜荟萃', 39.00, 87.00, 1.00, 17, 14, 1, 0, 1, '2018-10-30 23:54:49', NULL, 0);
-INSERT INTO `r_goods` VALUES (37, '绒鸡炖刺参', 3, NULL, '/image/6a1b5cba-7026-42ee-83dc-4093ce3caa7f.jpg', NULL, '绒鸡炖刺参绒鸡炖刺参绒鸡炖刺参绒鸡炖刺参绒鸡炖刺参绒鸡炖刺参绒鸡炖刺参', 67.00, 187.00, 1.00, 56, 20, 3, 0, 1, '2018-10-30 23:55:57', '2018-11-11 17:00:14', 0);
-INSERT INTO `r_goods` VALUES (38, '软炸虾糕', 3, NULL, '/image/276cbeac-5d84-4ac8-87cd-36b42ca433c9.jpg', NULL, '软炸虾糕软炸虾糕软炸虾糕软炸虾糕', 28.00, 68.00, 1.00, 22, 10, 1, 0, 1, '2018-10-30 23:56:26', NULL, 0);
-INSERT INTO `r_goods` VALUES (39, '三鲜酿南瓜', 3, NULL, '/image/85400711-7793-48fe-9cec-64181b0839f7.jpg', NULL, '三鲜酿南瓜三鲜酿南瓜三鲜酿南瓜三鲜酿南瓜三鲜酿南瓜', 10.00, 18.00, 1.00, 22, 18, 1, 0, 1, '2018-10-30 23:56:54', NULL, 0);
-INSERT INTO `r_goods` VALUES (40, '东坡肉', 5, NULL, '/image/4b1901b7-4d73-40d3-84b8-dc00f7b7231a.jpg', NULL, '东坡肉东坡肉东坡肉东坡肉东坡肉东坡肉东坡肉东坡肉东坡肉东坡肉东坡肉东坡肉', 23.00, 48.00, 1.00, 39, 6, 3, 0, 1, '2018-11-12 08:58:54', NULL, 0);
-INSERT INTO `r_goods` VALUES (41, '桂花糯米藕', 5, NULL, '/image/eb8aca12-69e8-419d-a504-da7e61df77fb.jpg', NULL, '桂花糯米藕桂花糯米藕桂花糯米藕桂花糯米藕桂花糯米藕桂花糯米藕桂花糯米藕', 8.00, 16.00, 1.00, 38, 1, 1, 0, 1, '2018-11-12 08:59:44', NULL, 0);
-INSERT INTO `r_goods` VALUES (42, '花雕熏鱼', 5, NULL, '/image/9a9afc42-42d9-438d-aab8-efe65553d588.jpg', NULL, '花雕熏鱼花雕熏鱼花雕熏鱼花雕熏鱼花雕熏鱼花雕熏鱼花雕熏鱼花雕熏鱼花雕熏鱼', 18.00, 36.00, 1.00, 41, 2, 1, 0, 1, '2018-11-12 09:01:13', NULL, 0);
-INSERT INTO `r_goods` VALUES (43, '花菇石鸡', 5, NULL, '/image/34392bc6-89c4-4fcd-96c0-ef945df6d499.jpg', NULL, '花菇石鸡花菇石鸡花菇石鸡花菇石鸡花菇石鸡花菇石鸡', 32.00, 69.00, 1.00, 40, 3, 1, 0, 1, '2018-11-12 09:01:54', NULL, 0);
-INSERT INTO `r_goods` VALUES (44, '江南卤鸭', 5, NULL, '/image/491945b9-08f4-4cc3-8e90-7fc8081d7ddd.jpg', NULL, '江南卤鸭、江南卤鸭江南卤鸭江南卤鸭江南卤鸭江南卤鸭江南卤鸭江南卤鸭江南卤鸭', 21.00, 54.00, 1.00, 27, 5, 3, 0, 1, '2018-11-12 09:03:02', NULL, 0);
-INSERT INTO `r_goods` VALUES (45, '叫花鸡', 5, NULL, '/image/280bf22a-3beb-4117-b08c-95d67e8846f8.jpg', NULL, '叫花鸡叫花鸡叫花鸡叫花鸡叫花鸡叫花鸡叫花鸡叫花鸡叫花鸡叫花鸡', 23.00, 54.00, 1.00, 62, 3, 1, 0, 1, '2018-11-12 09:04:24', NULL, 0);
-INSERT INTO `r_goods` VALUES (46, '梅干菜炒豇豆', 5, NULL, '/image/f3222459-f1d3-4734-99ed-c96285d71802.jpg', NULL, '梅干菜炒豇豆梅干菜炒豇豆梅干菜炒豇豆梅干菜炒豇豆梅干菜炒豇豆梅干菜炒豇豆梅干菜炒豇豆梅干菜炒豇豆', 5.00, 12.00, 1.00, 39, 4, 1, 0, 1, '2018-11-12 09:04:57', NULL, 0);
-INSERT INTO `r_goods` VALUES (47, '梅酱配炸响铃', 5, NULL, '/image/be57df1c-4a18-4be5-8377-16f9a49fb44b.jpg', NULL, '梅酱配炸响铃梅酱配炸响铃梅酱配炸响铃梅酱配炸响铃梅酱配炸响铃梅酱配炸响铃梅酱配炸响铃梅酱配炸响铃', 23.00, 49.00, 1.00, 76, 2, 1, 0, 1, '2018-11-12 09:05:33', NULL, 0);
-INSERT INTO `r_goods` VALUES (48, '酸甜酥香的酥焖鲫鱼', 5, NULL, '/image/7254542c-0c62-489c-a131-7dec898b63f6.jpg', NULL, '酸甜酥香的酥焖鲫鱼酸甜酥香的酥焖鲫鱼酸甜酥香的酥焖鲫鱼酸甜酥香的酥焖鲫鱼酸甜酥香的酥焖鲫鱼', 18.00, 39.00, 1.00, 54, 0, 1, 0, 1, '2018-11-12 09:06:17', NULL, 0);
-INSERT INTO `r_goods` VALUES (49, '油爆大虾', 5, NULL, '/image/6f333622-6578-4071-a116-f3b175079510.jpg', NULL, '油爆大虾油爆大虾油爆大虾油爆大虾油爆大虾油爆大虾油爆大虾油爆大虾油爆大虾油爆大虾油爆大虾', 45.00, 89.00, 1.00, 22, 1, 3, 0, 1, '2018-11-12 09:07:03', NULL, 0);
-INSERT INTO `r_goods` VALUES (50, '腌笃鲜', 5, NULL, '/image/178dc6a4-ee23-4f2d-b730-7d59ffd65e6b.jpg', NULL, '腌笃鲜.腌笃鲜.腌笃鲜.腌笃鲜.腌笃鲜.腌笃鲜.腌笃鲜.腌笃鲜.腌笃鲜.', 34.00, 68.00, 1.00, 23, 0, 1, 0, 1, '2018-11-12 09:07:34', NULL, 0);
-INSERT INTO `r_goods` VALUES (51, '香辣酸菜肉片', 1, NULL, '/image/872788fc-a067-4a1a-b88b-cec831369cc5.jpg', NULL, '香辣酸菜肉片香辣酸菜肉片香辣酸菜肉片香辣酸菜肉片香辣酸菜肉片香辣酸菜肉片香辣酸菜肉片', 32.00, 69.00, 1.00, 31, 1, 1, 0, 1, '2018-11-12 09:09:01', NULL, 0);
-INSERT INTO `r_goods` VALUES (52, '白灼虾', 4, NULL, '/image/f1911eec-b730-4433-b39a-236fa625f688.jpg', NULL, '白灼虾白灼虾白灼虾白灼虾白灼虾白灼虾白灼虾白灼虾白灼虾白灼虾', 24.00, 45.00, 1.00, 29, 3, 1, 0, 1, '2018-11-12 09:10:56', '2018-11-12 09:23:02', 0);
-INSERT INTO `r_goods` VALUES (53, '彩椒炒牛肉', 4, NULL, '/image/5999d201-1445-49e3-a2f2-280603b5ddb1.jpg', NULL, '彩椒炒牛肉彩椒炒牛肉彩椒炒牛肉彩椒炒牛肉彩椒炒牛肉彩椒炒牛肉', 32.00, 78.00, 1.00, 64, 3, 2, 0, 1, '2018-11-12 09:11:35', NULL, 0);
-INSERT INTO `r_goods` VALUES (54, '豉汁蒸鳗鱼', 4, NULL, '/image/b59292cc-c71c-4596-b360-f71c9b34210c.jpg', NULL, '豉汁蒸鳗鱼豉汁蒸鳗鱼豉汁蒸鳗鱼豉汁蒸鳗鱼豉汁蒸鳗鱼豉汁蒸鳗鱼豉汁蒸鳗鱼', 54.00, 129.00, 1.00, 22, 1, 3, 0, 1, '2018-11-12 09:12:05', '2018-11-12 09:22:59', 0);
-INSERT INTO `r_goods` VALUES (55, '油面筋炒丝瓜', 4, NULL, '/image/b15df0a6-4a0d-4c73-96f5-24a4283d6bd6.jpg', NULL, '油面筋炒丝瓜油面筋炒丝瓜油面筋炒丝瓜油面筋炒丝瓜油面筋炒丝瓜油面筋炒丝瓜油面筋炒丝瓜油面筋炒丝瓜油面筋炒丝瓜油面筋炒丝瓜油面筋炒丝瓜油面筋炒丝瓜油面筋炒丝瓜', 9.00, 16.00, 1.00, 30, 2, 1, 0, 1, '2018-11-12 09:12:53', NULL, 0);
-INSERT INTO `r_goods` VALUES (56, '蒜蓉豆豉蒸排骨', 4, NULL, '/image/45ab6aca-72c1-4fd0-93d9-29e899b27628.jpg', NULL, '蒜蓉豆豉蒸排骨蒜蓉豆豉蒸排骨蒜蓉豆豉蒸排骨蒜蓉豆豉蒸排骨', 34.00, 58.00, 1.00, 18, 3, 1, 0, 1, '2018-11-12 09:13:28', NULL, 0);
-INSERT INTO `r_goods` VALUES (57, '香辣炒红薯粉', 4, NULL, '/image/2e468728-8529-471c-a8e1-89b9aeda0cab.jpg', NULL, '香辣炒红薯粉香辣炒红薯粉香辣炒红薯粉香辣炒红薯粉香辣炒红薯粉香辣炒红薯粉香辣炒红薯粉', 7.80, 12.00, 1.00, 51, 3, 1, 0, 1, '2018-11-12 09:13:58', NULL, 0);
-INSERT INTO `r_goods` VALUES (58, '磷虾肠粉', 4, NULL, '/image/50cf064c-5525-42bf-b85c-e5024e741905.jpg', NULL, '磷虾肠粉磷虾肠粉磷虾肠粉磷虾肠粉磷虾肠粉磷虾肠粉磷虾肠粉', 18.00, 38.00, 1.00, 53, 1, 1, 0, 1, '2018-11-12 09:14:38', '2018-11-12 09:23:07', 0);
-INSERT INTO `r_goods` VALUES (59, '冯先生家常叉烧', 4, NULL, '/image/577f5599-55cb-4b8d-85b6-4987fd35f48a.jpg', NULL, '冯先生家常叉烧冯先生家常叉烧冯先生家常叉烧冯先生家常叉烧冯先生家常叉烧冯先生家常叉烧冯先生家常叉烧冯先生家常叉烧冯先生家常叉烧冯先生家常叉烧', 32.00, 79.00, 1.00, 54, 0, 1, 0, 1, '2018-11-12 09:15:19', NULL, 0);
-INSERT INTO `r_goods` VALUES (60, '蚝油玉米鸡肉丁', 4, NULL, '/image/31daf548-39c3-4ecb-bb03-76c18170aa6c.jpg', NULL, '蚝油玉米鸡肉丁蚝油玉米鸡肉丁蚝油玉米鸡肉丁蚝油玉米鸡肉丁', 13.00, 24.00, 1.00, 43, 0, 1, 0, 1, '2018-11-12 09:16:28', NULL, 0);
-INSERT INTO `r_goods` VALUES (61, '红糟叉烧', 4, NULL, '/image/4565da9a-38ae-4ca8-b40f-d4fd0e827a7a.jpg', NULL, '红糟叉烧红糟叉烧红糟叉烧红糟叉烧红糟叉烧红糟叉烧红糟叉烧红糟叉烧红糟叉烧红糟叉烧', 21.00, 48.00, 1.00, 31, 1, 2, 0, 1, '2018-11-12 09:17:01', NULL, 0);
-INSERT INTO `r_goods` VALUES (62, '南瓜蒸排骨', 4, NULL, '/image/840355c1-e9df-49e5-b305-083dcbc0bae7.jpg', NULL, '南瓜蒸排骨南瓜蒸排骨南瓜蒸排骨南瓜蒸排骨南瓜蒸排骨南瓜蒸排骨南瓜蒸排骨南瓜蒸排骨南瓜蒸排骨', 21.00, 58.00, 1.00, 24, 0, 1, 0, 1, '2018-11-12 09:17:39', NULL, 0);
-INSERT INTO `r_goods` VALUES (63, '牛油果青酱海鲜意粉', 4, NULL, '/image/3059038f-0da4-46e2-a105-6bcd6e2e79e9.jpg', NULL, '牛油果青酱海鲜意粉牛油果青酱海鲜意粉牛油果青酱海鲜意粉牛油果青酱海鲜意粉牛油果青酱海鲜意粉牛油果青酱海鲜意粉牛油果青酱海鲜意粉牛油果青酱海鲜意粉', 14.00, 28.00, 1.00, 27, 1, 1, 0, 1, '2018-11-12 09:18:11', '2018-11-12 09:22:52', 0);
-INSERT INTO `r_goods` VALUES (64, '宫保鸡丁', 1, NULL, '/image/ad7493af-dc36-4833-b7ad-508143f0a84e.jpg', NULL, '宫保鸡丁宫保鸡丁宫保鸡丁宫保鸡丁宫保鸡丁宫保鸡丁宫保鸡丁宫保鸡丁宫保鸡丁', 23.00, 689.00, 1.00, 34, 0, 2, 0, 1, '2018-11-29 17:34:31', NULL, 0);
+INSERT INTO `r_goods` VALUES (3, 'French Fries', 1, NULL, '/image/c87048d7-2b87-4be0-bf65-9a3f7286b1a4.jpg', '', 'French Fries', 23.00, 88.00, 1.00, 3, 16, 1, 0, 1, '2022-02-19 16:55:13', '2022-02-21 21:19:47', 0);
+INSERT INTO `r_goods` VALUES (4, 'Fried Squid Rings', 1, NULL, '/image/6218a5cc-6cce-4e2f-b04f-f1c0c2fad95d.jpg', '', 'Fried Squid Rings', 20.00, 68.00, 1.00, 0, 20, 2, 1, 0, '2021-09-29 14:26:19', '2021-11-30 16:41:12', 0);
+INSERT INTO `r_goods` VALUES (5, 'Roast Pork Knuckle', 1, NULL, '/image/a013629e-def0-4ae9-b68e-8b4e7bb5398d.jpg', '', 'Roast Pork Knuckle', 55.00, 148.00, 1.00, 13, 18, 1, 0, 1, '2021-10-19 13:53:07', '2021-10-30 21:11:15', 0);
+INSERT INTO `r_goods` VALUES (6, 'Chicken Wings with Buffalo', 1, NULL, '/image/cdbcc568-04f1-4b2f-bbee-e301a505eba8.jpg', NULL, 'Chicken Wings with Buffalo', 40.00, 68.00, 1.00, 23, 5, 1, 0, 1, '2021-10-19 14:11:54', '2021-10-30 21:11:03', 0);
+INSERT INTO `r_goods` VALUES (7, 'Risotto', 1, NULL, '/image/0272564d-7e0e-4dd4-ae45-bbaca606efad.jpg', '', 'Risotto', 17.00, 58.00, 1.00, 64, 36, 3, 0, 1, '2021-10-19 14:15:09', '2021-11-30 16:45:26', 0);
+INSERT INTO `r_goods` VALUES (8, 'Steak Burgers', 1, NULL, '/image/6b078a5b-0ed8-4f91-bf4e-6a64139b28e0.jpg', '', 'Steak Burgers', 45.00, 88.80, 1.00, 20, 14, 1, 0, 1, '2021-10-19 14:16:16', '2021-11-01 10:47:01', 0);
+INSERT INTO `r_goods` VALUES (9, 'Barbeque Chicken Grilled Pizza', 1, NULL, '/image/b7b9bf19-b0e9-4b22-91c9-e6563c4b3282.jpg', '', 'Barbeque Chicken Grilled Pizza', 78.00, 148.80, 1.00, 17, 11, 1, 0, 1, '2021-10-19 14:32:57', '2021-11-20 09:54:36', 0);
+INSERT INTO `r_goods` VALUES (10, 'Roasted Chicken', 1, NULL, '/image/62738ae7-886c-4c30-8fed-f24e91d5ee76.jpg', '', 'Roasted Chicken', 123.00, 208.00, 1.00, 8, 25, 1, 0, 1, '2021-10-21 23:35:03', '2021-10-22 16:41:48', 0);
+INSERT INTO `r_goods` VALUES (11, 'Creamy Garlic Tomato Shrimp Pasta', 1, NULL, '/image/4ae7ef67-c839-44ca-b410-1c9f11db1399.jpg', '', 'Creamy Garlic Tomato Shrimp Pasta', 17.90, 108.00, 1.00, 12, 9, 1, 0, 1, '2021-10-21 23:40:10', '2021-10-30 10:32:21', 0);
+INSERT INTO `r_goods` VALUES (12, 'Honey Garlic Meatballs', 1, NULL, '/image/443a94a9-5429-473a-90f0-cde578446d93.jpg', NULL, 'Honey Garlic Meatballs', 28.00, 68.00, 1.00, 70, 18, 2, 0, 1, '2021-10-30 10:29:51', '2021-11-11 17:00:07', 0);
+INSERT INTO `r_goods` VALUES (13, 'Americano', 2, NULL, '/image/2552d8d4-003a-4c7d-a158-1307c8cc8d24.jpg', NULL, 'Americano', 6.00, 18.00, 1.00, 10, 10, 1, 0, 1, '2021-10-30 10:34:47', NULL, 0);
+INSERT INTO `r_goods` VALUES (14, 'Flat White', 2, NULL, '/image/ba59bdac-113d-424e-b502-078acfd37e8d.jpg', NULL, 'Flat White', 7.00, 18.00, 1.00, 10, 20, 1, 0, 1, '2021-10-30 10:35:36', NULL, 0);
+INSERT INTO `r_goods` VALUES (15, 'Cappuccino', 2, NULL, '/image/c27d77fa-d41b-44d5-9fc5-bc52619a252d.jpg', NULL, 'Cappuccino', 6.50, 18.00, 1.00, 28, 12, 1, 0, 1, '2021-10-30 10:36:25', NULL, 0);
+INSERT INTO `r_goods` VALUES (16, 'Chocolate Latte', 2, NULL, '/image/d692d2e7-39b1-4ba9-a4f8-db8d8d6d9b72.jpg', NULL, 'Chocolate Latte', 8.00, 25.00, 1.00, 10, 10, 1, 0, 1, '2021-10-30 10:38:02', '2021-10-30 23:42:50', 0);
+INSERT INTO `r_goods` VALUES (17, 'Coke Cola', 2, NULL, '/image/ea359d93-1060-49e5-9598-14dec7643130.jpg', NULL, 'Coke Cola', 6.00, 15.00, 1.00, 8, 6, 1, 0, 1, '2021-10-30 10:38:54', NULL, 0);
+INSERT INTO `r_goods` VALUES (18, 'Chocolate', 2, NULL, '/image/8f5ac298-b725-4f62-9eda-3046016fd82b.jpg', NULL, 'Chocolate', 7.50, 18.00, 1.00, 1, 18, 1, 0, 1, '2021-10-30 10:39:48', NULL, 0);
+INSERT INTO `r_goods` VALUES (19, 'Orange Juice', 2, NULL, '/image/014d36e2-5ea3-4f1a-80b6-2dff4b22498a.jpg', NULL, 'Orange Juice', 6.00, 15.00, 1.00, 17, 15, 3, 0, 1, '2021-10-30 16:37:32', NULL, 0);
+INSERT INTO `r_goods` VALUES (20, 'Mocha', 2, NULL, '/image/7f706523-9d69-418b-a541-f73f09796821.jpg', NULL, 'Mocha', 6.50, 18.00, 1.00, 56, 9, 3, 0, 1, '2021-10-30 23:38:03', '2021-10-30 23:38:22', 0);
+INSERT INTO `r_goods` VALUES (21, 'House Beer', 2, NULL, '/image/001d635b-d16d-45ae-a21d-3d92dc7e3d5a.jpg', NULL, 'House Beer', 21.00, 48.00, 1.00, 33, 10, 2, 0, 1, '2021-10-30 23:39:27', NULL, 0);
+INSERT INTO `r_goods` VALUES (22, 'Espresso', 2, NULL, '/image/95f51e70-3544-46b2-9cab-8632c56ae9cd.jpg', NULL, 'Espresso', 12.00, 30.00, 1.00, 6, 11, 1, 0, 1, '2021-10-30 23:40:36', NULL, 0);
+INSERT INTO `r_goods` VALUES (23, 'Salmon Caesar Salad', 3, NULL, '/image/81bda1b0-fc37-4d6c-8e4a-7f6749db140e.jpg', NULL, 'Salmon Caesar Salad', 41.00, 108.00, 1.00, 36, 4, 1, 0, 1, '2021-10-30 23:41:34', NULL, 0);
+INSERT INTO `r_goods` VALUES (24, 'Chicken Salad', 3, NULL, '/image/3e88a351-1388-4efa-83da-790ffb3e82f0.jpg', NULL, 'Chicken Salad', 24.00, 98.00, 1.00, 63, 15, 1, 0, 1, '2021-10-30 23:43:36', NULL, 0);
+INSERT INTO `r_goods` VALUES (25, 'Nicoise Salad', 3, NULL, '/image/d65f568d-a8c4-439f-bb47-6e59abcd9bee.jpg', NULL, 'Nicoise Salad', 34.00, 103.00, 1.00, 9, 4, 1, 0, 1, '2021-10-30 23:44:21', NULL, 0);
+INSERT INTO `r_goods` VALUES (26, 'Love in Paris', 4, NULL, '/image/97ae84ee-27d9-4c09-8a25-5d76ff8f28ae.jpg', NULL, 'Love in Paris', 34.00, 108.00, 1.00, 15, 10, 1, 0, 1, '2021-10-30 23:44:58', NULL, 0);
+INSERT INTO `r_goods` VALUES (27, 'Tiramisu', 4, NULL, '/image/1b2aff29-653e-46eb-922a-f0a385cfd852.jpg', NULL, 'Tiramisu', 18.00, 78.00, 1.00, 30, 4, 1, 0, 1, '2021-10-30 23:46:09', NULL, 0);
+INSERT INTO `r_goods` VALUES (28, 'Mango Cheesecake', 4, NULL, '/image/02189ede-cc89-4996-9c80-9e7742bab471.jpg', NULL, 'Mango Cheesecake', 9.00, 38.00, 1.00, 11, 1, 2, 0, 1, '2021-10-30 23:48:07', '2021-11-01 14:54:03', 0);
+INSERT INTO `r_goods` VALUES (29, 'Snowflake', 4, NULL, '/image/d5ba4308-fe6b-443c-b0c3-88c9718c1f03.jpg', NULL, 'Snowflake', 6.50, 42.00, 1.00, 33, 1, 1, 0, 1, '2021-10-30 23:48:44', NULL, 0);
+INSERT INTO `r_goods` VALUES (30, 'Apple Pie', 4, NULL, '/image/6aa734c2-ef98-4676-b958-31b91a6aed70.jpg', NULL, 'Apple Pie', 11.00, 78.00, 1.00, 8, 4, 1, 0, 1, '2021-10-30 23:49:17', '2021-10-30 23:49:33', 0);
 
 -- ----------------------------
 -- Table structure for r_member
