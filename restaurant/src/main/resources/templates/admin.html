@@ -17,7 +17,6 @@
 <div id="LAY_app">
     <div class="layui-layout layui-layout-admin">
         <div class="layui-header">
-            <!-- 头部区域 -->
             <ul class="layui-nav layui-layout-left">
                 <li class="layui-nav-item layadmin-flexible" lay-unselect>
                     <a href="javascript:;" layadmin-event="flexible" title="侧边伸缩">
@@ -67,7 +66,6 @@
             </ul>
         </div>
 
-        <!-- 侧边菜单 -->
         <div class="layui-side layui-side-menu">
             <div class="layui-side-scroll">
                 <div class="layui-logo" lay-href="home/console.html">
@@ -87,7 +85,6 @@
                             </dd>
                         </dl>
                     </li>
-                    <!--动态菜单-->
                     <th:block th:each="menu:${menuList}">
                         <li data-name="component" class="layui-nav-item">
                             <a href="javascript:;" th:attr="lay-tips=${menu.menuName}" lay-direction="2">
@@ -111,7 +108,6 @@
                 </ul>
             </div>
         </div>
-        <!-- 页面标签 -->
         <div class="layadmin-pagetabs" id="LAY_app_tabs">
             <div class="layui-icon layadmin-tabs-control layui-icon-prev" layadmin-event="leftPage"></div>
             <div class="layui-icon layadmin-tabs-control layui-icon-next" layadmin-event="rightPage"></div>
@@ -134,10 +130,8 @@
                 </ul>
             </div>
         </div>
-        <!-- 主体内容 -->
         <div class="layui-body" id="LAY_app_body">
             <div class="layadmin-tabsbody-item layui-show">
-                <!--home/console.html-->
                 <iframe name="mainFrame" th:src="@{/sysuser/console.html}" src="" frameborder="0"
                         class="layadmin-iframe">
 
@@ -145,16 +139,15 @@
             </div>
         </div>
 
-        <!-- 辅助元素，一般用于移动设备下遮罩 -->
         <div class="layadmin-body-shade" layadmin-event="shade"></div>
     </div>
 </div>
 <script th:src="@{/layuiadmin/layui/layui.js}" src="../static/layuiadmin/layui/layui.js"></script>
 <script>
     layui.config({
-        base: '/restaurant/layuiadmin/' //静态资源所在路径
+        base: '/restaurant/layuiadmin/' 
     }).extend({
-        index: 'lib/index' //主入口模块
+        index: 'lib/index' 
     }).use('index');
 </script>
 </body>
