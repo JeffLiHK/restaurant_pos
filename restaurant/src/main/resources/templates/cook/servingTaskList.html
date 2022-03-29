@@ -2,7 +2,7 @@
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
-    <title>上次任务表 Last Time Mission List</title>
+    <title>Last Time Mission List</title>
     <link rel="stylesheet" th:href="@{/layuiadmin/layui/css/layui.css}"
           href="../../static/layuiadmin/layui/css/layui.css"
           media="all"/>
@@ -18,7 +18,6 @@
 <body>
 <div class="layui-card">
     <div class="layui-card-body">
-        <!--右边工具栏-->
         <script th:inline="javascript" type="text/html" id="barDemo">
             {{#
             if([[${role.roleId}]]==3){
@@ -26,19 +25,18 @@
                 {{#
                     if(d.status==2){
                 }}
-                    <a class="layui-btn layui-btn-warm" lay-event="finishServing">完成上菜 Served</a>
+                    <a class="layui-btn layui-btn-warm" lay-event="finishServing">Served</a>
                 {{#
                     }
                 }}
             {{#
                 }else{
             }}
-                <a class="layui-btn layui-btn-disabled">完成上菜 Served</a>
+                <a class="layui-btn layui-btn-disabled">Served</a>
             {{#
                 }
             }}
         </script>
-        <!-- table表格-->
         <table id="tableList" lay-filter="tableList">
 
         </table>
@@ -46,7 +44,7 @@
             {{#
             if( d.goods.imgUrl==null||d.goods.imgUrl=='')
             { }}
-            <div style="color:red">无图片 N/A</div>
+            <div style="color:red">N/A</div>
             {{#  } else { }}
             <img src="/restaurant/{{d.goods.imgUrl}}" class="laytable-cell-1-imgUrl">
             {{#  } }}
@@ -55,7 +53,7 @@
             {{#
             if( d.status==2){
             }}
-            <div style="color: red">等待上菜 Wait to Serve</div>
+            <div style="color: red">Wait to Serve</div>
             {{#
             }
             }}
@@ -68,23 +66,22 @@
         var $ = layui.$
             , form = layui.form
             , table = layui.table
-        //执行一个 table 实例
         table.render({
             elem: '#tableList'
-            , url: "/restaurant/service/servingTask.do" //数据接口
-            , title: '订单明细'
-            , even: true//开启背景隔行
+            , url: "/restaurant/service/servingTask.do" 
+            , title: 'Order Details'
+            , even: true
             , request: {
-                pageName: 'pageNum' //页码的参数名称，默认：page
-                , limitName: 'pageSize' //每页数据量的参数名，默认：limit
+                pageName: 'pageNum' 
+                , limitName: 'pageSize' 
             }
             , page: true
             , response: {
                 statusCode: 200
             }
             , size: 'lg'
-            , toolbar: '#test-table-toolbar-toolbarDemo' //开启工具栏，此处显示默认图标
-            , cols: [[ //表头
+            , toolbar: '#test-table-toolbar-toolbarDemo' 
+            , cols: [[ 
                 {
                     field: 'odId',
                     title: 'ID',
@@ -97,41 +94,40 @@
                 }
                 , {
                     field: 'deskCode',
-                    title: '桌号',
+                    title: 'Table No.',
                     align: 'center',
                     cellMinWidth: 150,
                     templet: '<div><span style="color:#FF5722 ">{{d.order.deskCode}}号</span></div>'
                 }
-                , {field: 'imgUrl', title: '菜品图片', align: 'center', cellMinWidth: 120, templet: '#imgUrl'}
+                , {field: 'imgUrl', title: 'Photo', align: 'center', cellMinWidth: 120, templet: '#imgUrl'}
                 , {
                     field: 'goodsName',
-                    title: '菜品名',
+                    title: 'Food Name',
                     align: 'center',
                     cellMinWidth: 150,
                     templet: '<div>{{d.goods.goodsName}}</div>'
                 }
                 , {
                     field: 'count',
-                    title: '数量',
+                    title: 'Quantity',
                     align: 'center',
                     cellMinWidth: 100,
                     templet: '<div><span style="color: #FF5722">{{d.count}}份</span></div>'
                 }
                 , {
                     field: 'goodsCategory',
-                    title: '菜品类型',
+                    title: 'Type',
                     align: 'center',
                     cellMinWidth: 100,
                     templet: '<div>{{d.goods.goodsCategory.categoryName}}</div>'
                 }
-                , {field: 'status', title: '上菜状态', align: 'center', cellMinWidth: 100, templet: "#status"}
-                , {fixed: 'right', title: "工具栏", align: 'center', cellMinWidth: 300, toolbar: '#barDemo'}
+                , {field: 'status', title: 'Cooking Status', align: 'center', cellMinWidth: 100, templet: "#status"}
+                , {fixed: 'right', title: "Toolbar", align: 'center', cellMinWidth: 300, toolbar: '#barDemo'}
             ]]
         });
-        //监听行工具事件
-        table.on('tool(tableList)', function (obj) { //注：tool 是工具条事件名，test 是 table 原始容器的属性 lay-filter="对应的值"
-            var data = obj.data //获得当前行数据
-                , layEvent = obj.event; //获得 lay-event 对应的值
+        table.on('tool(tableList)', function (obj) {
+            var data = obj.data 
+                , layEvent = obj.event; 
             if (layEvent === 'finishServing') {
                 $.ajax({
                     url: "/restaurant/service/finishServing.do",
@@ -143,11 +139,11 @@
                     },
                     success: function (result) {
                         if (result.code == 200) {
-                            table.reload('tableList'); //数据刷新
-                            layer.msg('成功!', {icon: 1});
+                            table.reload('tableList'); 
+                            layer.msg('Successful!', {icon: 1});
                         } else {
                             layer.alert(result.msg, {
-                                title: '提交结果'
+                                title: 'Submit'
                                 , anim: 6
                             });
                         }
