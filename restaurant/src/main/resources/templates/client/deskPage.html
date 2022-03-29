@@ -144,9 +144,8 @@
             layer = layui.layer,
             laypage = layui.laypage;
         var totalNum = [[${page.total}]]
-        var limit = 15;//一页显示条数
-        var currentPage = [[${page.pageNum}]];//当前页
-        //初始化数据
+        var limit = 15;
+        var currentPage = [[${page.pageNum}]];
         $(".click").click(function (){
           var deskState = $(this).find(".statue input").val();
           var deskCode = $(this).find(".desk_code").text();
@@ -171,18 +170,16 @@
               layer.msg("NOT AVAILABLE!",{icon:5});
           }
         });
-        //调用分页
         laypage.render({
             elem: 'test1'
-            , count: totalNum //数据总数
-            , limit: limit//设置每页条数
+            , count: totalNum 
+            , limit: limit/
             , curr:currentPage
             ,theme:'#393D49'
             , jump: function (obj, first){
                 console.log(obj.curr);
                 console.log(obj.limit);
                 var clickPage = obj.curr;
-                //首次不执行
                 if (!first) {
                     location = "/restaurant/guest/desklist.html?pageNum="+clickPage;
                 }
