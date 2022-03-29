@@ -88,9 +88,7 @@
     layui.use(['table', 'laydate'], function () {
         var $ = layui.$;
         var form = layui.form;
-        //默认初始化近七天的销量排行
         chart1NetworkRequest(6);
-        //默认初始化近七天的菜系销量统计
         chart2NetworkRequest(6);
 
         form.on('select(chart1Day)', function (data) {
@@ -102,9 +100,6 @@
             chart2NetworkRequest(day);
         });
 
-        /**
-         * 菜品销售排行网络请求数据
-         */
         function chart1NetworkRequest(day) {
             $.ajax({
                 url: '/restaurant/analysis/gssByDays.do',
@@ -131,9 +126,6 @@
             });
         }
 
-        /**
-         * 菜系销售分析网络请求数据
-         */
         function chart2NetworkRequest(day) {
             $.ajax({
                 url: '/restaurant/analysis/gcsByDays.do',
@@ -164,7 +156,6 @@
         }
     });
 
-    //加载柱状图表
     function loadChart1(nameArray, countArray) {
         require(
             [
@@ -173,12 +164,11 @@
                 'echarts/chart/bar'
             ],
             function (echarts) {
-                // 基于准备好的dom，初始化echarts图表
                 var myChart1 = echarts.init(document.getElementById('chart1'), 'macarons');
                 var option1 = {
                     title: {
-                        text: '菜品销量top12',
-                        // subtext: '纯属虚构'
+                        text: 'Best sell Top12',
+                        
                     },
                     tooltip: {
                         trigger: 'axis',
@@ -193,7 +183,7 @@
                         }
                     },
                     legend: {
-                        data: ['销量']
+                        data: ['Sales']
                     },
                     toolbox: {
                         show: true,
@@ -205,9 +195,7 @@
                         }
                     },
                     itemStyle: {
-                        //默认样式
                         normal: {
-                            //设置柱状条圆角
                             barBorderRadius: [12, 12, 12, 12],
                         }
                     },
@@ -231,29 +219,27 @@
                     ],
                     series: [
                         {
-                            name: '销量',
+                            name: 'Sales',
                             type: 'bar',
                             data: countArray,
                             markPoint: {
                                 data: [
-                                    {type: 'max', name: '最大值'},
-                                    {type: 'min', name: '最小值'}
+                                    {type: 'max', name: 'Maximum'},
+                                    {type: 'min', name: 'Minimum'}
                                 ]
                             },
                             markLine: {
                                 data: [
-                                    {type: 'average', name: '平均值'}
+                                    {type: 'average', name: 'Average'}
                                 ]
                             }
                         }
                     ]
                 };
-                // 为echarts对象加载数据
                 myChart1.setOption(option1);
             });
     }
 
-    //加载图表2 饼状图表
     function loadChart2(nameArray, countArray) {
         require(
             [
@@ -265,8 +251,7 @@
                 var myChart2 = echarts.init(document.getElementById('chart2'), 'macarons');
                 var option2 = {
                     title: {
-                        text: '菜系销量分析',
-                        //subtext: '纯属虚构',
+                        text: 'Order Sales Analysis',
                         x: 'center'
                     },
                     tooltip: {
@@ -302,7 +287,7 @@
                     calculable: false,
                     series: [
                         {
-                            name: '菜系',
+                            name: 'Order',
                             type: 'pie',
                             radius: '55%',
                             center: ['50%', '60%'],
