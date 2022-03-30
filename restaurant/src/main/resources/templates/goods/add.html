@@ -20,7 +20,7 @@
                     <div class="layui-col-xs6 layui-col-sm6 layui-col-md6">
                         <label class="layui-form-label">Name</label>
                         <div class="layui-input-block">
-                            <input type="text" name="goodsName" id="goodsName" lay-verify="required" placeholder="菜名 Food Name"
+                            <input type="text" name="goodsName" id="goodsName" lay-verify="required" placeholder="Food Name"
                                    autocomplete="off"
                                    class="layui-input">
                         </div>
@@ -61,15 +61,15 @@
                     <div class="layui-col-xs6 layui-col-sm6 layui-col-md6">
                         <label class="layui-form-label">Selling Status</label>
                         <div class="layui-input-block">
-                            <input type="radio" name="soldState" value="0" title="未售完 Available" checked>
-                            <input type="radio" name="soldState" value="1" title="已售完 Sold Out">
+                            <input type="radio" name="soldState" value="0" title="Available" checked>
+                            <input type="radio" name="soldState" value="1" title="Sold Out">
                         </div>
                     </div>
                     <div class="layui-col-xs6 layui-col-sm6 layui-col-md6">
                         <label class="layui-form-label">Listing Status</label>
                         <div class="layui-input-block">
-                            <input type="radio" name="putawayStatus" value="0" title="下架 Remove on sale" checked>
-                            <input type="radio" name="putawayStatus" value="1" title="上架 Put on sale">
+                            <input type="radio" name="putawayStatus" value="0" title="Remove on sale" checked>
+                            <input type="radio" name="putawayStatus" value="1" title="Put on sale">
                         </div>
                     </div>
                 </div>
@@ -87,9 +87,9 @@
                         <label class="layui-form-label">Type Status</label>
                         <div class="layui-input-block">
                             <select name="typeState">
-                                <option value="1" selected>普通菜 Main Dishes</option>
-                                <option value="2">新菜 Salad</option>
-                                <option value="3">特色菜 Dessert</option>
+                                <option value="1" selected>Main Dishes</option>
+                                <option value="2">Salad</option>
+                                <option value="3">Dessert</option>
                             </select>
                         </div>
                     </div>
@@ -108,11 +108,11 @@
                     </div>
                     <div class="layui-col-xs6 layui-col-sm6 layui-col-md6">
                         <label class="layui-form-label">Food Photo</label>
-                        <!--上传按钮-->
+
                         <button type="button" class="layui-btn" id="upload1">Upload</button>
-                        <!--隐藏的input-->
+
                         <input type="hidden" id="img_url" name="imgUrl" value=""/>
-                        <!--预览区域-->
+
                         <div class="layui-upload-list">
                             <img class="layui-upload-img" width="98px" height="132px" id="demo1"/>
                             <p id="demoText1"></p>
@@ -137,54 +137,53 @@
             , laydate = layui.laydate
             , layer = layui.layer;
 
-        //获取from表单提交事件
-        //此处submit中的值是lay-filter
+
         form.on('submit(component-form-element)', function (data) {
         });
-        //自定义验证
+
         form.verify({
-            //验证正数
+
             positive_number: function (value, item) {
                 if (parseFloat(value) < 0) {
-                    return '必须为正数';
+                    return 'Must be positive number!';
                 }
             },
             int_number: function (value, item) {
                 if (!/^(0|\+?[1-9][0-9]*)$/.test(value)) {
-                    return '必须为正整数';
+                    return 'Must be positive integer!';
                 }
             }
         });
     });
 </script>
-<!--上传图片的js代码-->
+
 <script type="text/javascript" th:inline="javascript">
     layui.use('upload', function () {
         var upload = layui.upload
             , $ = layui.jquery;
         var uploadInst1 = upload.render({
-            elem: '#upload1' //绑定元素
-            , url: '/restaurant/upload/img.do'//上传接口
+            elem: '#upload1' 
+            , url: '/restaurant/upload/img.do'
             , field: 'image'
             , before: function (obj) {
-                //预读本地文件示例，不支持ie8
+
                 obj.preview(function (index, file, result) {
-                    $('#demo1').attr('src', result); //图片链接（base64）
+                    $('#demo1').attr('src', result); 
                 });
             }
             , done: function (res) {
-                //如果上传失败
+                
                 if (res.code !== 200) {
-                    return layer.msg('上传失败', {icon: 2, anim: 6});
+                    return layer.msg('Fail to upload', {icon: 2, anim: 6});
                 }
-                //上传成功
-                layer.msg("上传成功", {icon: 6});
+                
+                layer.msg("Success!", {icon: 6});
                 document.getElementById("img_url").value = res.data.src;
             }
             , error: function () {
-                //演示失败状态，并实现重传
+
                 var demoText1 = $('#demoText1');
-                demoText1.html('<span style="color: #FF5722;">上传失败</span> <a class="layui-btn layui-btn-mini demo-reload">重试</a>');
+                demoText1.html('<span style="color: #FF5722;">Fail to upload</span> <a class="layui-btn layui-btn-mini demo-reload">Try again</a>');
                 demoText1.find('.demo-reload').on('click', function () {
                     uploadInst1.upload();
                 });
