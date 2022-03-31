@@ -119,34 +119,34 @@ CREATE TABLE `r_goods`  (
 -- ----------------------------
 -- Records of r_goods
 -- ----------------------------
-INSERT INTO `r_goods` VALUES (3, 'French Fries', 1, NULL, '/image/c87048d7-2b87-4be0-bf65-9a3f7286b1a4.jpg', '', 'French Fries', 23.00, 88.00, 1.00, 3, 16, 1, 0, 1, '2022-02-19 16:55:13', '2022-02-21 21:19:47', 0);
-INSERT INTO `r_goods` VALUES (4, 'Fried Squid Rings', 1, NULL, '/image/6218a5cc-6cce-4e2f-b04f-f1c0c2fad95d.jpg', '', 'Fried Squid Rings', 20.00, 68.00, 1.00, 0, 20, 2, 1, 0, '2021-09-29 14:26:19', '2021-11-30 16:41:12', 0);
-INSERT INTO `r_goods` VALUES (5, 'Roast Pork Knuckle', 1, NULL, '/image/a013629e-def0-4ae9-b68e-8b4e7bb5398d.jpg', '', 'Roast Pork Knuckle', 55.00, 148.00, 1.00, 13, 18, 1, 0, 1, '2021-10-19 13:53:07', '2021-10-30 21:11:15', 0);
-INSERT INTO `r_goods` VALUES (6, 'Chicken Wings with Buffalo', 1, NULL, '/image/cdbcc568-04f1-4b2f-bbee-e301a505eba8.jpg', NULL, 'Chicken Wings with Buffalo', 40.00, 68.00, 1.00, 23, 5, 1, 0, 1, '2021-10-19 14:11:54', '2021-10-30 21:11:03', 0);
-INSERT INTO `r_goods` VALUES (7, 'Risotto', 1, NULL, '/image/0272564d-7e0e-4dd4-ae45-bbaca606efad.jpg', '', 'Risotto', 17.00, 58.00, 1.00, 64, 36, 3, 0, 1, '2021-10-19 14:15:09', '2021-11-30 16:45:26', 0);
-INSERT INTO `r_goods` VALUES (8, 'Steak Burgers', 1, NULL, '/image/6b078a5b-0ed8-4f91-bf4e-6a64139b28e0.jpg', '', 'Steak Burgers', 45.00, 88.80, 1.00, 20, 14, 1, 0, 1, '2021-10-19 14:16:16', '2021-11-01 10:47:01', 0);
-INSERT INTO `r_goods` VALUES (9, 'Barbeque Chicken Grilled Pizza', 1, NULL, '/image/b7b9bf19-b0e9-4b22-91c9-e6563c4b3282.jpg', '', 'Barbeque Chicken Grilled Pizza', 78.00, 148.80, 1.00, 17, 11, 1, 0, 1, '2021-10-19 14:32:57', '2021-11-20 09:54:36', 0);
-INSERT INTO `r_goods` VALUES (10, 'Roasted Chicken', 1, NULL, '/image/62738ae7-886c-4c30-8fed-f24e91d5ee76.jpg', '', 'Roasted Chicken', 123.00, 208.00, 1.00, 8, 25, 1, 0, 1, '2021-10-21 23:35:03', '2021-10-22 16:41:48', 0);
-INSERT INTO `r_goods` VALUES (11, 'Creamy Garlic Tomato Shrimp Pasta', 1, NULL, '/image/4ae7ef67-c839-44ca-b410-1c9f11db1399.jpg', '', 'Creamy Garlic Tomato Shrimp Pasta', 17.90, 108.00, 1.00, 12, 9, 1, 0, 1, '2021-10-21 23:40:10', '2021-10-30 10:32:21', 0);
-INSERT INTO `r_goods` VALUES (12, 'Honey Garlic Meatballs', 1, NULL, '/image/443a94a9-5429-473a-90f0-cde578446d93.jpg', NULL, 'Honey Garlic Meatballs', 28.00, 68.00, 1.00, 70, 18, 2, 0, 1, '2021-10-30 10:29:51', '2021-11-11 17:00:07', 0);
-INSERT INTO `r_goods` VALUES (13, 'Americano', 2, NULL, '/image/2552d8d4-003a-4c7d-a158-1307c8cc8d24.jpg', NULL, 'Americano', 6.00, 18.00, 1.00, 10, 10, 1, 0, 1, '2021-10-30 10:34:47', NULL, 0);
-INSERT INTO `r_goods` VALUES (14, 'Flat White', 2, NULL, '/image/ba59bdac-113d-424e-b502-078acfd37e8d.jpg', NULL, 'Flat White', 7.00, 18.00, 1.00, 10, 20, 1, 0, 1, '2021-10-30 10:35:36', NULL, 0);
-INSERT INTO `r_goods` VALUES (15, 'Cappuccino', 2, NULL, '/image/c27d77fa-d41b-44d5-9fc5-bc52619a252d.jpg', NULL, 'Cappuccino', 6.50, 18.00, 1.00, 28, 12, 1, 0, 1, '2021-10-30 10:36:25', NULL, 0);
-INSERT INTO `r_goods` VALUES (16, 'Chocolate Latte', 2, NULL, '/image/d692d2e7-39b1-4ba9-a4f8-db8d8d6d9b72.jpg', NULL, 'Chocolate Latte', 8.00, 25.00, 1.00, 10, 10, 1, 0, 1, '2021-10-30 10:38:02', '2021-10-30 23:42:50', 0);
-INSERT INTO `r_goods` VALUES (17, 'Coke Cola', 2, NULL, '/image/ea359d93-1060-49e5-9598-14dec7643130.jpg', NULL, 'Coke Cola', 6.00, 15.00, 1.00, 8, 6, 1, 0, 1, '2021-10-30 10:38:54', NULL, 0);
-INSERT INTO `r_goods` VALUES (18, 'Chocolate', 2, NULL, '/image/8f5ac298-b725-4f62-9eda-3046016fd82b.jpg', NULL, 'Chocolate', 7.50, 18.00, 1.00, 1, 18, 1, 0, 1, '2021-10-30 10:39:48', NULL, 0);
-INSERT INTO `r_goods` VALUES (19, 'Orange Juice', 2, NULL, '/image/014d36e2-5ea3-4f1a-80b6-2dff4b22498a.jpg', NULL, 'Orange Juice', 6.00, 15.00, 1.00, 17, 15, 3, 0, 1, '2021-10-30 16:37:32', NULL, 0);
-INSERT INTO `r_goods` VALUES (20, 'Mocha', 2, NULL, '/image/7f706523-9d69-418b-a541-f73f09796821.jpg', NULL, 'Mocha', 6.50, 18.00, 1.00, 56, 9, 3, 0, 1, '2021-10-30 23:38:03', '2021-10-30 23:38:22', 0);
-INSERT INTO `r_goods` VALUES (21, 'House Beer', 2, NULL, '/image/001d635b-d16d-45ae-a21d-3d92dc7e3d5a.jpg', NULL, 'House Beer', 21.00, 48.00, 1.00, 33, 10, 2, 0, 1, '2021-10-30 23:39:27', NULL, 0);
-INSERT INTO `r_goods` VALUES (22, 'Espresso', 2, NULL, '/image/95f51e70-3544-46b2-9cab-8632c56ae9cd.jpg', NULL, 'Espresso', 12.00, 30.00, 1.00, 6, 11, 1, 0, 1, '2021-10-30 23:40:36', NULL, 0);
-INSERT INTO `r_goods` VALUES (23, 'Salmon Caesar Salad', 3, NULL, '/image/81bda1b0-fc37-4d6c-8e4a-7f6749db140e.jpg', NULL, 'Salmon Caesar Salad', 41.00, 108.00, 1.00, 36, 4, 1, 0, 1, '2021-10-30 23:41:34', NULL, 0);
-INSERT INTO `r_goods` VALUES (24, 'Chicken Salad', 3, NULL, '/image/3e88a351-1388-4efa-83da-790ffb3e82f0.jpg', NULL, 'Chicken Salad', 24.00, 98.00, 1.00, 63, 15, 1, 0, 1, '2021-10-30 23:43:36', NULL, 0);
-INSERT INTO `r_goods` VALUES (25, 'Nicoise Salad', 3, NULL, '/image/d65f568d-a8c4-439f-bb47-6e59abcd9bee.jpg', NULL, 'Nicoise Salad', 34.00, 103.00, 1.00, 9, 4, 1, 0, 1, '2021-10-30 23:44:21', NULL, 0);
-INSERT INTO `r_goods` VALUES (26, 'Love in Paris', 4, NULL, '/image/97ae84ee-27d9-4c09-8a25-5d76ff8f28ae.jpg', NULL, 'Love in Paris', 34.00, 108.00, 1.00, 15, 10, 1, 0, 1, '2021-10-30 23:44:58', NULL, 0);
-INSERT INTO `r_goods` VALUES (27, 'Tiramisu', 4, NULL, '/image/1b2aff29-653e-46eb-922a-f0a385cfd852.jpg', NULL, 'Tiramisu', 18.00, 78.00, 1.00, 30, 4, 1, 0, 1, '2021-10-30 23:46:09', NULL, 0);
-INSERT INTO `r_goods` VALUES (28, 'Mango Cheesecake', 4, NULL, '/image/02189ede-cc89-4996-9c80-9e7742bab471.jpg', NULL, 'Mango Cheesecake', 9.00, 38.00, 1.00, 11, 1, 2, 0, 1, '2021-10-30 23:48:07', '2021-11-01 14:54:03', 0);
-INSERT INTO `r_goods` VALUES (29, 'Snowflake', 4, NULL, '/image/d5ba4308-fe6b-443c-b0c3-88c9718c1f03.jpg', NULL, 'Snowflake', 6.50, 42.00, 1.00, 33, 1, 1, 0, 1, '2021-10-30 23:48:44', NULL, 0);
-INSERT INTO `r_goods` VALUES (30, 'Apple Pie', 4, NULL, '/image/6aa734c2-ef98-4676-b958-31b91a6aed70.jpg', NULL, 'Apple Pie', 11.00, 78.00, 1.00, 8, 4, 1, 0, 1, '2021-10-30 23:49:17', '2021-10-30 23:49:33', 0);
+INSERT INTO `r_goods` VALUES (3, 'French Fries', 1, NULL, '/image/frenchfries.jpeg', '', 'French Fries', 23.00, 88.00, 1.00, 3, 16, 1, 0, 1, '2022-02-19 16:55:13', '2022-02-21 21:19:47', 0);
+INSERT INTO `r_goods` VALUES (4, 'Fried Squid Rings', 1, NULL, '/image/FriedSquidRings.jpg', '', 'Fried Squid Rings', 20.00, 68.00, 1.00, 0, 20, 2, 1, 0, '2021-09-29 14:26:19', '2021-11-30 16:41:12', 0);
+INSERT INTO `r_goods` VALUES (5, 'Roast Pork Knuckle', 1, NULL, '/image/RoastPorkKnuckle.jpeg', '', 'Roast Pork Knuckle', 55.00, 148.00, 1.00, 13, 18, 1, 0, 1, '2021-10-19 13:53:07', '2021-10-30 21:11:15', 0);
+INSERT INTO `r_goods` VALUES (6, 'Chicken Wings with Buffalo', 1, NULL, '/image/ChickenWingswithBuffalo.jpeg', NULL, 'Chicken Wings with Buffalo', 40.00, 68.00, 1.00, 23, 5, 1, 0, 1, '2021-10-19 14:11:54', '2021-10-30 21:11:03', 0);
+INSERT INTO `r_goods` VALUES (7, 'Risotto', 1, NULL, '/image/Risotto.jpeg', '', 'Risotto', 17.00, 58.00, 1.00, 64, 36, 3, 0, 1, '2021-10-19 14:15:09', '2021-11-30 16:45:26', 0);
+INSERT INTO `r_goods` VALUES (8, 'Steak Burgers', 1, NULL, '/image/SteakBurgers.jpeg', '', 'Steak Burgers', 45.00, 88.80, 1.00, 20, 14, 1, 0, 1, '2021-10-19 14:16:16', '2021-11-01 10:47:01', 0);
+INSERT INTO `r_goods` VALUES (9, 'Barbeque Chicken Grilled Pizza', 1, NULL, '/image/BarbequeChickenGrilledPizza.jpeg', '', 'Barbeque Chicken Grilled Pizza', 78.00, 148.80, 1.00, 17, 11, 1, 0, 1, '2021-10-19 14:32:57', '2021-11-20 09:54:36', 0);
+INSERT INTO `r_goods` VALUES (10, 'Roasted Chicken', 1, NULL, '/image/RoastedChicken.jpeg', '', 'Roasted Chicken', 123.00, 208.00, 1.00, 8, 25, 1, 0, 1, '2021-10-21 23:35:03', '2021-10-22 16:41:48', 0);
+INSERT INTO `r_goods` VALUES (11, 'Creamy Garlic Tomato Shrimp Pasta', 1, NULL, '/image/CreamyGarlicTomatoShrimpPasta.jpeg', '', 'Creamy Garlic Tomato Shrimp Pasta', 17.90, 108.00, 1.00, 12, 9, 1, 0, 1, '2021-10-21 23:40:10', '2021-10-30 10:32:21', 0);
+INSERT INTO `r_goods` VALUES (12, 'Honey Garlic Meatballs', 1, NULL, '/image/HoneyGarlicMeatballs.jpeg', NULL, 'Honey Garlic Meatballs', 28.00, 68.00, 1.00, 70, 18, 2, 0, 1, '2021-10-30 10:29:51', '2021-11-11 17:00:07', 0);
+INSERT INTO `r_goods` VALUES (13, 'Americano', 2, NULL, '/image/Americano.jpeg', NULL, 'Americano', 6.00, 18.00, 1.00, 10, 10, 1, 0, 1, '2021-10-30 10:34:47', NULL, 0);
+INSERT INTO `r_goods` VALUES (14, 'Flat White', 2, NULL, '/image/FlatWhite.jpeg', NULL, 'Flat White', 7.00, 18.00, 1.00, 10, 20, 1, 0, 1, '2021-10-30 10:35:36', NULL, 0);
+INSERT INTO `r_goods` VALUES (15, 'Cappuccino', 2, NULL, '/image/Cappuccino.jpeg', NULL, 'Cappuccino', 6.50, 18.00, 1.00, 28, 12, 1, 0, 1, '2021-10-30 10:36:25', NULL, 0);
+INSERT INTO `r_goods` VALUES (16, 'Chocolate Latte', 2, NULL, '/image/ChocolateLatte.jpeg', NULL, 'Chocolate Latte', 8.00, 25.00, 1.00, 10, 10, 1, 0, 1, '2021-10-30 10:38:02', '2021-10-30 23:42:50', 0);
+INSERT INTO `r_goods` VALUES (17, 'Coke Cola', 2, NULL, '/image/CokeCola.jpeg', NULL, 'Coke Cola', 6.00, 15.00, 1.00, 8, 6, 1, 0, 1, '2021-10-30 10:38:54', NULL, 0);
+INSERT INTO `r_goods` VALUES (18, 'Chocolate', 2, NULL, '/image/Chocolate.jpeg', NULL, 'Chocolate', 7.50, 18.00, 1.00, 1, 18, 1, 0, 1, '2021-10-30 10:39:48', NULL, 0);
+INSERT INTO `r_goods` VALUES (19, 'Orange Juice', 2, NULL, '/image/OrangeJuice.jpeg', NULL, 'Orange Juice', 6.00, 15.00, 1.00, 17, 15, 3, 0, 1, '2021-10-30 16:37:32', NULL, 0);
+INSERT INTO `r_goods` VALUES (20, 'Mocha', 2, NULL, '/image/Mocha.jpeg', NULL, 'Mocha', 6.50, 18.00, 1.00, 56, 9, 3, 0, 1, '2021-10-30 23:38:03', '2021-10-30 23:38:22', 0);
+INSERT INTO `r_goods` VALUES (21, 'House Beer', 2, NULL, '/image/HouseBeer.jpeg', NULL, 'House Beer', 21.00, 48.00, 1.00, 33, 10, 2, 0, 1, '2021-10-30 23:39:27', NULL, 0);
+INSERT INTO `r_goods` VALUES (22, 'Espresso', 2, NULL, '/image/Espresso.png', NULL, 'Espresso', 12.00, 30.00, 1.00, 6, 11, 1, 0, 1, '2021-10-30 23:40:36', NULL, 0);
+INSERT INTO `r_goods` VALUES (23, 'Salmon Caesar Salad', 3, NULL, '/image/p4.png', NULL, 'Salmon Caesar Salad', 41.00, 108.00, 1.00, 36, 4, 1, 0, 1, '2021-10-30 23:41:34', NULL, 0);
+INSERT INTO `r_goods` VALUES (24, 'Chicken Salad', 3, NULL, '/image/ChickenSalad.jpeg', NULL, 'Chicken Salad', 24.00, 98.00, 1.00, 63, 15, 1, 0, 1, '2021-10-30 23:43:36', NULL, 0);
+INSERT INTO `r_goods` VALUES (25, 'Nicoise Salad', 3, NULL, '/image/NicoiseSalad', NULL, 'Nicoise Salad', 34.00, 103.00, 1.00, 9, 4, 1, 0, 1, '2021-10-30 23:44:21', NULL, 0);
+INSERT INTO `r_goods` VALUES (26, 'Love in Paris', 4, NULL, '/glassheart.jpeg', NULL, 'Love in Paris', 34.00, 108.00, 1.00, 15, 10, 1, 0, 1, '2021-10-30 23:44:58', NULL, 0);
+INSERT INTO `r_goods` VALUES (27, 'Tiramisu', 4, NULL, '/image/Tiramisu.jpg', NULL, 'Tiramisu', 18.00, 78.00, 1.00, 30, 4, 1, 0, 1, '2021-10-30 23:46:09', NULL, 0);
+INSERT INTO `r_goods` VALUES (28, 'Mango Cheesecake', 4, NULL, '/image/MangoCheesecake.jpeg', NULL, 'Mango Cheesecake', 9.00, 38.00, 1.00, 11, 1, 2, 0, 1, '2021-10-30 23:48:07', '2021-11-01 14:54:03', 0);
+INSERT INTO `r_goods` VALUES (29, 'Snowflake', 4, NULL, '/image/p3.jpeg', NULL, 'Snowflake', 6.50, 42.00, 1.00, 33, 1, 1, 0, 1, '2021-10-30 23:48:44', NULL, 0);
+INSERT INTO `r_goods` VALUES (30, 'Apple Pie', 4, NULL, '/image/ApplePie.jpeg', NULL, 'Apple Pie', 11.00, 78.00, 1.00, 8, 4, 1, 0, 1, '2021-10-30 23:49:17', '2021-10-30 23:49:33', 0);
 
 -- ----------------------------
 -- Table structure for r_member
