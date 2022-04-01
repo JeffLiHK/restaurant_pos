@@ -16,7 +16,7 @@
     <div class="layui-card-body">
         <form class="layui-form layui-form-pane" action="" lay-filter="component-form-element">
             <div class="layui-form-item">
-                
+                <!--隐藏域-->
                 <div class="layui-input-block layui-hide">
                     <input type="text" name="goodsId" th:value="${goods.goodsId}" autocomplete="off"
                            class="layui-input">
@@ -26,7 +26,7 @@
                         <label class="layui-form-label">Name</label>
                         <div class="layui-input-block">
                             <input type="text" th:value="${goods.goodsName}" name="goodsName" id="goodsName"
-                                   lay-verify="required" placeholder="Food Name"
+                                   lay-verify="required" placeholder="菜名 Food Name"
                                    autocomplete="off"
                                    class="layui-input">
                         </div>
@@ -76,12 +76,12 @@
                         <label class="layui-form-label">Selling Status</label>
                         <div class="layui-input-block">
                             <th:block th:if="${goods.soldState}==0">
-                                <input type="radio" name="soldState" value="0" title="Available" checked>
-                                <input type="radio" name="soldState" value="1" title="Sold Out">
+                                <input type="radio" name="soldState" value="0" title="未售完 Available" checked>
+                                <input type="radio" name="soldState" value="1" title="已售完 Sold Out">
                             </th:block>
                             <th:block th:if="${goods.soldState}==1">
-                                <input type="radio" name="soldState" value="0" title="Available">
-                                <input type="radio" name="soldState" value="1" title="Sold Out" checked>
+                                <input type="radio" name="soldState" value="0" title="未售完 Available">
+                                <input type="radio" name="soldState" value="1" title="已售完 Sold Out" checked>
                             </th:block>
                         </div>
                     </div>
@@ -89,12 +89,12 @@
                         <label class="layui-form-label">Listing Status</label>
                         <div class="layui-input-block">
                             <th:block th:if="${goods.putawayStatus}==0">
-                                <input type="radio" name="putawayStatus" value="0" title="Remove on sale" checked>
-                                <input type="radio" name="putawayStatus" value="1" title="Put on sale">
+                                <input type="radio" name="putawayStatus" value="0" title="下架 Remove on sale" checked>
+                                <input type="radio" name="putawayStatus" value="1" title="上架 Put on sale">
                             </th:block>
                             <th:block th:if="${goods.putawayStatus}==1">
-                                <input type="radio" name="putawayStatus" value="0" title="Remove on sale">
-                                <input type="radio" name="putawayStatus" value="1" title="Put on sale" checked>
+                                <input type="radio" name="putawayStatus" value="0" title="下架 Remove on sale">
+                                <input type="radio" name="putawayStatus" value="1" title="上架 Put on sale" checked>
                             </th:block>
                         </div>
                     </div>
@@ -115,19 +115,19 @@
                         <div class="layui-input-block">
                             <select name="typeState">
                                 <th:block th:if="${goods.typeState}==1">
-                                    <option value="1" selected>Main Dishes</option>
-                                    <option value="2">Salad</option>
-                                    <option value="3">Dessert</option>
+                                    <option value="1" selected>普通菜 Main Dishes</option>
+                                    <option value="2">新菜 Salad</option>
+                                    <option value="3">特色菜 Dessert</option>
                                 </th:block>
                                 <th:block th:if="${goods.typeState}==2">
-                                    <option value="1">Main Dishes</option>
-                                    <option value="2" selected>Salad</option>
-                                    <option value="3">Dessert</option>
+                                    <option value="1">普通菜 Main Dishes</option>
+                                    <option value="2" selected>新菜 Salad</option>
+                                    <option value="3">特色菜 Dessert</option>
                                 </th:block>
                                 <th:block th:if="${goods.typeState}==3">
-                                    <option value="1">Main Dishes</option>
-                                    <option value="2">Salad</option>
-                                    <option value="3" selected>Dessert</option>
+                                    <option value="1">普通菜 Main Dishes</option>
+                                    <option value="2">新菜 Salad</option>
+                                    <option value="3" selected>特色菜 Dessert</option>
                                 </th:block>
                             </select>
                         </div>
@@ -148,11 +148,11 @@
                     </div>
                     <div class="layui-col-xs6 layui-col-sm6 layui-col-md6">
                         <label class="layui-form-label">Food Photo</label>
-
+                        <!--上传按钮-->
                         <button type="button" class="layui-btn" id="upload1">Upload</button>
-
+                        <!--隐藏的input-->
                         <input type="hidden" id="img_url" name="imgUrl"/>
-
+                        <!--预览区域-->
                         <div class="layui-upload-list">
                             <th:block th:if="${goods.imgUrl}==null or ${goods.imgUrl}==''">
                                 <img class="layui-upload-img" width="98px" height="132px" id="demo1"/>
@@ -185,31 +185,32 @@
             , laydate = layui.laydate
             , layer = layui.layer;
 
-
+        //获取from表单提交事件
+        //此处submit中的值是lay-filter
         form.on('submit(component-form-element)', function (data) {
         });
-
+        //自定义验证
         form.verify({
-
+            //验证正数
             positive_number: function (value, item) {
                 if (parseFloat(value) < 0) {
-                    return 'Must be positive number!';
+                    return '必须为正数';
                 }
             },
             int_number: function (value, item) {
                 if (!/^(0|\+?[1-9][0-9]*)$/.test(value)) {
-                    return 'Must be positive integer!';
+                    return '必须为正整数';
                 }
             }
         });
-        
+        //图片弹出
         layer.photos({
             photos: '#layer-photos-demo1'
-            , anim: 5 /
+            , anim: 5 //0-6的选择，指定弹出图片动画类型，默认随机（请注意，3.0之前的版本用shift参数）
         });
         layer.photos({
             photos: '#layer-photos-demo2'
-            , anim: 5 
+            , anim: 5 //0-6的选择，指定弹出图片动画类型，默认随机（请注意，3.0之前的版本用shift参数）
         });
     });
 </script>
@@ -218,29 +219,29 @@
         var upload = layui.upload
             , $ = layui.jquery;
         var uploadInst1 = upload.render({
-            elem: '#upload1'
-            , url: '/restaurant/upload/img.do'
+            elem: '#upload1' //绑定元素
+            , url: '/restaurant/upload/img.do'//上传接口
             , field: 'image'
             , before: function (obj) {
-
+                //预读本地文件示例，不支持ie8
                 obj.preview(function (index, file, result) {
-                    $('#demo1').attr('src', result);
+                    $('#demo1').attr('src', result); //图片链接（base64）
                 });
             }
             , done: function (res) {
-                
+                //如果上传失败
                 if (res.code !== 200) {
-                    return layer.msg('Fail to upload!', {icon: 2, anim: 6});
+                    return layer.msg('上传失败', {icon: 2, anim: 6});
                 }
-                
-                layer.msg("Success", {icon: 6});
-                console.log("Path:" + res.data.src);
+                //上传成功
+                layer.msg("上传成功", {icon: 6});
+                console.log("图片路径：" + res.data.src);
                 document.getElementById("img_url").value = res.data.src;
             }
             , error: function () {
-
+                //演示失败状态，并实现重传
                 var demoText1 = $('#demoText1');
-                demoText1.html('<span style="color: #FF5722;">Fail to upload</span> <a class="layui-btn layui-btn-mini demo-reload">Try Again</a>');
+                demoText1.html('<span style="color: #FF5722;">上传失败</span> <a class="layui-btn layui-btn-mini demo-reload">重试</a>');
                 demoText1.find('.demo-reload').on('click', function () {
                     uploadInst1.upload();
                 });
