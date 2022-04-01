@@ -11,11 +11,9 @@
             margin-top: 4px;
             height: 98%;
         }
-
         .height100 {
             height: 100%;
         }
-
         .height98 {
             height: 98%;
         }
@@ -56,10 +54,10 @@
             <div class="layui-card height100">
                 <div class="layui-card-body">
                     <div class="layui-row">
-                        <div class="layui-col-md2" style="height:120px"><span>Number of Order</span></div>
+                        <div class="layui-col-md2" style="height:120px"><span>number of order</span></div>
                         <div class="layui-col-md8"
                              style="height:120px;font-size: 26px;line-height:120px;color: #01AAED;text-align: center">
-                            <span id="totalOrder"></span><span>Number of Order</span></div>
+                            <span id="totalOrder"></span><span>no. of order</span></div>
                         <div class="layui-col-md2" style="height:120px;text-align: right"><span class="day">TODAY</span>
                         </div>
                     </div>
@@ -75,9 +73,9 @@
                         <div class="layui-col-md2">
                             <div class="layui-inline">
                                 <select name="day" lay-filter="salesStatisticsChartDay" style="border-color: #00FF00">
-                                    <option value="7" selected>Recent 7 days</option>
-                                    <option value="14">Recent 15 days</option>
-                                    <option value="29">Recent 30 days</option>
+                                    <option value="7" selected>recent 7 days</option>
+                                    <option value="14">recent 15 days</option>
+                                    <option value="29">recent 30 days</option>
                                 </select>
                             </div>
                         </div>
@@ -87,7 +85,6 @@
         </div>
         <div class="layui-card-body" style="height: 88%">
             <div id="salesStatisticsChart" class="height100">
-
             </div>
         </div>
     </div>
@@ -104,14 +101,16 @@
     layui.use(['table', 'laydate'], function () {
         var $ = layui.$;
         var form = layui.form;
+        //默认初始化近七天的销售额统计数据
         ssChartNetworkRequest(6);
         loadCurDaySalesStatistics();
         form.on('select(salesStatisticsChartDay)', function (data) {
             var day = data.value;
             ssChartNetworkRequest(day);
         });
-
-       
+        /**
+         * 销售额统计网络请求数据
+         */
         function ssChartNetworkRequest(day) {
             $.ajax({
                 url: '/restaurant/analysis/ssByDays.do',
@@ -133,6 +132,7 @@
                             totalProfitArray.push(data[i].totalProfit);
                             totalOrderArray.push(data[i].totalOrder);
                         }
+                        //加载销售额统计图表
                         loadSalesStatisticsChart(dateArray, mustPayArray, totalProfitArray, totalOrderArray);
                     } else {
                         layer.msg(res.msg, {icon: 5});
@@ -140,7 +140,6 @@
                 }
             });
         }
-
         function loadCurDaySalesStatistics() {
             $.ajax({
                 url: '/restaurant/analysis/ssByDays.do',
@@ -167,10 +166,9 @@
                     }
                 }
             });
-
         }
-
         /**
+         * 加载销售额统计图表
          * @param dateArray
          * @param mustPayArray
          * @param totalProfitArray
@@ -187,7 +185,8 @@
                     var salesStatisticsChart = echarts.init(document.getElementById('salesStatisticsChart'), 'macarons');
                     var salesStatisticsOption = {
                         title: {
-                            text: 'Sales StatisticsO',
+                            text: '销售统计',
+                            // subtext: '纯属虚构'
                         },
                         tooltip: {
                             trigger: 'axis',
@@ -198,7 +197,6 @@
                                     width: 1,
                                     type: 'dashed'
                                 },
-
                             }
                         },
                         toolbox: {
@@ -219,12 +217,14 @@
                         },
                         calculable: true,
                         itemStyle: {
+                            //默认样式
                             normal: {
+                                //设置柱状条圆角
                                 barBorderRadius: [20, 20, 12, 12]
                             }
                         },
                         legend: {
-                            data: ['Revenue', 'Profit', 'No. of Order']
+                            data: ['营业额', '利润', '订单数']
                         },
                         xAxis: [
                             {
@@ -235,10 +235,11 @@
                         yAxis: [
                             {
                                 type: 'value',
+                                //name : '金额',
                                 axisLabel: {
-                                    formatter: '{value}$',
+                                    formatter: '{value}元',
                                     show: true,
-                                    interval: 'auto',    
+                                    interval: 'auto',    // {number}
                                     margin: 10,
                                     textStyle: {
                                         color: '#5FB878',
@@ -250,8 +251,9 @@
                             },
                             {
                                 type: 'value',
+                                //name : '订单',
                                 axisLabel: {
-                                    formatter: 'no. of order: {value}',
+                                    formatter: '{value}笔',
                                     show: true,
                                     interval: 'auto',
                                     margin: 40,
@@ -265,53 +267,52 @@
                             }
                         ],
                         series: [
-
                             {
-                                name: 'Revenue',
+                                name: '营业额',
                                 type: 'bar',
                                 data: mustPayArray
                                 , markPoint: {
                                     data: [
-                                        {type: 'max', name: 'Maximum'},
-                                        {type: 'min', name: 'Minimum'}
+                                        {type: 'max', name: '最大值'},
+                                        {type: 'min', name: '最小值'}
                                     ]
                                 },
                                 markLine: {
                                     data: [
-                                        {type: 'average', name: 'Average'}
+                                        {type: 'average', name: '平均值'}
                                     ]
                                 }
                             },
                             {
-                                name: 'Profit',
+                                name: '利润',
                                 type: 'bar',
                                 data: totalProfitArray,
                                 markPoint: {
                                     data: [
-                                        {type: 'max', name: 'Maximum'},
-                                        {type: 'min', name: 'Minimum'}
+                                        {type: 'max', name: '最大值'},
+                                        {type: 'min', name: '最小值'}
                                     ]
                                 },
                                 markLine: {
                                     data: [
-                                        {type: 'average', name: 'Average'}
+                                        {type: 'average', name: '平均值'}
                                     ]
                                 }
                             },
                             {
-                                name: 'No. of Order',
+                                name: '订单数',
                                 type: 'line',
                                 yAxisIndex: 1,
                                 data: totalOrderArray
                                 , markPoint: {
                                     data: [
-                                        {type: 'max', name: 'Maximum'},
-                                        {type: 'min', name: 'Minimum'}
+                                        {type: 'max', name: '最大值'},
+                                        {type: 'min', name: '最小值'}
                                     ]
                                 },
                                 markLine: {
                                     data: [
-                                        {type: 'average', name: 'Average'}
+                                        {type: 'average', name: '平均值'}
                                     ]
                                 }
                             }
