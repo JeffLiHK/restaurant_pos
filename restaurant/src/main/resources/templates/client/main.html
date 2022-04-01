@@ -50,6 +50,7 @@
 <div id="LAY_app">
     <div class="layui-layout layui-layout-admin">
         <div class="layui-header" style="background:url('../image/background.jpg') no-repeat">
+            <!-- 头部区域 -->
             <ul class="layui-nav layui-layout-left">
               <!--  <li class="layui-nav-item layui-hide-xs">
                     <input type="text" placeholder="搜索..." autocomplete="off" class="layui-input layui-input-search"
@@ -79,6 +80,7 @@
             </ul>
         </div>
 
+        <!-- 侧边菜单 -->
         <div class="layui-side layui-side-menu" style="background:url('../image/background.jpg') no-repeat;box-shadow:none; ">
             <div class="layui-side-scroll">
                 <div class="layui-logo"
@@ -112,6 +114,7 @@
                 </ul>
             </div>
         </div>
+        <!-- 页面标签 -->
         <div class="layadmin-pagetabs" id="LAY_app_tabs">
             <div class="layui-icon layadmin-tabs-control layui-icon-prev" layadmin-event="leftPage"></div>
             <div class="layui-tab" lay-unauto lay-allowClose="true" lay-filter="layadmin-layout-tabs">
@@ -121,6 +124,7 @@
                 </ul>
             </div>
         </div>
+        <!--/*主体内容 内嵌iframe页面*/-->
         <div class="layui-body" id="LAY_app_body">
             <div class="layadmin-tabsbody-item layui-show">
                 <iframe name="iframe" th:src="@{/guest/goodslist.html/-1}" frameborder="0"
@@ -129,7 +133,9 @@
                 </iframe>
             </div>
         </div>
+        <!--/*右侧弹出菜品代码*/-->
         <div id="right_window-contain">
+            <!-- 辅助元素，一般用于移动设备下遮罩 -->
             <div class="layadmin-body-shade" layadmin-event="shade"></div>
         </div>
     </div>
@@ -138,7 +144,7 @@
 <script th:inline="javascript" th:src="@{/js/main.js}" src="../../static/js/main.js"></script>
 <script type="text/javascript">
     function logout() {
-        layer.confirm('LOGOUT?', function () {
+        layer.confirm('确定退出?', function () {
             var curDeskCode = document.getElementById("deskCode").innerText;
             location.href = '/restaurant/guest/logout.do/'+curDeskCode;
         });
