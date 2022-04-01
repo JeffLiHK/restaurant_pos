@@ -54,19 +54,21 @@
         var $ = layui.$
             , form = layui.form
 
+        //获取from表单提交事件
+        //此处submit中的值是lay-filter
         form.on('submit(component-form-element)', function (data) {
         });
-
+        //自定义验证
         form.verify({
-
+            //验证正数
             positive_number: function (value, item) {
                 if (parseFloat(value) < 0) {
-                    return 'Must be positive number!';
+                    return '必须为正数';
                 }
             },
             int_number: function (value, item) {
                 if (!/^(0|\+?[1-9][0-9]*)$/.test(value)) {
-                    return 'Must be positive integer!';
+                    return '必须为正整数';
                 }
             }
         });
