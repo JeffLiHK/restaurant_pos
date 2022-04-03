@@ -2,7 +2,7 @@
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8" http-equiv="refresh" content="15">
-    <title>桌位页面</title>
+    <title>Table Page</title>
     <link rel="stylesheet" th:href="@{/layuiadmin/layui/css/layui.css}" href="../../static/layui/css/layui.css"
           media="all"/>
     <style>
@@ -91,7 +91,7 @@
 <body class="layui-layout-body">
     <div class="layui-card nav">
         <div class="title">
-            请选择当前桌位
+            Please choose the table
         </div>
     </div>
     <div class="con">
@@ -100,33 +100,33 @@
                 <th:block th:if="${desk.idleStatus}==0">
                     <div class="desk color1 click" style="text-align:center;">
                         <input type="hidden" name="deskId" th:value="${desk.deskId}">
-                        <div class="people"><span th:text="${desk.peopleCount}"></span><span>人/桌</span></div>
+                        <div class="people"><span th:text="${desk.peopleCount}"></span><span>People</span></div>
                         <div class="desk_code" th:text="${desk.deskCode}"></div>
                         <div class="statue">
                             <input type="hidden" th:value="${desk.idleStatus}">
-                            空台
+                            --Available
                         </div>
                     </div>
                 </th:block>
                 <th:block th:if="${desk.idleStatus}==1">
                     <div class="desk color2 click" style="text-align:center;">
                         <input type="hidden" name="deskId" th:value="${desk.deskId}">
-                        <div class="people"><span th:text="${desk.peopleCount}"></span><span>人/桌</span></div>
+                        <div class="people"><span th:text="${desk.peopleCount}"></span><span>People</span></div>
                         <div class="desk_code" th:text="${desk.deskCode}"></div>
                         <div class="statue">
                             <input type="hidden" th:value="${desk.idleStatus}">
-                            就餐中
+                            Dining
                         </div>
                     </div>
                 </th:block>
                 <th:block th:if="${desk.idleStatus}==2">
                     <div class="desk color3 click" style="text-align:center;">
                         <input type="hidden" name="deskId" th:value="${desk.deskId}">
-                        <div class="people"><span th:text="${desk.peopleCount}"></span><span>人/桌</span></div>
+                        <div class="people"><span th:text="${desk.peopleCount}"></span><span>People</span></div>
                         <div class="desk_code" th:text="${desk.deskCode}"></div>
                         <div class="statue">
                             <input type="hidden" th:value="${desk.idleStatus}">
-                            待清理
+                            --Cleaning
                         </div>
                     </div>
                 </th:block>
@@ -160,7 +160,7 @@
                 },
                 success:function (res) {
                     if(res.code==200){
-                        layer.msg("登录成功");
+                        layer.msg("Login success!");
                         location = "/restaurant/guest/main.html";
                     }else{
                         layer.msg(res.msg,{icon:5});
@@ -168,7 +168,7 @@
                 }
             });
           }else{
-              layer.msg("非空闲状态,不能选择！",{icon:5});
+              layer.msg("NOT AVAILABLE!",{icon:5});
           }
         });
         //调用分页

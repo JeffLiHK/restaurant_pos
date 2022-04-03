@@ -2,7 +2,7 @@
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
-    <title>添加桌位</title>
+    <title>Add a Table</title>
     <link rel="stylesheet" th:href="@{/layuiadmin/layui/css/layui.css}" href="../../static/layui/css/layui.css"
           media="all"/>
     <style>
@@ -16,28 +16,28 @@
     <div class="layui-card-body">
         <form class="layui-form layui-form-pane" action="" lay-filter="component-form-element">
             <div class="layui-form-item">
-                <label class="layui-form-label">桌位编号</label>
+                <label class="layui-form-label">Table No.</label>
                 <div class="layui-input-inline">
                     <input type="text" name="deskCode" id="deskCode" lay-verify="required|number"
-                           placeholder="桌位编号"
+                           placeholder="Number"
                            autocomplete="off"
                            class="layui-input">
                 </div>
             </div>
             <div class="layui-form-item">
-                <label class="layui-form-label">座位人数</label>
+                <label class="layui-form-label">People</label>
                 <div class="layui-input-inline">
                     <input type="text" name="peopleCount" id="peopleCount" lay-verify="required|number|int_number"
-                           placeholder="座位人数"
+                           placeholder="No. of People"
                            autocomplete="off"
                            class="layui-input">
                 </div>
             </div>
             <div class="layui-form-item">
-                <label class="layui-form-label">空闲状态</label>
+                <label class="layui-form-label">Status</label>
                 <div class="layui-input-block">
-                    <input type="radio" name="idleStatus" value="0" title="空闲" checked>
-                    <input type="radio" name="idleStatus" value="1" title="有人">
+                    <input type="radio" name="idleStatus" value="0" title="Available" checked>
+                    <input type="radio" name="idleStatus" value="1" title="Not Available">
                 </div>
             </div>
             <div class="layui-form-item layui-hide">

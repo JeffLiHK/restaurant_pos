@@ -2,7 +2,7 @@
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
-    <title>上次任务表</title>
+    <title>上次任务表 Last Time Mission List</title>
     <link rel="stylesheet" th:href="@{/layuiadmin/layui/css/layui.css}"
           href="../../static/layuiadmin/layui/css/layui.css"
           media="all"/>
@@ -26,14 +26,14 @@
                 {{#
                     if(d.status==2){
                 }}
-                    <a class="layui-btn layui-btn-warm" lay-event="finishServing">完成上菜</a>
+                    <a class="layui-btn layui-btn-warm" lay-event="finishServing">完成上菜 Served</a>
                 {{#
                     }
                 }}
             {{#
                 }else{
             }}
-                <a class="layui-btn layui-btn-disabled">完成上菜</a>
+                <a class="layui-btn layui-btn-disabled">完成上菜 Served</a>
             {{#
                 }
             }}
@@ -46,7 +46,7 @@
             {{#
             if( d.goods.imgUrl==null||d.goods.imgUrl=='')
             { }}
-            <div style="color:red">无图片</div>
+            <div style="color:red">无图片 N/A</div>
             {{#  } else { }}
             <img src="/restaurant/{{d.goods.imgUrl}}" class="laytable-cell-1-imgUrl">
             {{#  } }}
@@ -55,7 +55,7 @@
             {{#
             if( d.status==2){
             }}
-            <div style="color: red">等待上菜</div>
+            <div style="color: red">等待上菜 Wait to Serve</div>
             {{#
             }
             }}
