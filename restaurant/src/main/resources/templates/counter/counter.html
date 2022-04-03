@@ -418,14 +418,14 @@
         <div class="counter-item1">
             <div class="counter-item1-left float-left">
                 <div class="search-by-desk-code search">
-                    <input name="deskCode" style="text-align: center" placeholder="请输入桌号" id="deskCode" value=""
+                    <input name="deskCode" style="text-align: center" placeholder="Please enter desk code" id="deskCode" value=""
                            type="text">
                     <button id="desk-button">Check</button>
                 </div>
             </div>
             <div class="counter-item1-right float-left">
                 <div class="search-by-member-code search float-left">
-                    <input name="memberCode" style="text-align: center" placeholder="请输入会员号即手机号" id="memberCode"
+                    <input name="memberCode" style="text-align: center" placeholder="Please enter phone number" id="memberCode"
                            value="" type="text">
                     <button id="member-button">Sure</button>
                 </div>
@@ -462,7 +462,7 @@
                     <span>Amount Payable：$</span><span class="must-pay">0.00</span>
                 </div>
                 <div class="money-item" style="font-size: 18px;">
-                    <span>Amount Paid：$</span><input type="text" name="truly-pay" style="width: 80px" placeholder="请输入..."
+                    <span>Amount Paid：$</span><input type="text" name="truly-pay" style="width: 80px" placeholder="Please enter..."
                                               id="truly-pay" value="">
                 </div>
                 <div class="money-item" style="font-size: 18px;">
@@ -556,7 +556,7 @@
                         loadView(res.data);
                     } else {
                         layer.alert(res.msg, {
-                            title: '提交结果'
+                            title: 'Submission Result'
                             , anim: 6
                         });
                     }
@@ -593,7 +593,7 @@
                         loadMemberInfo(res.data);
                     } else {
                         layer.alert(res.msg, {
-                            title: '提交结果'
+                            title: 'Submission Result'
                             , anim: 6
                         });
                     }
@@ -603,11 +603,11 @@
         $("#register").click(function () {
             layer.open({
                 type: 2
-                , title: '注册会员'
+                , title: 'Registered member'
                 , content: '/restaurant/member/add.html'
                 , maxmin: true
                 , area: ['700px', '430px']
-                , btn: ['确定', '取消']
+                , btn: ['Confirm', 'Cancel']
                 , yes: function (index, layero) {
                     var iframeWindow = window['layui-layer-iframe' + index]
                         //该id是窗口打开html页面中表单提交按钮的id
@@ -630,7 +630,7 @@
                                     layer.msg("Registered Success! ", {icon: 1});
                                 } else {
                                     layer.alert(result.msg, {
-                                        title: '提交结果'
+                                        title: 'Submission Result'
                                         , anim: 6
                                     });
                                 }
@@ -723,7 +723,7 @@
             }
             if ($("#truly-pay").val() == '') {
                 layer.alert("Please type the Amount Paid!", {
-                    title: '警告'
+                    title: 'Warning'
                     , anim: 6
                 });
                 return;
@@ -764,7 +764,7 @@
                         },1000);
                     }else{
                         layer.alert(res.msg,{
-                            title: '信息'
+                            title: 'Info'
                             , anim: 6
                         });
                     }

@@ -144,7 +144,7 @@
 <script th:inline="javascript" th:src="@{/js/main.js}" src="../../static/js/main.js"></script>
 <script type="text/javascript">
     function logout() {
-        layer.confirm('确定退出?', function () {
+        layer.confirm('Exit?', function () {
             var curDeskCode = document.getElementById("deskCode").innerText;
             location.href = '/restaurant/guest/logout.do/'+curDeskCode;
         });

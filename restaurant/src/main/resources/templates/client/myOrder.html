@@ -78,7 +78,7 @@
         table.render({
             elem: '#tableList'
             , url: '/restaurant/guest/client/myOrder.do?orderCode='+orderCode//数据接口
-            , title: '已提交菜单'
+            , title: 'Submitted Order'
             , even: true//开启背景隔行
             , request: {
                 pageName: 'pageNum' //页码的参数名称，默认：page
@@ -94,13 +94,13 @@
             ,size:'lg'
             , cols: [[ //表头
                  {field: 'odId', title:'ID', align: 'center', cellMinWidth: 60, fixed: 'left', sort: true,templet:'<div>{{d.odId}}</div>',hide:true}
-                , {field: 'goodsName', title: '菜品名',align:'center', cellMinWidth: 150, sort: true,templet:'<div>{{d.goods.goodsName}}</div>'}
-                , {field: 'imgUrl', title: '菜品图片',align:'center', cellMinWidth:120, templet:'#imgUrl'}
-                , {field: 'goodsCategory', title: '菜品类型', align:'center',cellMinWidth: 100, templet: '<div>{{d.goods.goodsCategory.categoryName}}</div>'}
-                , {field: 'price', title: '价格',align:'center', cellMinWidth: 100,sort: true,templet:'<div>{{d.goods.price}}元</div>'}
-                , {field: 'count', title: '数量',align:'center', cellMinWidth: 100,sort:true,templet:'<div>{{d.count}}份</div>'}
-                , {field: 'status', title: '制作状态',align:'center', cellMinWidth: 100,sort: true,templet:"#status"}
-                , {fixed: 'right', title: "工具栏",align:'center', width: 120, toolbar: '#barDemo'}
+                , {field: 'goodsName', title: 'Food Name',align:'center', cellMinWidth: 150, sort: true,templet:'<div>{{d.goods.goodsName}}</div>'}
+                , {field: 'imgUrl', title: 'Picture',align:'center', cellMinWidth:120, templet:'#imgUrl'}
+                , {field: 'goodsCategory', title: 'Type', align:'center',cellMinWidth: 100, templet: '<div>{{d.goods.goodsCategory.categoryName}}</div>'}
+                , {field: 'price', title: 'Price',align:'center', cellMinWidth: 100,sort: true,templet:'<div>${{d.goods.price}}</div>'}
+                , {field: 'count', title: 'Count',align:'center', cellMinWidth: 100,sort:true,templet:'<div>{{d.count}}</div>'}
+                , {field: 'status', title: 'Status',align:'center', cellMinWidth: 100,sort: true,templet:"#status"}
+                , {fixed: 'right', title: "Tool Bar",align:'center', width: 120, toolbar: '#barDemo'}
                 ]]
         });
         //监听行工具事件
@@ -108,7 +108,7 @@
             var data = obj.data //获得当前行数据
                 , layEvent = obj.event; //获得 lay-event 对应的值
             if (layEvent === 'del') {
-                layer.confirm('确定要退该菜?', function (index) {
+                layer.confirm('Dismiss this order?', function (index) {
                     $.ajax({
                         url: "/restaurant/guest/client/delGood.do",
                         type: "post",
@@ -117,10 +117,10 @@
                         success: function (result) {
                             if (result.code == 200) {
                                 obj.del(); //删除对应行（tr）的DOM结构
-                                layer.msg('退菜成功!', {icon: 1});
+                                layer.msg('Dismiss successfully!', {icon: 1});
                             } else {
                                 layer.alert(result.msg, {
-                                    title: '提交结果'
+                                    title: 'Submission Result'
                                     , anim: 6
                                 });
                             }

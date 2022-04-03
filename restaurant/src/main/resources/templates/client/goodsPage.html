@@ -2,7 +2,7 @@
 <html xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
-    <title>菜品列表 FOOD CATEGORY</title>
+    <title>FOOD List</title>
     <link rel="stylesheet" th:href="@{/layuiadmin/layui/css/layui.css}" href="../../static/layui/css/layui.css"
           media="all"/>
     <style>
@@ -131,7 +131,7 @@
                                 next(lis.join(''), pageNum < pages); //假设总页数为 10
                             } else {
                                 layer.alert(res.msg, {
-                                    title: '提交结果'
+                                    title: 'Submit'
                                     , anim: 6
                                 });
                             }
@@ -147,8 +147,8 @@
                             '<li class="goodName">' + info["goodsName"] + '</li>' +
                             '<li style="color: #AF2825"><b style="float: left">￥</b>' +
                             '<span style="float: left" class="price">' + info["price"] + '</span>' +
-                            '<b style="margin-left: 10px" class="store">共</b><span class="storeCount store" style="float: left">' + info["storeCount"] + '</span><b class="store">份</b>' +
-                            '<button class="layui-btn layui-btn-primary chickClick" style="display:inline-block;float:right;width:60px;font-size:12px;padding:0px 4px;color:#AF2825;height:28px;line-height:28px;text-align:center;border-radius:25px;border: 1px solid #AF2825;">来一份</button>' +
+                            '<b style="margin-left: 10px" class="store">Total </b><span class="storeCount store" style="float: left">' + info["storeCount"] + '</span><b class="store"> dishes</b>' +
+                            '<button class="layui-btn layui-btn-primary chickClick" style="display:inline-block;float:right;width:60px;font-size:12px;padding:0px 4px;color:#AF2825;height:28px;line-height:28px;text-align:center;border-radius:25px;border: 1px solid #AF2825;">Select</button>' +
                             '</li>' +
                             '</ul>' +
                             '</li>'

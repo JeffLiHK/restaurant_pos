@@ -177,7 +177,7 @@
                 var myChart1 = echarts.init(document.getElementById('chart1'), 'macarons');
                 var option1 = {
                     title: {
-                        text: '菜品销量top12',
+                        text: 'Top dishes',
                         // subtext: '纯属虚构'
                     },
                     tooltip: {
@@ -193,7 +193,7 @@
                         }
                     },
                     legend: {
-                        data: ['销量']
+                        data: ['Sales']
                     },
                     toolbox: {
                         show: true,
@@ -225,24 +225,24 @@
                         {
                             type: 'value',
                             axisLabel: {
-                                formatter: '{value}份'
+                                formatter: '{value} dishes'
                             }
                         }
                     ],
                     series: [
                         {
-                            name: '销量',
+                            name: 'Sales',
                             type: 'bar',
                             data: countArray,
                             markPoint: {
                                 data: [
-                                    {type: 'max', name: '最大值'},
-                                    {type: 'min', name: '最小值'}
+                                    {type: 'max', name: 'Maximum'},
+                                    {type: 'min', name: 'Minimum'}
                                 ]
                             },
                             markLine: {
                                 data: [
-                                    {type: 'average', name: '平均值'}
+                                    {type: 'average', name: 'Average'}
                                 ]
                             }
                         }
@@ -265,7 +265,7 @@
                 var myChart2 = echarts.init(document.getElementById('chart2'), 'macarons');
                 var option2 = {
                     title: {
-                        text: '菜系销量分析',
+                        text: 'Dishes type sales analysis',
                         //subtext: '纯属虚构',
                         x: 'center'
                     },
@@ -302,7 +302,7 @@
                     calculable: false,
                     series: [
                         {
-                            name: '菜系',
+                            name: 'Dishes type',
                             type: 'pie',
                             radius: '55%',
                             center: ['50%', '60%'],

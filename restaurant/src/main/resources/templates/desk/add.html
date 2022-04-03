@@ -42,7 +42,7 @@
             </div>
             <div class="layui-form-item layui-hide">
                 <input type="button" lay-submit lay-filter="LAY-user-front-submit" id="LAY-user-front-submit"
-                       value="确认">
+                       value="Confirm">
             </div>
         </form>
     </div>
@@ -63,12 +63,12 @@
             //验证正数
             positive_number: function (value, item) {
                 if (parseFloat(value) < 0) {
-                    return '必须为正数';
+                    return 'Must be a positive number';
                 }
             },
             int_number: function (value, item) {
                 if (!/^(0|\+?[1-9][0-9]*)$/.test(value)) {
-                    return '必须为正整数';
+                    return 'Must be a positive integer';
                 }
             }
         });

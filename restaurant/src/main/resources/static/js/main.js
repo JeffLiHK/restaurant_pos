@@ -130,7 +130,7 @@ layui.use(['index', "jquery"], function () {
                     $('#commit').off('click');
                     //给提交按钮添加点击事件
                     $("#commit").on("click", function (e) {
-                        layer.confirm('确定提交?提交后将不能修改！', function (index) {
+                        layer.confirm('Confirm submission? Cannot modify after submission!', function (index) {
                             confirm();
                             layer.close(index);
                         });

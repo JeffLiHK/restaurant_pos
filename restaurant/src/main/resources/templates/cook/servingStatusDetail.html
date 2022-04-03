@@ -2,7 +2,7 @@
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
-    <title>详细情况 Details</title>
+    <title>Details</title>
     <link rel="stylesheet" th:href="@{/layuiadmin/layui/css/layui.css}"
           href="../../static/layuiadmin/layui/css/layui.css"
           media="all"/>
@@ -32,7 +32,7 @@
             {{#
             if( d.goods.imgUrl==null||d.goods.imgUrl=='')
             { }}
-            <div style="color:red">无图片 N/A</div>
+            <div style="color:red">N/A</div>
             {{#  } else { }}
             <img src="/restaurant/{{d.goods.imgUrl}}" class="laytable-cell-1-imgUrl">
             {{#  } }}
@@ -41,19 +41,19 @@
             {{#
                 if( d.status==0){
             }}
-                <div style="color: #01AAED">等待烹饪 Wait to Cooking</div>
+                <div style="color: #01AAED">Waiting Cooking</div>
             {{#
                 } else if(d.status==1){
             }}
-                <div style="color: #FFB800">正在烹饪 Cooking</div>
+                <div style="color: #FFB800">Cooking</div>
             {{#
                 } else if(d.status==2){
             }}
-                <div style="color: #FF5722">等待上菜 Wait to Serve</div>
+                <div style="color: #FF5722">Wait to Serve</div>
             {{#
                 } else if(d.status==3){
             }}
-                <div style="color:#5FB878">上菜完成 Served</div>
+                <div style="color:#5FB878">Served</div>
             {{#
                 }
             }}
@@ -69,7 +69,7 @@
         table.render({
             elem: '#tableList'
             , url: "/restaurant/service/ssd.do/[[${orderId}]]" //数据接口
-            , title: '详细情况'
+            , title: 'Details'
             , even: true//开启背景隔行
             , request: {
                 pageName: 'pageNum' //页码的参数名称，默认：page
@@ -85,12 +85,12 @@
             , toolbar: '#test-table-toolbar-toolbarDemo' //开启工具栏，此处显示默认图标
             , cols: [[ //表头
                  {field: 'odId', title:'ID', align: 'center', cellMinWidth: 60, fixed: 'left', sort: true,templet:'<div>{{d.odId}}</div>',hide:true}
-                , {field: 'goodsName', title: '菜品名 Food Name',align:'center', cellMinWidth: 150, sort: true,templet:'<div>{{d.goods.goodsName}}</div>'}
-                , {field: 'imgUrl', title: '菜品图片 Food Photo',align:'center', cellMinWidth:120, templet:'#imgUrl'}
-                , {field: 'goodsCategory', title: '菜品类型 Food Type', align:'center',cellMinWidth: 100, templet: '<div>{{d.goods.goodsCategory.categoryName}}</div>'}
-                , {field: 'price', title: '价格 Prices',align:'center', cellMinWidth: 100,sort: true,templet:'<div>{{d.goods.price}}元</div>'}
-                , {field: 'count', title: '数量 Quantity',align:'center', cellMinWidth: 100,sort:true,templet:'<div>{{d.count}}份</div>'}
-                , {field: 'status', title: '制作状态 Cooking Status',align:'center', cellMinWidth: 100,sort: true,templet:"#status"}
+                , {field: 'goodsName', title: 'Food Name',align:'center', cellMinWidth: 150, sort: true,templet:'<div>{{d.goods.goodsName}}</div>'}
+                , {field: 'imgUrl', title: 'Food Photo',align:'center', cellMinWidth:120, templet:'#imgUrl'}
+                , {field: 'goodsCategory', title: 'Type', align:'center',cellMinWidth: 100, templet: '<div>{{d.goods.goodsCategory.categoryName}}</div>'}
+                , {field: 'price', title: 'Prices',align:'center', cellMinWidth: 100,sort: true,templet:'<div>${{d.goods.price}}</div>'}
+                , {field: 'count', title: 'Count',align:'center', cellMinWidth: 100,sort:true,templet:'<div>{{d.count}}</div>'}
+                , {field: 'status', title: 'Cooking Status',align:'center', cellMinWidth: 100,sort: true,templet:"#status"}
                 ]]
         });
     });

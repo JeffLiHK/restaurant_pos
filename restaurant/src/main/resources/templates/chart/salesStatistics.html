@@ -185,7 +185,7 @@
                     var salesStatisticsChart = echarts.init(document.getElementById('salesStatisticsChart'), 'macarons');
                     var salesStatisticsOption = {
                         title: {
-                            text: '销售统计',
+                            text: 'Sales statistics',
                             // subtext: '纯属虚构'
                         },
                         tooltip: {
@@ -224,7 +224,7 @@
                             }
                         },
                         legend: {
-                            data: ['营业额', '利润', '订单数']
+                            data: ['Turnover', 'Profit', 'Number of order']
                         },
                         xAxis: [
                             {
@@ -237,7 +237,7 @@
                                 type: 'value',
                                 //name : '金额',
                                 axisLabel: {
-                                    formatter: '{value}元',
+                                    formatter: '${value}',
                                     show: true,
                                     interval: 'auto',    // {number}
                                     margin: 10,
@@ -253,7 +253,7 @@
                                 type: 'value',
                                 //name : '订单',
                                 axisLabel: {
-                                    formatter: '{value}笔',
+                                    formatter: '{value} orders',
                                     show: true,
                                     interval: 'auto',
                                     margin: 40,
@@ -268,51 +268,51 @@
                         ],
                         series: [
                             {
-                                name: '营业额',
+                                name: 'Turnover',
                                 type: 'bar',
                                 data: mustPayArray
                                 , markPoint: {
                                     data: [
-                                        {type: 'max', name: '最大值'},
-                                        {type: 'min', name: '最小值'}
+                                        {type: 'max', name: 'Maximum'},
+                                        {type: 'min', name: 'Minimum'}
                                     ]
                                 },
                                 markLine: {
                                     data: [
-                                        {type: 'average', name: '平均值'}
+                                        {type: 'average', name: 'Average'}
                                     ]
                                 }
                             },
                             {
-                                name: '利润',
+                                name: 'Profit',
                                 type: 'bar',
                                 data: totalProfitArray,
                                 markPoint: {
                                     data: [
-                                        {type: 'max', name: '最大值'},
-                                        {type: 'min', name: '最小值'}
+                                        {type: 'max', name: 'Maximum'},
+                                        {type: 'min', name: 'Minimum'}
                                     ]
                                 },
                                 markLine: {
                                     data: [
-                                        {type: 'average', name: '平均值'}
+                                        {type: 'average', name: 'Average'}
                                     ]
                                 }
                             },
                             {
-                                name: '订单数',
+                                name: 'Orders',
                                 type: 'line',
                                 yAxisIndex: 1,
                                 data: totalOrderArray
                                 , markPoint: {
                                     data: [
-                                        {type: 'max', name: '最大值'},
-                                        {type: 'min', name: '最小值'}
+                                        {type: 'max', name: 'Maximum'},
+                                        {type: 'min', name: 'Minimum'}
                                     ]
                                 },
                                 markLine: {
                                     data: [
-                                        {type: 'average', name: '平均值'}
+                                        {type: 'average', name: 'Average'}
                                     ]
                                 }
                             }

@@ -114,7 +114,7 @@ public class SysUserController {
     @ResponseBody
     public Result<SysUser> delete(@RequestParam String ids){
         sysUserService.deleteByIds(ids);
-        return ResultUtil.success("删除成功！");
+        return ResultUtil.success("Delete Successfully！");
     }
 
 

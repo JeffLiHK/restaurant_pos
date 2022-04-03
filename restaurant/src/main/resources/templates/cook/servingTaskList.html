@@ -2,7 +2,7 @@
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
-    <title>上次任务表 Last Time Mission List</title>
+    <title>Last Time Task List</title>
     <link rel="stylesheet" th:href="@{/layuiadmin/layui/css/layui.css}"
           href="../../static/layuiadmin/layui/css/layui.css"
           media="all"/>
@@ -26,14 +26,14 @@
                 {{#
                     if(d.status==2){
                 }}
-                    <a class="layui-btn layui-btn-warm" lay-event="finishServing">完成上菜 Served</a>
+                    <a class="layui-btn layui-btn-warm" lay-event="finishServing">Served</a>
                 {{#
                     }
                 }}
             {{#
                 }else{
             }}
-                <a class="layui-btn layui-btn-disabled">完成上菜 Served</a>
+                <a class="layui-btn layui-btn-disabled">Served</a>
             {{#
                 }
             }}
@@ -46,7 +46,7 @@
             {{#
             if( d.goods.imgUrl==null||d.goods.imgUrl=='')
             { }}
-            <div style="color:red">无图片 N/A</div>
+            <div style="color:red">N/A</div>
             {{#  } else { }}
             <img src="/restaurant/{{d.goods.imgUrl}}" class="laytable-cell-1-imgUrl">
             {{#  } }}
@@ -55,7 +55,7 @@
             {{#
             if( d.status==2){
             }}
-            <div style="color: red">等待上菜 Wait to Serve</div>
+            <div style="color: red">Wait to Serve</div>
             {{#
             }
             }}
@@ -72,7 +72,7 @@
         table.render({
             elem: '#tableList'
             , url: "/restaurant/service/servingTask.do" //数据接口
-            , title: '订单明细'
+            , title: 'Order details'
             , even: true//开启背景隔行
             , request: {
                 pageName: 'pageNum' //页码的参数名称，默认：page
@@ -97,7 +97,7 @@
                 }
                 , {
                     field: 'deskCode',
-                    title: '桌号',
+                    title: 'Desk Code',
                     align: 'center',
                     cellMinWidth: 150,
                     templet: '<div><span style="color:#FF5722 ">{{d.order.deskCode}}号</span></div>'
@@ -105,27 +105,27 @@
                 , {field: 'imgUrl', title: '菜品图片', align: 'center', cellMinWidth: 120, templet: '#imgUrl'}
                 , {
                     field: 'goodsName',
-                    title: '菜品名',
+                    title: 'Food Name',
                     align: 'center',
                     cellMinWidth: 150,
                     templet: '<div>{{d.goods.goodsName}}</div>'
                 }
                 , {
                     field: 'count',
-                    title: '数量',
+                    title: 'Count',
                     align: 'center',
                     cellMinWidth: 100,
                     templet: '<div><span style="color: #FF5722">{{d.count}}份</span></div>'
                 }
                 , {
                     field: 'goodsCategory',
-                    title: '菜品类型',
+                    title: 'Type',
                     align: 'center',
                     cellMinWidth: 100,
                     templet: '<div>{{d.goods.goodsCategory.categoryName}}</div>'
                 }
-                , {field: 'status', title: '上菜状态', align: 'center', cellMinWidth: 100, templet: "#status"}
-                , {fixed: 'right', title: "工具栏", align: 'center', cellMinWidth: 300, toolbar: '#barDemo'}
+                , {field: 'status', title: 'Status', align: 'center', cellMinWidth: 100, templet: "#status"}
+                , {fixed: 'right', title: "Tool Bar", align: 'center', cellMinWidth: 300, toolbar: '#barDemo'}
             ]]
         });
         //监听行工具事件
@@ -144,10 +144,10 @@
                     success: function (result) {
                         if (result.code == 200) {
                             table.reload('tableList'); //数据刷新
-                            layer.msg('成功!', {icon: 1});
+                            layer.msg('Successful!', {icon: 1});
                         } else {
                             layer.alert(result.msg, {
-                                title: '提交结果'
+                                title: 'Submission Result'
                                 , anim: 6
                             });
                         }
