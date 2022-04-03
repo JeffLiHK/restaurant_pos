@@ -2,7 +2,7 @@
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
-    <title>Order details list</title>
+    <title>订单明细表</title>
     <link rel="stylesheet" th:href="@{/layuiadmin/layui/css/layui.css}"
           href="../../static/layuiadmin/layui/css/layui.css"
           media="all"/>
@@ -29,11 +29,11 @@
             {{#
                 if(d.status>0||d.order.payStatus==1){
             }}
-                <a class="layui-btn layui-btn-disabled layui-btn-xs"><i class="layui-icon layui-icon-delete"></i>Delete</a>
+                <a class="layui-btn layui-btn-disabled layui-btn-xs"><i class="layui-icon layui-icon-delete"></i>删除</a>
             {{#
                 }else{
             }}
-            <a class="layui-btn layui-btn-danger layui-btn-xs" lay-event="del"><i class="layui-icon layui-icon-delete"></i>Delete</a>
+            <a class="layui-btn layui-btn-danger layui-btn-xs" lay-event="del"><i class="layui-icon layui-icon-delete"></i>删除</a>
             {{#
                 }
             }}
@@ -46,7 +46,7 @@
             {{#
             if( d.goods.imgUrl==null||d.goods.imgUrl=='')
             { }}
-            <div style="color:red">No photo</div>
+            <div style="color:red">无图片</div>
             {{#  } else { }}
             <img src="/restaurant/{{d.goods.imgUrl}}" class="laytable-cell-1-imgUrl">
             {{#  } }}
@@ -55,19 +55,19 @@
             {{#
                 if( d.status==0){
             }}
-                <div>Waiting to cook</div>
+                <div>等待烹饪</div>
             {{#
                 } else if(d.status==1){
             }}
-                <div>Cooking</div>
+                <div>正在烹饪</div>
             {{#
                 } else if(d.status==2){
             }}
-                <div>Waiting to be served</div>
+                <div>等待上菜</div>
             {{#
                 } else if(d.status==3){
             }}
-                <div style="color:#5FB878">Finished serving</div>
+                <div style="color:#5FB878">上菜完成</div>
             {{#
                 }
             }}
@@ -84,7 +84,7 @@
         table.render({
             elem: '#tableList'
             , url: "/restaurant/order/viewdetail.do/[[${orderId}]]" //数据接口
-            , title: 'Order details'
+            , title: '订单明细'
             , even: true//开启背景隔行
             , request: {
                 pageName: 'pageNum' //页码的参数名称，默认：page
@@ -101,14 +101,14 @@
             , toolbar: '#test-table-toolbar-toolbarDemo' //开启工具栏，此处显示默认图标
             , cols: [[ //表头
                  {field: 'odId', title:'ID', align: 'center', cellMinWidth: 60, fixed: 'left', sort: true,templet:'<div>{{d.odId}}</div>',hide:true}
-                , {field: 'goodsName', title: 'Food name',align:'center', cellMinWidth: 150, sort: true,templet:'<div>{{d.goods.goodsName}}</div>'}
-                , {field: 'imgUrl', title: 'Food photo',align:'center', cellMinWidth:120, templet:'#imgUrl'}
-                , {field: 'goodsCategory', title: 'Food type', align:'center',cellMinWidth: 100, templet: '<div>{{d.goods.goodsCategory.categoryName}}</div>'}
-                , {field: 'cost', title: 'Cost',align:'center', cellMinWidth: 100,sort:true,templet:'<div>{{d.goods.cost}}元</div>'}
-                , {field: 'price', title: 'Amount',align:'center', cellMinWidth: 100,sort: true,templet:'<div>{{d.goods.price}}元</div>'}
-                , {field: 'count', title: 'Quantity',align:'center', cellMinWidth: 100,sort:true,templet:'<div>{{d.count}}份</div>'}
-                , {field: 'status', title: 'Production status',align:'center', cellMinWidth: 100,sort: true,templet:"#status"}
-                , {fixed: 'right', title: "Toolbar",align:'center', width: 120, toolbar: '#barDemo'}
+                , {field: 'goodsName', title: '菜品名',align:'center', cellMinWidth: 150, sort: true,templet:'<div>{{d.goods.goodsName}}</div>'}
+                , {field: 'imgUrl', title: '菜品图片',align:'center', cellMinWidth:120, templet:'#imgUrl'}
+                , {field: 'goodsCategory', title: '菜品类型', align:'center',cellMinWidth: 100, templet: '<div>{{d.goods.goodsCategory.categoryName}}</div>'}
+                , {field: 'cost', title: '成本',align:'center', cellMinWidth: 100,sort:true,templet:'<div>{{d.goods.cost}}元</div>'}
+                , {field: 'price', title: '价格',align:'center', cellMinWidth: 100,sort: true,templet:'<div>{{d.goods.price}}元</div>'}
+                , {field: 'count', title: '数量',align:'center', cellMinWidth: 100,sort:true,templet:'<div>{{d.count}}份</div>'}
+                , {field: 'status', title: '制作状态',align:'center', cellMinWidth: 100,sort: true,templet:"#status"}
+                , {fixed: 'right', title: "工具栏",align:'center', width: 120, toolbar: '#barDemo'}
                 ]]
         });
         //监听行工具事件
@@ -116,7 +116,7 @@
             var data = obj.data //获得当前行数据
                 , layEvent = obj.event; //获得 lay-event 对应的值
              if (layEvent === 'del') {
-                layer.confirm('Confirm delete this detail?', function (index) {
+                layer.confirm('确定删除该明细?', function (index) {
                     $.ajax({
                         url: "/restaurant/order/deldetail.do",
                         type: "post",
@@ -125,10 +125,10 @@
                         success: function (result) {
                             if (result.code == 200) {
                                 obj.del(); //删除对应行（tr）的DOM结构
-                                layer.msg('Sucessfully deleted!', {icon: 1});
+                                layer.msg('删除成功!', {icon: 1});
                             } else {
                                 layer.alert(result.msg, {
-                                    title: 'Submit result'
+                                    title: '提交结果'
                                     , anim: 6
                                 });
                             }

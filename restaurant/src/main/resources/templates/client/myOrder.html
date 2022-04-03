@@ -2,7 +2,7 @@
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
-    <title>My Order</title>
+    <title>已点菜</title>
     <link rel="stylesheet" th:href="@{/layuiadmin/layui/css/layui.css}"
           href="../../static/layuiadmin/layui/css/layui.css"
           media="all"/>
@@ -27,11 +27,11 @@
             {{#
             if(d.status>0||d.order.payStatus==1){
             }}
-            <a class="layui-btn layui-btn-disabled layui-btn-xs">Cancel</a>
+            <a class="layui-btn layui-btn-disabled layui-btn-xs">退菜</a>
             {{#
             }else{
             }}
-            <a class="layui-btn layui-btn-danger layui-btn-xs" lay-event="del">Cancel</a>
+            <a class="layui-btn layui-btn-danger layui-btn-xs" lay-event="del">退菜</a>
             {{#
             }
             }}
@@ -40,7 +40,7 @@
             {{#
             if( d.goods.imgUrl==null||d.goods.imgUrl=='')
             { }}
-            <div style="color:red">No photo</div>
+            <div style="color:red">无图片</div>
             {{#  } else { }}
             <img src="/restaurant/{{d.goods.imgUrl}}" class="laytable-cell-1-imgUrl">
             {{#  } }}
@@ -49,19 +49,19 @@
             {{#
                 if( d.status==0){
             }}
-                <div style="color: #01AAED">Waiting to Cook</div>
+                <div style="color: #01AAED">等待烹饪</div>
             {{#
                 } else if(d.status==1){
             }}
-                <div style="color: #FFB800">Cooking</div>
+                <div style="color: #FFB800">正在烹饪</div>
             {{#
                 } else if(d.status==2){
             }}
-                <div style="color: #FF5722">Waiting to Serve</div>
+                <div style="color: #FF5722">等待上菜</div>
             {{#
                 } else if(d.status==3){
             }}
-                <div style="color:#5FB878">Served</div>
+                <div style="color:#5FB878">上菜完成</div>
             {{#
                 }
             }}

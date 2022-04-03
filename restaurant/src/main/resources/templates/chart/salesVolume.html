@@ -2,7 +2,7 @@
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
-    <title>Sales Volume</title>
+    <title>销量统计</title>
     <link rel="stylesheet" th:href="@{/layuiadmin/layui/css/layui.css}" href="../../static/layui/css/layui.css"
           media="all"/>
     <style>
@@ -29,10 +29,10 @@
                                 <div class="layui-col-md4 layui-col-md-offset8">
                                     <div class="layui-inline">
                                         <select name="day" lay-filter="chart1Day" style="border-color: #00FF00">
-                                            <option value="0">Today</option>
-                                            <option value="6" selected>Recent 7 days</option>
-                                            <option value="14">Recent 15 days</option>
-                                            <option value="29">Recent 30 days</option>
+                                            <option value="0">今天</option>
+                                            <option value="6" selected>近7天</option>
+                                            <option value="14">近15天</option>
+                                            <option value="29">近30天</option>
                                         </select>
                                     </div>
                                 </div>
@@ -56,10 +56,10 @@
                                 <div class="layui-col-md4 layui-col-md-offset8">
                                     <div class="layui-inline">
                                         <select name="day" lay-filter="chart2Day" style="border-color: #00FF00">
-                                            <option value="0">Today</option>
-                                            <option value="7" selected>Recent 7 days</option>
-                                            <option value="15">Recent 15 days</option>
-                                            <option value="30">Recent 30 days</option>
+                                            <option value="0">今天</option>
+                                            <option value="7" selected>近7天</option>
+                                            <option value="15">近15天</option>
+                                            <option value="30">近30天</option>
                                         </select>
                                     </div>
                                 </div>

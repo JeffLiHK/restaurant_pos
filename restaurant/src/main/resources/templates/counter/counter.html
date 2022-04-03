@@ -2,7 +2,7 @@
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
-    <title>Cashier</title>
+    <title>收银台</title>
     <link rel="stylesheet" th:href="@{/layuiadmin/layui/css/layui.css}"
           href="../../static/layuiadmin/layui/css/layui.css"
           media="all"/>
@@ -368,21 +368,21 @@
         <div class="nav-item">
             <div class="nav-item-item1">
                 <div class="float-left left-item">
-                    <b>Order Code</b>
+                    <b>单号：</b>
                     <b class="orderCode"></b>
                 </div>
                 <div class="float-left right-item">
-                    <b>Table No. :</b>
+                    <b>桌号：</b>
                     <b class="deskCode"></b>
-                    <b>XX</b>
+                    <b>号桌</b>
                 </div>
             </div>
             <div class="nav-item-item2">
                 <div class="float-left left-item">
-                    <span>Dish（Price / Number）</span>
+                    <span>菜品（单价 / 数量）</span>
                 </div>
                 <div class="float-left right-item">
-                    <span>Total</span>
+                    <span>小计</span>
                 </div>
             </div>
         </div>
@@ -392,17 +392,17 @@
         <div class="left_footer">
             <div class="left_footer-item1">
                 <div class="float-left item-left">
-                    <b>Additional Fees:$</b>
+                    <b>附加费用:￥</b>
                     <b class="otherMoney">0.00</b>
                 </div>
                 <div class="float-left item-right">
-                    <b>Total Fees:$</b>
+                    <b>菜品合计消费：</b>
                     <b class="totalPrice">0.00</b>
-                    <b></b>
+                    <b>元</b>
                 </div>
             </div>
             <div class="left_footer-item2">
-                <span>Total Fees:$</span>
+                <span>消费:￥</span>
                 <b class="totalMoney">0.00</b>
             </div>
         </div>
@@ -412,7 +412,7 @@
             <div>
                 <img src="../image/counter_icon.png" width="22px" height="22px"
                      style="margin-right: 5px;display: inline-block;line-height: 22px;height: 22px"/>
-                <span style="display: inline-block;line-height:22px;height: 22px">Cashier</span>
+                <span style="display: inline-block;line-height:22px;height: 22px">收银台</span>
             </div>
         </div>
         <div class="counter-item1">
@@ -420,35 +420,35 @@
                 <div class="search-by-desk-code search">
                     <input name="deskCode" style="text-align: center" placeholder="请输入桌号" id="deskCode" value=""
                            type="text">
-                    <button id="desk-button">Check</button>
+                    <button id="desk-button">查询</button>
                 </div>
             </div>
             <div class="counter-item1-right float-left">
                 <div class="search-by-member-code search float-left">
                     <input name="memberCode" style="text-align: center" placeholder="请输入会员号即手机号" id="memberCode"
                            value="" type="text">
-                    <button id="member-button">Sure</button>
+                    <button id="member-button">确定</button>
                 </div>
                 <div style="float: right">
-                    <button id="register">Member Register</button>
+                    <button id="register">注册会员</button>
                 </div>
             </div>
         </div>
         <div class="counter-item2">
             <div class="cards">
                 <div class="card-name card">
-                    <div>Member Name</div>
-                    <div style="line-height: 40px;font-size: 18px" class="member-name">N/A</div>
+                    <div>会员名</div>
+                    <div style="line-height: 40px;font-size: 18px" class="member-name">无</div>
                 </div>
                 <div class="card-vip card">
-                    <div>Member Type</div>
-                    <div style="line-height: 40px;font-size: 18px" class="member-category">Non-Member</div>
+                    <div>会员类型</div>
+                    <div style="line-height: 40px;font-size: 18px" class="member-category">非会员</div>
                 </div>
                 <div class="card-discount card">
-                    <div>Discount</div>
+                    <div>享有折扣</div>
                     <div style="line-height: 40px;font-size: 18px">
                         <input type="hidden" id="discount" value="1">
-                        <b class="discount">N/A</b>
+                        <b class="discount">无</b>
                     </div>
                 </div>
             </div>
@@ -456,21 +456,21 @@
         <div class="counter-item3">
             <div class="counter-item3-left float-left">
                 <div class="money-item">
-                    <span>Discount：－$</span><span class="discount-money">0.00</span>
+                    <span>打折优惠：－￥</span><span class="discount-money">0.00</span>
                 </div>
                 <div class="money-item" style="font-size: 18px;color:#dc5d54; ">
-                    <span>Amount Payable：$</span><span class="must-pay">0.00</span>
+                    <span>应付金额：￥</span><span class="must-pay">0.00</span>
                 </div>
                 <div class="money-item" style="font-size: 18px;">
-                    <span>Amount Paid：$</span><input type="text" name="truly-pay" style="width: 80px" placeholder="请输入..."
+                    <span>实付金额：￥</span><input type="text" name="truly-pay" style="width: 80px" placeholder="请输入..."
                                               id="truly-pay" value="">
                 </div>
                 <div class="money-item" style="font-size: 18px;">
-                    <span>Change：￥</span><span id="change-money">0.00</span>
+                    <span>找&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;零：￥</span><span id="change-money">0.00</span>
                 </div>
             </div>
             <div class="counter-item3-right float-left">
-                <button id="commit">PAID</button>
+                <button id="commit">结算</button>
             </div>
         </div>
         <div style="display: none">
@@ -480,13 +480,13 @@
 
                     </div>
                     <div class="item-price float-left">
-                        <span>$</span><span class="price"></span>
+                        <span>￥</span><span class="price"></span>
                     </div>
                     <div class="item-count float-left">
                         <span class="count"></span>
                     </div>
                     <div class="item-count-money float-left">
-                        <span>$</span><span class="countMoney"></span>
+                        <span>￥</span><span class="countMoney"></span>
                     </div>
                 </div>
             </div>
@@ -548,7 +548,7 @@
                 , success: function (res) {
                     if (res.code == 200) {
                         if (res.data.length <= 0) {
-                            layer.msg("Don't have correspond order!", {icon: 2});
+                            layer.msg("没有对应订单", {icon: 2});
                             return;
                         }
                         console.log("data", res.data);
@@ -571,7 +571,7 @@
             //验证手机号
             if (!/^[1][3,4,5,7,8][0-9]{9}$/.test(memberCode)) {
                 $("#memberCode").val("");
-                layer.msg("Incorrect Member Number Format!", {icon: 5});
+                layer.msg("会员号格式不正确！", {icon: 5});
                 return;
             }
             clearMemberInfo();
@@ -586,7 +586,7 @@
                     if (res.code == 200) {
                         console.log("data", res.data);
                         if (res.data == null) {
-                            layer.msg("We dont find the correspond Member!", {icon: 2});
+                            layer.msg("没有找到该会员!", {icon: 2});
                             $("#memberCode").val("");
                             return;
                         }
@@ -627,7 +627,7 @@
                                     $("#memberCode").val(data.field.memberCode);
                                     $("#member-button").click();
                                     layer.close(index); //关闭弹层
-                                    layer.msg("Registered Success! ", {icon: 1});
+                                    layer.msg("注册成功！", {icon: 1});
                                 } else {
                                     layer.alert(result.msg, {
                                         title: '提交结果'
@@ -703,14 +703,14 @@
             $(".totalMoney").text("0.00");
             $(".must-pay").text("0.00");
             $("#change-money").text("0.00");
-            $(".member-name").text("N/A");
-            $(".member-category").text("Non-Member");
+            $(".member-name").text("无");
+            $(".member-category").text("非会员");
             clearMemberInfo();
         }
         function  clearMemberInfo(){
-            $(".member-name").text("N/A");
-            $(".member-category").text("Non-Member");
-            $(".discount").text("N/A");
+            $(".member-name").text("无");
+            $(".member-category").text("非会员");
+            $(".discount").text("无");
             $(".discount-money").text("0.00");
             $(".must-pay").text($(".totalMoney").text());
         }
@@ -722,7 +722,7 @@
                 return;
             }
             if ($("#truly-pay").val() == '') {
-                layer.alert("Please type the Amount Paid!", {
+                layer.alert("请输入实付金额！", {
                     title: '警告'
                     , anim: 6
                 });
@@ -754,7 +754,7 @@
                 ,data:data
                 ,success:function (res){
                     if(res.code==200){
-                        layer.msg("Paid!",{icon:1});
+                        layer.msg("结算成功!",{icon:1});
                         setTimeout(function () {
                            $("#deskCode").val("");
                            $("#memberCode").val("");

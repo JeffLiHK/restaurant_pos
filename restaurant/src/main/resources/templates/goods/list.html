@@ -2,7 +2,7 @@
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
-    <title>Food List</title>
+    <title>菜品列表</title>
     <link rel="stylesheet" th:href="@{/layuiadmin/layui/css/layui.css}" href="../../static/layuiadmin/layui/css/layui.css"
           media="all"/>
     <link rel="stylesheet" th:href="@{/layuiadmin/style/admin.css}" href="../../static/layuiadmin/layui/css/layui.css"
@@ -19,41 +19,41 @@
         <div class="layui-form layui-card-header layuiadmin-card-header-auto">
             <div class="layui-form-item">
                 <div class="layui-inline">
-                    <label class="layui-form-label">Find</label>
+                    <label class="layui-form-label">查询条件</label>
                     <div class="layui-input-inline" style="width:100px;">
-                        <input type="text" name="goodsName" id="goodsName" placeholder="Food Name" autocomplete="off" class="layui-input">
+                        <input type="text" name="goodsName" id="goodsName" placeholder="菜名" autocomplete="off" class="layui-input">
                     </div>
                 </div>
                 <div class="layui-inline">
                     <div class="layui-input-inline" style="width: 180px">
-                        <label class="layui-form-label" style="width:60px;;padding: 9px 0px">Listing Status</label>
+                        <label class="layui-form-label" style="width:60px;;padding: 9px 0px">上架状态</label>
                         <div class="layui-input-block" style="margin-left:70px;">
                             <select name="putawayStatus">
-                                <option value="">不限 N/A</option>
-                                <option value="1">上架 Put on sale</option>
-                                <option value="0">下架 Remove on sale</option>
+                                <option value="">不限</option>
+                                <option value="1">上架</option>
+                                <option value="0">下架</option>
                             </select>
                         </div>
                     </div>
                 </div>
                 <div class="layui-inline">
                     <div class="layui-input-inline" style="width: 180px">
-                        <label class="layui-form-label" style="width:60px;;padding: 9px 0px">Selling Status</label>
+                        <label class="layui-form-label" style="width:60px;;padding: 9px 0px">销售状态</label>
                         <div class="layui-input-block" style="margin-left:70px;">
                             <select name="soldState">
-                                <option value="">不限 N/A</option>
-                                <option value="0">未售完 Available</option>
-                                <option value="1">已售完 Sold Out</option>
+                                <option value="">不限</option>
+                                <option value="0">未售完</option>
+                                <option value="1">已售完</option>
                             </select>
                         </div>
                     </div>
                 </div>
                 <div class="layui-inline">
                     <div class="layui-input-inline" style="width: 180px">
-                        <label class="layui-form-label" style="width:60px;;padding: 9px 0px">Type</label>
+                        <label class="layui-form-label" style="width:60px;;padding: 9px 0px">菜品类型</label>
                         <div class="layui-input-block" style="margin-left:70px;">
                             <select name="categoryId">
-                                <option value="">不限  N/A</option>
+                                <option value="">不限</option>
                                 <th:block th:each="goodsCategory:${goodsCategoryList}">
                                     <option th:value="${goodsCategory.categoryId}" th:text="${goodsCategory.categoryName}"></option>
                                 </th:block>
@@ -93,23 +93,23 @@
             <table id="tableList" lay-filter="tableList"></table>
             <!--右边工具栏-->
             <script th:inline="javascript" type="text/html" id="barDemo">
-                <a class="layui-btn layui-btn-xs" lay-event="edit">编辑 Edit</a>
+                <a class="layui-btn layui-btn-xs" lay-event="edit">编辑</a>
                 <!--在该语法中通过模板Thymeleaf模板引擎获取中文会被转换成编码-->
                 {{#
                 if( [[${role.roleId}]]==1)
                 { }}
-                <a class="layui-btn layui-btn-danger layui-btn-xs" lay-event="del">删除 Delete</a>
+                <a class="layui-btn layui-btn-danger layui-btn-xs" lay-event="del">删除</a>
                 {{#  } else { }}
-                <a class="layui-btn layui-btn-disabled layui-btn-xs">删除 Delete</a>
+                <a class="layui-btn layui-btn-disabled layui-btn-xs">删除</a>
                 {{#  } }}
             </script>
             <script th:inline="javascript" type="text/html" id="putawayStatus">
                 {{#
                 if(d.putawayStatus==0)
                 { }}
-                <button class="layui-btn layui-btn-primary layui-btn-sm">下架 Remove on sale</button>
+                <button class="layui-btn layui-btn-primary layui-btn-sm">下架</button>
                 {{#  } else { }}
-                <button class="layui-btn layui-btn-sm">上架 Put on sale</button>
+                <button class="layui-btn layui-btn-sm">上架</button>
                 {{#  } }}
             </script>
 
@@ -117,24 +117,24 @@
                 {{#
                 if( d.soldState==0)
                 { }}
-                <button class="layui-btn  layui-btn-primary layui-btn-sm">未售完 Available</button>
+                <button class="layui-btn  layui-btn-primary layui-btn-sm">未售完</button>
                 {{#  } else { }}
-                <button class="layui-btn layui-btn-danger layui-btn-sm">已售完 Sold Out</button>
+                <button class="layui-btn layui-btn-danger layui-btn-sm">已售完</button>
                 {{#  } }}
             </script>
             <script th:inline="javascript" type="text/html" id="typeState">
                 {{#
                     if( d.typeState==1){
                 }}
-                <b style="color: #2F4056;">普通菜 Main Dishes</b>
+                <b style="color: #2F4056;">普通菜</b>
                 {{#
                     } else if(d.typeState==2){
                 }}
-                <b style="color: #FFB800;">新菜 Salad</b>
+                <b style="color: #FFB800;">新菜</b>
                 {{#
                     }else if(d.typeState==3){
                 }}
-                <b style="color: #FF5722;">特色菜 Dessert</b>
+                <b style="color: #FF5722;">特色菜</b>
                 {{#
                     }
                 }}
@@ -144,7 +144,7 @@
                 {{#
                 if( d.imgUrl==null||d.imgUrl=='')
                 { }}
-                <div style="color:red">无图片 N/A</div>
+                <div style="color:red">无图片</div>
                 {{#  } else { }}
                 <img src="/restaurant{{d.imgUrl}}" class="laytable-cell-1-imgUrl">
                 {{#  } }}
@@ -186,19 +186,19 @@
                 , cols: [[ //表头
                     {type: 'checkbox', fixed: 'left'}
                     , {field: 'goodsId', title: 'ID',align:'center', width: 60, sort: true, fixed: 'left',hide:true}
-                    , {field: 'goodsName', title: '菜品名 Food Name', width: 150, sort: true}
-                    , {field: 'goodsCategory', title: '菜品类型 Type', align:'center',width: 100, templet: '<div>{{d.goodsCategory.categoryName}}</div>'}
-                    , {field: 'imgUrl', title: '菜品图片 Photo',align:'center', width:120, templet:'#imgUrl'}
-                    , {field: 'description', title: '菜品描述 Description', width: 100, sort: true, totalRow: true}
-                    , {field: 'cost', title: '成本 Cost',align:'center', width: 100,sort:true,templet:'<div>{{d.cost}}元</div>'}
-                    , {field: 'price', title: '价格 Prices',align:'center', width: 100,sort: true,templet:'<div>{{d.price}}元</div>'}
-                    , {field: 'storeCount', title: '库存量 Inventory',align:'center',width: 100,sort: true,templet:'<div>{{d.storeCount}}份</div>'}
-                    , {field: 'putawayStatus', title: '上架状态 Listing Status',align:'center',templet: '#putawayStatus',width: 100}
-                    , {field: 'soldState', title: '销售状态 Selling Status',align:'center',templet: '#soldState',width: 100}
-                    , {field:  'typeState',title: '销售类型 Selling Type',align:'center',templet: '#typeState',width: 100}
-                    , {field: 'createTime', title: '创建时间 Creating Date ', width: 170,sort: true}
-                    , {field: 'modifyTime', title: '修改时间 Editing Date', width: 170,sort: true}
-                    , {fixed: 'right', title: "工具栏 Toolbar",align:'center', width: 180, toolbar: '#barDemo'}
+                    , {field: 'goodsName', title: '菜品名', width: 150, sort: true}
+                    , {field: 'goodsCategory', title: '菜品类型', align:'center',width: 100, templet: '<div>{{d.goodsCategory.categoryName}}</div>'}
+                    , {field: 'imgUrl', title: '菜品图片',align:'center', width:120, templet:'#imgUrl'}
+                    , {field: 'description', title: '菜品描述', width: 100, sort: true, totalRow: true}
+                    , {field: 'cost', title: '成本',align:'center', width: 100,sort:true,templet:'<div>{{d.cost}}元</div>'}
+                    , {field: 'price', title: '价格',align:'center', width: 100,sort: true,templet:'<div>{{d.price}}元</div>'}
+                    , {field: 'storeCount', title: '库存量',align:'center',width: 100,sort: true,templet:'<div>{{d.storeCount}}份</div>'}
+                    , {field: 'putawayStatus', title: '上架状态',align:'center',templet: '#putawayStatus',width: 100}
+                    , {field: 'soldState', title: '销售状态',align:'center',templet: '#soldState',width: 100}
+                    , {field:  'typeState',title: '销售类型',align:'center',templet: '#typeState',width: 100}
+                    , {field: 'createTime', title: '创建时间', width: 170,sort: true}
+                    , {field: 'modifyTime', title: '修改时间', width: 170,sort: true}
+                    , {fixed: 'right', title: "工具栏",align:'center', width: 180, toolbar: '#barDemo'}
                 ]]
             });
 

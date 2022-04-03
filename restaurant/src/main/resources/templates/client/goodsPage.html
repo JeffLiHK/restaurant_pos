@@ -2,7 +2,7 @@
 <html xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
-    <title>菜品列表 FOOD CATEGORY</title>
+    <title>菜品列表</title>
     <link rel="stylesheet" th:href="@{/layuiadmin/layui/css/layui.css}" href="../../static/layui/css/layui.css"
           media="all"/>
     <style>
@@ -167,12 +167,12 @@
             var soldState = $(goodsItem).find("input[name='soldState']").val();//售馨
             console.log("soldState", soldState);
             if (soldState == '1') {
-                layer.msg("SOLD OUT！", {icon: 5});
+                layer.msg("该菜已售馨！", {icon: 5});
                 return;
             }
             $(this).css({"background-color": "#AF2825", "color": "#ffffff"});
             if ($(this).css("background-color") === "rgb(175, 40, 37)") {
-                layer.msg("This item is already choosed!", {icon: 6});
+                layer.msg("已选该菜！", {icon: 6});
                 return;
             }
             var price = $(goodsItem).find(".price").text();

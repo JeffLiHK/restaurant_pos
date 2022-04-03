@@ -2,7 +2,7 @@
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
-    <title>Add Dish to POS</title>
+    <title>添加菜品</title>
     <link rel="stylesheet" th:href="@{/layuiadmin/layui/css/layui.css}" href="../../static/layui/css/layui.css"
           media="all"/>
     <style>
@@ -18,15 +18,15 @@
             <div class="layui-form-item">
                 <div class="layui-row layui-col-space5">
                     <div class="layui-col-xs6 layui-col-sm6 layui-col-md6">
-                        <label class="layui-form-label">Name</label>
+                        <label class="layui-form-label">菜品名称</label>
                         <div class="layui-input-block">
-                            <input type="text" name="goodsName" id="goodsName" lay-verify="required" placeholder="菜名 Food Name"
+                            <input type="text" name="goodsName" id="goodsName" lay-verify="required" placeholder="菜名"
                                    autocomplete="off"
                                    class="layui-input">
                         </div>
                     </div>
                     <div class="layui-col-xs6 layui-col-sm6 layui-col-md6">
-                        <label class="layui-form-label">Type</label>
+                        <label class="layui-form-label">菜品类型</label>
                         <div class="layui-input-block">
                             <select name="categoryId">
                                 <th:block th:each="goodsCategory:${goodsCategoryList}">
@@ -41,14 +41,14 @@
             <div class="layui-form-item">
                 <div class="layui-row layui-col-space5">
                     <div class="layui-col-xs6 layui-col-sm6 layui-col-md6">
-                        <label class="layui-form-label">Cost</label>
+                        <label class="layui-form-label">菜品成本</label>
                         <div class="layui-input-block">
                             <input type="text" name="cost" lay-verify="required|number|positive_number" placeholder=""
                                    autocomplete="off" class="layui-input">
                         </div>
                     </div>
                     <div class="layui-col-xs6 layui-col-sm6 layui-col-md6">
-                        <label class="layui-form-label">Prices</label>
+                        <label class="layui-form-label">菜品价格</label>
                         <div class="layui-input-block">
                             <input type="text" name="price" lay-verify="required|number|positive_number" placeholder=""
                                    autocomplete="off" class="layui-input">
@@ -59,17 +59,17 @@
             <div class="layui-form-item">
                 <div class="layui-row layui-col-space5">
                     <div class="layui-col-xs6 layui-col-sm6 layui-col-md6">
-                        <label class="layui-form-label">Selling Status</label>
+                        <label class="layui-form-label">销售状态</label>
                         <div class="layui-input-block">
-                            <input type="radio" name="soldState" value="0" title="未售完 Available" checked>
-                            <input type="radio" name="soldState" value="1" title="已售完 Sold Out">
+                            <input type="radio" name="soldState" value="0" title="未售完" checked>
+                            <input type="radio" name="soldState" value="1" title="已售完">
                         </div>
                     </div>
                     <div class="layui-col-xs6 layui-col-sm6 layui-col-md6">
-                        <label class="layui-form-label">Listing Status</label>
+                        <label class="layui-form-label">上架状态</label>
                         <div class="layui-input-block">
-                            <input type="radio" name="putawayStatus" value="0" title="下架 Remove on sale" checked>
-                            <input type="radio" name="putawayStatus" value="1" title="上架 Put on sale">
+                            <input type="radio" name="putawayStatus" value="0" title="下架" checked>
+                            <input type="radio" name="putawayStatus" value="1" title="上架">
                         </div>
                     </div>
                 </div>
@@ -77,19 +77,19 @@
             <div class="layui-form-item">
                 <div class="layui-row layui-col-space5">
                     <div class="layui-col-xs6 layui-col-sm6 layui-col-md6">
-                        <label class="layui-form-label">Inventory</label>
+                        <label class="layui-form-label">库存量</label>
                         <div class="layui-input-block">
                             <input type="text" name="storeCount" lay-verify="required|int_number" placeholder=""
                                    autocomplete="off" class="layui-input">
                         </div>
                     </div>
                     <div class="layui-col-xs6 layui-col-sm6 layui-col-md6">
-                        <label class="layui-form-label">Type Status</label>
+                        <label class="layui-form-label">类型状态</label>
                         <div class="layui-input-block">
                             <select name="typeState">
-                                <option value="1" selected>普通菜 Main Dishes</option>
-                                <option value="2">新菜 Salad</option>
-                                <option value="3">特色菜 Dessert</option>
+                                <option value="1" selected>普通菜</option>
+                                <option value="2">新菜</option>
+                                <option value="3">特色菜</option>
                             </select>
                         </div>
                     </div>
@@ -99,17 +99,17 @@
                 <div class="layui-row layui-col-space5">
                     <div class="layui-col-xs6 layui-col-sm6 layui-col-md6">
                         <div class="layui-form-text">
-                            <label class="layui-form-label">Food Description</label>
+                            <label class="layui-form-label">菜品描述</label>
                             <div class="layui-input-block">
-                        <textarea name="description" placeholder="Please type it on here!" lay-verify="required"
+                        <textarea name="description" placeholder="请输入内容" lay-verify="required"
                                   class="layui-textarea"></textarea>
                             </div>
                         </div>
                     </div>
                     <div class="layui-col-xs6 layui-col-sm6 layui-col-md6">
-                        <label class="layui-form-label">Food Photo</label>
+                        <label class="layui-form-label">菜品照片</label>
                         <!--上传按钮-->
-                        <button type="button" class="layui-btn" id="upload1">Upload</button>
+                        <button type="button" class="layui-btn" id="upload1">上传图片</button>
                         <!--隐藏的input-->
                         <input type="hidden" id="img_url" name="imgUrl" value=""/>
                         <!--预览区域-->

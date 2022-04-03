@@ -2,7 +2,7 @@
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
-    <title>Table List</title>
+    <title>桌位列表</title>
     <link rel="stylesheet" th:href="@{/layuiadmin/layui/css/layui.css}" href="../../static/layuiadmin/layui/css/layui.css"
           media="all"/>
     <link rel="stylesheet" th:href="@{/layuiadmin/style/admin.css}" href="../../static/layuiadmin/layui/css/layui.css"
@@ -19,20 +19,20 @@
         <div class="layui-form layui-card-header layuiadmin-card-header-auto">
             <div class="layui-form-item">
                 <div class="layui-inline">
-                    <label class="layui-form-label">Find</label>
+                    <label class="layui-form-label">查询条件</label>
                     <div class="layui-input-inline" style="width:100px;">
-                        <input type="text" name="deskCode" id="deskCode" placeholder="Table No." autocomplete="off" class="layui-input">
+                        <input type="text" name="deskCode" id="deskCode" placeholder="桌位编号" autocomplete="off" class="layui-input">
                     </div>
                 </div>
                 <div class="layui-inline">
                     <div class="layui-input-inline" style="width: 180px">
-                        <label class="layui-form-label" style="width:60px;;padding: 9px 0px">Status</label>
+                        <label class="layui-form-label" style="width:60px;;padding: 9px 0px">餐桌状态</label>
                         <div class="layui-input-block" style="margin-left:70px;">
                             <select name="idleStatus">
-                                <option value="">N/A</option>
-                                <option value="0">Available</option>
-                                <option value="1">Not Available</option>
-                                <option value="2">Cleaning</option>
+                                <option value="">不限</option>
+                                <option value="0">空闲</option>
+                                <option value="1">有人</option>
+                                <option value="2">待清理</option>
                             </select>
                         </div>
                     </div>
@@ -80,13 +80,13 @@
                 {{#
                     if([[${role.roleId}]]==1){
                 }}
-                    <a class="layui-btn layui-btn-xs" lay-event="edit">Edit</a>
-                    <a class="layui-btn layui-btn-danger layui-btn-xs" lay-event="del">Delete</a>
+                    <a class="layui-btn layui-btn-xs" lay-event="edit">编辑</a>
+                    <a class="layui-btn layui-btn-danger layui-btn-xs" lay-event="del">删除</a>
                 {{#
                     }else{
                 }}
-                    <a class="layui-btn layui-btn-disabled layui-btn-xs">Edit</a>
-                    <a class="layui-btn layui-btn-disabled layui-btn-xs">Delete</a>
+                    <a class="layui-btn layui-btn-disabled layui-btn-xs">编辑</a>
+                    <a class="layui-btn layui-btn-disabled layui-btn-xs">删除</a>
                 {{#
                     }
                 }}
@@ -97,15 +97,15 @@
                 {{#
                 if(d.idleStatus==0){
                 }}
-                <button class="layui-btn layui-btn-xs">Available</button>
+                <button class="layui-btn layui-btn-xs">空&nbsp;&nbsp;&nbsp;&nbsp;闲</button>
                 {{#
                 } else if(d.idleStatus==1){
                 }}
-                <button class="layui-btn layui-btn-warm  layui-btn-xs">Not Available</button>
+                <button class="layui-btn layui-btn-warm  layui-btn-xs">有&nbsp;&nbsp;&nbsp;&nbsp;人</button>
                 {{#
                 }else if(d.idleStatus==2){
                 }}
-                <button class="layui-btn layui-btn-danger layui-btn-xs">Cleaning</button>
+                <button class="layui-btn layui-btn-danger layui-btn-xs">待清理</button>
                 {{#
                 }
                 }}
@@ -146,12 +146,12 @@
                 , cols: [[ //表头
                     {type: 'checkbox', fixed: 'left'}
                     , {field: 'deskId', title: 'ID', cellMinWidth: 60, sort: true, fixed: 'left',hide:true,align:'center'}
-                    , {field: 'deskCode', title: '桌位编号 Table No.', cellMinWidth: 150, sort: true,align:'center'}
-                    , {field: 'peopleCount', title: '座位人数 People',align:'center',sort:true, cellMinWidth: 100,templet:'<div>{{d.peopleCount}}人</div>'}
-                    , {field: 'idleStatus', title: '桌位状态 Status',align:'center', cellMinWidth:120, templet:'#idleStatus'}
-                    , {field: 'createTime', title: '创建时间 Creating Date',align:'center', cellMinWidth: 170,sort: true}
-                    , {field: 'modifyTime', title: '修改时间 Editing Date',align:'center', cellMinWidth: 170,sort: true}
-                    , {fixed: 'right',align:'center', title: "工具栏 Toolbar", cellMinWidth: 180, toolbar: '#barDemo'}
+                    , {field: 'deskCode', title: '桌位编号', cellMinWidth: 150, sort: true,align:'center'}
+                    , {field: 'peopleCount', title: '座位人数',align:'center',sort:true, cellMinWidth: 100,templet:'<div>{{d.peopleCount}}人</div>'}
+                    , {field: 'idleStatus', title: '桌位状态',align:'center', cellMinWidth:120, templet:'#idleStatus'}
+                    , {field: 'createTime', title: '创建时间',align:'center', cellMinWidth: 170,sort: true}
+                    , {field: 'modifyTime', title: '修改时间',align:'center', cellMinWidth: 170,sort: true}
+                    , {fixed: 'right',align:'center', title: "工具栏", cellMinWidth: 180, toolbar: '#barDemo'}
                 ]]
             });
 

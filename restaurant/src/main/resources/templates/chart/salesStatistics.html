@@ -2,7 +2,7 @@
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
-    <title>Sales Statistics</title>
+    <title>销量统计</title>
     <link rel="stylesheet" th:href="@{/layuiadmin/layui/css/layui.css}" href="../../static/layui/css/layui.css"
           media="all"/>
     <style>
@@ -11,9 +11,11 @@
             margin-top: 4px;
             height: 98%;
         }
+
         .height100 {
             height: 100%;
         }
+
         .height98 {
             height: 98%;
         }
@@ -26,11 +28,11 @@
             <div class="layui-card height100">
                 <div class="layui-card-body">
                     <div class="layui-row">
-                        <div class="layui-col-md2" style="height:120px"><span>Total Turnover</span></div>
+                        <div class="layui-col-md2" style="height:120px"><span>总营业额</span></div>
                         <div class="layui-col-md8"
                              style="height:120px;font-size: 26px;line-height:120px;color: #FF5722;text-align: center">
-                            <span id="mustPay"></span><span>$</span></div>
-                        <div class="layui-col-md2" style="height:120px;text-align: right"><span class="day">TODAY</span>
+                            <span id="mustPay"></span><span>元</span></div>
+                        <div class="layui-col-md2" style="height:120px;text-align: right"><span class="day">今日</span>
                         </div>
                     </div>
                 </div>
@@ -40,11 +42,11 @@
             <div class="layui-card height100">
                 <div class="layui-card-body">
                     <div class="layui-row">
-                        <div class="layui-col-md2" style="height:120px"><span>Total Profit</span></div>
+                        <div class="layui-col-md2" style="height:120px"><span>总利润</span></div>
                         <div class="layui-col-md8"
                              style="height:120px;font-size: 26px;line-height:120px;color: #FFB800;text-align: center">
-                            <span id="totalProfit"></span><span>$</span></div>
-                        <div class="layui-col-md2" style="height:120px;text-align: right"><span class="day">TODAY</span>
+                            <span id="totalProfit"></span><span>元</span></div>
+                        <div class="layui-col-md2" style="height:120px;text-align: right"><span class="day">今日</span>
                         </div>
                     </div>
                 </div>
@@ -54,11 +56,11 @@
             <div class="layui-card height100">
                 <div class="layui-card-body">
                     <div class="layui-row">
-                        <div class="layui-col-md2" style="height:120px"><span>number of order</span></div>
+                        <div class="layui-col-md2" style="height:120px"><span>订单数</span></div>
                         <div class="layui-col-md8"
                              style="height:120px;font-size: 26px;line-height:120px;color: #01AAED;text-align: center">
-                            <span id="totalOrder"></span><span>no. of order</span></div>
-                        <div class="layui-col-md2" style="height:120px;text-align: right"><span class="day">TODAY</span>
+                            <span id="totalOrder"></span><span>笔</span></div>
+                        <div class="layui-col-md2" style="height:120px;text-align: right"><span class="day">今日</span>
                         </div>
                     </div>
                 </div>
@@ -73,9 +75,9 @@
                         <div class="layui-col-md2">
                             <div class="layui-inline">
                                 <select name="day" lay-filter="salesStatisticsChartDay" style="border-color: #00FF00">
-                                    <option value="7" selected>recent 7 days</option>
-                                    <option value="14">recent 15 days</option>
-                                    <option value="29">recent 30 days</option>
+                                    <option value="7" selected>近7天</option>
+                                    <option value="14">近15天</option>
+                                    <option value="29">近30天</option>
                                 </select>
                             </div>
                         </div>
@@ -85,6 +87,7 @@
         </div>
         <div class="layui-card-body" style="height: 88%">
             <div id="salesStatisticsChart" class="height100">
+
             </div>
         </div>
     </div>
@@ -108,6 +111,7 @@
             var day = data.value;
             ssChartNetworkRequest(day);
         });
+
         /**
          * 销售额统计网络请求数据
          */
@@ -140,6 +144,7 @@
                 }
             });
         }
+
         function loadCurDaySalesStatistics() {
             $.ajax({
                 url: '/restaurant/analysis/ssByDays.do',
@@ -166,7 +171,9 @@
                     }
                 }
             });
+
         }
+
         /**
          * 加载销售额统计图表
          * @param dateArray
@@ -197,6 +204,7 @@
                                     width: 1,
                                     type: 'dashed'
                                 },
+
                             }
                         },
                         toolbox: {
@@ -267,6 +275,7 @@
                             }
                         ],
                         series: [
+
                             {
                                 name: '营业额',
                                 type: 'bar',

@@ -2,7 +2,7 @@
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
-    <title>桌位上菜情况表 Table Dish Status</title>
+    <title>桌位上菜情况表</title>
     <link rel="stylesheet" th:href="@{/layuiadmin/layui/css/layui.css}"
           href="../../static/layuiadmin/layui/css/layui.css"
           media="all"/>
@@ -20,20 +20,20 @@
     <div class="layui-form layui-card-header layuiadmin-card-header-auto">
         <div class="layui-form-item">
             <div class="layui-inline">
-                <label class="layui-form-label">Find</label>
+                <label class="layui-form-label">查询条件</label>
                 <div class="layui-input-inline" style="width:100px;">
-                    <input type="text" name="deskCode" id="deskCode" placeholder="Table No." autocomplete="off"
+                    <input type="text" name="deskCode" id="deskCode" placeholder="桌号" autocomplete="off"
                            class="layui-input">
                 </div>
             </div>
             <div class="layui-inline">
                 <div class="layui-input-inline" style="width: 170px">
-                    <label class="layui-form-label" style="width:60px;padding: 9px 0px">完成状态 Status</label>
+                    <label class="layui-form-label" style="width:60px;padding: 9px 0px">完成状态</label>
                     <div class="layui-input-block" style="margin-left:70px;">
                         <select name="finishStatus">
-                            <option value="">不限 N/A</option>
-                            <option value="0">未完成 Not Finish</option>
-                            <option value="1">已完成 Finish</option>
+                            <option value="">不限</option>
+                            <option value="0">未完成</option>
+                            <option value="1">已完成</option>
                         </select>
                     </div>
                 </div>
@@ -52,17 +52,17 @@
         <table id="tableList" lay-filter="tableList"></table>
         <!--右边工具栏-->
         <script th:inline="javascript" type="text/html" id="barDemo">
-            <a class="layui-btn layui-btn-xs" lay-event="viewDetail">查看详情 Details</a>
+            <a class="layui-btn layui-btn-xs" lay-event="viewDetail">查看详情</a>
         </script>
         <script type="text/html" id="payStatus_templet">
             {{#
             if(d.payStatus==0){
             }}
-            <div style="color: #FF1744;">未付款 Not Pay</div>
+            <div style="color: #FF1744;">未付款</div>
             {{#
             }else{
             }}
-            <div style="color:#5FB878;">已付款 Paid</div>
+            <div style="color:#5FB878;">已付款</div>
             {{#
             }
             }}
@@ -71,11 +71,11 @@
             {{#
             if(d.finishStatus==0){
             }}
-            <div style="color: #FF1744;">未完成 Not Finish </div>
+            <div style="color: #FF1744;">未完成</div>
             {{#
             }else{
             }}
-            <div style="color:#5FB878;">已完成 Finish</div>
+            <div style="color:#5FB878;">已完成</div>
             {{#
             }
             }}
@@ -124,14 +124,14 @@
             , toolbar: '#test-table-toolbar-toolbarDemo' //开启工具栏，此处显示默认图标，可以自定义模板，详见文档
             , cols: [[ //表头
                 , {field: 'orderId', title: 'ID', align: 'center', cellMinWidth: 70, sort: true, fixed: 'left', sort: true, hide: true}
-                , {field: 'deskCode', title: '桌号 Table No.', align: 'center', cellMinWidth: 120,sort:true}
-                , {field: 'peopleNum', title: '人数 People', align: 'center', cellMinWidth: 120}
-                , {field: 'payStatus', title: '付款状态 Pay Status', align: 'center', cellMinWidth:120, templet: "#payStatus_templet"}
-                , {field: 'finishStatus', title: '上菜完成状态 Dish Status', align: 'center', cellMinWidth: 160, templet: "#finishStatus_templet"}
-                , {field: 'totalPrice', title: '总金额 Total Prices', align: 'center', cellMinWidth: 140, sort: true,templet:'<div>{{d.totalPrice}}元</div>'}
-                , {field: 'createTime', title: '创建时间 Creating Date', cellMinWidth: 170,sort: true,templet:'<div>{{d.createTime}}</div>'}
-                , {field: 'modifyTime', title: '修改时间 Editing Date', cellMinWidth: 170,sort: true,templet:'#modifyTime_templet'}
-                , {fixed: 'right', title: "工具栏 Toolbar",align:'center', cellMinWidth: 220, toolbar: '#barDemo'}
+                , {field: 'deskCode', title: '桌号', align: 'center', cellMinWidth: 120,sort:true}
+                , {field: 'peopleNum', title: '人数', align: 'center', cellMinWidth: 120}
+                , {field: 'payStatus', title: '付款状态', align: 'center', cellMinWidth:120, templet: "#payStatus_templet"}
+                , {field: 'finishStatus', title: '上菜完成状态', align: 'center', cellMinWidth: 160, templet: "#finishStatus_templet"}
+                , {field: 'totalPrice', title: '总金额', align: 'center', cellMinWidth: 140, sort: true,templet:'<div>{{d.totalPrice}}元</div>'}
+                , {field: 'createTime', title: '创建时间', cellMinWidth: 170,sort: true,templet:'<div>{{d.createTime}}</div>'}
+                , {field: 'modifyTime', title: '修改时间', cellMinWidth: 170,sort: true,templet:'#modifyTime_templet'}
+                , {fixed: 'right', title: "工具栏",align:'center', cellMinWidth: 220, toolbar: '#barDemo'}
             ]]
         });
 
