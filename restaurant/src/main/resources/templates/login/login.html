@@ -2,7 +2,7 @@
 <html xmlns:th="http://www.thymeleaf.org">
     <head>
 		<meta charset="utf-8"/>
-		<title>餐厅点餐系统</title>
+		<title>Restaurant order system</title>
         <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 		<link rel="stylesheet" th:href="@{/layuiadmin/layui/css/layui.css}" href="../../static/layui/css/layui.css"/>
 		<link rel="stylesheet" th:href="@{/css/login.css}" href="../../static/css/login.css"/>
@@ -16,7 +16,7 @@
 			</div>
 			<div class="login layui-anim layui-anim-up">
 				<fieldset class="layui-elem-field layui-field-title">
-					<legend class="text-white">餐厅点餐系统</legend>
+					<legend class="text-white">Restaurant order system</legend>
 				</fieldset>
 				<div class="layui-form" action="" method="post">
 					<div class="layui-form-item">
@@ -29,8 +29,8 @@
 						<input type="text" id="code" lay-verify="required|code" maxlength="6" placeholder="请输入验证码" autocomplete="off" class="layui-input">
 						<div class="code"><img id="refCode_login_img" width="118" height="38"></div>
 					</div>-->
-					<button class="login_btn layui-btn layui-btn-radius layui-btn-normal" lay-submit lay-filter="login">登录</button>
-					<strong class="text-white">忘记密码？ <a href="#" id="click" style="color: cornflowerblue;">找回密码&raquo;</a></strong>
+					<button class="login_btn layui-btn layui-btn-radius layui-btn-normal" lay-submit lay-filter="login">Login</button>
+					<strong class="text-white">Forgot password？ <a href="#" id="click" style="color: cornflowerblue;">Find my password&raquo;</a></strong>
 				</div>
 				<hr class="layui-bg-gray"/>
 				<div class="layui-footer text-white">
@@ -47,8 +47,8 @@
 			$("#click").click(function () {
                 layui.use('layer', function(){
                     var layer = layui.layer;
-                    layer.alert("请联系经理！",{
-                        title:"提示",
+                    layer.alert("Please contact manager！",{
+                        title:"Hints",
 						anim:6,
 					})
                 });

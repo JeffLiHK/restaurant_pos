@@ -2,7 +2,7 @@
 <!DOCTYPE mapper
         PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
         "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-<mapper namespace="com.lzy.liujing.restaurant.dao.SysMenuDao">
+<mapper namespace="pkpd.restaurant.dao.SysMenuDao">
     <sql id="join">
         INNER JOIN sys_role_menu as rm on rm.menu_id =  m.menu_id
         INNER JOIN sys_role as r on r.role_id = rm.role_id
@@ -31,7 +31,7 @@
             and m.del = 0
         </where>
     </sql>
-    <select id="findById" parameterType="Long" resultType="com.lzy.liujing.restaurant.entity.SysMenu">
+    <select id="findById" parameterType="Long" resultType="pkpd.restaurant.entity.SysMenu">
         SELECT
         <include refid="fields"/>
         FROM sys_menu as m
@@ -39,7 +39,7 @@
 
     </select>
     
-    <select id="findList" parameterType="com.lzy.liujing.restaurant.entity.SysMenu" resultType="com.lzy.liujing.restaurant.entity.SysMenu">
+    <select id="findList" parameterType="pkpd.restaurant.entity.SysMenu" resultType="pkpd.restaurant.entity.SysMenu">
         SELECT
         <include refid="fields"/>
         FROM sys_menu as m

@@ -2,9 +2,9 @@
 <!DOCTYPE mapper
         PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
         "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-<mapper namespace="com.lzy.liujing.restaurant.dao.OrderDao">
+<mapper namespace="pkpd.restaurant.dao.OrderDao">
 
-    <select id="findPage" parameterType="com.lzy.liujing.restaurant.entity.CustomPageInfo" resultMap="orderResultMap">
+    <select id="findPage" parameterType="pkpd.restaurant.entity.CustomPageInfo" resultMap="orderResultMap">
         select * from r_order as a
         <include refid="join"/>
         <include refid="where"/>
@@ -24,19 +24,19 @@
         </foreach>
     </update>
 
-    <update id="update" parameterType="com.lzy.liujing.restaurant.entity.Order">
+    <update id="update" parameterType="pkpd.restaurant.entity.Order">
         update r_order
         <include refid="set"/>
         where order_id = #{orderId} and del = 0
     </update>
 
-    <update id="updateByOrderCode" parameterType="com.lzy.liujing.restaurant.entity.Order">
+    <update id="updateByOrderCode" parameterType="pkpd.restaurant.entity.Order">
         update r_order
         <include refid="set"/>
         where order_code = #{orderCode} and del = 0
     </update>
 
-    <insert id="insert" parameterType="com.lzy.liujing.restaurant.entity.Order" keyColumn="order_id" keyProperty="orderId" useGeneratedKeys="true">
+    <insert id="insert" parameterType="pkpd.restaurant.entity.Order" keyColumn="order_id" keyProperty="orderId" useGeneratedKeys="true">
         insert into r_order
         <include refid="set"/>
     </insert>
@@ -159,7 +159,7 @@
         left join r_merber_category as c on b.mc_id = c.mc_id
         left join sys_user as d on a.user_id = d.user_id
     </sql>
-    <resultMap id="orderResultMap" type="com.lzy.liujing.restaurant.entity.Order">
+    <resultMap id="orderResultMap" type="pkpd.restaurant.entity.Order">
         <id column="order_id" property="orderId"/>
         <result column="desk_code" property="deskCode"/>
         <result column="order_code" property="orderCode"/>
@@ -176,7 +176,7 @@
         <result column="over_status" property="overStatus"/>
         <result column="create_time" property="createTime"/>
         <result column="modify_time" property="modifyTime"/>
-        <association property="member" javaType="com.lzy.liujing.restaurant.entity.Member">
+        <association property="member" javaType="pkpd.restaurant.entity.Member">
             <id column="member_id" property="memberId"/>
             <result column="member_code" property="memberCode"/>
             <result column="m_name" property="name"/>
@@ -187,7 +187,7 @@
             <result column="create_time" property="createTime"/>
             <result column="modify_time" property="modifyTime"/>
             <result column="a.del" property="del"/>
-            <association property="memberCategory" javaType="com.lzy.liujing.restaurant.entity.MemberCategory">
+            <association property="memberCategory" javaType="pkpd.restaurant.entity.MemberCategory">
                 <id column="mc_id" property="mcId"/>
                 <result column="mc_name" property="mcName"/>
                 <result column="discount" property="discount"/>
@@ -197,7 +197,7 @@
                 <result column="b.del" property="del"/>
             </association>
         </association>
-        <association property="cashier" javaType="com.lzy.liujing.restaurant.entity.SysUser">
+        <association property="cashier" javaType="pkpd.restaurant.entity.SysUser">
             <id column="user_id" property="userId"/>
             <result column="login_code" property="loginCode"/>
             <result column="password" property="password"/>
