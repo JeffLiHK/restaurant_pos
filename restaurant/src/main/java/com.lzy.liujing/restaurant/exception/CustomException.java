@@ -1,6 +1,6 @@
-package pkpd.restaurant.exception;
+package com.lzy.liujing.restaurant.exception;
 
-import pkpd.restaurant.Enums.ResultEnum;
+import com.lzy.liujing.restaurant.Enums.ResultEnum;
 
 public class CustomException extends RuntimeException{
     private Integer code;

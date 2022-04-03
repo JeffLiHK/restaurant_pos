@@ -1,4 +1,4 @@
-package pkpd.restaurant.utils;
+package com.lzy.liujing.restaurant.utils;
 
 import java.text.SimpleDateFormat;
 import java.util.Date;

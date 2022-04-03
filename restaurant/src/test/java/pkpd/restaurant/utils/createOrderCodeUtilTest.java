@@ -1,4 +1,4 @@
-package pkpd.restaurant.utils;
+package com.lzy.liujing.restaurant.utils;
 
 import org.junit.Ignore;
 import org.junit.Test;

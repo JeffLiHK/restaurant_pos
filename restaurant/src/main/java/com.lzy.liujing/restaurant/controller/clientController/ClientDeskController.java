@@ -1,18 +1,18 @@
-package pkpd.restaurant.controller.clientController;
+package com.lzy.liujing.restaurant.controller.clientController;
 
-import pkpd.restaurant.service.DeskService;
-import pkpd.restaurant.service.GoodsCategoryService;
-import pkpd.restaurant.service.GoodsService;
-import pkpd.restaurant.utils.ResultUtil;
+import com.lzy.liujing.restaurant.service.DeskService;
+import com.lzy.liujing.restaurant.service.GoodsCategoryService;
+import com.lzy.liujing.restaurant.service.GoodsService;
+import com.lzy.liujing.restaurant.utils.ResultUtil;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
-import pkpd.restaurant.entity.CustomPageInfo;
-import pkpd.restaurant.entity.Desk;
-import pkpd.restaurant.entity.Goods;
-import pkpd.restaurant.entity.GoodsCategory;
-import pkpd.restaurant.entity.Result;
+import com.lzy.liujing.restaurant.entity.CustomPageInfo;
+import com.lzy.liujing.restaurant.entity.Desk;
+import com.lzy.liujing.restaurant.entity.Goods;
+import com.lzy.liujing.restaurant.entity.GoodsCategory;
+import com.lzy.liujing.restaurant.entity.Result;
 
 import javax.servlet.http.HttpSession;
 

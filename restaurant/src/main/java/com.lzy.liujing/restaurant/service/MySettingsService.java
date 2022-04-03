@@ -1,4 +1,4 @@
-package pkpd.restaurant.service;
+package com.lzy.liujing.restaurant.service;
 
 /**
 

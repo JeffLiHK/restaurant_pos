@@ -1,7 +1,7 @@
-package pkpd.restaurant.dao;
+package com.lzy.liujing.restaurant.dao;
 
-import pkpd.restaurant.entity.SysMenu;
-import pkpd.restaurant.utils.MenuUtil;
+import com.lzy.liujing.restaurant.entity.SysMenu;
+import com.lzy.liujing.restaurant.utils.MenuUtil;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;

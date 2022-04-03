@@ -1,7 +1,7 @@
-package pkpd.restaurant.utils;
+package com.lzy.liujing.restaurant.utils;
 
-import pkpd.restaurant.Enums.ResultEnum;
-import pkpd.restaurant.entity.Result;
+import com.lzy.liujing.restaurant.Enums.ResultEnum;
+import com.lzy.liujing.restaurant.entity.Result;
 
 /**
 

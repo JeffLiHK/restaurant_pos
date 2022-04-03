@@ -1,7 +1,7 @@
-package pkpd.restaurant.dao;
+package com.lzy.liujing.restaurant.dao;
 
-import pkpd.restaurant.entity.SysRole;
-import pkpd.restaurant.entity.SysUser;
+import com.lzy.liujing.restaurant.entity.SysRole;
+import com.lzy.liujing.restaurant.entity.SysUser;
 import org.apache.ibatis.annotations.Mapper;
 
 import java.util.List;

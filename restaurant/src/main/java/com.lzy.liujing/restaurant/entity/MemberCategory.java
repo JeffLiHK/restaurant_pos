@@ -1,4 +1,4 @@
-package pkpd.restaurant.entity;
+package com.lzy.liujing.restaurant.entity;
 
 /**
  * 会员类型类

@@ -1,9 +1,9 @@
-package pkpd.restaurant.controller.sysController;
+package com.lzy.liujing.restaurant.controller.sysController;
 
-import pkpd.restaurant.entity.Result;
-import pkpd.restaurant.entity.SysUser;
-import pkpd.restaurant.service.SysUserService;
-import pkpd.restaurant.utils.ResultUtil;
+import com.lzy.liujing.restaurant.entity.Result;
+import com.lzy.liujing.restaurant.entity.SysUser;
+import com.lzy.liujing.restaurant.service.SysUserService;
+import com.lzy.liujing.restaurant.utils.ResultUtil;
 import org.apache.shiro.SecurityUtils;
 import org.apache.shiro.authc.UsernamePasswordToken;
 import org.apache.shiro.subject.Subject;

@@ -1,4 +1,4 @@
-package pkpd.restaurant.entity.request;
+package com.lzy.liujing.restaurant.entity.request;
 
 public class OrderRequest {
     private Long goodsId;

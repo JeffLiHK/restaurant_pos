@@ -2,7 +2,7 @@
 <!DOCTYPE mapper
         PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
         "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-<mapper namespace="pkpd.restaurant.dao.MemberDao">
+<mapper namespace="com.lzy.liujing.restaurant.dao.MemberDao">
     <sql id="join">
         inner join r_merber_category as b on a.mc_id = b.mc_id
     </sql>
@@ -97,7 +97,7 @@
             </if>
         </set>
     </sql>
-    <resultMap id="memberResultMap" type="pkpd.restaurant.entity.Member">
+    <resultMap id="memberResultMap" type="com.lzy.liujing.restaurant.entity.Member">
         <id column="member_id" property="memberId"/>
         <result column="member_code" property="memberCode"/>
         <result column="m_name" property="name"/>
@@ -108,7 +108,7 @@
         <result column="create_time" property="createTime"/>
         <result column="modify_time" property="modifyTime"/>
         <result column="a.del" property="del"/>
-        <association property="memberCategory" javaType="pkpd.restaurant.entity.MemberCategory">
+        <association property="memberCategory" javaType="com.lzy.liujing.restaurant.entity.MemberCategory">
             <id column="mc_id" property="mcId"/>
             <result column="mc_name" property="mcName"/>
             <result column="discount" property="discount"/>
@@ -118,13 +118,13 @@
             <result column="b.del" property="del"/>
         </association>
     </resultMap>
-    <select id="findPage" parameterType="pkpd.restaurant.entity.Member" resultMap="memberResultMap">
+    <select id="findPage" parameterType="com.lzy.liujing.restaurant.entity.Member" resultMap="memberResultMap">
         select * from r_member as a
         <include refid="join"/>
         <include refid="where"/>
     </select>
 
-    <select id="searchByPhone" parameterType="pkpd.restaurant.entity.Member" resultMap="memberResultMap">
+    <select id="searchByPhone" parameterType="com.lzy.liujing.restaurant.entity.Member" resultMap="memberResultMap">
         select * from r_member as a
         <include refid="join"/>
          where a.m_phone = #{phone}
@@ -133,13 +133,13 @@
          </if>
     </select>
 
-    <select id="searchByMemberCode" parameterType="pkpd.restaurant.entity.Member" resultMap="memberResultMap">
+    <select id="searchByMemberCode" parameterType="com.lzy.liujing.restaurant.entity.Member" resultMap="memberResultMap">
         select * from r_member as a
         <include refid="join"/>
         where a.member_code = #{memberCode}
     </select>
 
-    <insert id="insert" parameterType="pkpd.restaurant.entity.Member" keyColumn="member_id" keyProperty="memberId" useGeneratedKeys="true">
+    <insert id="insert" parameterType="com.lzy.liujing.restaurant.entity.Member" keyColumn="member_id" keyProperty="memberId" useGeneratedKeys="true">
         insert into r_member
         <include refid="set2"/>
     </insert>
@@ -153,7 +153,7 @@
         </foreach>
     </update>
 
-    <update id="update" parameterType="pkpd.restaurant.entity.Member">
+    <update id="update" parameterType="com.lzy.liujing.restaurant.entity.Member">
         update r_member as a
         <include refid="set"/>
         where a.member_id = #{memberId} and a.del = 0

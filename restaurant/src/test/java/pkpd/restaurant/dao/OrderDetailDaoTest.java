@@ -1,9 +1,9 @@
-package pkpd.restaurant.dao;
+package com.lzy.liujing.restaurant.dao;
 
-import pkpd.restaurant.entity.Goods;
-import pkpd.restaurant.entity.Order;
-import pkpd.restaurant.entity.OrderDetail;
-import pkpd.restaurant.utils.SplitIdsUtil;
+import com.lzy.liujing.restaurant.entity.Goods;
+import com.lzy.liujing.restaurant.entity.Order;
+import com.lzy.liujing.restaurant.entity.OrderDetail;
+import com.lzy.liujing.restaurant.utils.SplitIdsUtil;
 import org.junit.Ignore;
 import org.junit.Test;
 import org.junit.runner.RunWith;

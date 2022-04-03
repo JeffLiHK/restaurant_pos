@@ -1,4 +1,4 @@
-package pkpd.restaurant.config;
+package com.lzy.liujing.restaurant.config;
 
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.boot.web.servlet.MultipartConfigFactory;

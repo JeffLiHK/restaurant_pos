@@ -2,7 +2,7 @@
 <!DOCTYPE mapper
         PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
         "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-<mapper namespace="pkpd.restaurant.dao.DeskDao">
+<mapper namespace="com.lzy.liujing.restaurant.dao.DeskDao">
     <sql id="set">
         <set>
             <if test="deskCode!=null">
@@ -48,17 +48,17 @@
         </where>
     </sql>
 
-    <select id="findPage" parameterType="pkpd.restaurant.entity.Desk" resultType="pkpd.restaurant.entity.Desk">
+    <select id="findPage" parameterType="com.lzy.liujing.restaurant.entity.Desk" resultType="com.lzy.liujing.restaurant.entity.Desk">
         select * from r_desk
         <include refid="where"/>
     </select>
 
-    <select id="findById" parameterType="Integer" resultType="pkpd.restaurant.entity.Desk">
+    <select id="findById" parameterType="Integer" resultType="com.lzy.liujing.restaurant.entity.Desk">
         select * from r_desk
         where desk_id = #{deskId} and  del = 0
     </select>
 
-    <select id="findByDeskCode" parameterType="pkpd.restaurant.entity.Desk" resultType="pkpd.restaurant.entity.Desk">
+    <select id="findByDeskCode" parameterType="com.lzy.liujing.restaurant.entity.Desk" resultType="com.lzy.liujing.restaurant.entity.Desk">
         select * from r_desk
         where desk_code = #{deskCode}
         <if test="deskId!=null">
@@ -66,12 +66,12 @@
         </if>
     </select>
 
-    <insert id="insert" parameterType="pkpd.restaurant.entity.Desk">
+    <insert id="insert" parameterType="com.lzy.liujing.restaurant.entity.Desk">
         insert into r_desk
         <include refid="set"/>
     </insert>
 
-    <update id="update" parameterType="pkpd.restaurant.entity.Desk">
+    <update id="update" parameterType="com.lzy.liujing.restaurant.entity.Desk">
         update r_desk
         <include refid="set"/>
         <include refid="where2"/>

@@ -1,4 +1,4 @@
-package pkpd.restaurant.entity;
+package com.lzy.liujing.restaurant.entity;
 
 import com.fasterxml.jackson.annotation.JsonFormat;
 

@@ -1,18 +1,18 @@
-package pkpd.restaurant.controller.sysController;
+package com.lzy.liujing.restaurant.controller.sysController;
 
-import pkpd.restaurant.entity.Result;
-import pkpd.restaurant.service.DataAnalysisService;
-import pkpd.restaurant.utils.ResultUtil;
+import com.lzy.liujing.restaurant.entity.Result;
+import com.lzy.liujing.restaurant.service.DataAnalysisService;
+import com.lzy.liujing.restaurant.utils.ResultUtil;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
-import pkpd.restaurant.entity.chart.GoodsCategorySalesChart;
-import pkpd.restaurant.entity.chart.GoodsSalesChart;
-import pkpd.restaurant.entity.chart.MemberChart;
-import pkpd.restaurant.entity.chart.PeopleChart;
-import pkpd.restaurant.entity.chart.SalesStatisticsChart;
+import com.lzy.liujing.restaurant.entity.chart.GoodsCategorySalesChart;
+import com.lzy.liujing.restaurant.entity.chart.GoodsSalesChart;
+import com.lzy.liujing.restaurant.entity.chart.MemberChart;
+import com.lzy.liujing.restaurant.entity.chart.PeopleChart;
+import com.lzy.liujing.restaurant.entity.chart.SalesStatisticsChart;
 
 import java.util.List;
 

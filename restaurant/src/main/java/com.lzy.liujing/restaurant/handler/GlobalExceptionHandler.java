@@ -1,11 +1,11 @@
-package pkpd.restaurant.handler;
+package com.lzy.liujing.restaurant.handler;
 
-import pkpd.restaurant.Enums.ResultEnum;
-import pkpd.restaurant.entity.Result;
-import pkpd.restaurant.exception.CustomAuthenticationException;
-import pkpd.restaurant.exception.CustomException;
-import pkpd.restaurant.exception.SysUserImplException;
-import pkpd.restaurant.utils.ResultUtil;
+import com.lzy.liujing.restaurant.Enums.ResultEnum;
+import com.lzy.liujing.restaurant.entity.Result;
+import com.lzy.liujing.restaurant.exception.CustomAuthenticationException;
+import com.lzy.liujing.restaurant.exception.CustomException;
+import com.lzy.liujing.restaurant.exception.SysUserImplException;
+import com.lzy.liujing.restaurant.utils.ResultUtil;
 import org.apache.shiro.authz.UnauthenticatedException;
 import org.apache.shiro.authz.UnauthorizedException;
 import org.slf4j.Logger;

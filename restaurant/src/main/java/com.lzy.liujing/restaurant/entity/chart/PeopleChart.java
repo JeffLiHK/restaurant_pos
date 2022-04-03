@@ -1,4 +1,4 @@
-package pkpd.restaurant.entity.chart;
+package com.lzy.liujing.restaurant.entity.chart;
 
 public class PeopleChart {
     private String dayHour;

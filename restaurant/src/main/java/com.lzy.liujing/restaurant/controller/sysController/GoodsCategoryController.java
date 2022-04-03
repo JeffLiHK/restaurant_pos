@@ -1,11 +1,11 @@
-package pkpd.restaurant.controller.sysController;
+package com.lzy.liujing.restaurant.controller.sysController;
 
-import pkpd.restaurant.Enums.ResultEnum;
-import pkpd.restaurant.entity.Member;
-import pkpd.restaurant.entity.GoodsCategory;
-import pkpd.restaurant.entity.Result;
-import pkpd.restaurant.service.GoodsCategoryService;
-import pkpd.restaurant.utils.ResultUtil;
+import com.lzy.liujing.restaurant.Enums.ResultEnum;
+import com.lzy.liujing.restaurant.entity.Member;
+import com.lzy.liujing.restaurant.entity.GoodsCategory;
+import com.lzy.liujing.restaurant.entity.Result;
+import com.lzy.liujing.restaurant.service.GoodsCategoryService;
+import com.lzy.liujing.restaurant.utils.ResultUtil;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;

@@ -1,6 +1,6 @@
-package pkpd.restaurant.utils;
+package com.lzy.liujing.restaurant.utils;
 
-import pkpd.restaurant.entity.SysMenu;
+import com.lzy.liujing.restaurant.entity.SysMenu;
 import java.util.ArrayList;
 import java.util.List;
 

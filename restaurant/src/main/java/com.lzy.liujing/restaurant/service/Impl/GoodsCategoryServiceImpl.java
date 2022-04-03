@@ -1,12 +1,12 @@
-package pkpd.restaurant.service.Impl;
+package com.lzy.liujing.restaurant.service.Impl;
 
-import pkpd.restaurant.Enums.ResultEnum;
-import pkpd.restaurant.dao.GoodsCategoryDao;
+import com.lzy.liujing.restaurant.Enums.ResultEnum;
+import com.lzy.liujing.restaurant.dao.GoodsCategoryDao;
 
-import pkpd.restaurant.entity.GoodsCategory;
-import pkpd.restaurant.exception.CustomException;
-import pkpd.restaurant.service.GoodsCategoryService;
-import pkpd.restaurant.utils.SplitIdsUtil;
+import com.lzy.liujing.restaurant.entity.GoodsCategory;
+import com.lzy.liujing.restaurant.exception.CustomException;
+import com.lzy.liujing.restaurant.service.GoodsCategoryService;
+import com.lzy.liujing.restaurant.utils.SplitIdsUtil;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 

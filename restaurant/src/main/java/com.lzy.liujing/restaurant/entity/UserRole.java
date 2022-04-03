@@ -1,4 +1,4 @@
-package pkpd.restaurant.entity;
+package com.lzy.liujing.restaurant.entity;
 
 public class UserRole {
     private Long userId;

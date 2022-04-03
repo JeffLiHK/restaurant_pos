@@ -1,8 +1,8 @@
-package pkpd.restaurant.service.Impl;
+package com.lzy.liujing.restaurant.service.Impl;
 
-import pkpd.restaurant.dao.OrderDetailDao;
-import pkpd.restaurant.entity.OrderDetail;
-import pkpd.restaurant.service.CookAndServingService;
+import com.lzy.liujing.restaurant.dao.OrderDetailDao;
+import com.lzy.liujing.restaurant.entity.OrderDetail;
+import com.lzy.liujing.restaurant.service.CookAndServingService;
 import org.junit.Ignore;
 import org.junit.Test;
 import org.junit.runner.RunWith;

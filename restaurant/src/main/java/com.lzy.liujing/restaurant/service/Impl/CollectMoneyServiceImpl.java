@@ -1,6 +1,6 @@
-package pkpd.restaurant.service.Impl;
+package com.lzy.liujing.restaurant.service.Impl;
 
-import pkpd.restaurant.service.CollectMoneyService;
+import com.lzy.liujing.restaurant.service.CollectMoneyService;
 import org.springframework.stereotype.Service;
 
 /**

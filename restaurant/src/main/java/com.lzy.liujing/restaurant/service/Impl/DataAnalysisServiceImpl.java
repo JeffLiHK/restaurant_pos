@@ -1,14 +1,14 @@
-package pkpd.restaurant.service.Impl;
+package com.lzy.liujing.restaurant.service.Impl;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-import pkpd.restaurant.dao.DataAnalysisDao;
-import pkpd.restaurant.entity.chart.GoodsCategorySalesChart;
-import pkpd.restaurant.entity.chart.GoodsSalesChart;
-import pkpd.restaurant.entity.chart.MemberChart;
-import pkpd.restaurant.entity.chart.PeopleChart;
-import pkpd.restaurant.entity.chart.SalesStatisticsChart;
-import pkpd.restaurant.service.DataAnalysisService;
+import com.lzy.liujing.restaurant.dao.DataAnalysisDao;
+import com.lzy.liujing.restaurant.entity.chart.GoodsCategorySalesChart;
+import com.lzy.liujing.restaurant.entity.chart.GoodsSalesChart;
+import com.lzy.liujing.restaurant.entity.chart.MemberChart;
+import com.lzy.liujing.restaurant.entity.chart.PeopleChart;
+import com.lzy.liujing.restaurant.entity.chart.SalesStatisticsChart;
+import com.lzy.liujing.restaurant.service.DataAnalysisService;
 
 import java.util.List;
 

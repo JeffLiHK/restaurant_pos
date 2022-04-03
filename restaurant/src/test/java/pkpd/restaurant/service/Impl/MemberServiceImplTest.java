@@ -1,8 +1,8 @@
-package pkpd.restaurant.service.Impl;
+package com.lzy.liujing.restaurant.service.Impl;
 
-import pkpd.restaurant.entity.CustomPageInfo;
-import pkpd.restaurant.entity.Member;
-import pkpd.restaurant.service.MemberService;
+import com.lzy.liujing.restaurant.entity.CustomPageInfo;
+import com.lzy.liujing.restaurant.entity.Member;
+import com.lzy.liujing.restaurant.service.MemberService;
 import org.junit.Ignore;
 import org.junit.Test;
 import org.junit.runner.RunWith;

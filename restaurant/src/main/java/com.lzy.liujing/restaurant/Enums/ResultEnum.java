@@ -1,4 +1,4 @@
-package pkpd.restaurant.Enums;
+package com.lzy.liujing.restaurant.Enums;
 
 
 public enum ResultEnum {

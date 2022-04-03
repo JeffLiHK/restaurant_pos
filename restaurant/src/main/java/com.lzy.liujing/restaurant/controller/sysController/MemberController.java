@@ -1,4 +1,4 @@
-package pkpd.restaurant.controller.sysController;
+package com.lzy.liujing.restaurant.controller.sysController;
 
 import org.apache.shiro.SecurityUtils;
 import org.apache.shiro.authz.annotation.RequiresPermissions;
@@ -6,15 +6,15 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
-import pkpd.restaurant.Enums.ResultEnum;
-import pkpd.restaurant.entity.CustomPageInfo;
-import pkpd.restaurant.entity.Member;
-import pkpd.restaurant.entity.MemberCategory;
-import pkpd.restaurant.entity.Result;
-import pkpd.restaurant.entity.SysUser;
-import pkpd.restaurant.service.MemberCategoryService;
-import pkpd.restaurant.service.MemberService;
-import pkpd.restaurant.utils.ResultUtil;
+import com.lzy.liujing.restaurant.Enums.ResultEnum;
+import com.lzy.liujing.restaurant.entity.CustomPageInfo;
+import com.lzy.liujing.restaurant.entity.Member;
+import com.lzy.liujing.restaurant.entity.MemberCategory;
+import com.lzy.liujing.restaurant.entity.Result;
+import com.lzy.liujing.restaurant.entity.SysUser;
+import com.lzy.liujing.restaurant.service.MemberCategoryService;
+import com.lzy.liujing.restaurant.service.MemberService;
+import com.lzy.liujing.restaurant.utils.ResultUtil;
 
 import java.text.SimpleDateFormat;
 import java.util.List;

@@ -1,11 +1,11 @@
-package pkpd.restaurant.controller.sysController;
+package com.lzy.liujing.restaurant.controller.sysController;
 
-import pkpd.restaurant.entity.CustomPageInfo;
-import pkpd.restaurant.entity.Desk;
-import pkpd.restaurant.entity.Result;
-import pkpd.restaurant.entity.SysUser;
-import pkpd.restaurant.service.DeskService;
-import pkpd.restaurant.utils.ResultUtil;
+import com.lzy.liujing.restaurant.entity.CustomPageInfo;
+import com.lzy.liujing.restaurant.entity.Desk;
+import com.lzy.liujing.restaurant.entity.Result;
+import com.lzy.liujing.restaurant.entity.SysUser;
+import com.lzy.liujing.restaurant.service.DeskService;
+import com.lzy.liujing.restaurant.utils.ResultUtil;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;

@@ -1,10 +1,10 @@
-package pkpd.restaurant.service;
+package com.lzy.liujing.restaurant.service;
 
-import pkpd.restaurant.entity.CustomPageInfo;
-import pkpd.restaurant.entity.SysMenu;
-import pkpd.restaurant.entity.SysRole;
-import pkpd.restaurant.entity.SysUser;
-import pkpd.restaurant.entity.request.UserRequest;
+import com.lzy.liujing.restaurant.entity.CustomPageInfo;
+import com.lzy.liujing.restaurant.entity.SysMenu;
+import com.lzy.liujing.restaurant.entity.SysRole;
+import com.lzy.liujing.restaurant.entity.SysUser;
+import com.lzy.liujing.restaurant.entity.request.UserRequest;
 
 import java.util.List;
 import java.util.Set;

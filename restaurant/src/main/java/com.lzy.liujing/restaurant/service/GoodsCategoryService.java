@@ -1,7 +1,7 @@
-package pkpd.restaurant.service;
+package com.lzy.liujing.restaurant.service;
 
 
-import pkpd.restaurant.entity.GoodsCategory;
+import com.lzy.liujing.restaurant.entity.GoodsCategory;
 
 import java.util.List;
 

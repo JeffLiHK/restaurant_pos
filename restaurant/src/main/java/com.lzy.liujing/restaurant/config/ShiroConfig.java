@@ -1,6 +1,6 @@
-package pkpd.restaurant.config;
+package com.lzy.liujing.restaurant.config;
 
-import pkpd.restaurant.auth.CustomRealm;
+import com.lzy.liujing.restaurant.auth.CustomRealm;
 import org.apache.shiro.mgt.SecurityManager;
 import org.apache.shiro.realm.Realm;
 import org.apache.shiro.spring.LifecycleBeanPostProcessor;

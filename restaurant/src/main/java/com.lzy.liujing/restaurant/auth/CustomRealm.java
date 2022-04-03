@@ -1,10 +1,10 @@
-package pkpd.restaurant.auth;
+package com.lzy.liujing.restaurant.auth;
 
-import pkpd.restaurant.Enums.ResultEnum;
-import pkpd.restaurant.entity.SysMenu;
-import pkpd.restaurant.entity.SysUser;
-import pkpd.restaurant.exception.CustomAuthenticationException;
-import pkpd.restaurant.service.SysUserService;
+import com.lzy.liujing.restaurant.Enums.ResultEnum;
+import com.lzy.liujing.restaurant.entity.SysMenu;
+import com.lzy.liujing.restaurant.entity.SysUser;
+import com.lzy.liujing.restaurant.exception.CustomAuthenticationException;
+import com.lzy.liujing.restaurant.service.SysUserService;
 import org.apache.shiro.SecurityUtils;
 import org.apache.shiro.authc.*;
 import org.apache.shiro.authz.AuthorizationInfo;

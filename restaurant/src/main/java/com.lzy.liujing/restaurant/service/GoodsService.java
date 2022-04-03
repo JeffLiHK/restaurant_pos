@@ -1,7 +1,7 @@
-package pkpd.restaurant.service;
+package com.lzy.liujing.restaurant.service;
 
-import pkpd.restaurant.entity.CustomPageInfo;
-import pkpd.restaurant.entity.Goods;
+import com.lzy.liujing.restaurant.entity.CustomPageInfo;
+import com.lzy.liujing.restaurant.entity.Goods;
 
 public interface GoodsService {
     /**

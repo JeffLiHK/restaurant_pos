@@ -1,4 +1,4 @@
-package pkpd.restaurant.entity.chart;
+package com.lzy.liujing.restaurant.entity.chart;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
 

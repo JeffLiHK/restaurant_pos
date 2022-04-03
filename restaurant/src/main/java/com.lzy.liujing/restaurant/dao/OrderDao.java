@@ -1,7 +1,7 @@
-package pkpd.restaurant.dao;
+package com.lzy.liujing.restaurant.dao;
 
-import pkpd.restaurant.entity.CustomPageInfo;
-import pkpd.restaurant.entity.Order;
+import com.lzy.liujing.restaurant.entity.CustomPageInfo;
+import com.lzy.liujing.restaurant.entity.Order;
 import org.apache.ibatis.annotations.Mapper;
 
 import java.util.List;

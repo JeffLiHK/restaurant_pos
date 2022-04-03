@@ -1,12 +1,12 @@
-package pkpd.restaurant.dao;
+package com.lzy.liujing.restaurant.dao;
 
 
 import org.apache.ibatis.annotations.Mapper;
-import pkpd.restaurant.entity.chart.GoodsCategorySalesChart;
-import pkpd.restaurant.entity.chart.GoodsSalesChart;
-import pkpd.restaurant.entity.chart.MemberChart;
-import pkpd.restaurant.entity.chart.PeopleChart;
-import pkpd.restaurant.entity.chart.SalesStatisticsChart;
+import com.lzy.liujing.restaurant.entity.chart.GoodsCategorySalesChart;
+import com.lzy.liujing.restaurant.entity.chart.GoodsSalesChart;
+import com.lzy.liujing.restaurant.entity.chart.MemberChart;
+import com.lzy.liujing.restaurant.entity.chart.PeopleChart;
+import com.lzy.liujing.restaurant.entity.chart.SalesStatisticsChart;
 
 import java.util.List;
 

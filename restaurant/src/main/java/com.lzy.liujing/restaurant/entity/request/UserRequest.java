@@ -1,6 +1,6 @@
-package pkpd.restaurant.entity.request;
+package com.lzy.liujing.restaurant.entity.request;
 
-import pkpd.restaurant.entity.SysUser;
+import com.lzy.liujing.restaurant.entity.SysUser;
 
 public class UserRequest extends SysUser {
     private int pageNum;

@@ -1,6 +1,6 @@
-package pkpd.restaurant.dao;
+package com.lzy.liujing.restaurant.dao;
 
-import pkpd.restaurant.entity.Desk;
+import com.lzy.liujing.restaurant.entity.Desk;
 import org.apache.ibatis.annotations.Mapper;
 import java.util.List;
 
