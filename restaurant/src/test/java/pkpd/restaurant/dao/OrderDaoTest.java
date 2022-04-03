@@ -1,7 +1,7 @@
-package com.lzy.liujing.restaurant.dao;
+package pkpd.restaurant.dao;
 
 import com.github.pagehelper.PageHelper;
-import com.lzy.liujing.restaurant.entity.Order;
+import pkpd.restaurant.entity.Order;
 import org.junit.Ignore;
 import org.junit.Test;
 import org.junit.runner.RunWith;

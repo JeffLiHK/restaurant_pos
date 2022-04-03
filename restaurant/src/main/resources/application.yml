@@ -4,7 +4,7 @@ spring:
   datasource:
     driver-class-name: com.mysql.jdbc.Driver
     username: root
-    password: password
+    password: 17734614
     url: jdbc:mysql://127.0.0.1:3306/restaurant?useUnicode=true&characterEncoding=utf-8
     hikari:
       read-only: false
@@ -34,7 +34,7 @@ spring:
 logging:
   level:
     root: info
-    com.lzy.liujing.restaurant: debug
+    pkpd.restaurant: debug
 
 #配置mybatis
 mybatis:
@@ -62,6 +62,6 @@ server:
   port: 8181
   servlet:
     context-path: /restaurant
-# the image path
+
 web:
-  upload-image-path: E:\Programming\Java\Project\restaurant\images\restaurant\upload
+  upload-image-path: E:\Programming\Java\Project\restaurant-master\images\restaurant\upload

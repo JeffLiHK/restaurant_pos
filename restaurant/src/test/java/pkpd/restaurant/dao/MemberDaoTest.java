@@ -1,6 +1,5 @@
-package com.lzy.liujing.restaurant.dao;
+package pkpd.restaurant.dao;
 
-import com.lzy.liujing.restaurant.entity.Member;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -16,7 +15,7 @@ public class MemberDaoTest {
     public void findPage() {
     }
 
-    @Test
+    /*@Test
     public void searchByPhone(){
         Member member = new Member();
         member.setMemberId(1L);
@@ -43,5 +42,5 @@ public class MemberDaoTest {
 
     @Test
     public void update() {
-    }
+    }*/
 }

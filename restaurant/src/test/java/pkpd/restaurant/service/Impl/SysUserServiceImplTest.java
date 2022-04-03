@@ -1,10 +1,10 @@
-package com.lzy.liujing.restaurant.service.Impl;
+package pkpd.restaurant.service.Impl;
 
-import com.lzy.liujing.restaurant.entity.CustomPageInfo;
-import com.lzy.liujing.restaurant.entity.SysRole;
-import com.lzy.liujing.restaurant.entity.SysUser;
-import com.lzy.liujing.restaurant.entity.request.UserRequest;
-import com.lzy.liujing.restaurant.service.SysUserService;
+import pkpd.restaurant.entity.CustomPageInfo;
+import pkpd.restaurant.entity.SysRole;
+import pkpd.restaurant.entity.SysUser;
+import pkpd.restaurant.entity.request.UserRequest;
+import pkpd.restaurant.service.SysUserService;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;

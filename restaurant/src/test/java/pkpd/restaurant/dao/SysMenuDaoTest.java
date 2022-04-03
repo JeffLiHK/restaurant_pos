@@ -1,7 +1,7 @@
-package com.lzy.liujing.restaurant.dao;
+package pkpd.restaurant.dao;
 
-import com.lzy.liujing.restaurant.entity.SysMenu;
-import com.lzy.liujing.restaurant.utils.MenuUtil;
+import pkpd.restaurant.entity.SysMenu;
+import pkpd.restaurant.utils.MenuUtil;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -12,7 +12,12 @@ import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
 
-
+/**
+ * Created with IDEA
+ * author:LiuJing
+ * Date:2018/10/3
+ * Time:22:31
+ */
 @RunWith(SpringRunner.class)
 @SpringBootTest
 public class SysMenuDaoTest {
