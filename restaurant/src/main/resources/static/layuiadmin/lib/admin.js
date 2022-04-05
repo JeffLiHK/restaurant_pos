@@ -15,7 +15,7 @@
                 e.elemPhone = a(e.elemPhone), e.elemVercode = a(e.elemVercode), n.on("click", function () {
                     var i = e.elemPhone, n = i.val();
                     if (t === e.seconds && !a(this).hasClass(f)) {
-                        if (!/^1\d{10}$/.test(n)) return i.focus(), layer.msg("请输入正确的手机号");
+                        if (!/^\d{8}$/.test(n)) return i.focus(), layer.msg("Please input correct phone number");
                         if ("object" == typeof e.ajax) {
                             var s = e.ajax.success;
                             delete e.ajax.success
