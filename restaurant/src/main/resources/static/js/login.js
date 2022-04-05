@@ -17,7 +17,7 @@
 	// 自定义验证规则
 	form.verify({
 		account: function(value) {
-			var regPhone = /^1[34578]\d{8}$/;
+			var regPhone = /^\d{8}$/;
 			if(!regPhone.test(value.trim())){
 				return "Please input correct account";
 			}
