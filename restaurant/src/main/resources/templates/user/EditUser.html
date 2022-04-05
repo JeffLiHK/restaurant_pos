@@ -31,12 +31,12 @@
                         <label class="layui-form-label">Sex</label>
                         <div class="layui-input-block">
                             <th:block th:if="${user.gender}=='M'">
-                                <input type="radio" name="gender" value="Male" title="Male" checked>
-                                <input type="radio" name="gender" value="Female" title="Female">
+                                <input type="radio" name="gender" value="M" title="Male" checked>
+                                <input type="radio" name="gender" value="F" title="Female">
                             </th:block>
                             <th:block th:if="${user.gender}=='F'">
-                                <input type="radio" name="gender" value="Male" title="Male">
-                                <input type="radio" name="gender" value="Female" title="Female" checked>
+                                <input type="radio" name="gender" value="M" title="Male">
+                                <input type="radio" name="gender" value="F" title="Female" checked>
                             </th:block>
                         </div>
                     </div>
