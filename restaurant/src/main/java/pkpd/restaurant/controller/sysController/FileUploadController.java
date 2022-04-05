@@ -32,10 +32,10 @@ public class FileUploadController {
             String rootFileName = multipartFile.getOriginalFilename();
             String contentType = multipartFile.getContentType();
             //打印日志
-            logger.info("上传图片:name={},type={}",rootFileName,contentType);
+            logger.info("upload picture:name={},type={}",rootFileName,contentType);
             //储存图片路径
             String filePath = location+File.separator+"image";
-            logger.info("储存图片路径：={}",filePath);
+            logger.info("picture saving path：={}",filePath);
             //保存图片，并返回UUID生成的图片名
             String fileName = ImageUtil.saveImage(multipartFile,filePath);
             ResultUrl url = new ResultUrl();
