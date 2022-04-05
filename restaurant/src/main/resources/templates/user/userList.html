@@ -45,8 +45,8 @@
                         <div class="layui-input-block" style="margin-left:50px;">
                             <select name="gender">
                                 <option value="">No limit</option>
-                                <option value="男">Male</option>
-                                <option value="女">Female</option>
+                                <option value="Male">Male</option>
+                                <option value="Female">Female</option>
                             </select>
                         </div>
                     </div>
@@ -115,7 +115,7 @@
                     statusCode: 200
                 }
                 , limits: [10, 20,30,40,50,60]
-                , title: '用户表'
+                , title: 'User List'
                 , page: true //开启分页
                 , even: true//开启背景隔行
                 ,height:540
@@ -267,7 +267,7 @@
                 var data = obj.data //获得当前行数据
                     , layEvent = obj.event; //获得 lay-event 对应的值
                 if (layEvent === 'resetPwd') {
-                    layer.confirm('Confirm reset user【'+data.name+'】password?', function (index) {
+                    layer.confirm('Confirm reset user ['+data.name+'] password?', function (index) {
                         $.ajax({
                             url: "/restaurant/user/resetpwd/"+data.userId,
                             dataType: "JSON",

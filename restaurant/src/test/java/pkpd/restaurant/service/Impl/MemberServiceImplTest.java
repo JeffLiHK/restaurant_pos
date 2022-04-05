@@ -25,7 +25,7 @@ public class MemberServiceImplTest {
         member.setCreateTime(new Date());
         member.setPhone("17781036105");
         member.setBirthday(new Date());
-        member.setGender("女");
+        member.setGender("Female");
         member.setName("刘静");
         memberService.update(member);
     }
@@ -38,7 +38,7 @@ public class MemberServiceImplTest {
         member.setCreateTime(new Date());
         member.setPhone("17781036105");
         member.setBirthday(new Date());
-        member.setGender("男");
+        member.setGender("Male");
         member.setName("顾客4");
         memberService.addMember(member);
     }
@@ -50,7 +50,7 @@ public class MemberServiceImplTest {
         info.setPageSize(2);
         /*Member member = new Member();
         member.setName("顾客");
-        member.setGender("女");
+        member.setGender("Female");
         info.setT(member);*/
         CustomPageInfo<Member> result = memberService.findPage(info);
     }

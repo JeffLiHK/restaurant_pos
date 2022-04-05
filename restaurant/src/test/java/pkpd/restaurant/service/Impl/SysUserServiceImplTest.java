@@ -29,7 +29,7 @@ public class SysUserServiceImplTest {
         SysRole sysRole = new SysRole();
         /*sysRole.setRoleId(1L);
         sysUser.setRole(sysRole);
-        sysUser.setGender("男");*/
+        sysUser.setGender("Male");*/
         SimpleDateFormat sf = new SimpleDateFormat("yyyy-MM-dd");
         Date date = null;
         sysUser.setBirthday(date);
