@@ -17,14 +17,14 @@
 	// 自定义验证规则
 	form.verify({
 		account: function(value) {
-			var regPhone = /^1[34578]\d{9}$/;
+			var regPhone = /^1[34578]\d{8}$/;
 			if(!regPhone.test(value.trim())){
-				return "请输入正确的账号";
+				return "Please input correct account";
 			}
 		},
 		pwd:function (value) {
 			if(value.trim()==''||value.trim()==null){
-				return'密码不能为空';
+				return'Password cannot be empty';
 			}
         }
 	});
