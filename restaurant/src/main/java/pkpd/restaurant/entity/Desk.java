@@ -17,7 +17,7 @@ public class Desk extends BaseBean{
     /**
      * 餐桌编号
      */
-    @NotNull(message = "桌号必填")
+    @NotNull(message = "Desk ID needed")
     private String deskCode;
     /**
      * 座位人数

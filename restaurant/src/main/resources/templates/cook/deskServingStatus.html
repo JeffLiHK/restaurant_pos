@@ -52,7 +52,7 @@
         <table id="tableList" lay-filter="tableList"></table>
         <!--右边工具栏-->
         <script th:inline="javascript" type="text/html" id="barDemo">
-            <a class="layui-btn layui-btn-xs" lay-event="viewDetail">查看详情 Details</a>
+            <a class="layui-btn layui-btn-xs" lay-event="viewDetail">Details</a>
         </script>
         <script type="text/html" id="payStatus_templet">
             {{#
@@ -131,7 +131,7 @@
                 , {field: 'totalPrice', title: 'Total Prices', align: 'center', cellMinWidth: 140, sort: true,templet:'<div>${{d.totalPrice}}</div>'}
                 , {field: 'createTime', title: 'Creating Time', cellMinWidth: 170,sort: true,templet:'<div>{{d.createTime}}</div>'}
                 , {field: 'modifyTime', title: 'Editing Time', cellMinWidth: 170,sort: true,templet:'#modifyTime_templet'}
-                , {fixed: 'right', title: "工具栏 Toolbar",align:'center', cellMinWidth: 220, toolbar: '#barDemo'}
+                , {fixed: 'right', title: "Toolbar",align:'center', cellMinWidth: 220, toolbar: '#barDemo'}
             ]]
         });
 
