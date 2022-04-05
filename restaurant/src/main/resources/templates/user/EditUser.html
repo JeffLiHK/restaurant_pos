@@ -30,11 +30,11 @@
                     <div class="layui-col-xs6 layui-col-sm6 layui-col-md4">
                         <label class="layui-form-label">Sex</label>
                         <div class="layui-input-block">
-                            <th:block th:if="${user.gender}=='Male'">
+                            <th:block th:if="${user.gender}=='M'">
                                 <input type="radio" name="gender" value="Male" title="Male" checked>
                                 <input type="radio" name="gender" value="Female" title="Female">
                             </th:block>
-                            <th:block th:if="${user.gender}=='Female'">
+                            <th:block th:if="${user.gender}=='F'">
                                 <input type="radio" name="gender" value="Male" title="Male">
                                 <input type="radio" name="gender" value="Female" title="Female" checked>
                             </th:block>
