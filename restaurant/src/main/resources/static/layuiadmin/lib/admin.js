@@ -116,7 +116,7 @@
             }, note: function (e) {
                 var a = P.screen() < 2, i = layui.data(n.tableName).note;
                 F.note.index = P.popup({
-                    title: "便签",
+                    title: "Note",
                     shade: 0,
                     offset: ["41px", a ? null : e.offset().left - 250 + "px"],
                     anim: -1,
@@ -126,7 +126,7 @@
                     resize: !1,
                     success: function (e, a) {
                         var t = e.find("textarea"),
-                            l = void 0 === i ? "便签中的内容会存储在本地，这样即便你关掉了浏览器，在下次打开时，依然会读取到上一次的记录。是个非常小巧实用的本地备忘录" : i;
+                            l = void 0 === i ? "The content in the note will be stored locally, so even if you close the browser, the last record will still be read when you open it next time. It's a very small and useful local note." : i;
                         t.val(l).focus().on("keyup", function () {
                             layui.data(n.tableName, {key: "note", value: this.value})
                         })
