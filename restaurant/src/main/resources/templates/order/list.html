@@ -22,13 +22,13 @@
             <div class="layui-inline">
                 <label class="layui-form-label">Query conditions</label>
                 <div class="layui-input-inline" style="width:100px;">
-                    <input type="text" name="deskCode" id="deskCode" placeholder="桌号" autocomplete="off"
+                    <input type="text" name="deskCode" id="deskCode" placeholder="Desk ID" autocomplete="off"
                            class="layui-input">
                 </div>
             </div>
             <div class="layui-inline">
                 <div class="layui-input-inline" style="width:100px;">
-                    <input type="text" name="orderCode" id="orderCode" placeholder="订单号" autocomplete="off"
+                    <input type="text" name="orderCode" id="orderCode" placeholder="Order ID" autocomplete="off"
                            class="layui-input">
                 </div>
             </div>
@@ -112,7 +112,7 @@
             {{#
             if(d.actualPay!=null){
             }}
-            <div>{{d.actualPay}}元</div>
+            <div>${{d.actualPay}}</div>
             {{#
             }else{
             }}
@@ -200,7 +200,7 @@
                 , {field: 'orderCode', title: 'Order number', align: 'center', width: 230, sort: true}
                 , {field: 'deskCode', title: 'table number', align: 'center', width: 120}
                 , {field: 'member', title: 'Member name', align: 'center', width: 120, templet: '#member_templet'}
-                , {field: 'totalPrice', title: 'Food total amount', align: 'center', width: 140, sort: true,templet:'<div>{{d.totalPrice}}元</div>'}
+                , {field: 'totalPrice', title: 'Food total amount', align: 'center', width: 140, sort: true,templet:'<div> ${{d.totalPrice}}</div>'}
                 , {field: 'actualPay', title: 'Amount paid', align: 'center', width: 140, templet: "#actualPay_templet"}
                 , {field: 'peopleNum', title: 'Number of people', align: 'center', width: 120}
                 , {field: 'payStatus', title: 'Payment status', align: 'center', width:120, templet: "#payStatus_templet"}

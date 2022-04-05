@@ -200,7 +200,7 @@
                 statusCode: 200
             }
             , limits: [10, 20, 30,40]
-            , title: '交易记录'
+            , title: 'Transaction records'
             , page: true //开启分页
             , even: true//开启背景隔行
             //,size:"lg"设置表格尺寸
@@ -212,13 +212,13 @@
                 , {field: 'deskCode', title: 'Table number', align: 'center', width: 120}
                 , {field: 'member', title: 'Member number', align: 'center', width: 140, templet: '#memberCode_templet'}
                 , {field: 'member', title: 'Member name', align: 'center', width: 120, templet: '#member_templet'}
-                , {field: 'totalPrice', title: 'Food total amount', align: 'center', width: 140, sort: true,templet:'<div>{{d.totalPrice}}元</div>'}
-                , {field: 'mustPay', title: 'Amounts payable', align: 'center', width: 140, templet: "<div>{{d.mustPay}}元</div>"}
+                , {field: 'totalPrice', title: 'Food total amount', align: 'center', width: 140, sort: true,templet:'<div> ${{d.totalPrice}}</div>'}
+                , {field: 'mustPay', title: 'Amounts payable', align: 'center', width: 140, templet: "<div> ${{d.mustPay}}</div>"}
                 , {field: 'actualPay', title: 'Amount paid', align: 'center', width: 140, templet: "#actualPay_templet"}
-                , {field: 'discountMoney', title: 'Discount amount', align: 'center', width: 140, templet: "<div>{{d.discountMoney}}元</div>"}
-                , {field: 'changeMoney', title: 'change', align: 'center', width: 140, templet: "<div>{{d.changeMoney}}元</div>"}
-                , {field: 'totalCost', title: 'Total cost', align: 'center', width: 140, templet: "<div>{{d.totalCost}}元</div>"}
-                , {field: 'totalProfit', title: 'Total profit', align: 'center', width: 140, templet: "<div>{{d.totalProfit}}元</div>"}
+                , {field: 'discountMoney', title: 'Discount amount', align: 'center', width: 140, templet: "<div> ${{d.discountMoney}}</div>"}
+                , {field: 'changeMoney', title: 'change', align: 'center', width: 140, templet: "<div> ${{d.changeMoney}}</div>"}
+                , {field: 'totalCost', title: 'Total cost', align: 'center', width: 140, templet: "<div> ${{d.totalCost}}</div>"}
+                , {field: 'totalProfit', title: 'Total profit', align: 'center', width: 140, templet: "<div> ${{d.totalProfit}}</div>"}
                 , {field: 'peopleNum', title: 'Number of people', align: 'center', width: 120}
                 , {field: 'payStatus', title: 'Payment status', align: 'center', width:120, templet: "#payStatus_templet"}
                 , {field: 'name', title: 'cashier', align: 'center', width:120, templet: "<div>{{d.cashier.name}}</div>"}

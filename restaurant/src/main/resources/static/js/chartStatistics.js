@@ -196,13 +196,13 @@ function loadTodayCustomerFlowChart(timeArray,countArray){
             var customerFlowChart = echarts.init(document.getElementById('customerFlowChart'), 'macarons');
             var customerFlowChartOption = {
                 title : {
-                    text: '今日客流量',
+                    text: 'Today\'s customer',
                 },
                 tooltip : {
                     trigger: 'axis'
                 },
                 legend: {
-                    data:['人数']
+                    data:['Number of people']
                 },
                 toolbox: {
                     show : true,
@@ -228,7 +228,7 @@ function loadTodayCustomerFlowChart(timeArray,countArray){
                 ],
                 series : [
                     {
-                        name:'人数',
+                        name:'Number of people',
                         type:'line',
                         smooth:true,
                         itemStyle: {normal: {areaStyle: {type: 'default'}}},
@@ -254,7 +254,7 @@ function loadMemberAddChart(dateArray, countArray) {
             var memberAddChart = echarts.init(document.getElementById('memberAddChart'), 'macarons');
             var memberAddChartOption = {
                 title: {
-                    text: '近七天新增会员量',
+                    text: 'New members in the past seven days',
                     //subtext: '最近七天新增会员量'
                 },
                 tooltip: {
@@ -281,24 +281,24 @@ function loadMemberAddChart(dateArray, countArray) {
                     {
                         type: 'value',
                         axisLabel: {
-                            formatter: '{value}人'
+                            formatter: '{value}'
                         }
                     }
                 ],
                 series: [
                     {
-                        name:'人数',
+                        name:'Number of people',
                         type: 'line',
                         data: countArray,
                         markPoint: {
                             data: [
-                                {type: 'max', name: '最大值'},
-                                {type: 'min', name: '最小值'}
+                                {type: 'max', name: 'Maximum'},
+                                {type: 'min', name: 'Minimum'}
                             ]
                         },
                         markLine: {
                             data: [
-                                {type: 'average', name: '平均值'}
+                                {type: 'average', name: 'Average'}
                             ]
                         }
                     }
@@ -325,7 +325,7 @@ function loadMemberCategoryRateChart(nameArray, countArray) {
             var MemberCategoryRateChart = echarts.init(document.getElementById('memberCategoryRate'), 'macarons');
             var MemberCategoryRateChartOption = {
                 title: {
-                    text: '各等级会员统计',
+                    text: 'Membership statistics for each level',
                     //subtext:'各等级会员统计',
                     x: 'left'
                 },
@@ -341,7 +341,7 @@ function loadMemberCategoryRateChart(nameArray, countArray) {
                 calculable: false,
                 series: [
                     {
-                        name: '类型名称',
+                        name: 'Type Name',
                         type: 'pie',
                         radius: '55%',
                         center: ['50%', '60%'],
@@ -367,7 +367,7 @@ function loadChart2(nameArray, countArray) {
             var myChart2 = echarts.init(document.getElementById('chart2'), 'macarons');
             var option2 = {
                 title: {
-                    text: '近七天菜系销量分析',
+                    text: 'Food statistics with different type',
                     x: 'center'
                 },
                 tooltip: {
@@ -403,7 +403,7 @@ function loadChart2(nameArray, countArray) {
                 calculable: false,
                 series: [
                     {
-                        name: '菜系',
+                        name: 'Type',
                         type: 'pie',
                         radius: '55%',
                         center: ['50%', '60%'],
@@ -430,13 +430,13 @@ function loadGoodsWordCloudChart(chartData) {
             var goodsWordCloudChart = ec.init(document.getElementById('goodsWordCloudChart'), 'macarons');
             var goodsWordCloudChartOption = {
                 title: {
-                    text: '近七天热销菜',
+                    text: 'Popular food in the past seven days',
                 },
                 tooltip: {
                     show: true
                 },
                 series: [{
-                    name: '菜名',
+                    name: 'Food Name',
                     type: 'wordCloud',
                     center: ['50%', '50%'],
                     size: ['80%', '80%'],

@@ -25,7 +25,7 @@ public enum ResultEnum {
     INSERT_DB_FAIL(101,"数据添加失败！"),
     DEL_DB_FAIL(101,"删除失败！"),
     UPDATE_DB_FAIL(101,"修改失败！"),
-    IMAGE_UPLOAD_FAIL(101,"图片上传失败！"),
+    IMAGE_UPLOAD_FAIL(101,"图片Upload failed！"),
     UNAUTHENTICATED_ERROR(100,"没有权限"),
     ADD_ORDER_FAIL(101,"添加订单失败");
     private Integer code;

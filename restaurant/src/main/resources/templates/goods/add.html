@@ -20,7 +20,7 @@
                     <div class="layui-col-xs6 layui-col-sm6 layui-col-md6">
                         <label class="layui-form-label">Name</label>
                         <div class="layui-input-block">
-                            <input type="text" name="goodsName" id="goodsName" lay-verify="required" placeholder="菜名 Food Name"
+                            <input type="text" name="goodsName" id="goodsName" lay-verify="required" placeholder="Food Name"
                                    autocomplete="off"
                                    class="layui-input">
                         </div>
@@ -61,15 +61,15 @@
                     <div class="layui-col-xs6 layui-col-sm6 layui-col-md6">
                         <label class="layui-form-label">Selling Status</label>
                         <div class="layui-input-block">
-                            <input type="radio" name="soldState" value="0" title="未售完 Available" checked>
-                            <input type="radio" name="soldState" value="1" title="已售完 Sold Out">
+                            <input type="radio" name="soldState" value="0" title="Available" checked>
+                            <input type="radio" name="soldState" value="1" title="Sold Out">
                         </div>
                     </div>
                     <div class="layui-col-xs6 layui-col-sm6 layui-col-md6">
                         <label class="layui-form-label">Listing Status</label>
                         <div class="layui-input-block">
-                            <input type="radio" name="putawayStatus" value="0" title="下架 Remove on sale" checked>
-                            <input type="radio" name="putawayStatus" value="1" title="上架 Put on sale">
+                            <input type="radio" name="putawayStatus" value="0" title="Remove on sale" checked>
+                            <input type="radio" name="putawayStatus" value="1" title="Put on sale">
                         </div>
                     </div>
                 </div>
@@ -87,9 +87,9 @@
                         <label class="layui-form-label">Type Status</label>
                         <div class="layui-input-block">
                             <select name="typeState">
-                                <option value="1" selected>普通菜 Main Dishes</option>
-                                <option value="2">新菜 Salad</option>
-                                <option value="3">特色菜 Dessert</option>
+                                <option value="1" selected>Main Dishes</option>
+                                <option value="2">Salad</option>
+                                <option value="3">Dessert</option>
                             </select>
                         </div>
                     </div>
@@ -146,12 +146,12 @@
             //验证正数
             positive_number: function (value, item) {
                 if (parseFloat(value) < 0) {
-                    return '必须为正数';
+                    return 'must be a positive number';
                 }
             },
             int_number: function (value, item) {
                 if (!/^(0|\+?[1-9][0-9]*)$/.test(value)) {
-                    return '必须为正整数';
+                    return 'must be a positive integer';
                 }
             }
         });
@@ -173,18 +173,18 @@
                 });
             }
             , done: function (res) {
-                //如果上传失败
+                //如果Upload failed
                 if (res.code !== 200) {
-                    return layer.msg('上传失败', {icon: 2, anim: 6});
+                    return layer.msg('Upload failed', {icon: 2, anim: 6});
                 }
-                //上传成功
-                layer.msg("上传成功", {icon: 6});
+                //Upload successfully
+                layer.msg("Upload successfully", {icon: 6});
                 document.getElementById("img_url").value = res.data.src;
             }
             , error: function () {
                 //演示失败状态，并实现重传
                 var demoText1 = $('#demoText1');
-                demoText1.html('<span style="color: #FF5722;">上传失败</span> <a class="layui-btn layui-btn-mini demo-reload">重试</a>');
+                demoText1.html('<span style="color: #FF5722;">Upload failed</span> <a class="layui-btn layui-btn-mini demo-reload">Retry</a>');
                 demoText1.find('.demo-reload').on('click', function () {
                     uploadInst1.upload();
                 });

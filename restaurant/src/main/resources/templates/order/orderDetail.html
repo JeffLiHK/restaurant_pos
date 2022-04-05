@@ -104,9 +104,9 @@
                 , {field: 'goodsName', title: 'Food name',align:'center', cellMinWidth: 150, sort: true,templet:'<div>{{d.goods.goodsName}}</div>'}
                 , {field: 'imgUrl', title: 'Food photo',align:'center', cellMinWidth:120, templet:'#imgUrl'}
                 , {field: 'goodsCategory', title: 'Food type', align:'center',cellMinWidth: 100, templet: '<div>{{d.goods.goodsCategory.categoryName}}</div>'}
-                , {field: 'cost', title: 'Cost',align:'center', cellMinWidth: 100,sort:true,templet:'<div>{{d.goods.cost}}元</div>'}
-                , {field: 'price', title: 'Amount',align:'center', cellMinWidth: 100,sort: true,templet:'<div>{{d.goods.price}}元</div>'}
-                , {field: 'count', title: 'Quantity',align:'center', cellMinWidth: 100,sort:true,templet:'<div>{{d.count}}份</div>'}
+                , {field: 'cost', title: 'Cost',align:'center', cellMinWidth: 100,sort:true,templet:'<div> ${{d.goods.cost}}</div>'}
+                , {field: 'price', title: 'Price',align:'center', cellMinWidth: 100,sort: true,templet:'<div>${{d.goods.price}}</div>'}
+                , {field: 'count', title: 'Count',align:'center', cellMinWidth: 100,sort:true,templet:'<div> {{d.count}}</div>'}
                 , {field: 'status', title: 'Production status',align:'center', cellMinWidth: 100,sort: true,templet:"#status"}
                 , {fixed: 'right', title: "Toolbar",align:'center', width: 120, toolbar: '#barDemo'}
                 ]]
