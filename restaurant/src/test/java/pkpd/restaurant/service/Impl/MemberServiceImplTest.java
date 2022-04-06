@@ -23,10 +23,10 @@ public class MemberServiceImplTest {
         Member member = new Member();
         member.setMemberId(5L);
         member.setCreateTime(new Date());
-        member.setPhone("17781036105");
+        member.setPhone("52731082");
         member.setBirthday(new Date());
         member.setGender("Female");
-        member.setName("刘静");
+        member.setName("Lau Ki");
         memberService.update(member);
     }
 
@@ -34,12 +34,12 @@ public class MemberServiceImplTest {
     @Ignore
     public void addMember(){
         Member member = new Member();
-        member.setMemberCode("17781036106");
+        member.setMemberCode("92026469");
         member.setCreateTime(new Date());
-        member.setPhone("17781036105");
+        member.setPhone("52731082");
         member.setBirthday(new Date());
         member.setGender("Male");
-        member.setName("顾客4");
+        member.setName("Customer4");
         memberService.addMember(member);
     }
 
