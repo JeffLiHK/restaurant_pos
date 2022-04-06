@@ -8,10 +8,10 @@ staff login address: http://localhost:8181/restaurant/sysuser/login.html
 
 customer login address: http://localhost:8181/restaurant/guest/desklist.html  
 
-manager testing account:       ac: 18384623911 pw: 123456 
+manager testing account:       ac: 69972123 pw: 123456 
 
-cashier testing account:     ac: 18384623912 pw: 123456  
+cashier testing account:     ac: 92876762 pw: 123456  
 
-chief testing account       ac: 18384623913 pw: 123456  
+chief testing account       ac: 93268745 pw: 123456  
 
-waiter testing account:     ac: 18384623914 pw: 123456 
+waiter testing account:     ac: 64789021 pw: 123456 
