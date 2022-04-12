@@ -11,7 +11,7 @@ var popHtml = '<div class="container layui-card" style="width: 98%;height: 98%;m
     '                                <input type="text" id="totalMoney"\n' +
     '                                       style="width: 60px;height: 30px;text-align: center;line-height: 30px;border: none;background:none;color: red" value="0.00" disabled></li>\n' +
     '                        <li style="float: right">\n' +
-    '                            <button class="layui-btn" style="background:#AF2825;width:64px;height: 30px;padding:2px 4px;line-height: 30px;text-align: center;font-size: 14px;border-radius: 6px"; id="commit">提交</button>\n' +
+    '                            <button class="layui-btn" style="background:#AF2825;width:64px;height: 30px;padding:2px 4px;line-height: 30px;text-align: center;font-size: 14px;border-radius: 6px"; id="commit">Submit</button>\n' +
     '                        </li>\n' +
     '                        <li style="float: left;margin-left: 26px">\n' +
     '                           <div style="overflow: hidden;display: inline-block">\n' +
@@ -71,7 +71,7 @@ function parseGoodSView(goods) {
         '                                  style="display:inline-block;line-height: 30px;height:30px;font-size:14px;color: #0C0C0C">' + goods.goodsName + '</span><br/>\n' +
         '                            <span style="display:inline-block;line-height: 30px;height:30px;color: red"><input\n' +
         '                                    type="text" style="width: 30px;border: none;background:none;color: red" name="price"\n' +
-        '                                    value="' + goods.price + '" disabled>元/份</span>\n' +
+        '                                    value=" ' + goods.price + '" disabled>/ every one</span>\n' +
         '                        </li>\n' +
         '                        <li class="goods-item-li-other" style="text-align: center;padding:35px 0px;width: 25%;"\n' +
         '                            disabled="">\n' +
@@ -95,7 +95,7 @@ function parseGoodSView(goods) {
         '                        <li class="goods-item-li-other" style="text-align: center;width: 15%">\n' +
         '                            <button class="layui-btn layui-btn-primary delete"\n' +
         '                                    style="margin:35px auto;color: #FFFFFF;background: #AF2825;height:30px;line-height:30px;text-align:center;border-radius: 6px;border: 0px;">\n' +
-        '                                删除\n' +
+        '                                Delete\n' +
         '                            </button>\n' +
         '                        </li>\n' +
         '                    </ul>'
@@ -172,9 +172,9 @@ layui.use(['index', "jquery"], function () {
                                         //注意通过a标签跳转Iframe页面，有几个页面会生成几个iframe
                                         //清除所有iframe页面中的已选菜品样式
                                         clearAllIframeStyle();
-                                        layer.msg("提交成功！", {icon: 1})
+                                        layer.msg("Submit successfully!", {icon: 1})
                                     } else {
-                                        layer.msg("提交失败！", {icon: 2})
+                                        layer.msg("Submit failed!", {icon: 2})
                                     }
                                 }
                             });
@@ -208,11 +208,11 @@ layui.use(['index', "jquery"], function () {
                         //prev() 上一个兄弟节点
                         var currentCount = parseInt($(this).prev().val());
                         var storeCount = $(goodsItem).find("input[name='storeCount']").val();
-                        if (currentCount >= 1) {
-                            layer.msg("不要点重了哦!", {icon: 6});
-                        }
+                        // if (currentCount >= 1) {
+                        //     layer.msg("不要点重了哦!", {icon: 6});
+                        // }
                         if (currentCount >= storeCount) {
-                            layer.msg("没有那么多份亲！", {icon: 5});
+                            layer.msg("Not enough count!", {icon: 5});
                         } else {
                             $(this).prev().attr("value", currentCount + 1);
                             var price = parseFloat($(goodsItem).find("input[name='price']").val());
@@ -267,13 +267,13 @@ layui.use(['index', "jquery"], function () {
 
     $("#commit_goods").on('click',function (){
         if(orderCode==''){
-            layer.msg("还没有点菜哦！",{icon:6});
+            layer.msg("Not order yet!",{icon:6});
             return;
         }
         var url = "/restaurant/guest/client/myOrder.html?orderCode="+orderCode;
         layer.open({
             type: 2
-            , title: '已提交菜单'
+            , title: 'Submitted Order'
             , content: url
             , maxmin: true
             , anim: 1

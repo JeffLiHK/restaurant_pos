@@ -64,4 +64,4 @@ server:
     context-path: /restaurant
 
 web:
-  upload-image-path: E:\Programming\Java\Project\restaurant-master\images\restaurant\upload
+  upload-image-path: E:\Programming\Java\Project\restaurant_pos_ultimate\images\restaurant\upload
