@@ -26,7 +26,7 @@ public class OrderDetailDaoTest {
         OrderDetail orderDetail = new OrderDetail();
         Order order = new Order();
         Member member = new Member();
-        member.setMemberCode("17781036104");
+        member.setMemberCode("97258262");
         order.setMember(member);
         //orderDetail.setOrder(order);
         Goods goods = new Goods();

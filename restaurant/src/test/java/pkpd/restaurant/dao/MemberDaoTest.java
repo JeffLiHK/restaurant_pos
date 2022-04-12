@@ -19,14 +19,14 @@ public class MemberDaoTest {
     public void searchByPhone(){
         Member member = new Member();
         member.setMemberId(1L);
-        member.setPhone("17781036101");
+        member.setPhone("57359824");
        // System.out.println(memberDao.searchByPhone(member).toString());
     }
 
     @Test
     public void searchByMemberCode() {
         Member member = new Member();
-        member.setMemberCode("17781036106");
+        member.setMemberCode("92026469");
         //System.out.println(memberDao.searchByMemberCode(member).toString());
     }
 
