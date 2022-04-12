@@ -7,7 +7,7 @@ var popHtml = '<div class="container layui-card" style="width: 98%;height: 98%;m
     '                    <ul style="overflow: hidden;margin: 36px 5px 35px 10px">\n' +
     '                        <li style="float: left">\n' +
     '                            <div style="font-size: 20px;color: red">\n' +
-    '                                <span style="height:30px;text-align: center;line-height: 30px">合计:￥</span>\n' +
+    '                                <span style="height:30px;text-align: center;line-height: 30px">Total:$</span>\n' +
     '                                <input type="text" id="totalMoney"\n' +
     '                                       style="width: 60px;height: 30px;text-align: center;line-height: 30px;border: none;background:none;color: red" value="0.00" disabled></li>\n' +
     '                        <li style="float: right">\n' +
@@ -15,7 +15,7 @@ var popHtml = '<div class="container layui-card" style="width: 98%;height: 98%;m
     '                        </li>\n' +
     '                        <li style="float: left;margin-left: 26px">\n' +
     '                           <div style="overflow: hidden;display: inline-block">\n' +
-    '                                <span class="input-float" style="height: 30px;text-align: center;line-height: 30px">就餐人数</span>' +
+    '                                <span class="input-float" style="height: 30px;text-align: center;line-height: 30px">People: </span>' +
     '                                <input class="input-float people_minus" type="button"\n' +
     '                                       style="width: 25px;font-size:20px;height: 30px;background: none;border: 0px"\n' +
     '                                       value="-" name="minus">\n' +
