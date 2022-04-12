@@ -69,9 +69,9 @@ function parseGoodSView(goods) {
         '                        <li class="goods-item-li-other" style="padding:20px 0px 20px 3%; width: 22%;">\n' +
         '                            <span class="name"\n' +
         '                                  style="display:inline-block;line-height: 30px;height:30px;font-size:14px;color: #0C0C0C">' + goods.goodsName + '</span><br/>\n' +
-        '                            <span style="display:inline-block;line-height: 30px;height:30px;color: red"><input\n' +
+        '                            <span style="display:inline-block;line-height: 30px;height:30px;color: red">$<input\n' +
         '                                    type="text" style="width: 30px;border: none;background:none;color: red" name="price"\n' +
-        '                                    value=" ' + goods.price + '" disabled>/ every one</span>\n' +
+        '                                    value=" ' + goods.price + '" disabled>per one</span>\n' +
         '                        </li>\n' +
         '                        <li class="goods-item-li-other" style="text-align: center;padding:35px 0px;width: 25%;"\n' +
         '                            disabled="">\n' +
@@ -130,7 +130,10 @@ layui.use(['index', "jquery"], function () {
                     $('#commit').off('click');
                     //给提交按钮添加点击事件
                     $("#commit").on("click", function (e) {
-                        layer.confirm('Confirm submission? Cannot modify after submission!', function (index) {
+                        layer.confirm('Confirm submission? Cannot modify after submission!',{
+                            title: 'Confirm submission',
+                            btn: ['Confirm', 'Cancel']
+                        }, function (index) {
                             confirm();
                             layer.close(index);
                         });
@@ -278,6 +281,7 @@ layui.use(['index', "jquery"], function () {
             , maxmin: true
             , anim: 1
             , area: ['900px', '500px']
+            , btn: ['Confirm', 'Cancel']
         });
     });
     /**
