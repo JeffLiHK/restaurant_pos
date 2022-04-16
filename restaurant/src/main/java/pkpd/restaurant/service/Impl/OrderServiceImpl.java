@@ -163,7 +163,7 @@ public class OrderServiceImpl implements OrderService {
             String currDeskCode = resultDetailList.get(0).getOrder().getDeskCode();
             Desk desk = new Desk();
             desk.setDeskCode(currDeskCode);
-            desk.setIdleStatus(2);
+            desk.setIdleStatus(0);
             deskDao.update(desk);
         }
         int effect = orderDao.updateByOrderCode(order);

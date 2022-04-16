@@ -25,7 +25,7 @@ public class MemberServiceImplTest {
         member.setCreateTime(new Date());
         member.setPhone("52731082");
         member.setBirthday(new Date());
-        member.setGender("Female");
+        member.setGender("F");
         member.setName("Lau Ki");
         memberService.update(member);
     }

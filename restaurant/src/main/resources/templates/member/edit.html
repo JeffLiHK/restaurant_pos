@@ -69,13 +69,13 @@
                         <div class="layui-col-xs6 layui-col-sm6 layui-col-md4">
                             <label class="layui-form-label">Sex</label>
                             <div class="layui-input-block">
-                                <th:block th:if="${member.gender} eq 'Male'">
-                                    <input type="radio" name="gender" value="Male" title="Male" checked>
-                                    <input type="radio" name="gender" value="Female" title="Female">
+                                <th:block th:if="${member.gender} eq 'M'">
+                                    <input type="radio" name="gender" value="M" title="Male" checked>
+                                    <input type="radio" name="gender" value="F" title="Female">
                                 </th:block>
-                                <th:block th:if="${member.gender} eq 'Female'">
-                                    <input type="radio" name="gender" value="Male" title="Male">
-                                    <input type="radio" name="gender" value="Female" title="Female" checked>
+                                <th:block th:if="${member.gender} eq 'F'">
+                                    <input type="radio" name="gender" value="M" title="Male">
+                                    <input type="radio" name="gender" value="F" title="Female" checked>
                                 </th:block>
                             </div>
                         </div>

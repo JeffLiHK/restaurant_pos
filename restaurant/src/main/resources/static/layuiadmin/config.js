@@ -44,12 +44,14 @@ layui.define(['laytpl', 'layer', 'element', 'util'], function(exports){
       'echartsTheme' //echarts 主题
     ]
     
-    //主题配置
+    // color scheme
     ,theme: {
       //内置主题配色方案
       color: [{
-        main: '#20222A' //主题色
-        ,selected: '#009688' //选中色
+        main: '#2449d5'
+        ,logo: '#4469d5'
+        ,selected: '#6f58f1'
+        ,header: '#44a9d5'
         ,alias: 'default' //默认别名
       },{
         main: '#03152A'
