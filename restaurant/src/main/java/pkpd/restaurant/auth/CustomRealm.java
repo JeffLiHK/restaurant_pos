@@ -75,7 +75,7 @@ public class CustomRealm extends AuthorizingRealm {
         info.setRoles(roles);
         SysMenu sysMenu = new SysMenu();
         sysMenu.getCondition().put("list",roles);
-        //根据角色信息，查询出用户具备的权限字符串
+        //According to the role information, query the permission string possessed by the user
         List<SysMenu> menuList = sysUserService.findMenuList(sysMenu);
         Set<String> permissions = new HashSet<>();
         for(SysMenu menu:menuList){
@@ -84,8 +84,8 @@ public class CustomRealm extends AuthorizingRealm {
                 System.out.println(menu.getPermission());
             }
         }
-        // 将权限名称提供给info
-        //set集合不会出现重复数据
+        // give the permission name to info
+        // There will be no duplicate data in the set collection
         info.setStringPermissions(permissions);
         return info;
     }
