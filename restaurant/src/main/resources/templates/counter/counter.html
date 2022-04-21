@@ -683,7 +683,7 @@
         function loadMemberInfo(data) {
             $(".member-name").text(data.name);
             $(".member-category").text(data.memberCategory.mcName);
-            $(".discount").text(parseFloat(1-(data.memberCategory.discount) * 10) + "% off");
+            $(".discount").text(parseFloat(100-(data.memberCategory.discount) * 100) + "% off");
             //消费金额
             var totalMoney = parseFloat($(".totalMoney").text());
             var discountMoney = (totalMoney * (1 - data.memberCategory.discount)).toFixed(2);
