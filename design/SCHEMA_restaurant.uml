@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Diagram>
+  <ID>DATABASE</ID>
+  <OriginalElement>292249cb-a3d0-481f-b19a-e24348ba0ab8.SCHEMA:restaurant</OriginalElement>
+  <nodes>
+    <node x="0.0" y="863.0">292249cb-a3d0-481f-b19a-e24348ba0ab8.TABLE:restaurant.sys_user</node>
+    <node x="447.0" y="238.0">292249cb-a3d0-481f-b19a-e24348ba0ab8.TABLE:restaurant.r_member</node>
+    <node x="997.0" y="0.0">292249cb-a3d0-481f-b19a-e24348ba0ab8.TABLE:restaurant.r_order</node>
+    <node x="37.5" y="0.0">292249cb-a3d0-481f-b19a-e24348ba0ab8.TABLE:restaurant.r_category</node>
+    <node x="554.5" y="0.0">292249cb-a3d0-481f-b19a-e24348ba0ab8.TABLE:restaurant.r_merber_category</node>
+    <node x="23.5" y="150.0">292249cb-a3d0-481f-b19a-e24348ba0ab8.TABLE:restaurant.r_goods</node>
+    <node x="487.75" y="1233.0">292249cb-a3d0-481f-b19a-e24348ba0ab8.TABLE:restaurant.sys_role_menu</node>
+    <node x="193.25" y="1233.0">292249cb-a3d0-481f-b19a-e24348ba0ab8.TABLE:restaurant.sys_user_role</node>
+    <node x="944.0" y="863.0">292249cb-a3d0-481f-b19a-e24348ba0ab8.TABLE:restaurant.r_desk</node>
+    <node x="0.0" y="630.0">292249cb-a3d0-481f-b19a-e24348ba0ab8.TABLE:restaurant.r_order_detail</node>
+    <node x="587.0" y="885.0">292249cb-a3d0-481f-b19a-e24348ba0ab8.TABLE:restaurant.sys_menu</node>
+    <node x="302.0" y="951.0">292249cb-a3d0-481f-b19a-e24348ba0ab8.TABLE:restaurant.sys_role</node>
+  </nodes>
+  <notes />
+  <edges>
+    <edge source="292249cb-a3d0-481f-b19a-e24348ba0ab8.TABLE:restaurant.r_order_detail" target="292249cb-a3d0-481f-b19a-e24348ba0ab8.TABLE:restaurant.r_goods" relationship="REFERENCES">
+      <point x="0.0" y="-94.0" />
+      <point x="0.0" y="215.0" />
+    </edge>
+    <edge source="292249cb-a3d0-481f-b19a-e24348ba0ab8.TABLE:restaurant.sys_role_menu" target="292249cb-a3d0-481f-b19a-e24348ba0ab8.TABLE:restaurant.sys_menu" relationship="REFERENCES">
+      <point x="50.5" y="-38.5" />
+      <point x="639.25" y="1208.0" />
+      <point x="743.0" y="1208.0" />
+      <point x="0.0" y="138.0" />
+    </edge>
+    <edge source="292249cb-a3d0-481f-b19a-e24348ba0ab8.TABLE:restaurant.sys_role_menu" target="292249cb-a3d0-481f-b19a-e24348ba0ab8.TABLE:restaurant.sys_role" relationship="REFERENCES">
+      <point x="-50.5" y="-38.5" />
+      <point x="538.25" y="1208.0" />
+      <point x="434.5" y="1208.0" />
+      <point x="0.0" y="72.0" />
+    </edge>
+    <edge source="292249cb-a3d0-481f-b19a-e24348ba0ab8.TABLE:restaurant.sys_user_role" target="292249cb-a3d0-481f-b19a-e24348ba0ab8.TABLE:restaurant.sys_user" relationship="REFERENCES">
+      <point x="-47.25" y="-38.5" />
+      <point x="240.5" y="1208.0" />
+      <point x="141.0" y="1208.0" />
+      <point x="0.0" y="160.0" />
+    </edge>
+    <edge source="292249cb-a3d0-481f-b19a-e24348ba0ab8.TABLE:restaurant.sys_user_role" target="292249cb-a3d0-481f-b19a-e24348ba0ab8.TABLE:restaurant.sys_role" relationship="REFERENCES">
+      <point x="47.25" y="-38.5" />
+      <point x="335.0" y="1208.0" />
+      <point x="434.5" y="1208.0" />
+      <point x="0.0" y="72.0" />
+    </edge>
+    <edge source="292249cb-a3d0-481f-b19a-e24348ba0ab8.TABLE:restaurant.r_goods" target="292249cb-a3d0-481f-b19a-e24348ba0ab8.TABLE:restaurant.r_category" relationship="REFERENCES">
+      <point x="0.0" y="-215.0" />
+      <point x="0.0" y="50.0" />
+    </edge>
+    <edge source="292249cb-a3d0-481f-b19a-e24348ba0ab8.TABLE:restaurant.r_member" target="292249cb-a3d0-481f-b19a-e24348ba0ab8.TABLE:restaurant.r_merber_category" relationship="REFERENCES">
+      <point x="0.0" y="-138.0" />
+      <point x="0.0" y="94.0" />
+    </edge>
+  </edges>
+  <settings layout="Hierarchic" zoom="0.541980605657076" showDependencies="false" x="889.439563231946" y="645.593280348184" />
+  <SelectedNodes />
+  <Categories>
+    <Category>Columns</Category>
+    <Category>Comments</Category>
+    <Category>Key columns</Category>
+    <Category>Virtual foreign keys</Category>
+  </Categories>
+</Diagram>
+
