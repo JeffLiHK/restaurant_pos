@@ -28,8 +28,8 @@ public class CustomRealm extends AuthorizingRealm {
     private SysUserService sysUserService;
 
     /**
-     * 认证
-     * 获取身份效验信息
+     * 
+     * 
      * @param authenticationToken
      * @return
      */
@@ -37,39 +37,39 @@ public class CustomRealm extends AuthorizingRealm {
     protected AuthenticationInfo doGetAuthenticationInfo(AuthenticationToken authenticationToken) throws AuthenticationException {
         UsernamePasswordToken token = (UsernamePasswordToken) authenticationToken;
         String loginCode = (String) token.getPrincipal();
-       //此处username 即loginCode登录账号
+       //username loginCode
         SysUser user = sysUserService.findByLoginCode(loginCode);
         if(user==null){
-            //此处自定义的AuthenticationException
+            //AuthenticationException
             throw new CustomAuthenticationException(ResultEnum.USER_NO_FOUND);
         }else if(!user.getPassword().equals(new String((char[]) token.getCredentials()))){
             throw new CustomAuthenticationException(ResultEnum.PWD_ERROR);
         }
-        // 当验证都通过后，把用户信息放在session里
+        // ，session
         Session session = SecurityUtils.getSubject().getSession();
         session.setAttribute("user",user);
-        //身份信息
+        //
         return new SimpleAuthenticationInfo(
-                user,//用户
-                user.getPassword(),//密码
+                user,//
+                user.getPassword(),//
                 ByteSource.Util.bytes(loginCode),
                 getName()//realm name
         );
     }
 
     /**
-     * 授权
-     * 获取授权信息
+     * 
+     * 
      * @param principalCollection
      * @return
      */
     @Override
     protected AuthorizationInfo doGetAuthorizationInfo(PrincipalCollection principalCollection) {
-        //获取用户的输入的账号.
+        //.
         String loginCode = ((SysUser) SecurityUtils.getSubject().getPrincipal()).getLoginCode();
-        //根据账号查询用户
+        //
         SysUser param = sysUserService.findByLoginCode(loginCode);
-        //授权信息对象info,用来存放查出的用户的所有的角色（role）及权限（permission）
+        //info,（role）（permission）
         SimpleAuthorizationInfo info = new SimpleAuthorizationInfo();
         Set<String> roles = sysUserService.findRoleNameByUser(param);
         info.setRoles(roles);

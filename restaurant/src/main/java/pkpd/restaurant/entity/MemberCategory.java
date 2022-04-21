@@ -5,24 +5,24 @@ package pkpd.restaurant.entity;
  * author:LiuJing
  * Date:2018/10/1
  * Time:22:55
- * 会员类型类
+ * 
  */
 
 public class MemberCategory extends BaseBean{
     /**
-     * 会员类型id
+     * id
      */
     private  Integer mcId;
     /**
-     * 会员类型名称
+     * 
      */
     private  String mcName;
     /**
-     * 会员享有的折扣
+     * 
      */
     private String discount;
     /**
-     * 需要达到的消费金额
+     * 
      */
     private Double amount;
 

@@ -90,7 +90,7 @@
             <div class="layui-form-item">
                 <div class="layui-row layui-col-space15">
                     <div class="layui-col-xs6 layui-col-sm6 layui-col-md4">
-                        <!-- 文本框要用.layui-form-text样式修饰-->
+                        <!-- .layui-form-text-->
                         <div class="layui-form-text">
                             <label class="layui-form-label">Home address</label>
                             <div class="">
@@ -136,14 +136,14 @@
             , laydate = layui.laydate
             , layer = layui.layer;
 
-        //获取from表单提交事件
-        //此处submit中的值是lay-filter
+        //from
+        //submitlay-filter
         form.on('submit(component-form-element)', function (data) {
         });
-        //日期选择器
+        //
         laydate.render({
             elem: '#birthday'
-            , format: 'yyyy-MM-dd' //可任意组合
+            , format: 'yyyy-MM-dd' //
         });
     });
 </script>

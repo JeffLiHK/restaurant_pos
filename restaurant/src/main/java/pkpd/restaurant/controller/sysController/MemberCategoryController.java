@@ -63,7 +63,7 @@ public class MemberCategoryController {
     }
 
     /**
-     * 会员类型列表数据接口
+     * 
      * @return
      */
     @PostMapping("/list.do")

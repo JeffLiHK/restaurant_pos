@@ -34,27 +34,27 @@ public class OrderServiceImpl implements OrderService {
     @Autowired
     private DeskDao deskDao;
     /**
-     * 添加订单
+     * 
      *
      * @param order
      */
     @Override
     public String addOrder(Order order) {
         String orderCode = OrderCodeUtil.createOrderCode();
-        //创建一个订单号
+        //
         order.setOrderCode(orderCode);
         order.setCreateTime(new Date());
-        //此处返回该条记录的orderId到order对象中
+        //orderIdorder
         orderDao.insert(order);
-        //设置订单orderId
+        //orderId
         Order order1 = new Order();
         order1.setOrderId(order.getOrderId());
-        //插入订单明细
+        //
         for (int i = 0; i < order.getOrderDetails().size(); i++) {
             order.getOrderDetails().get(i).setOrder(order1);
         }
         int effect = orderDetailDao.insert(order.getOrderDetails());
-        //减库存,加销量
+        //,
         for (OrderDetail detail:order.getOrderDetails()){
             updateStoreAndSold(detail.getGoods().getGoodsId(),detail.getCount());
         }
@@ -65,7 +65,7 @@ public class OrderServiceImpl implements OrderService {
     }
 
     /**
-     * 修改库存和销量
+     * 
      * @param goodsId
      * @param count
      */
@@ -75,14 +75,14 @@ public class OrderServiceImpl implements OrderService {
         newGoods.setGoodsId(oldGoods.getGoodsId());
         newGoods.setStoreCount(oldGoods.getStoreCount()-count);
         newGoods.setSoldCount(oldGoods.getSoldCount()+count);
-        //如果库存为0，则将商品设置成已售罄状态
+        //0，
         if(oldGoods.getStoreCount()==count){
             newGoods.setSoldState(1);
         }
         goodsDao.update(newGoods);
     }
     /**
-     * 多条件分页查询订单
+     * 
      * @param pageInfo
      * @return
      */
@@ -95,7 +95,7 @@ public class OrderServiceImpl implements OrderService {
     }
 
     /**
-     * 根据订单id查询订单
+     * id
      *
      * @param orderId
      * @return
@@ -106,7 +106,7 @@ public class OrderServiceImpl implements OrderService {
     }
 
     /**
-     * 根据订单id删除订单
+     * id
      *
      * @param strIds
      */
@@ -121,7 +121,7 @@ public class OrderServiceImpl implements OrderService {
     }
 
     /**
-     * 修改订单
+     * 
      *
      * @param order
      */
@@ -131,7 +131,7 @@ public class OrderServiceImpl implements OrderService {
     }
 
     /**
-     * 结账业务
+     * 
      * @param order
      */
     @Override
@@ -141,25 +141,25 @@ public class OrderServiceImpl implements OrderService {
         conditionOrder.setOrderCode(order.getOrderCode());
         orderDetail.setOrder(conditionOrder);
         List<OrderDetail> resultDetailList = orderDetailDao.findPage(orderDetail);
-        //总成本
+        //
         double totalCost=0;
-        //计算总成本
+        //
         for(OrderDetail detail:resultDetailList){
-            //每个菜的成本乘以数量
+            //
             totalCost+=detail.getGoods().getCost()*detail.getCount();
         }
-        //设置利润
+        //
         order.setTotalProfit(order.getMustPay()-totalCost);
-        //设置总成本
+        //
         order.setTotalCost(totalCost);
-        //设置为支付状态
+        //
         order.setPayStatus(1);
         /**
-         * 判断该订单实付已上菜完毕，如果上菜完毕，则将订单设置成结束状态1
+         * ，，1
          */
         if(resultDetailList.get(0).getOrder().getFinishStatus()==1){
             order.setOverStatus(1);
-            //将对应餐桌状态设置成'待清理'
+            //''
             String currDeskCode = resultDetailList.get(0).getOrder().getDeskCode();
             Desk desk = new Desk();
             desk.setDeskCode(currDeskCode);
@@ -168,18 +168,18 @@ public class OrderServiceImpl implements OrderService {
         }
         int effect = orderDao.updateByOrderCode(order);
         /**
-         *  增加会员的总消费额
-         *  1先根据会员号查出会员信息
-         *  2修改会员消费总金额
+         *  
+         *  1
+         *  2
          */
         Member member = order.getMember();
-        //查出该会员的信息
+        //
         Member queryMember = (memberDao.findPage(member)).get(0);
         Double currentTotalMoney = queryMember.getTotalMoney()+order.getMustPay();
         member.setTotalMoney(currentTotalMoney);
         /**
-         * 判断会员需不需要升级
-         * 查找当前会员消费总金额能达到的会员等级的id
+         * 
+         * id
          */
         Integer mcId = queryMember.getMemberCategory().getMcId();
         List<MemberCategory> categoryList = memberCategoryDao.findAll();
@@ -191,7 +191,7 @@ public class OrderServiceImpl implements OrderService {
 
         MemberCategory memberCategory = new MemberCategory();
         memberCategory.setMcId(mcId);
-        //根据会员id来修改会员信息
+        //id
         member.setMemberCode(null);
         member.setMemberId(queryMember.getMemberId());
         member.setMemberCategory(memberCategory);

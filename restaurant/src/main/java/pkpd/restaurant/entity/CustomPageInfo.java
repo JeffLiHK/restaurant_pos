@@ -11,20 +11,20 @@ import java.util.Map;
  * Date:2018/10/3
  * Time:15:41
  *
- * 分页查询类
+ * 
  */
 
 public class CustomPageInfo<T> extends PageInfo<T> {
     /**
-     * 用于储存实体
+     * 
      */
     private T t;
     /**
-     * 排序方式
+     * 
      */
     private String orderBy;
     /**
-     * 条件
+     * 
      */
     private Map<String,Object> condition;
     public CustomPageInfo(){

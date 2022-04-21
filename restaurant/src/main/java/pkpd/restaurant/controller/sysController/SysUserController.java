@@ -25,7 +25,7 @@ public class SysUserController {
     private SysUserService sysUserService;
 
     /**
-     * 用户列表数据接口
+     * 
      * @param userRequest
      * @return
      */
@@ -47,7 +47,7 @@ public class SysUserController {
     }
 
     /**
-     * 用户列表html页面
+     * html
      * @param model
      * @return
      */
@@ -59,7 +59,7 @@ public class SysUserController {
     }
 
     /**
-     * 添加用户页面
+     * 
      * @return
      */
     @GetMapping("/adduser.html")
@@ -79,7 +79,7 @@ public class SysUserController {
     }
 
     /**
-     * 编辑用户页面
+     * 
      * @return
      */
 
@@ -101,7 +101,7 @@ public class SysUserController {
         user.setRole(role);
         sysUserService.update(user);
         SysUser curUser = (SysUser) session.getAttribute("user");
-        //如果果是当前修改当前用户信息，则要将session中的保存的当前用户重新设置
+        //，session
         if(curUser.getUserId()==user.getUserId()){
             SysUser sysUser = sysUserService.findById(user.getUserId());
             session.setAttribute("user",sysUser);
@@ -130,7 +130,7 @@ public class SysUserController {
     }
 
     /**
-     * 个人信息页面
+     * 
      * @param session
      * @param model
      * @return
@@ -147,7 +147,7 @@ public class SysUserController {
     }
 
     /**
-     * 修改密码页面
+     * 
      * @return
      */
     @GetMapping("/updatepwd.html")

@@ -22,7 +22,7 @@ import java.util.List;
  * Date:2018/10/22
  * Time:15:09
  *
- * 桌位管理业务逻辑
+ * 
  */
 @Service
 @Transactional
@@ -30,19 +30,19 @@ public class DeskServiceImpl implements DeskService {
     @Autowired
     private DeskDao deskDao;
     /**
-     * 分页查询桌位(可以加多条件)
+     * ()
      * @return
      */
     @Override
     public CustomPageInfo<Desk> findPage(CustomPageInfo<Desk> pageInfo) {
         Page page = PageHelper.startPage(pageInfo.getPageNum(),pageInfo.getPageSize());
-        //此处调用查询后，返回值会返回到page中
+        //，page
         deskDao.findPage(pageInfo.getT());
         CustomPageInfo<Desk> resultInfo = new CustomPageInfo<>(page);
         return resultInfo;
     }
     /**
-     * 根据id查找桌位
+     * id
      * @param id
      * @return
      */
@@ -53,7 +53,7 @@ public class DeskServiceImpl implements DeskService {
 
 
     /**
-     *添加桌位
+     *
      * @param desk
      */
     @Override
@@ -67,7 +67,7 @@ public class DeskServiceImpl implements DeskService {
     }
 
     /**
-     * 修改桌位信息
+     * 
      * @param desk
      */
     @Override
@@ -81,7 +81,7 @@ public class DeskServiceImpl implements DeskService {
     }
 
     /**
-     * 根据桌位id删除桌位
+     * id
      * @param strIds
      */
     @Override
@@ -94,7 +94,7 @@ public class DeskServiceImpl implements DeskService {
     }
 
     /**
-     * 根据桌号查询
+     * 
      * @param desk
      * @return
      */
@@ -104,7 +104,7 @@ public class DeskServiceImpl implements DeskService {
     }
 
     /**
-     * 桌位登录业务
+     * 
      * @param desk
      */
     @Override
@@ -116,14 +116,14 @@ public class DeskServiceImpl implements DeskService {
        if(findDesk.getIdleStatus()==1||findDesk.getIdleStatus()==2){
            throw new CustomException(ResultEnum.DESK_CODE_NO_IDLE);
        }
-       //将桌位设置成有人状态
+       //
        desk.setIdleStatus(1);
        deskDao.update(desk);
     }
 
     @Override
     public void logout(Desk desk){
-        //将桌位状态设置为空闲0
+        //0
         desk.setIdleStatus(0);
         deskDao.update(desk);
     }

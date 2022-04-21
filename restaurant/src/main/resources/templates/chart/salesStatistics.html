@@ -101,7 +101,7 @@
     layui.use(['table', 'laydate'], function () {
         var $ = layui.$;
         var form = layui.form;
-        //默认初始化近七天的销售额统计数据
+        //
         ssChartNetworkRequest(6);
         loadCurDaySalesStatistics();
         form.on('select(salesStatisticsChartDay)', function (data) {
@@ -109,7 +109,7 @@
             ssChartNetworkRequest(day);
         });
         /**
-         * 销售额统计网络请求数据
+         *
          */
         function ssChartNetworkRequest(day) {
             $.ajax({
@@ -132,7 +132,7 @@
                             totalProfitArray.push(data[i].totalProfit);
                             totalOrderArray.push(data[i].totalOrder);
                         }
-                        //加载销售额统计图表
+                        //
                         loadSalesStatisticsChart(dateArray, mustPayArray, totalProfitArray, totalOrderArray);
                     } else {
                         layer.msg(res.msg, {icon: 5});
@@ -168,7 +168,7 @@
             });
         }
         /**
-         * 加载销售额统计图表
+         *
          * @param dateArray
          * @param mustPayArray
          * @param totalProfitArray
@@ -186,7 +186,7 @@
                     var salesStatisticsOption = {
                         title: {
                             text: 'Sales statistics',
-                            // subtext: '纯属虚构'
+                            // subtext: ''
                         },
                         tooltip: {
                             trigger: 'axis',
@@ -217,9 +217,9 @@
                         },
                         calculable: true,
                         itemStyle: {
-                            //默认样式
+                            //
                             normal: {
-                                //设置柱状条圆角
+                                //
                                 barBorderRadius: [20, 20, 12, 12]
                             }
                         },
@@ -235,7 +235,7 @@
                         yAxis: [
                             {
                                 type: 'value',
-                                //name : '金额',
+                                //name : '',
                                 axisLabel: {
                                     formatter: '${value}',
                                     show: true,
@@ -251,7 +251,7 @@
                             },
                             {
                                 type: 'value',
-                                //name : '订单',
+                                //name : '',
                                 axisLabel: {
                                     formatter: '{value} orders',
                                     show: true,

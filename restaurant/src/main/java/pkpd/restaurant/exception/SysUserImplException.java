@@ -9,9 +9,9 @@ import pkpd.restaurant.Enums.ResultEnum;
  * Time:17:13
  */
 /**
- * 异常异常类
- * 注意：此处为什么继承RuntimeException而不是Exception与？
- * 原因：Spring这个框架只对抛出的异常是RuntimeException才做事务回滚，如果抛出Exception是不会进行事务回滚的
+ * 
+ * ：RuntimeExceptionException？
+ * ：SpringRuntimeException，Exception
  */
 public class SysUserImplException extends RuntimeException{
     private Integer code;

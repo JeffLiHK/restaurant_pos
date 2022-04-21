@@ -13,31 +13,31 @@ import java.util.List;
 
 public class MenuUtil {
     /**
-     * 获取子菜单
+     * 
      * @param menuId
      * @param rootMenu
      * @return
      */
     public static List<SysMenu> getChild(Long menuId,List<SysMenu> rootMenu){
-        List<SysMenu> childMenu = new ArrayList<>();//存放直接子菜单
+        List<SysMenu> childMenu = new ArrayList<>();//
         /**
-         * 查找直接子菜单
+         * 
          */
         for(SysMenu menu:rootMenu){
             if(menu.getParentId()!=0&&menu.getParentId()==menuId){
                childMenu.add(menu);
             }
         }
-        //按权重排序
+        //
         sortByWeight(childMenu);
         if(childMenu.size()==0){
             return null;
         }
         /**
-         * 遍历子菜的直接子菜单
+         * 
          */
         for (SysMenu menu:childMenu){
-            //这个判断的意思是 如果url 不为空说明是最后一个节点(叶子节点)
+            // url ()
            /* if(StringUtil.isEmpty(menu.getMenuHref())){
                 menu.setChildMenu(getChild(menu.getMenuId(),rootMenu));
             }*/
@@ -48,21 +48,21 @@ public class MenuUtil {
 
     /**
      *
-     * @param rootMenu 所有菜单集合
-     * @param enableIsShowFields  是否使用is_show 字段
+     * @param rootMenu 
+     * @param enableIsShowFields  is_show 
      * @return
      */
     public static List<SysMenu> formatMenuList(List<SysMenu> rootMenu,boolean enableIsShowFields){
         List<SysMenu> formatMenuList = new ArrayList<>();
         /**
-         * 判断是否使用is_show字段
-         * is_show=0 代表不显示菜单  is_show=1代表显示
+         * is_show
+         * is_show=0   is_show=1
          */
         if(enableIsShowFields){
             List<SysMenu> clearMenuList = new ArrayList<>();
             System.out.println(rootMenu.size());
             for(SysMenu menu:rootMenu){
-                //0 代表不显示 1代表显示
+                //0  1
                 if(menu.getIsShow()==1){
                     clearMenuList.add(menu);
                 }
@@ -71,17 +71,17 @@ public class MenuUtil {
             System.out.println(rootMenu.size());
         }
         /**
-         * 找到所有的一级子菜单
+         * 
          */
         for(SysMenu menu:rootMenu){
             if(menu.getParentId()==0){
                 formatMenuList.add(menu);
             }
         }
-        //按权重排序
+        //
         sortByWeight(formatMenuList);
         /**
-         * 一级菜单后开始递归子菜单
+         * 
          */
         for(SysMenu menu:formatMenuList){
             menu.setChildMenus(getChild(menu.getMenuId(),rootMenu));
@@ -90,7 +90,7 @@ public class MenuUtil {
     }
 
     /**
-     * 运用选择排序
+     * 
      * @param menuList
      */
     public static void sortByWeight(List<SysMenu> menuList){
@@ -99,7 +99,7 @@ public class MenuUtil {
             for(int j=i+1;j<menuList.size();j++){
                 if(menuList.get(i).getWeight()<menuList.get(j).getWeight()){
                     tempMenu = menuList.get(j);
-                    //menuList.get(j) = menuList.get(i)  是错误的，集合不能直接赋值
+                    //menuList.get(j) = menuList.get(i)  ，
                     menuList.set(j,menuList.get(i));
                     menuList.set(i,tempMenu);
                 }

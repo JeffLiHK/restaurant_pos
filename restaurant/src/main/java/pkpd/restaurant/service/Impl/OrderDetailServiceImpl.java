@@ -19,7 +19,7 @@ import java.util.Date;
 import java.util.List;
 
 /**
- * 订单明细业务逻辑类
+ * 
  */
 @Service
 @Transactional
@@ -30,7 +30,7 @@ public class OrderDetailServiceImpl implements OrderDetailService {
     private OrderDao orderDao;
 
     /**
-     * 根据订单id查询订单明细
+     * id
      *
      * @param orderId
      * @return
@@ -45,7 +45,7 @@ public class OrderDetailServiceImpl implements OrderDetailService {
     }
 
     /**
-     * 分页查询订单明细
+     * 
      *
      * @param pageInfo
      * @return
@@ -59,32 +59,32 @@ public class OrderDetailServiceImpl implements OrderDetailService {
     }
 
     /**
-     * 根据明细id删除订单明细
+     * id
      *
      * @param strIds
      */
     @Override
     public void deleteByIds(String strIds) {
         List<Long> idList = SplitIdsUtil.splitStrIds(strIds);
-        //计算删除菜品的总价格
+        //
         Double minusPrice = orderDetailDao.countPriceByOdIds(idList);
         OrderDetail orderDetail = new OrderDetail();
-        //获取订单明细id
+        //id
         orderDetail.setOdId(idList.get(0));
-        //查询当前订单id
+        //id
         List<OrderDetail> orderDetailList = orderDetailDao.findPage(orderDetail);
         Long orderId = orderDetailList.get(0).getOrder().getOrderId();
-        //查询当前订单信息
+        //
         Order findOrder = orderDao.findById(orderId);
         /**
-         * 修改订单的总价格
+         * 
          */
         Order updateOrder = new Order();
         updateOrder.setOrderId(findOrder.getOrderId());
         updateOrder.setTotalPrice(findOrder.getTotalPrice() - minusPrice);
         updateOrder.setModifyTime(new Date());
         orderDao.update(updateOrder);
-        //删除订单明细
+        //
         int effect = orderDetailDao.deleteByIds(idList);
         if (effect <= 0) {
             throw new CustomException(ResultEnum.DEL_DB_FAIL);
@@ -92,7 +92,7 @@ public class OrderDetailServiceImpl implements OrderDetailService {
     }
 
     /**
-     * 根据桌号查询订单明细
+     * 
      * @param deskCode
      * @return
      */
@@ -100,9 +100,9 @@ public class OrderDetailServiceImpl implements OrderDetailService {
     public List<OrderDetail> findOrderDetailsByDeskCode(String deskCode) {
         OrderDetail orderDetail = new OrderDetail();
         Order order = new Order();
-        //设置桌号
+        //
         order.setDeskCode(deskCode);
-        //未支付的
+        //
         order.setPayStatus(0);
         orderDetail.setOrder(order);
         List<OrderDetail> resultList = orderDetailDao.findPage(orderDetail);

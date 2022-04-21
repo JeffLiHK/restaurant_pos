@@ -57,7 +57,7 @@ public class GoodsCategoryController{
     }
 
     /**
-     * 菜品类型
+     * 
      * @return
      */
     @PostMapping("/list.do")

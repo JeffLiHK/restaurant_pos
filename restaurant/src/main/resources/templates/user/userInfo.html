@@ -113,11 +113,11 @@
             , laydate = layui.laydate
             , layer = layui.layer;
 
-        //获取from表单提交事件
-        //此处submit中的值是lay-filter
+        //from
+        //submitlay-filter
         form.on('submit(component-form-element)', function (data) {
-            var field = data.field; //获取提交的字段
-            //提交 Ajax 成功后，静态更新表格中的数据
+            var field = data.field; //
+            // Ajax ，
             $.ajax({
                 url: "/restaurant/user/saveEdit.do",
                 type: "post",
@@ -135,10 +135,10 @@
                 }
             });
         });
-        //日期选择器
+        //
         laydate.render({
             elem: '#birthday'
-            , format: 'yyyy-MM-dd' //可任意组合
+            , format: 'yyyy-MM-dd' //
         });
     });
 </script>

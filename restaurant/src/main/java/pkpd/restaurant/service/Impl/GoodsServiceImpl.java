@@ -17,7 +17,7 @@ import java.util.Date;
 import java.util.List;
 
 /**
- * 菜普管理
+ * 
  */
 @Service
 @Transactional
@@ -26,7 +26,7 @@ public class GoodsServiceImpl implements GoodsService {
     private GoodsDao goodsDao;
 
     /**
-     * 分页查询以及分页条件查询
+     * 
      *
      * @param pageInfo
      * @return
@@ -37,26 +37,26 @@ public class GoodsServiceImpl implements GoodsService {
         Goods goods = (Goods) pageInfo.getT();
         if (goods.getGoodsCategory() != null) {
             if (goods.getGoodsCategory().getCategoryId() != null) {
-                //新菜
+                //
                 if (goods.getGoodsCategory().getCategoryId() == -2) {
                     goods.getGoodsCategory().setCategoryId(null);
                     goods.setTypeState(2);
-                    //特色菜
+                    //
                 }else if (goods.getGoodsCategory().getCategoryId() == -1) {
                     goods.getGoodsCategory().setCategoryId(null);
                     goods.setTypeState(3);
                 }
             }
         }
-        //此处调用查询后，返回值会返回到page中
+        //，page
         goodsDao.findPage(goods);
-        //采用构造方法创建，传入page会自动计算一些值
+        //，page
         CustomPageInfo<Goods> resultInfo = new CustomPageInfo<>(page);
         return resultInfo;
     }
 
     /**
-     * 根据goodsId查询
+     * goodsId
      *
      * @param goodsId
      * @return
@@ -67,7 +67,7 @@ public class GoodsServiceImpl implements GoodsService {
     }
 
     /**
-     * 添加菜品
+     * 
      *
      * @param goods
      */
@@ -82,7 +82,7 @@ public class GoodsServiceImpl implements GoodsService {
     }
 
     /**
-     * 修改菜品
+     * 
      *
      * @param goods
      */
@@ -97,7 +97,7 @@ public class GoodsServiceImpl implements GoodsService {
     }
 
     /**
-     * 根据id删除菜品
+     * id
      *
      * @param strIds
      */

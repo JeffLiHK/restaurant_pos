@@ -2,65 +2,65 @@ package pkpd.restaurant.entity;
 
 public class Goods extends BaseBean{
     /**
-     * 菜品id
+     * id
      */
     private Integer goodsId;
     /**
-     * 菜品名
+     * 
      */
     private String goodsName;
     /**
-     * 菜品类型
+     * 
      */
     private GoodsCategory goodsCategory;
 
     /**
-     * 菜小图片
+     * 
      */
     private String imgSmallUrl;
     /**
-     * 菜大图片
+     * 
      */
     private String imgUrl;
     /**
-     * 菜轮播图
+     * 
      */
     private String imgCircleUrl;
     /**
-     * 菜品描述
+     * 
      */
     private String description;
     /**
-     *制作成本
+     *
      */
     private Double cost;
     /**
-     * 菜品价格
+     * 
      */
     private Double price;
     /**
-     * 折扣
+     * 
      */
     private Double discount;
 
     /**
-     * 菜品上架状态(0下架，1上架)
+     * (0，1)
      */
     private Integer putawayStatus;
     /**
-     * 销售量
+     * 
      */
     private Long soldCount;
     /**
-     * 库存量
+     * 
      */
     private Long storeCount;
     /**
-     * 销售状态(0 在售，1销售完)
+     * (0 ，1)
      */
     private Integer soldState;
     /**
-     * 类型状态(1普通菜，2新菜，3热菜）
+     * (1，2，3）
      */
     private Integer typeState;
 

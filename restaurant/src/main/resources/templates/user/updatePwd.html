@@ -57,11 +57,11 @@
             , laydate = layui.laydate
             , layer = layui.layer;
 
-        //获取from表单提交事件
-        //此处submit中的值是lay-filter
+        //from
+        //submitlay-filter
         form.on('submit(updatePwd)', function (data) {
-            var field = data.field; //获取提交的字段
-            //提交 Ajax 成功后，静态更新表格中的数据
+            var field = data.field; //
+            // Ajax ，
             $.ajax({
                 url: "/restaurant/user/updatepwd.do",
                 type: "post",
@@ -79,14 +79,14 @@
                 }
             });
         });
-        //日期选择器
+        //
         laydate.render({
             elem: '#birthday'
-            , format: 'yyyy-MM-dd' //可任意组合
+            , format: 'yyyy-MM-dd' //
         });
-        //自定义验证
+        //
         form.verify({
-            //验证两次输入密码是否相同
+            //
             new_re_same: function (value, item) {
                var newPwd =  $('#newPassword').val();
                var rePwd = $('#rePassword').val();
@@ -94,7 +94,7 @@
                     return 'The password entered twice is not the same!';
                 }
             },
-            //验证密码格式是否合格
+            //
             format_verify:function (value,item) {
                 if(!/^(?![0-9]+$)(?![a-zA-Z]+$)[0-9A-Za-z]{8,16}$/.test(value)){
                     return "Incorrect password format！";

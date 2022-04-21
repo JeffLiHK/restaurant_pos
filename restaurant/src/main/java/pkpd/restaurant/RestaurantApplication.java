@@ -14,7 +14,7 @@ public class RestaurantApplication {
 		return new EmbeddedServletContainerCustomizer(){
 			@Override
 			public void customize(ConfigurableEmbeddedServletContainer container) {
-				//单位s  这里设置30分钟
+				//s  30
 				container.setSessionTimeout(1800);
 			}
 		};

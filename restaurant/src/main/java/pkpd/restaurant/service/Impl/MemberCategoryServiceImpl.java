@@ -19,7 +19,7 @@ public class MemberCategoryServiceImpl implements MemberCategoryService {
     @Autowired
     private MemberCategoryDao memberCategoryDao;
     /**
-     * 查询所有会员类型
+     * 
      * @return
      */
     @Override
@@ -27,7 +27,7 @@ public class MemberCategoryServiceImpl implements MemberCategoryService {
         return memberCategoryDao.findAll();
     }
     /**
-     * 根据会员id查找会员类型信息
+     * id
      * @param id
      * @return
      */
@@ -36,7 +36,7 @@ public class MemberCategoryServiceImpl implements MemberCategoryService {
         return memberCategoryDao.findById(id);
     }
     /**
-     *添加会员类型
+     *
      * @param memberCategory
      */
     @Override
@@ -50,7 +50,7 @@ public class MemberCategoryServiceImpl implements MemberCategoryService {
     }
 
     /**
-     * 修改会员类型信息
+     * 
      * @param memberCategory
      */
     @Override
@@ -64,7 +64,7 @@ public class MemberCategoryServiceImpl implements MemberCategoryService {
     }
 
     /**
-     * 根据会员类型id删除类型
+     * id
      * @param strIds
      */
     @Override

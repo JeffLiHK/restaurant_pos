@@ -20,7 +20,7 @@ import java.io.File;
 @MultipartConfig
 public class FileUploadController {
     private final static Logger logger = LoggerFactory.getLogger(FileUploadController.class);
-    //图片上传基地址
+    //
     @Value("${web.upload-image-path}")
     private String location;
 
@@ -28,18 +28,18 @@ public class FileUploadController {
     @ResponseBody
     public Result upload(@RequestParam("image") MultipartFile multipartFile)throws Exception{
         if(multipartFile!=null&&!multipartFile.isEmpty()){
-            //获取文件名
+            //
             String rootFileName = multipartFile.getOriginalFilename();
             String contentType = multipartFile.getContentType();
-            //打印日志
+            //
             logger.info("upload picture:name={},type={}",rootFileName,contentType);
-            //储存图片路径
+            //
             String filePath = location+File.separator+"image";
             logger.info("picture saving path：={}",filePath);
-            //保存图片，并返回UUID生成的图片名
+            //，UUID
             String fileName = ImageUtil.saveImage(multipartFile,filePath);
             ResultUrl url = new ResultUrl();
-            //返回给前端的访问路径
+            //
             String returnPath = "/image/"+fileName;
             url.setSrc(returnPath);
             return ResultUtil.success(url);

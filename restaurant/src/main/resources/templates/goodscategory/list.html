@@ -27,9 +27,9 @@
                     </button>
                 </div>
             </script>
-            <!-- table表格-->
+            <!-- table-->
             <table id="tableList" lay-filter="tableList"></table>
-            <!--右边工具栏-->
+            <!---->
             <script type="text/html" id="barDemo">
                 <a class="layui-btn layui-btn-xs" lay-event="edit">Edit</a>
                 <a class="layui-btn layui-btn-danger layui-btn-xs" lay-event="del">Delete</a>
@@ -44,19 +44,19 @@
                 ,table = layui.table
                 ,laydate = layui.laydate;
 
-            //执行一个 table 实例
+            // table
             table.render({
                 elem: '#tableList'
                 , height: 620
-                , url: "/restaurant/goodscategory/list.do" //数据接口
+                , url: "/restaurant/goodscategory/list.do" //
                 , method: 'post'
                 , title: 'Food catagory chart'
                 , response: {
                     statusCode: 200
                 }
-                //,size:"lg"设置表格尺寸
-                , toolbar: '#test-table-toolbar-toolbarDemo' //开启工具栏，此处显示默认图标，可以自定义模板，详见文档
-                , cols: [[ //表头
+                //,size:"lg"
+                , toolbar: '#test-table-toolbar-toolbarDemo' //，，，
+                , cols: [[ //
                     {type: 'checkbox', fixed: 'left'}
                     , {field: 'categoryId', title: 'ID',align:'center', cellMinWidth: 80, sort: true, fixed: 'left', totalRowText: 'Total: '}
                     , {field: 'categoryName', title: 'Category Name',align:'center', cellMinWidth: 150}
@@ -64,10 +64,10 @@
                 ]]
             });
 
-            //监听头工具栏事件
+            //
             table.on('toolbar(tableList)', function (obj) {
                 var checkStatus = table.checkStatus(obj.config.id)
-                    , data = checkStatus.data; //获取选中的数据
+                    , data = checkStatus.data; //
                 switch (obj.event) {
                     case 'add':
                         layer.open({
@@ -79,14 +79,14 @@
                             ,btn: ['confirm', 'cancel']
                             ,yes: function(index, layero){
                                 var iframeWindow = window['layui-layer-iframe'+ index]
-                                    //该id是窗口打开html页面中表单提交按钮的id
+                                    //idhtmlid
                                     ,submitID = 'LAY-user-front-submit'
                                     ,submit = layero.find('iframe').contents().find('#'+ submitID);
 
-                                //监听提交
+                                //
                                 iframeWindow.layui.form.on('submit('+ submitID +')', function(data){
-                                    var field = data.field; //获取提交的字段
-                                    //提交 Ajax 成功后，静态更新表格中的数据
+                                    var field = data.field; //
+                                    // Ajax ，
                                     $.ajax({
                                         url: "/restaurant/goodscategory/add.do",
                                         type: "post",
@@ -94,8 +94,8 @@
                                         data: data.field,
                                         success: function(result) {
                                             if(result.code == 200) {
-                                                table.reload('tableList'); //数据刷新
-                                                layer.close(index); //关闭弹层
+                                                table.reload('tableList'); //
+                                                layer.close(index); //
                                             }else {
                                                 layer.alert(result.msg, {
                                                     title: 'Submission Result'
@@ -129,10 +129,10 @@
                                         ,submitID = 'LAY-user-front-submit'
                                         ,submit = layero.find('iframe').contents().find('#'+ submitID);
 
-                                    //监听提交
+                                    //
                                     iframeWindow.layui.form.on('submit('+ submitID +')', function(data){
-                                        var field = data.field; //获取提交的字段
-                                        //提交 Ajax 成功后，静态更新表格中的数据
+                                        var field = data.field; //
+                                        // Ajax ，
                                         $.ajax({
                                             url: "/restaurant/goodscategory/edit.do",
                                             type: "post",
@@ -140,8 +140,8 @@
                                             data:field,
                                             success: function(result) {
                                                 if(result.code == 200) {
-                                                    table.reload('tableList'); //数据刷新
-                                                    layer.close(index); //关闭弹层
+                                                    table.reload('tableList'); //
+                                                    layer.close(index); //
                                                 }else {
                                                     layer.alert(result.msg, {
                                                         title: 'Submission Result'
@@ -172,7 +172,7 @@
                                     data: {ids:ids},
                                     success: function(result) {
                                         if(result.code == 200) {
-                                            table.reload('tableList'); //数据刷新
+                                            table.reload('tableList'); //
                                             layer.msg('successfully deleted!', {icon: 6});
                                         }else {
                                             layer.alert(result.msg, {
@@ -189,10 +189,10 @@
                 };
             });
 
-            //监听行工具事件
+            //
             table.on('tool(tableList)', function (obj) {
-                var data = obj.data //获得当前行数据
-                    , layEvent = obj.event; //获得 lay-event 对应的值
+                var data = obj.data //
+                    , layEvent = obj.event; // lay-event
                 if (layEvent === 'del') {
                     layer.confirm('Confirm delete?'+data.categoryName, function (index) {
                         $.ajax({
@@ -202,7 +202,7 @@
                             data: {ids:data.categoryId},
                             success: function(result) {
                                 if(result.code == 200) {
-                                    obj.del(); //删除对应行（tr）的DOM结构
+                                    obj.del(); //（tr）DOM
                                     layer.msg('successfully deleted!', {icon: 6});
                                 }else {
                                     layer.alert(result.msg, {
@@ -228,10 +228,10 @@
                                 ,submitID = 'LAY-user-front-submit'
                                 ,submit = layero.find('iframe').contents().find('#'+ submitID);
 
-                            //监听提交
+                            //
                             iframeWindow.layui.form.on('submit('+ submitID +')', function(data){
-                                var field = data.field; //获取提交的字段
-                                //提交 Ajax 成功后，静态更新表格中的数据
+                                var field = data.field; //
+                                // Ajax ，
                                 $.ajax({
                                     url: "/restaurant/goodscategory/edit.do",
                                     type: "post",
@@ -239,8 +239,8 @@
                                     data:field,
                                     success: function(result) {
                                         if(result.code == 200) {
-                                            table.reload('tableList'); //数据刷新
-                                            layer.close(index); //关闭弹层
+                                            table.reload('tableList'); //
+                                            layer.close(index); //
                                         }else {
                                             layer.alert(result.msg, {
                                                 title: 'Submission Result'

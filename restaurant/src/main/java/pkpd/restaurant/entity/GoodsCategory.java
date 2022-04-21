@@ -2,11 +2,11 @@ package pkpd.restaurant.entity;
 
 public class GoodsCategory extends BaseBean{
     /**
-     * 菜品类型id
+     * id
      */
     private Integer categoryId;
     /**
-     * 菜品类型名称
+     * 
      */
     private String categoryName;
 

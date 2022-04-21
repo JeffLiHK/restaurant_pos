@@ -3,7 +3,7 @@ package pkpd.restaurant.entity.chart;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 
 /**
- * 销售状况用到实体
+ *
  */
 public class SalesStatisticsChart{
     @JsonIgnore

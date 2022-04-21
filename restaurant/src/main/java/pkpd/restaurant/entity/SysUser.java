@@ -6,56 +6,56 @@ import javax.validation.constraints.NotNull;
 import java.util.Date;
 
 /**
- * 基类
+ * 
  */
 public class SysUser extends BaseBean{
     /**
-     * 用户id
+     * id
      */
     private Long userId;
     /**
-     * 登录账户
+     * 
      */
-    @NotNull(message = "账号不能为空！")
+    @NotNull(message = "！")
     private String loginCode;
     /**
-     * 登录密码
+     * 
      */
     private String password;
     /**
-     * 用户姓名
+     * 
      */
     private String name;
     /**
-     * 电话
+     * 
      */
     private String phone;
     /**
-     * 邮箱
+     * 
      */
     private String  email;
     /**
-     * 性别
+     * 
      */
     private String gender;
     /**
-     * 生日
+     * 
      */
     @JsonFormat(pattern="yyyy-MM-dd",timezone = "GMT+8")
     @DateTimeFormat(pattern = "yyyy-MM-dd")
     private Date birthday;
     /**
-     * 身份证号
+     * 
      */
     private String idNumber;
     /**
-     * 家庭住址
+     * 
      */
     private String address;
     private String oldPwd;
     private String newPwd;
     /**
-     * 用户角色
+     * 
      */
     public SysRole role;
 

@@ -88,9 +88,9 @@
     layui.use(['table', 'laydate'], function () {
         var $ = layui.$;
         var form = layui.form;
-        //默认初始化近七天的销量排行
+        //
         chart1NetworkRequest(6);
-        //默认初始化近七天的菜系销量统计
+        //
         chart2NetworkRequest(6);
 
         form.on('select(chart1Day)', function (data) {
@@ -103,7 +103,7 @@
         });
 
         /**
-         * 菜品销售排行网络请求数据
+         *
          */
         function chart1NetworkRequest(day) {
             $.ajax({
@@ -132,7 +132,7 @@
         }
 
         /**
-         * 菜系销售分析网络请求数据
+         *
          */
         function chart2NetworkRequest(day) {
             $.ajax({
@@ -164,7 +164,7 @@
         }
     });
 
-    //加载柱状图表
+    //
     function loadChart1(nameArray, countArray) {
         require(
             [
@@ -173,12 +173,12 @@
                 'echarts/chart/bar'
             ],
             function (echarts) {
-                // 基于准备好的dom，初始化echarts图表
+                // dom，echarts
                 var myChart1 = echarts.init(document.getElementById('chart1'), 'macarons');
                 var option1 = {
                     title: {
                         text: 'Top dishes',
-                        // subtext: '纯属虚构'
+                        // subtext: ''
                     },
                     tooltip: {
                         trigger: 'axis',
@@ -205,9 +205,9 @@
                         }
                     },
                     itemStyle: {
-                        //默认样式
+                        //
                         normal: {
-                            //设置柱状条圆角
+                            //
                             barBorderRadius: [12, 12, 12, 12],
                         }
                     },
@@ -248,12 +248,12 @@
                         }
                     ]
                 };
-                // 为echarts对象加载数据
+                // echarts
                 myChart1.setOption(option1);
             });
     }
 
-    //加载图表2 饼状图表
+    //2
     function loadChart2(nameArray, countArray) {
         require(
             [
@@ -266,7 +266,7 @@
                 var option2 = {
                     title: {
                         text: 'Dishes type sales analysis',
-                        //subtext: '纯属虚构',
+                        //subtext: '',
                         x: 'center'
                     },
                     tooltip: {

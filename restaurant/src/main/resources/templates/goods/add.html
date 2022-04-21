@@ -108,11 +108,11 @@
                     </div>
                     <div class="layui-col-xs6 layui-col-sm6 layui-col-md6">
                         <label class="layui-form-label">Food Photo</label>
-                        <!--上传按钮-->
+                        <!---->
                         <button type="button" class="layui-btn" id="upload1">Upload</button>
-                        <!--隐藏的input-->
+                        <!--input-->
                         <input type="hidden" id="img_url" name="imgUrl" value=""/>
-                        <!--预览区域-->
+                        <!---->
                         <div class="layui-upload-list">
                             <img class="layui-upload-img" width="98px" height="132px" id="demo1"/>
                             <p id="demoText1"></p>
@@ -137,13 +137,13 @@
             , laydate = layui.laydate
             , layer = layui.layer;
 
-        //获取from表单提交事件
-        //此处submit中的值是lay-filter
+        //from
+        //submitlay-filter
         form.on('submit(component-form-element)', function (data) {
         });
-        //自定义验证
+        //
         form.verify({
-            //验证正数
+            //
             positive_number: function (value, item) {
                 if (parseFloat(value) < 0) {
                     return 'must be a positive number';
@@ -157,23 +157,23 @@
         });
     });
 </script>
-<!--上传图片的js代码-->
+<!--js-->
 <script type="text/javascript" th:inline="javascript">
     layui.use('upload', function () {
         var upload = layui.upload
             , $ = layui.jquery;
         var uploadInst1 = upload.render({
-            elem: '#upload1' //绑定元素
-            , url: '/restaurant/upload/img.do'//上传接口
+            elem: '#upload1' //
+            , url: '/restaurant/upload/img.do'//
             , field: 'image'
             , before: function (obj) {
-                //预读本地文件示例，不支持ie8
+                //，ie8
                 obj.preview(function (index, file, result) {
-                    $('#demo1').attr('src', result); //图片链接（base64）
+                    $('#demo1').attr('src', result); //（base64）
                 });
             }
             , done: function (res) {
-                //如果Upload failed
+                //Upload failed
                 if (res.code !== 200) {
                     return layer.msg('Upload failed', {icon: 2, anim: 6});
                 }
@@ -182,7 +182,7 @@
                 document.getElementById("img_url").value = res.data.src;
             }
             , error: function () {
-                //演示失败状态，并实现重传
+                //，
                 var demoText1 = $('#demoText1');
                 demoText1.html('<span style="color: #FF5722;">Upload failed</span> <a class="layui-btn layui-btn-mini demo-reload">Retry</a>');
                 demoText1.find('.demo-reload').on('click', function () {

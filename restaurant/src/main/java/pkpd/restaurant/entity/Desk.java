@@ -11,20 +11,20 @@ import javax.validation.constraints.NotNull;
 
 public class Desk extends BaseBean{
     /**
-     * 餐桌id
+     * id
      */
     private Integer deskId;
     /**
-     * 餐桌编号
+     * 
      */
     @NotNull(message = "Desk ID needed")
     private String deskCode;
     /**
-     * 座位人数
+     * 
      */
     private Integer peopleCount;
     /**
-     * 空闲状态(0空闲，1有人,2待清理)
+     * (0，1,2)
      */
     private Integer idleStatus;
 

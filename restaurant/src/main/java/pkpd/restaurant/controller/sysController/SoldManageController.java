@@ -17,7 +17,7 @@ public class SoldManageController {
     private OrderService orderService;
 
     /**
-     * 交易记录列表HTML页面
+     * HTML
      * @return
      */
     @GetMapping("/tranRecordsList.html")
@@ -26,7 +26,7 @@ public class SoldManageController {
     }
 
     /**
-     * 交易记录列表数据接口
+     * 
      * @param pageInfo
      * @param order
      * @return
@@ -34,11 +34,11 @@ public class SoldManageController {
     @PostMapping("/tranRecordsList.do")
     @ResponseBody
     public Result<Order> orderList(CustomPageInfo<Order> pageInfo, Order order, Member member){
-        //交易记录是已支付订单，状态为1
+        //，1
         order.setPayStatus(1);
         order.setMember(member);
         pageInfo.setT(order);
-        //按时间降序
+        //
         pageInfo.setOrderBy("DESC");
         CustomPageInfo<Order> resultInfo =  orderService.findPage(pageInfo);
         return ResultUtil.success(resultInfo.getList(),resultInfo.getTotal());

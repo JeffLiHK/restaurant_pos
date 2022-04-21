@@ -26,7 +26,7 @@ public class MemberServiceImpl implements MemberService {
     private MemberCategoryDao memberCategoryDao;
 
     /**
-     * 修改会员
+     * 
      * @param member
      */
     @Override
@@ -40,7 +40,7 @@ public class MemberServiceImpl implements MemberService {
     }
 
     /**
-     * 添加会员
+     * 
      * @param member
      */
     @Override
@@ -58,22 +58,22 @@ public class MemberServiceImpl implements MemberService {
     }
 
     /**
-     * 多条件分页查询
+     * 
      * @param pageInfo
      * @return
      */
     @Override
     public CustomPageInfo<Member> findPage(CustomPageInfo<Member> pageInfo) {
-        //PageHelper的分页参数
+        //PageHelper
         Page page = PageHelper.startPage(pageInfo.getPageNum(),pageInfo.getPageSize());
         memberDao.findPage(pageInfo.getT());
-        //采用构造方法创建对象,
+        //,
         CustomPageInfo<Member> info = new CustomPageInfo<>(page);
         return info;
     }
 
     /**
-     * 根据memberId查找会员
+     * memberId
      * @param member
      * @return
      */
@@ -84,7 +84,7 @@ public class MemberServiceImpl implements MemberService {
     }
 
     /**
-     * 根据会员号查询会员
+     * 
      * @param member
      * @return
      */
@@ -94,7 +94,7 @@ public class MemberServiceImpl implements MemberService {
     }
 
     /**
-     * 根据id删除会员
+     * id
      * @param strIds
      */
     @Override

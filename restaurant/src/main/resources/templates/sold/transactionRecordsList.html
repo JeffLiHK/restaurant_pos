@@ -80,12 +80,12 @@
                 }}
             </div>
         </script>
-        <!-- table表格-->
+        <!-- table-->
         <table id="tableList" lay-filter="tableList"></table>
-        <!--右边工具栏-->
+        <!---->
         <script th:inline="javascript" type="text/html" id="barDemo">
             <a class="layui-btn layui-btn-xs" lay-event="viewDetail">Record details</a>
-            <!--在该语法中通过模板Thymeleaf模板引擎获取中文会被转换成编码-->
+            <!--Thymeleaf-->
             {{#
             if( [[${session.user.role.roleId}]]==1)
             { }}
@@ -172,7 +172,7 @@
             }
             }}
         </script>
-        <!--下边分页条-->
+        <!---->
         <div class="layui-tab-item">
             <div id="pageDemo"></div>
         </div>
@@ -186,26 +186,26 @@
             , table = layui.table
             , laydate = layui.laydate;
 
-        //执行一个 table 实例
+        // table
         table.render({
             elem: '#tableList'
             , height: 535
-            , url: "/restaurant/sold/tranRecordsList.do" //数据接口
+            , url: "/restaurant/sold/tranRecordsList.do" //
             , method: 'post'
             , request: {
-                pageName: 'pageNum' //页码的参数名称，默认：page
-                , limitName: 'pageSize' //每页数据量的参数名，默认：limit
+                pageName: 'pageNum' //，：page
+                , limitName: 'pageSize' //，：limit
             }
             , response: {
                 statusCode: 200
             }
             , limits: [10, 20, 30,40]
             , title: 'Transaction records'
-            , page: true //开启分页
-            , even: true//开启背景隔行
-            //,size:"lg"设置表格尺寸
-            , toolbar: '#test-table-toolbar-toolbarDemo' //开启工具栏，此处显示默认图标，可以自定义模板，详见文档
-            , cols: [[ //表头
+            , page: true //
+            , even: true//
+            //,size:"lg"
+            , toolbar: '#test-table-toolbar-toolbarDemo' //，，，
+            , cols: [[ //
                  {type: 'checkbox', fixed: 'left'}
                 , {field: 'orderId', title: 'ID', align: 'center', width: 70, sort: true, fixed: 'left', sort: true, hide: true}
                 , {field: 'orderCode', title: 'Order number', align: 'center', width: 230, sort: true}
@@ -227,10 +227,10 @@
                 , {fixed: 'right', title: "Toolbar",align:'center', width: 220, toolbar: '#barDemo'}
             ]]
         });
-        //监听头工具栏事件
+        //
         table.on('toolbar(tableList)', function (obj) {
             var checkStatus = table.checkStatus(obj.config.id)
-                , data = checkStatus.data; //获取选中的数据
+                , data = checkStatus.data; //
             switch (obj.event) {
                 case 'delete':
                     if (data.length === 0) {
@@ -248,7 +248,7 @@
                                 data: {ids: ids},
                                 success: function (result) {
                                     if (result.code == 200) {
-                                        table.reload('tableList'); //数据刷新
+                                        table.reload('tableList'); //
                                         layer.msg('Sucessfully deleted!', {icon: 1});
                                     } else {
                                         layer.alert(result.msg, {
@@ -265,10 +265,10 @@
             };
         });
 
-        //监听行工具事件
-        table.on('tool(tableList)', function (obj) { //注：tool 是工具条事件名，test 是 table 原始容器的属性 lay-filter="对应的值"
-            var data = obj.data //获得当前行数据
-                , layEvent = obj.event; //获得 lay-event 对应的值
+        //
+        table.on('tool(tableList)', function (obj) { //：tool ，test  table  lay-filter=""
+            var data = obj.data //
+                , layEvent = obj.event; // lay-event
             if (layEvent === 'viewDetail') {
                 var url = "/restaurant/order/viewdetail.html/" + data.orderId;
                 layer.open({
@@ -280,7 +280,7 @@
                     , area: ['900px', '540px']
                     ,btn: ['Confirm', 'Cancel']
                     ,yes: function(index, layero){
-                        table.reload('tableList'); //数据刷新
+                        table.reload('tableList'); //
                         layer.close(index);
                     }
                 });
@@ -293,7 +293,7 @@
                         data: {ids: data.orderId},
                         success: function (result) {
                             if (result.code == 200) {
-                                obj.del(); //删除对应行（tr）的DOM结构
+                                obj.del(); //（tr）DOM
                                 layer.msg('Sucessfully deleted!', {icon: 1});
                             } else {
                                 layer.alert(result.msg, {
@@ -307,37 +307,37 @@
                 });
             }
         });
-        //监听搜索
+        //
         form.on('submit(Search)', function (data) {
             var field = data.field;
-            //执行重载
+            //
             table.reload('tableList', {
                 where: field
                 , page: {
-                    curr: 1 //重新从第 1 页开始
+                    curr: 1 // 1
                 }
             });
         });
-        //开始日期
+        //
         var insStart = laydate.render({
             elem: '#startTime'
             ,type: 'datetime'
             ,done: function(value, date){
-                //更新结束日期的最小日期
+                //
                 insEnd.config.min = lay.extend({}, date, {
                     month: date.month - 1
                 });
-                //自动弹出结束日期的选择器
+                //
                 insEnd.config.elem[0].focus();
             }
         });
 
-        //结束日期
+        //
         var insEnd = laydate.render({
             elem: '#endTime'
             ,type: 'datetime'
             ,done: function(value, date){
-                //更新开始日期的最大日期
+                //
                 insStart.config.max = lay.extend({}, date, {
                     month: date.month - 1
                 });

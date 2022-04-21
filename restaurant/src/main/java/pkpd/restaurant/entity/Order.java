@@ -11,83 +11,83 @@ import java.util.List;
  * Date:2018/10/1
  * Time:23:12
  *
- * 订单表
+ * 
  */
 
 public class Order extends BaseBean{
     /**
-     * 订单id
+     * id
      */
     private Long orderId;
     /**
-     * 订单号
+     * 
      */
     private String orderCode;
     /**
-     * 餐桌
+     * 
      */
     private String deskCode;
     /**
-     * 收银员
+     * 
      */
     private SysUser cashier;
     /**
-     * 会员
+     * 
      */
     private Member member;
     /**
-     * 总成本
+     * 
      */
     private Double totalCost;
     /**
-     * 总价格
+     * 
      */
     private Double totalPrice;
     /**
-     * 总利润
+     * 
      */
     private Double totalProfit;
     /**
-     * 实际付款
+     * 
      */
     private Double actualPay;
     /**
-     * 应付金额
+     * 
      */
     private Double mustPay;
     /**
-     * 找零
+     * 
      */
     private Double changeMoney;
     /**
-     * 折扣金额
+     * 
      */
     private  Double discountMoney;
     /**
-     * 就餐人数
+     * 
      */
     private Integer peopleNum;
     /**
-     * 支付状态(0未支付，1已支付)
+     * (0，1)
      */
     private Integer payStatus;
     /**
-     *上菜是否完成（0未完成，1完成）
+     *（0，1）
      */
     private Integer finishStatus;
     /**
-     * 订单结束状态(0未结束，1已结束)
+     * (0，1)
      */
     private Integer overStatus;
     /**
-     * 用于根据时间段查询，开始时间
+     * ，
      */
-    @DateTimeFormat(pattern = "yyyy-MM-dd HH:mm:ss")//用接口传入String类型时间转换成date类型
+    @DateTimeFormat(pattern = "yyyy-MM-dd HH:mm:ss")//Stringdate
     private Date startTime;
     /**
-     * 用于根据时间段查询，结束时间
+     * ，
      */
-    @DateTimeFormat(pattern = "yyyy-MM-dd HH:mm:ss")//用接口传入String类型时间转换成date类型
+    @DateTimeFormat(pattern = "yyyy-MM-dd HH:mm:ss")//Stringdate
     private Date endTime;
 
     private List<OrderDetail> orderDetails;

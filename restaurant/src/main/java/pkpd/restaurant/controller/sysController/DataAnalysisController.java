@@ -18,7 +18,7 @@ import org.springframework.web.bind.annotation.ResponseBody;
 import java.util.List;
 
 /**
- * 图表分析接口
+ * 
  */
 @Controller
 @RequestMapping("/analysis")
@@ -26,7 +26,7 @@ public class DataAnalysisController{
     @Autowired
     private DataAnalysisService dataAnalysisService;
     /**
-     * 销量统计HTML页面
+     * HTML
      * @return
      */
     @GetMapping("/salesVolume.html")
@@ -35,7 +35,7 @@ public class DataAnalysisController{
     }
 
     /**
-     * 销售统计HTML页面
+     * HTML
      * @return
      */
     @GetMapping("/salesStatistics.html")
@@ -44,31 +44,31 @@ public class DataAnalysisController{
     }
 
     /**
-     * 查询近几天的菜品销量排行top10数据接口
+     * top10
      * @return
      */
     @GetMapping("/gssByDays.do")
     @ResponseBody
     public Result<GoodsSalesChart> goodsSalesSortByDays(GoodsSalesChart goodsSalesChart){
-        //默认查询top12
+        //top12
         goodsSalesChart.setNumber(12);
         List<GoodsSalesChart> result = dataAnalysisService.findSalesSortByDays(goodsSalesChart);
         return ResultUtil.success(result,new Long(result.size()));
     }
     /**
-     * 查询近几天的菜品销量排行词云数据接口
+     * 
      * @return
      */
     @GetMapping("/gwcByDays.do")
     @ResponseBody
     public Result<GoodsSalesChart> goodsWordCloudBynDays(GoodsSalesChart goodsSalesChart){
-        //默认查询top12
+        //top12
         goodsSalesChart.setNumber(20);
         List<GoodsSalesChart> result = dataAnalysisService.findSalesSortByDays(goodsSalesChart);
         return ResultUtil.success(result,new Long(result.size()));
     }
     /**
-     * 查询近几天的菜系销量数据
+     * 
      * @return
      */
     @GetMapping("/gcsByDays.do")
@@ -79,7 +79,7 @@ public class DataAnalysisController{
     }
 
     /**
-     * 查询近几天的营业情况数据
+     * 
      * @return
      */
     @GetMapping("/ssByDays.do")
@@ -90,7 +90,7 @@ public class DataAnalysisController{
     }
 
     /**
-     * 查询近几天会员增长数接口
+     * 
      * @param memberChart
      * @return
      */
@@ -102,7 +102,7 @@ public class DataAnalysisController{
     }
 
     /**
-     * 查询各类型会员数量
+     * 
      * @return
      */
     @GetMapping("/mcRate.do")
@@ -112,7 +112,7 @@ public class DataAnalysisController{
         return ResultUtil.success(result,new Long(result.size()));
     }
     /**
-     * 查询每天(8-24)点中每小时的顾客数量接口
+     * (8-24)
      * @return
      */
     @GetMapping("/peopleByHour.do")

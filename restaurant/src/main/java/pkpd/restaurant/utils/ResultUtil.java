@@ -8,7 +8,7 @@ import pkpd.restaurant.entity.Result;
  * author:LiuJing
  * Date:2018/10/2
  * Time:17:53
- * 返回值工具类
+ *
  */
 
 public class ResultUtil {

@@ -2,11 +2,11 @@ package pkpd.restaurant.entity;
 
 public class SysRole extends BaseBean{
     /**
-     * 角色id
+     * id
      */
     private Integer roleId;
     /**
-     * 角色名
+     *
      */
     private String roleName;
 

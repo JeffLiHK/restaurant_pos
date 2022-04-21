@@ -1,7 +1,7 @@
 package pkpd.restaurant.entity;
 
 /**
- * http请求返回的最外层对象
+ * http
  * @param <T>
  */
 public class Result<T>{

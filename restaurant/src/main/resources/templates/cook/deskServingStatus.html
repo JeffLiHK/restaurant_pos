@@ -48,9 +48,9 @@
         </div>
     </div>
     <div class="layui-card-body">
-        <!-- table表格-->
+        <!-- table-->
         <table id="tableList" lay-filter="tableList"></table>
-        <!--右边工具栏-->
+        <!---->
         <script th:inline="javascript" type="text/html" id="barDemo">
             <a class="layui-btn layui-btn-xs" lay-event="viewDetail">Details</a>
         </script>
@@ -103,26 +103,26 @@
             , table = layui.table
             , laydate = layui.laydate;
 
-        //执行一个 table 实例
+        // table
         table.render({
             elem: '#tableList'
-            , url: "/restaurant/service/dssList.do" //数据接口
+            , url: "/restaurant/service/dssList.do" //
             , method: 'post'
             , request: {
-                pageName: 'pageNum' //页码的参数名称，默认：page
-                , limitName: 'pageSize' //每页数据量的参数名，默认：limit
+                pageName: 'pageNum' //，：page
+                , limitName: 'pageSize' //，：limit
             }
             , response: {
                 statusCode: 200
             }
             , limits: [2, 5, 10, 20, 30]
             , title: 'Table of desk status'
-            , page: true //开启分页
-            , even: true//开启背景隔行
+            , page: true //
+            , even: true//
             , height: 500
-            //,size:"lg"设置表格尺寸
-            , toolbar: '#test-table-toolbar-toolbarDemo' //开启工具栏，此处显示默认图标，可以自定义模板，详见文档
-            , cols: [[ //表头
+            //,size:"lg"
+            , toolbar: '#test-table-toolbar-toolbarDemo' //，，，
+            , cols: [[ //
                 , {field: 'orderId', title: 'ID', align: 'center', cellMinWidth: 70, sort: true, fixed: 'left', sort: true, hide: true}
                 , {field: 'deskCode', title: 'Table No.', align: 'center', cellMinWidth: 120,sort:true}
                 , {field: 'peopleNum', title: 'Number of People', align: 'center', cellMinWidth: 120}
@@ -135,10 +135,10 @@
             ]]
         });
 
-        //监听行工具事件
-        table.on('tool(tableList)', function (obj) { //注：tool 是工具条事件名，test 是 table 原始容器的属性 lay-filter="对应的值"
-            var data = obj.data //获得当前行数据
-                , layEvent = obj.event; //获得 lay-event 对应的值
+        //
+        table.on('tool(tableList)', function (obj) { //：tool ，test  table  lay-filter=""
+            var data = obj.data //
+                , layEvent = obj.event; // lay-event
             if (layEvent === 'viewDetail') {
                 var url = "/restaurant/service/ssd.html/" + data.orderId;
                 layer.open({
@@ -151,14 +151,14 @@
                 });
             }
         });
-        //监听搜索
+        //
         form.on('submit(Search)', function (data) {
             var field = data.field;
-            //执行重载
+            //
             table.reload('tableList', {
                 where: field
                 , page: {
-                    curr: 1 //重新从第 1 页开始
+                    curr: 1 // 1
                 }
             });
         });

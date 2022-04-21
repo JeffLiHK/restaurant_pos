@@ -8,36 +8,36 @@ import java.util.List;
  * Date:2018/10/1
  * Time:23:19
  *
- * 订单明细表
+ * 
  */
 
 public class OrderDetail extends BaseBean{
     /**
-     * 订单明细id
+     * id
      */
     private Long odId;
     /**
-     * 订单
+     * 
      */
     private Order order;
     /**
-     * 商品
+     * 
      */
     private Goods goods;
     /**
-     * 菜的数量
+     * 
      */
     private Integer count;
     /**
-     * 菜的状态(0未制作，1正在制作，2制作完成，3上菜完成)
+     * (0，1，2，3)
      */
     private Integer status;
     /**
-     * 制菜说明
+     * 
      */
     private String description;
     /**
-     * 订单id集
+     * id
      */
     private List<Long> odIdList;
 

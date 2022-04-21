@@ -28,7 +28,7 @@ public class ClientDeskController{
     @Autowired
     private GoodsCategoryService goodsCategoryService;
     /**
-     * 客户端桌位接口
+     * 
      */
     @PostMapping("/login.do")
     @ResponseBody
@@ -68,13 +68,13 @@ public class ClientDeskController{
     }
 
     /**
-     * 商品列表html页面
+     * html
      * @param model
      * @return
      */
     @GetMapping("/goodslist.html/{categoryId}")
     public String goodsList(Model model,@PathVariable("categoryId") Integer categoryId){
-        //0代表查询所有菜，即无条件查询
+        //0，
         if (categoryId==0){
             categoryId=null;
         }
@@ -83,7 +83,7 @@ public class ClientDeskController{
     }
 
     /**
-     * 商品列表数据
+     * 
      * @param pageInfo
      * @param goods
      * @param goodsCategory

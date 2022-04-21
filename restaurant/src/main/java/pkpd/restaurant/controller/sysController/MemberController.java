@@ -27,7 +27,7 @@ public class MemberController {
     @Autowired
     private MemberCategoryService memberCategoryService;
     /**
-     * 用户列表html页面
+     * html
      * @param model
      * @return
      */
@@ -88,10 +88,10 @@ public class MemberController {
         return ResultUtil.success();
     }
     /**
-     * 会员列表数据接口
-     * @param pageInfo 接收pageNum、pageSize
-     * @param member 接收条件信息
-     * @param memberCategory 接收类型条件的id
+     * 
+     * @param pageInfo pageNum、pageSize
+     * @param member 
+     * @param memberCategory id
      * @return
      */
     @PostMapping("/list.do")
@@ -111,7 +111,7 @@ public class MemberController {
     }
 
     /**
-     * 根据会员号查询会员接口
+     * 
      * @param member
      * @return
      */

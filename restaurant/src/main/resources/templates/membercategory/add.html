@@ -16,7 +16,7 @@
             var btnMinus = document.getElementById("btn_minus");
             var btnPlus = document.getElementById("btn_plus");
             btnMinus.onclick = function () {
-                //注意parseFloat转换成的浮点类型会有很多位,如果不用toFixed(2)方法截取小数点位数，再做显示时位数会变多
+                //parseFloat,toFixed(2)，
                 var num = parseFloat(discount.value);
                 if (num > 0.0) {
                     discount.value = (num - 0.01).toFixed(2);
@@ -84,13 +84,13 @@
         var $ = layui.$
             , form = layui.form
 
-        //获取from表单提交事件
-        //此处submit中的值是lay-filter
+        //from
+        //submitlay-filter
         form.on('submit(component-form-element)', function (data) {
         });
-        //自定义验证
+        //
         form.verify({
-            //验证正数
+            //
             positive_number: function (value, item) {
                 if (parseFloat(value) < 0) {
                     return 'Amount cannot be negative';

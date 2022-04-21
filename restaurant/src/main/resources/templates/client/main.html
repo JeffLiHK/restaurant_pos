@@ -13,7 +13,7 @@
           media="all"/>
     <style>
         body {
-            font-family: "宋体";
+            font-family: "";
         }
 
         .goods-item-image {
@@ -50,10 +50,10 @@
 <div id="LAY_app">
     <div class="layui-layout layui-layout-admin">
         <div class="layui-header" style="background:url('../image/background.jpg') no-repeat">
-            <!-- 头部区域 -->
+            <!--  -->
             <ul class="layui-nav layui-layout-left">
               <!--  <li class="layui-nav-item layui-hide-xs">
-                    <input type="text" placeholder="搜索..." autocomplete="off" class="layui-input layui-input-search"
+                    <input type="text" placeholder="..." autocomplete="off" class="layui-input layui-input-search"
                            layadmin-event="serach">
                 </li>-->
             </ul>
@@ -80,7 +80,7 @@
             </ul>
         </div>
 
-        <!-- 侧边菜单 -->
+        <!--  -->
         <div class="layui-side layui-side-menu" style="background:url('../image/background.jpg') no-repeat;box-shadow:none; ">
             <div class="layui-side-scroll">
                 <div class="layui-logo"
@@ -90,14 +90,14 @@
                 <ul class="layui-nav layui-nav-tree" lay-shrink="all" id="LAY-system-side-menu"
                     lay-filter="layadmin-system-side-menu">
                     <li data-name="console" class=" layui-nav-item layui-nav-itemed">
-                        <a lay-href="home/console.html" lay-tips="特色菜" lay-direction="2">
+                        <a lay-href="home/console.html" lay-tips="" lay-direction="2">
                             <i class="layui-icon layui-icon-home"></i>
                             <cite>Main Dish</cite>
                         </a>
                         </dl>
                     </li>
                     <li data-name="component" class="layui-nav-item">
-                        <a th:attr="lay-href=@{/guest/goodslist.html/-2}" lay-tips="新菜" lay-direction="2">
+                        <a th:attr="lay-href=@{/guest/goodslist.html/-2}" lay-tips="" lay-direction="2">
                             <i class="layui-icon layui-icon-home"></i>
                             <cite>Salad</cite>
                         </a>
@@ -105,7 +105,7 @@
                     <th:block th:each="category:${categoryList}">
                         <li data-name="component" class="layui-nav-item">
                             <a th:attr="lay-href=@{/guest/goodslist.html/{categoryId}(categoryId=${category.categoryId})},lay-tips=${category.categoryName}"
-                               lay-tips="川菜" lay-direction="2" target="iframe">
+                               lay-tips="" lay-direction="2" target="iframe">
                                 <i class="layui-icon layui-icon-home"></i>
                                 <cite th:text="${category.categoryName}"></cite>
                             </a>
@@ -114,7 +114,7 @@
                 </ul>
             </div>
         </div>
-        <!-- 页面标签 -->
+        <!--  -->
         <div class="layadmin-pagetabs" id="LAY_app_tabs">
             <div class="layui-icon layadmin-tabs-control layui-icon-prev" layadmin-event="leftPage"></div>
             <div class="layui-tab" lay-unauto lay-allowClose="true" lay-filter="layadmin-layout-tabs">
@@ -124,7 +124,7 @@
                 </ul>
             </div>
         </div>
-        <!--/*主体内容 内嵌iframe页面*/-->
+        <!--/* iframe*/-->
         <div class="layui-body" id="LAY_app_body">
             <div class="layadmin-tabsbody-item layui-show">
                 <iframe name="iframe" th:src="@{/guest/goodslist.html/-1}" frameborder="0"
@@ -133,9 +133,9 @@
                 </iframe>
             </div>
         </div>
-        <!--/*右侧弹出菜品代码*/-->
+        <!--/**/-->
         <div id="right_window-contain">
-            <!-- 辅助元素，一般用于移动设备下遮罩 -->
+            <!-- ， -->
             <div class="layadmin-body-shade" layadmin-event="shade"></div>
         </div>
     </div>

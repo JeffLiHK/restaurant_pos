@@ -21,11 +21,11 @@ import org.springframework.web.bind.annotation.ResponseBody;
  * Date:2018/10/2
  * Time:19:56
  */
-@ControllerAdvice//注解定义全局异常处理类
+@ControllerAdvice//
 public class GlobalExceptionHandler {
-    //Spring自带的日志框架Logger
+    //SpringLogger
     private static final Logger logger = LoggerFactory.getLogger(GlobalExceptionHandler.class);
-    //声明要捕获的异常类
+    //
     @ExceptionHandler(Exception.class)
     @ResponseBody
     public Result handlerException(Exception e){
@@ -46,7 +46,7 @@ public class GlobalExceptionHandler {
             CustomException exception = (CustomException) e;
             return ResultUtil.error(exception.getCode(),exception.getMessage());
         }else{
-            logger.info("[系统错误]={}",e);
+            logger.info("[]={}",e);
             return ResultUtil.error(ResultEnum.UNKNOWN_ERROR.getCode(),ResultEnum.UNKNOWN_ERROR.getMsg());
         }
     }

@@ -175,7 +175,7 @@
         }
 
         /**
-        右边
+
          */
         .right .top-nav {
             width: 100%;
@@ -499,28 +499,28 @@
             , form = layui.form
             , laydate = layui.laydate;
         $("input[type=text]").change(function () {
-            //非数字
+            //
             if (isNaN($(this).val())) {
                 $(this).val("");
             }
-            //正数
+            //
             if (!/^[0-9]+.?[0-9]*$/.test($(this).val())) {
                 $(this).val("");
             }
         });
 
         $("#truly-pay").change(function () {
-            //正整数
+            //
             if (/^[0-9]+.?[0-9]*$/.test($(this).val())) {
                 var counterItem3Node = $(this).parents(".counter-item3-left")[0];
-                //实付金额
+                //
                 var trulyMoney = parseFloat($(this).val());
-                //应付金额
+                //
                 var mustPay = parseFloat($(counterItem3Node).find(".must-pay").text());
                 if (mustPay == 0) {
                     return;
                 }
-                //找零
+                //
                 var changeMoney = (trulyMoney - mustPay).toFixed(2);
                 if (changeMoney < 0) {
                     $(this).val("");
@@ -535,7 +535,7 @@
             if (deskCode == '') {
                 return;
             }
-            //先清空界面
+            //
             clearAll();
             $.ajax({
                 url: '/restaurant/order/findDetail.do'
@@ -551,7 +551,7 @@
                             return;
                         }
                         console.log("data", res.data);
-                        //加载订单商品视图
+                        //
                         loadView(res.data);
                     } else {
                         layer.alert(res.msg, {
@@ -567,7 +567,7 @@
             if (memberCode == '') {
                 return;
             }
-            //验证手机号
+            //
             if (!/^\d{8}$/.test(memberCode)) {
                 $("#memberCode").val("");
                 layer.msg("Incorrect Member Number Format!", {icon: 5});
@@ -609,13 +609,13 @@
                 , btn: ['Confirm', 'Cancel']
                 , yes: function (index, layero) {
                     var iframeWindow = window['layui-layer-iframe' + index]
-                        //该id是窗口打开html页面中表单提交按钮的id
+                        //idhtmlid
                         , submitID = 'LAY-user-front-submit'
                         , submit = layero.find('iframe').contents().find('#' + submitID);
-                    //监听提交
+                    //
                     iframeWindow.layui.form.on('submit(' + submitID + ')', function (data) {
-                        var field = data.field; //获取提交的字段
-                        //提交 Ajax 成功后，静态更新表格中的数据
+                        var field = data.field; //
+                        // Ajax ，
                         $.ajax({
                             url: "/restaurant/member/add.do",
                             type: "post",
@@ -625,7 +625,7 @@
                                 if (result.code == 200) {
                                     $("#memberCode").val(data.field.memberCode);
                                     $("#member-button").click();
-                                    layer.close(index); //关闭弹层
+                                    layer.close(index); //
                                     layer.msg("Registered Success! ", {icon: 1});
                                 } else {
                                     layer.alert(result.msg, {
@@ -641,21 +641,21 @@
             });
         });
         $("#commit").click(function () {
-            //结算函数
+            //
             settleAccounts();
         });
 
         /**
-         * 加载左边商品明细视图
+         *
          */
         function loadView(data) {
-            //加载明细商品列表
+            //
             for (var i = 0; i < data.length; i++) {
                 loadGoodsItemView(data[i]);
             }
-            //订单号
+            //
             $(".orderCode").text(data[0].order.orderCode);
-            //桌号
+            //
             $(".deskCode").text(data[0].order.deskCode);
             $(".totalPrice").text(parseFloat(data[0].order.totalPrice).toFixed(2));
             $(".totalMoney").text(parseFloat(data[0].order.totalPrice).toFixed(2));
@@ -663,7 +663,7 @@
         }
 
         /**
-         * 加载一项商品的视图
+         *
          * @param data
          */
         function loadGoodsItemView(data) {
@@ -677,14 +677,14 @@
         }
 
         /**
-         * 加载会员信息
+         *
          * @param data
          */
         function loadMemberInfo(data) {
             $(".member-name").text(data.name);
             $(".member-category").text(data.memberCategory.mcName);
             $(".discount").text(parseFloat(100-(data.memberCategory.discount) * 100) + "% off");
-            //消费金额
+            //
             var totalMoney = parseFloat($(".totalMoney").text());
             var discountMoney = (totalMoney * (1 - data.memberCategory.discount)).toFixed(2);
             $(".discount-money").text(discountMoney);
@@ -692,7 +692,7 @@
         }
 
         /**
-         * 清空所有数据
+         *
          */
         function clearAll() {
             $("#items").empty();
@@ -714,7 +714,7 @@
             $(".must-pay").text($(".totalMoney").text());
         }
         /**
-         * 结算函数
+         *
          */
         function settleAccounts(){
             if($(".orderCode").text()==''){
@@ -730,18 +730,18 @@
             var data;
             var order = {};
             var member = {};
-            //会员号
+            //
             member.memberCode = $("#memberCode").val();
             order.member = member;
-            //应付金额
+            //
             order.mustPay = parseFloat($(".must-pay").text());
-            //实付金额
+            //
             order.actualPay = parseFloat($("#truly-pay").val());
-            //找零
+            //
             order.changeMoney = parseFloat($("#change-money").text());
-            //打折金额
+            //
             order.discountMoney = parseFloat($(".discount-money").text());
-            //订单号
+            //
             order.orderCode = $(".orderCode").text();
             data = JSON.stringify(order);
             console.log("data", data);
@@ -758,7 +758,7 @@
                            $("#deskCode").val("");
                            $("#memberCode").val("");
                            $("#truly-pay").val("");
-                            //重载当前页面
+                            //
                             location.reload();
                         },1000);
                     }else{

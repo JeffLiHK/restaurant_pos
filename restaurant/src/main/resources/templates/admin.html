@@ -88,15 +88,15 @@
                     <th:block th:each="menu:${menuList}">
                         <li data-name="component" class="layui-nav-item">
                             <a href="javascript:;" th:attr="lay-tips=${menu.menuName}" lay-direction="2">
-                                <!--th:attrappend 给元素追加值而不覆盖原有值-->
+                                <!--th:attrappend -->
                                 <i class="layui-icon " th:attrappend="class=${menu.menuIcon}"></i>
                                 <cite th:text="${menu.menuName}"></cite>
                             </a>
                             <dl class="layui-nav-child">
                                 <th:block th:each="childMenu:${menu.childMenus}">
                                     <dd data-name="grid">
-                                        <!--Thymeleaf中给标签属性赋值用 th:atrr=""
-                                        列如 th:attr=“ src=@{/images/gtvglogo.png}, title=#{logo}, alt=#{logo}”-->
+                                        <!--Thymeleaf th:atrr=""
+                                         th:attr=“ src=@{/images/gtvglogo.png}, title=#{logo}, alt=#{logo}”-->
                                         <a th:attr="lay-href=@{${childMenu.menuHref}}" target="mainFrame">
                                             <cite th:text="${childMenu.menuName}"></cite>
                                         </a>

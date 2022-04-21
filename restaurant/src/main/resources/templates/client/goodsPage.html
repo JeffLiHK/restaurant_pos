@@ -103,9 +103,9 @@
         Jquery = $;
         var pageSize = 10;
         flow.load({
-            elem: '#content' //流加载容器
-            , done: function (pageNum, next) { //执行下一页的回调
-                //模拟数据插入
+            elem: '#content' //
+            , done: function (pageNum, next) { //
+                //
                 setTimeout(function () {
                     var lis = [];
                     console.log("pageNum", pageNum);
@@ -128,7 +128,7 @@
                                 });
                                 var pages = parseInt(((res.count - 1) / pageSize)) + 1;
                                 console.log("pages", pages);
-                                next(lis.join(''), pageNum < pages); //假设总页数为 10
+                                next(lis.join(''), pageNum < pages); // 10
                             } else {
                                 layer.alert(res.msg, {
                                     title: 'Submit'
@@ -155,16 +155,16 @@
                         return html;
                     }
 
-                    //执行下一页渲染，第二参数为：满足“加载更多”的条件，即后面仍有分页
-                    //pages为Ajax返回的总页数，只有当前页小于总页数的情况下，才会继续出现加载更多
+                    //，：“”，
+                    //pagesAjax，，
                 }, 500);
             }
         })
         //flow.lazyimg();
-        //给body下的所有 .chickClick 动态添加点击事件
+        //body .chickClick
         $("body").on("click", ".chickClick", function (e) {
             var goodsItem = $(this).parents(".goods-item")[0];
-            var soldState = $(goodsItem).find("input[name='soldState']").val();//售馨
+            var soldState = $(goodsItem).find("input[name='soldState']").val();//
             console.log("soldState", soldState);
             if (soldState == '1') {
                 layer.msg("SOLD OUT！", {icon: 5});

@@ -11,14 +11,14 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import java.util.List;
 /**
- * 菜品类型管理
+ * 
  */
 @Service
 public class GoodsCategoryServiceImpl implements GoodsCategoryService {
     @Autowired
     private GoodsCategoryDao goodsCategoryDao;
     /**
-     * 查询所有菜品类型
+     * 
      * @return
      */
     @Override
@@ -27,7 +27,7 @@ public class GoodsCategoryServiceImpl implements GoodsCategoryService {
     }
 
     /**
-     * 根据菜品类型id查询菜品类型信息
+     * id
      * @param id
      * @return
      */
@@ -37,7 +37,7 @@ public class GoodsCategoryServiceImpl implements GoodsCategoryService {
     }
 
     /**
-     * 添加类型
+     * 
      * @param goodsCategory
      */
     @Override
@@ -50,7 +50,7 @@ public class GoodsCategoryServiceImpl implements GoodsCategoryService {
     }
 
     /**
-     * 修改类型
+     * 
      * @param goodsCategory
      */
     @Override
@@ -63,7 +63,7 @@ public class GoodsCategoryServiceImpl implements GoodsCategoryService {
     }
 
     /**
-     * 根据id删除类型
+     * id
      * @param strIds
      */
     @Override

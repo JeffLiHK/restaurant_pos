@@ -20,7 +20,7 @@ import javax.servlet.http.HttpSession;
 import java.util.List;
 
 /**
- * 制菜上菜管理网络接口
+ * 
  */
 @Controller
 @RequestMapping("/service")
@@ -33,7 +33,7 @@ public class CookAndServingController{
     private OrderDetailService orderDetailService;
 
     /**
-     * 制菜任务列表HTML界面
+     * HTML
      * @return
      */
     @GetMapping("/cookTask.html")
@@ -45,7 +45,7 @@ public class CookAndServingController{
     }
 
     /**
-     * 制菜任务列表数据接口
+     * 
      * @param pageInfo
      * @return
      */
@@ -58,8 +58,8 @@ public class CookAndServingController{
     }
 
     /**
-     * 开始制菜修改状态接口
-     * 获取前台传的数组，保存到List集合，必须添加value = "odIdList[]
+     * 
+     * ，List，value = "odIdList[]
      * @param odIdList
      * @return
      */
@@ -75,8 +75,8 @@ public class CookAndServingController{
     }
 
     /**
-     * 完成制菜修改状态接口
-     * 获取前台传的数组，保存到List集合，必须添加value = "odIdList[]
+     * 
+     * ，List，value = "odIdList[]
      * @param odIdList
      * @return
      */
@@ -92,7 +92,7 @@ public class CookAndServingController{
     }
 
     /**
-     * 上菜任务列表HTML界面
+     * HTML
      * @return
      */
     @GetMapping("/servingTask.html")
@@ -104,7 +104,7 @@ public class CookAndServingController{
     }
 
     /**
-     * 上菜任务列表数据接口
+     * 
      * @param pageInfo
      * @return
      */
@@ -117,7 +117,7 @@ public class CookAndServingController{
     }
 
     /**
-     * 完成上菜接口
+     * 
      * @param orderDetail
      * @param order
      * @return
@@ -132,7 +132,7 @@ public class CookAndServingController{
     }
 
     /**
-     * 桌位上菜情况列表HTML界面
+     * HTML
      * @return
      */
     @GetMapping("/dssList.html")
@@ -142,7 +142,7 @@ public class CookAndServingController{
     }
 
     /**
-     * 桌位上菜情况列表数据接口
+     * 
      * @param pageInfo
      * @param order
      * @return
@@ -158,7 +158,7 @@ public class CookAndServingController{
     }
 
     /**
-     * 桌位上菜详细情况HTML页面
+     * HTML
      * @param orderId
      * @param model
      * @return
@@ -171,7 +171,7 @@ public class CookAndServingController{
     }
 
     /**
-     * 桌位上菜详细情况数据接口
+     * 
      * @param pageInfo
      * @param orderId
      * @return

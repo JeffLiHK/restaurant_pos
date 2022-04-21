@@ -18,7 +18,7 @@ import javax.servlet.http.HttpSession;
 import java.util.List;
 
 /**
- * 订单操作接口
+ * 
  */
 @Controller
 @RequestMapping("/order")
@@ -36,7 +36,7 @@ public class OrderController {
     @PostMapping("/list.do")
     @ResponseBody
     public Result<Order> orderList(CustomPageInfo<Order> pageInfo, Order order){
-        //订单是未完成状态的，（以付款、已完成制菜的）是已完成订单即交易记录
+        //，（、）
         order.setOverStatus(0);
         pageInfo.setT(order);
         pageInfo.setOrderBy("ASC");
@@ -77,7 +77,7 @@ public class OrderController {
     }
 
     /**
-     * 根据桌号查询订单明细
+     * 
      * @param deskCode
      * @return
      */
@@ -89,14 +89,14 @@ public class OrderController {
     }
 
     /**
-     * 结账接口
+     * 
      * @return
      */
     @PostMapping("/settleAccounts.do")
     @ResponseBody
     public Result<Order> settleAccounts(@RequestBody Order order, HttpSession session){
         SysUser user = (SysUser) session.getAttribute("user");
-        //将当前收银员保存到订单中
+        //
         order.setCashier(user);
         orderService.settleAccounts(order);
         return ResultUtil.success();

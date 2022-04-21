@@ -4,7 +4,7 @@ spring:
   datasource:
     driver-class-name: com.mysql.jdbc.Driver
     username: root
-    password: password
+    password: 17734614
     url: jdbc:mysql://127.0.0.1:3306/restaurant?useUnicode=true&characterEncoding=utf-8
     hikari:
       read-only: false
@@ -53,4 +53,4 @@ server:
     context-path: /restaurant
 #web image path (change before run the spring)
 web:
-  upload-image-path: /Users/iptszwai/Documents/java/restaurant_pos_ultimate2/images/restaurant/upload
+  upload-image-path: E:\Programming\Java\Project\restaurant_pos_ultimate\images\restaurant\upload
