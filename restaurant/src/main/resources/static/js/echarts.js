@@ -61951,10 +61951,10 @@ var MONTH_TEXT = {
         'Oct', 'Nov', 'Dec'
     ],
     CN: [
-        '一月', '二月', '三月',
-        '四月', '五月', '六月',
-        '七月', '八月', '九月',
-        '十月', '十一月', '十二月'
+        '一Month', '二Month', '三Month',
+        '四Month', '五Month', '六Month',
+        '七Month', '八Month', '九Month',
+        '十Month', '十一Month', '十二Month'
     ]
 };
 
