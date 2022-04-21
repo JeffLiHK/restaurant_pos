@@ -1,6 +1,6 @@
 
 spring:
-  #数据源配置
+  #db (change the username and password before run the spring)
   datasource:
     driver-class-name: com.mysql.jdbc.Driver
     username: root
@@ -15,53 +15,42 @@ spring:
       minimum-idle: 10
   transaction:
     rollback-on-commit-failure: true
-  #去掉theymeleaf的HTML5效验
   thymeleaf:
     cache: false
     mode: LEGACYHTML5
-  #配置时间(接口将字符串映射到实体的date类型时会用到，不配置时间会有偏差)
+  #time zone
   jackson: time-zone=GMT+8
-  #表示所有的访问都经过静态资源路径
   mvc:
     static-path-pattern: /**
-    #在这里配置静态资源路径，前面说了这里的配置是覆盖默认配置，
-    #所以需要将默认的也加上否则static、public等这些路径将不能被当作静态资源路径，
-    #在这个最末尾的file:${web.upload-path}之所有要加file:是因为指定的是一个具体的硬盘路径，
-    #其他的使用classpath指的是系统环境变量
   resources:
     static-locations: classpath:/META-INF/resources/,classpath:/resources/,classpath:/static/,classpath:/public/,file:${web.upload-image-path}
-#配置日志信息
 logging:
   level:
     root: info
     pkpd.restaurant: debug
 
-#配置mybatis
 mybatis:
-#配置驼峰命名转换
   configuration:
      map-underscore-to-camel-case: true
-  #配置mapping文件路径
   mapper-locations: classpath:/mappings/**/*.xml
   type-aliases-package: tk.mybatis.springboot.model
-
-#mapper插件配置
+#mapper
 mapper:
     mappers:
         - tk.mybatis.mapper.common.Mapper
     mapper.not-empty: false
     mapper.identity: MYSQL
-#pageHelper配置
+#pageHelper
 pagehelper:
     helperDialect: mysql
     reasonable: true
     supportMethodsArguments: true
     params: count=countSql
-#配置项目访问端口和地址
+#server information
 server:
   port: 8181
   servlet:
     context-path: /restaurant
-
+#web image path (change before run the spring)
 web:
-  upload-image-path: E:\Programming\Java\Project\restaurant_pos_ultimate\images\restaurant\upload
+  upload-image-path: /Users/iptszwai/Documents/java/restaurant_pos_ultimate2/images/restaurant/upload
