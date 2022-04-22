@@ -22,17 +22,17 @@ public class CookAndServingServiceImplTest {
     private OrderDetailDao orderDetailDao;
 
     /**
-     * 测试制菜统筹算法
+     * 
      */
     @Test
     @Ignore
     public void cookTaskManage() {
         List<Integer> statusList = new ArrayList<>();
-        //查询正在制作的菜
+        //
         statusList.add(1);
         List<OrderDetail> resultCookTaskList = orderDetailDao.findPageByStatus(statusList);
         cookAndServingService.cookTaskManage(resultCookTaskList);
-        //查询所有等待制作的
+        //
         statusList.clear();
         statusList.add(0);
         List<OrderDetail> cookingTaskList = orderDetailDao.findPageByStatus(statusList);

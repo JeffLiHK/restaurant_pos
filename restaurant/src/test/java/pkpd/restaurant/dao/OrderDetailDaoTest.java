@@ -30,12 +30,12 @@ public class OrderDetailDaoTest {
         order.setMember(member);
         //orderDetail.setOrder(order);
         Goods goods = new Goods();
-        goods.setGoodsName("蒜爆肉");
+        goods.setGoodsName("");
         orderDetail.setGoods(goods);*/
         OrderDetail orderDetail = new OrderDetail();
         orderDetail.setOdId(30L);
         List<OrderDetail> list = detailDao.findPage(orderDetail);
-        System.out.println("列表长度"+list.size());
+        System.out.println(""+list.size());
     }
 
     @Test

@@ -41,7 +41,7 @@
     <insert id="insert" parameterType="java.util.List">
         insert into r_order_detail(order_id,goods_id,count,status,description,del) values
         <foreach collection="list" index="index" item="item"  separator=",">
-            /*新的订单status都为0*/
+            /*status0*/
             (#{item.order.orderId},#{item.goods.goodsId},#{item.count},0,#{item.description},0)
         </foreach>
     </insert>
@@ -77,7 +77,7 @@
             #{item}
         </foreach>
     </update>
-    <!--注意如果多表连接查询有的id字段可能为空，则将其放到最后用左连接查询(左连接查询如果左边为空则右边以null填充)-->
+    <!--id，(null)-->
     <sql id="join">
         left join r_order as b on a.order_id = b.order_id
         inner join r_goods as e on a.goods_id = e.goods_id

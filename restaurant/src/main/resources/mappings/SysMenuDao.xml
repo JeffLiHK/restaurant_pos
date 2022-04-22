@@ -19,7 +19,7 @@
         m.weight,
         m.del
     </sql>
-    <!--等同于 SQL语句 select * from sys_menu where role_name in()-->
+    <!-- SQL select * from sys_menu where role_name in()-->
     <sql id="where">
         <where>
             <if test="condition!=null and condition.list !=null">

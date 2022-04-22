@@ -63,7 +63,7 @@
 			<scope>test</scope>
 		</dependency>
 
-		<!-- HikariCP数据源 -->
+		<!-- HikariCP -->
 		<dependency>
 			<groupId>com.zaxxer</groupId>
 			<artifactId>HikariCP</artifactId>

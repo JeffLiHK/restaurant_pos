@@ -31,7 +31,7 @@ public class SysMenuDaoTest {
     public void findList() {
         SysMenu sysMenu = new SysMenu();
         Set<String> roles = new HashSet<>();
-        roles.add("经理");
+        roles.add("");
         sysMenu.getCondition().put("list",roles);
         List<SysMenu> menuList = sysMenuDao.findList(sysMenu);
       /*  System.out.println(menus);*/

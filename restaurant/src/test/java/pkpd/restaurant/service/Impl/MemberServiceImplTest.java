@@ -49,7 +49,7 @@ public class MemberServiceImplTest {
         info.setPageNum(1);
         info.setPageSize(2);
         /*Member member = new Member();
-        member.setName("顾客");
+        member.setName("");
         member.setGender("Female");
         info.setT(member);*/
         CustomPageInfo<Member> result = memberService.findPage(info);
