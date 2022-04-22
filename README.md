@@ -4,17 +4,17 @@
 
 ## Access address and testing account
 
-staff login address: http://localhost:8181/restaurant/sysuser/login.html  
+Staff login address: http://localhost:8181/restaurant/sysuser/login.html  
 
-customer login address: http://localhost:8181/restaurant/guest/desklist.html  
+Customer login address: http://localhost:8181/restaurant/guest/desklist.html  
 
-manager testing account:       ac: 69972123 pw: 123456 
+Manager testing account:       ac: 69972123 pw: 123456 
 
-cashier testing account:     ac: 92876762 pw: 123456  
+Cashier testing account:     ac: 92876762 pw: 123456  
 
-chief testing account       ac: 93268745 pw: 123456  
+Chief testing account       ac: 93268745 pw: 123456  
 
-waiter testing account:     ac: 64789021 pw: 123456 
+Waiter testing account:     ac: 64789021 pw: 123456 
 
 ## Setup the project
 
