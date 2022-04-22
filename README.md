@@ -1,8 +1,8 @@
 # Restaurant POS System
 
-## remember the database name can be modified in application.yml, mysql version cannot below 5.6
+## Remember the database name can be modified in application.yml, mysql version cannot below 5.6
 
-## access address and testing account
+## Access address and testing account
 
 staff login address: http://localhost:8181/restaurant/sysuser/login.html  
 
@@ -16,7 +16,7 @@ chief testing account       ac: 93268745 pw: 123456
 
 waiter testing account:     ac: 64789021 pw: 123456 
 
-## setup the project
+## Setup the project
 
 1. Using IDEA or other IDE to open the project and setup the springboot and maven environment
 2. Prepare MySQL, and create a database named 'restaurant'
