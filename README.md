@@ -1,5 +1,8 @@
 # Restaurant POS System
 
+Introduction Video:
+[Click Me!](https://youtu.be/a-EcUQ7hkY4)
+
 ## Setup the project
 
 1. Using IDEA to open the project and setup the springboot and maven environment
