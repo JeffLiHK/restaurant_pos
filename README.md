@@ -17,4 +17,8 @@ Client side:
 Staff side:
 ![image](https://user-images.githubusercontent.com/40237973/225609367-750490f0-3051-40ac-8ced-99cab3a558e2.png)
 ![image](https://user-images.githubusercontent.com/40237973/225609922-d8d612bb-dde3-4d5e-92de-01fd4be225de.png)
+![image](https://user-images.githubusercontent.com/40237973/225611060-5dad3692-936e-4e4a-9a2f-ee4c2f3f8f68.png)
+![image](https://user-images.githubusercontent.com/40237973/225611154-91e91092-6a99-4c41-83ad-758ca0cb4fbd.png)
+![image](https://user-images.githubusercontent.com/40237973/225611245-01c5fbed-ca58-4242-aa89-9fe5d4d4cedb.png)
+![image](https://user-images.githubusercontent.com/40237973/225611338-897ef864-541e-4dd3-a3b1-167ed369d0be.png)
 
