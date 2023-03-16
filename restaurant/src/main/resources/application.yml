@@ -1,10 +1,10 @@
 
 spring:
-  #db (change the username and password before run the spring)
+  #db (change the username and password before run the spring) only support mysql version 5.6+!
   datasource:
     driver-class-name: com.mysql.jdbc.Driver
     username: root
-    password: 17734614
+    password: password
     url: jdbc:mysql://127.0.0.1:3306/restaurant?useUnicode=true&characterEncoding=utf-8
     hikari:
       read-only: false
