@@ -18,7 +18,7 @@ Waiter testing account:     ac: 64789021 pw: 123456
 
 ## Setup the project
 
-1. Using IDEA or other IDE to open the project and setup the springboot and maven environment
+1. Using IDEA to open the project and setup the springboot and maven environment
 2. Prepare MySQL, and create a database named 'restaurant'
 3. Import/Execute the sql file inside the db folder into your restaurant database to setup all tables and data
 4. Find the application.yml inside the path src/main/resources/
